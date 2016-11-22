@@ -3,7 +3,7 @@
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil 
 #+TITLE: AQA GCSE Computer Science
-#+AUTHOR: Marc Scott and Stephen Brown
+#+AUTHOR: Marc Scott, Stephen Brown and Paul Dougall
 
 #+BEGIN_HTML
 <div class=ribbon>
@@ -23,6 +23,10 @@
 :HTML_CONTAINER_CLASS: link-heading
 :END:
 * [[http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-SP.PDF][AQA GCSE CS Specification]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-1-constants.html][3.1.1 Variables, Constants, Data Types, Booleans and Arrays]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:

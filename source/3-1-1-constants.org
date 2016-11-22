@@ -1,0 +1,173 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.1 Constants, Variables and Data Types
+#+AUTHOR: Paul Dougall
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Variables, constants, functions and procedures
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Definitions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+/Data/
+
+- Data is processed by computers, the resulting information can then be used to make decisions. You need to know the definitions of data and information and the relationship between the two.
+
+- Data is words, numbers, dates, images, sounds etc *without* context.
+
+- Data items need to be part of a structure, such as a sentence, in order to give them meaning.
+
+/Information/
+
+- Information is a collection of words, numbers, dates, images, sounds etc. put into *context*, .i.e. to give them meaning.
+
+/Constant/
+
+- Data values that stay the same every time a program is executed are known as constants. 
+- Constants are not expected to change.
+
+Examples of a constant within a game might be:
+- the unit of gravity
+- the number of lives available for the player
+- the amount of time allowed for a level in a game
+
+/Variable/
+
+- Variables are data values that can *change* when the user is asked a question, for example, their age. 
+- Variables may change during program execution.
+- A variable is a memory location. 
+- It has a name that is associated with that location. 
+- The memory location is used to hold data. 
+
+- The key difference when comparing a constant to a variable is that the value associated with a variable name may change during program execution. 
+- For example 'highScore' would need to be variable to change throughout a game.
+- The content and organisation of a computer's memory is not fixed - so neither is the value that is pointed at by a variable.
+- When data is read from a variable, the content of the memory location is copied and used in calculations.
+
+** Learn It: Data Types
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+ 
+- integer - are whole numbers represented as binary values. 1-8 bytes
+
+- Boolean - True or False only requires one bit of storage.
+
+- Real (a float in Python) - numbers are numbers that have a fractional part, usually represented using two components: the main number and the fractional part, each of which is a binary number. 
+This is known as a floating-point representation. Most programming languages provide one or more data types based on floating-point representations. They are usually given names like 'float', 'single', 'double', 'real' or 'longreal'.
+The number data type can affect the type of calculations that can be performed in a program. 4-8 bytes of storage. 
+character - only one symbol, only requires one byte of storage. 
+
+- String - Limited to the amount that can be stored in main memory
+They are used for data values that are made up of ordered sequences of characters, such as "hello world". 
+A string can contain any sequence of characters, visible or invisible, and characters may be repeated. 
+The number of characters in the string is called its length, and "hello world" has length 11 - made up of 10 letters and 1 space. 
+There is usually a restriction on the maximum length of a string. 
+There is also such a thing as an empty string, which contains no characters - length 0.
+
+/Explain the purpose of data types within code:/
+
+- Different types of data are represented in different ways inside a computer and need varying amounts of memory to store them. 
+- They also have different operations that can be performed upon them. 
+- All values that belong to the same data type will be represented in the same way.
+
+** Learn It: Arrays
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- An array is one method of storing data in an organised structure.
+- When arrays are created, the program needs to know their size. 
+- It needs to know how many player names and scores you want to collect. 
+- When an array or any variable is created in a program this is called *declaring*. 
+
+- *One Dimensional Arrays*
+
+
+
+- Two Dimensional Arrays
+
+
+** Learn It: Boolean Expressions:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+
+- NOT
+- AND
+- OR 
