@@ -2,34 +2,253 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="pages/css/styles.css"/>
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil 
-#+TITLE: AQA GCSE Computer Science
-#+AUTHOR: Marc Scott, Stephen Brown and Paul Dougall
+#+TITLE: AQA 8520 GCSE Computer Science
+#+AUTHOR: Steve Fone and Alex Smith
 
 #+BEGIN_HTML
 <div class=ribbon>
 <a href="https://github.com/stsb11/GCSE_Computing_Fundamentals">Fork me on GitHub</a>
 </div>
+<div class=logo>
+<img src="pages/img/logo.png">
+</div>
 #+END_HTML
-* [[file:docs/20xx_solution.pdf][Specimen Paper model solution]]
+
+
+
+* [[file:docs/AQA_8520_Spec.pdf][AQA 8520 GCSE CS Specification]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:docs/2014_solution.pdf][2014 Paper model solution]]
+* [[file:docs/AQA_Pseudo_Code.pdf][AQA Pseudocode Guide]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:docs/2015_solution.pdf][*NEW* 2015 Paper model solution]]
+
+* 3.1 Fundementals of Algorithms
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-SP.PDF][AQA GCSE CS Specification]]
+#+BEGIN_HTML
+<details>
+<summary>Click here for the sub-sections</summary>
+<p></p>
+#+END_HTML
+
+[[file:pages/3-1-1-constants.html][3.1.1 Representing Algorithms]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-1-2-constants.html][3.1.2 Efficiency of Algorithms]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-1-3-searching.html][3.1.3 Searching Algorithms]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-1-4-sorting.html][3.1.4 Sorting Algorithms]]
+#+BEGIN_HTML
+</details>
+#+END_HTML
+
+* 3.2 Programming
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:pages/3-1-1-constants.html][3.1.1 Variables, Constants, Data Types, Booleans and Arrays]]
+#+BEGIN_HTML
+<details>
+<summary>Click here for the sub-sections</summary>
+<p></p>
+#+END_HTML
+
+[[file:pages/3-2-1-datatypes.html][3.2.1 Data Types]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-2-2-concepts.html][3.1.2 Programming Concepts]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-2-3-arithmetic.html][3.1.3 Arithmetic Operations in a Programming Language]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-2-4-relational.html][3.1.4 Relational Operations in a Programming Language]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-2-5-structures.html][3.1.5 Data Structures]]
+#+BEGIN_HTML
+</details>
+#+END_HTML
+
+* 3.3 Fundamentals of Data Representation
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
+#+BEGIN_HTML
+<details>
+<summary>Click here for the sub-sections</summary>
+<p></p>
+#+END_HTML
+
+[[file:pages/3-3-1-base.html][3.3.1 Number Bases]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-3-2-c_num_bases.html][3.3.2 Converting between Number Bases]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-3-3-units_info.html][3.3.3 Units of Information]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-3-4-bin_arith.html][3.3.4 Binary Arithmetic]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-3-5-char_enc.html][3.3.5 Character Encoding]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-3-6-rep_img.html][3.3.6 Representing Images]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-3-7-rep_sd.html][3.3.7 Representing Sound]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-3-8-data_comp.html][3.3.8 Data Compression]]
+#+BEGIN_HTML
+</details>
+#+END_HTML
+
+* 3.4 Computer Systems
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+#+BEGIN_HTML
+<details>
+<summary>Click here for the sub-sections</summary>
+<p></p>
+#+END_HTML
+
+[[file:pages/3-4-1-hard_soft.html][3.4.1 Hardware and Software]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-4-2-bool_logic.html][3.4.2 Boolean Logic]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-4-3-soft_class.html][3.4.3 Software Classification]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-4-4-sys_arc.html][3.4.4 Systems Architecture]]
+#+BEGIN_HTML
+</details>
+#+END_HTML
+
+* 3.5 Fundamentals of Computer Networks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+#+BEGIN_HTML
+<details>
+<summary>Click here for the sub-sections</summary>
+<p></p>
+#+END_HTML
+
+[[file:pages/3-5-1-comp_net.html][3.5.1 Computer Networks]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-5-2-net_prot.html][3.5.2 Network Protocols]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-5-3-net_sec.html][3.5.3 Network Security]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-5-4-tcp.html][3.5.4 TCP/IP Layers]]
+#+BEGIN_HTML
+</details>
+#+END_HTML
+
+* 3.6 Fundamentals of Cyber Security
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+#+BEGIN_HTML
+<details>
+<summary>Click here for the sub-sections</summary>
+<p></p>
+#+END_HTML
+
+[[file:pages/3-6-1-cyber.html][3.6.1 Cyber Security]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-6-2-cyber_threats.html][3.6.2 Cyber Security Threats]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-6-3-soc_eng.html][3.6.3 Social Engineering]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-6-4-mal_code.html][3.6.4 Malicious Code]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-6-5-prev_cyber.html][3.6.5 Methods to Detect & Prevent Cyber Security Threats]]
+#+BEGIN_HTML
+</details>
+#+END_HTML
+
+* [[file:pages/3-7-ethical.html][3.7 Ethical, Legal and Environmental Impacts of Digital Technology on Wider Society, including Issues of Privacy]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+
+* [[file:docs/AQA_GCSE _CS_Revision_Guide.pdf][Exam Revision Guide]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+
+* AQA Sample Exam Papers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+#+BEGIN_HTML
+<details>
+<summary>Click here for the sub-sections</summary>
+<p></p>
+#+END_HTML
+
+[[file:docs/AQA_85201_SQP.pdf][AQA Sample Paper 1]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:docs/AQA_85201_SMS.pdf][AQA Sample Paper 1 Mark Scheme]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:docs/AQA_85202_SQP.pdf][AQA Sample Paper 2]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:docs/AQA_85202_SMS.pdf][AQA Sample Paper 1 Marks Scheme]]
+#+BEGIN_HTML
+</details>
+#+END_HTML
+
+* Older AQA Materials
 * [[file:pages/3-1-5-Scope.html][3.1.5 Scope]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
@@ -96,14 +315,6 @@
 :END:
 
 * [[file:pages/3-1-15-SQL.html][3.1.15 SQL]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3-1-16-society.html][3.1.16 Computing and Society]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/Exam_Practice.html][Exam Practice]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
