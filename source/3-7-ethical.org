@@ -1,0 +1,156 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society, including issues of Privacy
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Evaluate the effectiveness of computer programs/solutions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Digital Divide
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+Read the following articles.
+
+ - Spread of internet has not conquered 'digital divide' between rich and poor – [[https://www.theguardian.com/technology/2016/jan/13/internet-not-conquered-digital-divide-rich-poor-world-bank-report][report]].
+ - BBC [[http://www.bbc.co.uk/education/guides/zkhykqt/revision/5][Bitesize]]
+
+- Can you now discuss the affect the digital divide has on people around the world?
+
+* Evaluate the impact of and issues related to the use of computer technology in society.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Medical advances
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+Read and watch
+
+- [[https://medicalfuturist.com/20-potential-technological-advances-in-the-future-of-medicine-part-i/][The Medical Futurist]]
+
+#+BEGIN_HTML
+<b>The Future</b>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/exVUmuMthps" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+- Can you list the advantages and disadvantages of medical advances using Computers?
+
+** Learn It: Shopping
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+Read this short article from [[http://mashable.com/2012/07/17/supermarket-technology-marketing/#oC45nsE75kqD][Mashable]]
+
+ - Can you discuss some of the technology used at a supermarket checkout?
+
+- Read this short [[https://blog.buymeapie.com/online-shopping-traditional-shopping-pros-cons/][article]]
+
+- Can you list the benefits and drawbacks of online shopping compared to high street shopping?
+
+** Learn It: Social Media
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- [[http://www.teach-ict.com/gcse_new/being_online/social%2520networking/miniweb/pg3.htm][Advantages]]
+- [[http://www.teach-ict.com/gcse_new/being_online/social%2520networking/miniweb/pg4.htm][Disadvantages]]
+
+- Can you list the advantages and disadvantages of social media such as Twitter and FaceBook?
+
+** Learn It: Other areas to research
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- [[http://mashable.com/2014/01/26/10-jobs-replaced-by-machines/#oC45nsE75kqD][Jobs]]
+- Crime
+- Copyright, patents and piracy
+- Privacy
+
+** Watch It: Society and Computing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+#+BEGIN_HTML
+<iframe width="800" height="450" src="https://www.youtube.com/embed/gk4O6Fjsg7Y?list=PL04uZ7242_M7vEYGOr_QDVJJNAfip_iEh" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+
+
