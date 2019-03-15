@@ -1,0 +1,270 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.3.1 Number Bases
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Number Bases
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Decimal, Binary and Hexadecimal*
+- In this unit we will learn about the following number
+  systems:
+  - Decimal (Base 10).
+  - Binary (Base 2).
+  - Hexadecimal (Base 16).
+*Decimal*
+- Binary data uses only two digits, 0 and 1. With our decimal systems
+  we use ten digits, 0 to 9. The number 55, for example, is 5 tens
+  plus 5 units.
+- The number 54351 is made up of the following:
+| *Hundred Thousands* | *Ten Thousands* |  *Thousands*  | *Hundreds* | *Tens* | *Units* |
+|---------------------+-----------------+---------------+------------+--------+---------|
+|0                    |5                |4              |3           |5       |1        |
+
+- *Each category is multiplied by 10 each time* 
+- *(5x10000)+(4x1000)+(3x100)+(5x10)+(1x1)=54351*
+
+*Binary*
+- As previously mentioned binary systems use base 2 and they only have
+  two possible digits, 0 and 1.
+- The decimal number: *123* has a binary value of: *01111011*.
+- Using the table below we can convert decimal to binary or binary to decimal:
+
+|   *2^7*  |  *2^6*   |  *2^5*   |  *2^4*  |  *2^3*   |  *2^2*  |  *2^1*  |  *2^0*  |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|0         |1         |1         |1        |1         |0        |1        |1        |
+- Using the table above we simply ignore the zero's and add the values
+  of the 1's.
+- *Each category is multiplied by 2 each time*
+- *(0x128)+(1x64)+(1x32)+(1x16)+(1x8)+(0x4)+(1x2)+(1x1)=123*
+
+*Why Binary*
+- A computer microprocessor contains the central processing unit (CPU)
+  which carries out all of the program instructions by carrying out
+  millions of instructions per second.
+- These calculations are performed by billions of transistors acting
+  as switches. They have two states, either off or on/0 or 1.
+- Computers use binary to represent all data and instructions, a bit
+  pattern could represent different types of data including text,
+  image, sound and integers.
+
+#+BEGIN_SRC
+ All computer programs and the data that computers store have to be converted into billions
+  of 1s and 0s as that is all that computers can work with!
+#+END_SRC
+
+*Binary Explained by James May*
+- The following video explains how and why computers use binary:
+#+BEGIN_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kcTwu6TFZ08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_html
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Using the table below try converting the following decimal number: *96* into binary:
+
+|   *2^7*  |  *2^6*   |  *2^5*   |  *2^4*  |  *2^3*   |  *2^2*  |  *2^1*  |  *2^0*  |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|          |          |          |         |          |         |         |         |
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*** Hexadecimal
+- Hexadecimal is a base 16 number system, there are 16 digits, 0
+  to 15.
+- As we only have 10 single digits in decimal (0 to 9), we use uppercase letters A to F for the remaining six digits.
+- The following table shows the hexadecimal digits and their decimal equivalents:
+
+|*Decimal*     |0 |1 |2 |3 |4 |5 |6 |7 |8 |9 |10|11|12|13|14|15|
+|--------------+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--|
+|*Hexadecimal* |0 |1 |2 |3 |4 |5 |6 |7 |8 |9 |A |B |C |D |E |F |
+
+*Useful Conversion Table*
+|*Decimal*|*Binary*|*Hexadecimal*|
+|---------+--------+-------------|
+|0        |0000    |0            | 
+|------------------+-------------| 
+|1        |0001    |1            |
+|---------+--------+-------------|
+|2        |0010    |2            |
+|---------+--------+-------------|
+|3        |0011    |3            |
+|---------+--------+-------------|
+|4        |0100    |4            |
+|---------+--------+-------------|
+|5        |0101    |5            |
+|---------+--------+-------------|
+|6        |0110    |6            |
+|---------+--------+-------------|
+|7        |0111    |7            |
+|---------+--------+-------------|
+|8        |1000    |8            |
+|---------+--------+-------------|
+|9        |1001    |9            |
+|---------+--------+-------------|
+|10       |1010    |A            |
+|---------+--------+-------------|
+|11       |1011    |B            |
+|---------+--------+-------------|
+|12       |1100    |C            |
+|---------+--------+-------------|
+|13       |1101    |D            |
+|---------+--------+-------------|
+|14       |1110    |E            |
+|---------+--------+-------------|
+|15       |1111    |F            |
+
+
+*Why do we use Hexadecimal?*
+- Hexadecimal is widely used in computing because it is a much shorter
+  way of representing a byte of data and therefore much easier for humans to remember.
+- If we were to represent a byte of data in binary, it would require 8
+  digits, e.g. 11111111.
+- However, that same byte of data could be represented in hexadecimal in just two digits e.g. FF - much more compact and user friendly than a binary number.
+
+*Hexadecimal Explained*
+- The following video explains how hexadecimal number systems work.
+#+BEGIN_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5sS7w-CMHkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_html
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Using the tables and video above try and convert the following decimal
+  number: *112* first into Binary and then into Hexadecimal?
+- *Step 1*: First we need to use the *binary table* to work out the
+  Binary number.
+- *Step 2*: Does 128 go into 112? No, so we place a 0 under the 128
+  value, then does 64 go into 112? Yes, 112 - 64 = 48 - so we place a 1
+  under the 64 value.
+- *Step 3*: We can then check does 32 goes into 48? Yes, 48 - 32 =
+  16 - so we place a 1 under the 32 value.
+- *Step 4*: Repeat this until there is no remainder.
+
+|   *2^7*  |  *2^6*   |  *2^5*   |  *2^4*  |  *2^3*   |  *2^2*  |  *2^1*  |  *2^0*  |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|0         |1         |1         |1        |0         |0        |0        |0        |
+
+- This gives us 01110000 - We then need to split the byte (8 bits) into
+  two nibbles (4 bits).
+- Then starting at the least significant bit (The right side).
+- Read the 4 bits (0000) - Look at the conversion table above gives us
+  a *0*.
+- Read the next 4 bits (0111) - Again look at the coversion table
+  gives us a *7*.
+- So *112* in Decimal converts to *01110000* in Binary - Converts to
+  *70* in Hexadecimal.
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Silver*: Answer the following 3 questions and submit to *www.bournetolearn.com*
+#+BEGIN_SRC
+ 1. What number system does a computer use?
+ 2. What is the maximum decimal number that could be represented in a byte?
+ 3. Looking at the Binary Table above, what decimal value is represented by 2^8?
+#+END_SRC
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Gold*: Answer the following questions and submit to *www.bournetolearn.com*
+#+BEGIN_SRC
+ 1. Why do we use Hexadecimal instead of Binary in Computer Science?
+ 2. Complete the following Hexadecimal Table and state what is the largest value you could
+    represent with 16^4 (Five Hexadecimal digits)?
+#+END_SRC
+
+|  *16^4* |  *16^3* |  *16^2* |  *16^1* |  *16^0* |
+|---------+---------+---------+---------+---------|
+|    ?    |    ?    |    ?    |   16    |    1    |
+
