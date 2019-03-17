@@ -1,0 +1,154 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.3.3 Units of Information
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Base Number and Units
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Binary Bits*
+- Computers are made up of electronic hardware that can store and
+  process data.
+- A computer can be broken down into basic components which contain
+  millions of IC circuits that either do or do not allow electicity to
+  flow through them.
+- IC circuits are like rows of switches that can either be on or off,
+  different combinations can mean different things.
+- Each switch can be represented by 1 or 0. This is called *binary*.
+- A single *1* or *0* is a *Binary* *digIT*, or a *BIT* for short.
+- A *byte* is a group of eight bits.
+- A *nibble* is a group of 4 bits or half a byte.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*** Units
+- A byte is the smallest addressable unit of memory in a
+  computer. Just like a kilometer is a 1000 meters, we can group
+  together a 1000 bytes to make a *kilobyte*.
+- Memory size is measured in the following multiples:
+| *Unit*            | *Number of bytes* |            *Decimal value*           |  *Equivalent to* |
+|-------------------+-------------------+--------------------------------------+------------------|
+| Kilobyte(KB)      | 10^3              | 1,000                                | 1024 bytes       |
+| Megabyte(MB)      | 10^6              | 1,000,000                            | 1024 kilobytes   |
+| Gigabyte(GB)      | 10^9              | 1,000,000,000                        | 1024 megabytes   |
+| Terabyte(TB)      | 10^12             | 1,000,000,000,000                    | 1024 gigabytes   |
+| Petabyte(PB       | 10^15             | 1,000,000,000,000,000                | 1024 terabytes   |
+| Exabyte(XB)       | 10^18             | 1,000,000,000,000,000,000            | 1024 petabytes   |
+| Zettabyte(ZB)     | 10^21             | 1,000,000,000,000,000,000,000        | 1024 exabytes    |
+| Yotabyte(YB)      | 10^24             | 1,000,000,000,000,000,000,000,000    | 1024 zettabytes  |
+*Please Note*
+- 1MB = 1000KB etc. Internal memory often use the Kibibyte, where
+  1KiB (Kibibyte) = 2^10 = 1,024 bytes, MiB (Mebibyte) = 2^20 =
+  1,048,576 bytes, and so on.
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Silver*: Answer the following 3 questions and submit to *www.bournetolearn.com*
+#+BEGIN_SRC
+ 1. How many bytes in a 1,000 Exabyte?
+ 2. Convert 5600MB into GB.
+ 3. Convert 1000TB into GB.
+#+END_SRC
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Gold*: Answer the following questions and submit to *www.bournetolearn.com*
+#+BEGIN_SRC
+ 1. What is meant by a bit?
+ 2. What is the highest value that can be represented by a nibble?
+ 3. How many bits are there in a byte?
+ 4. How many bytes do 12bits make?
+ 5. How many megabytes are there in 3 gigabytes?
+#+END_SRC
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Platinum*: Complete the Python program below, which is a conversion
+  program where you can choose to convert from either KB, MB, GB, TB
+  or PB. The user can enter the number of kilobytes and then return the number of bytes for that unit.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/8e25292036" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
