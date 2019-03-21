@@ -97,7 +97,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.3.2 Converting between Number Bases]]
+[[file:pages/3-3-2-conv_num_bases.html][3.3.2 Converting between Number Bases]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
