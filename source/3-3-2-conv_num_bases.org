@@ -1,0 +1,378 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.3.2 Converting Between Number Bases
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Converting Between Number Bases
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Converting Between Number Bases*
+- Different numbering systems exist for whole numbers, fractions,
+  positive numbers and negative numbers. At GCSE level, you need only
+  work with binary integers that have a decimal equivalent of between
+  0 and 255.
+
+*Binary to Decimal Conversion*
+- To convert a binary number into decimal, add up the column values
+  where a *"1"* appears.
+- For example, to convert the binary number *01101100* to decimal,
+  write each number under a column heading, starting on the right with
+  the least significant digit:
+
+|   *2^7*  |  *2^6*   |  *2^5*   |  *2^4*  |  *2^3*   |  *2^2*  |  *2^1*  |  *2^0*  |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|0         |1         |1         |0        |1         |1        |0        |0        |
+
+- *This gives us the value: 64 + 32 + 8 + 4 = 108*
+
+*More Examples:*
+
+                                                                                                   
+|--------------------------------------------------------------------------------------------------|
+|  *Decimal*   |   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|--------------+----------+----------+----------+---------+----------+---------+---------+---------|
+|  *126*  <--- |0         |1         |1         |1        |1         |1        |1        |0        |
+|--------------+----------+----------+----------+---------+----------+---------+---------+---------|
+|  *213*  <--- |1         |1         |0         |1        |0         |1        |0        |1        |
+|--------------+----------+----------+----------+---------+----------+---------+---------+---------|
+|  *255*  <--- |1         |1         |1         |1        |1         |1        |1        |1        |
+
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+*Binary Game*
+- Try playing the binary game using the link below:
+#+BEGIN_html
+<iframe width="700" height="600" src="https://games.penjee.com/binary-numbers-game/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_html
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Silver*: Convert the following binary numbers into decimal.
+#+BEGIN_SRC
+ 1. 00010111
+ 2. 10010110
+ 3. 11111111
+#+END_SRC
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*** Decimal to Binary Conversions
+- To convert a decimal number to a binary number, use the column
+  headings. You need to find the highest column heading that you can
+  take away from the number and start there.
+- To convert the decimal number *57* into binary.
+- The highest column heading we can take out of 57 is 32 (The next one
+  is 64, too high):
+  1. We can start by placing a "1" in the column headed 32 (57 - 32 = 25).
+  2. We can then place a "1" in the column headed 16 (25 - 16 = 9).
+  3. Finally place "1"s in the columns 8 and 1 (9 - 8 = 1).
+
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|     0    |    0     |     1    |    1    |     1    |    0    |    0    |    1    |
+
+- *This gives us the value: 57 = 00111001*
+
+*Here are some more examples:*
+                                                                                                   
+|--------------------------------------------------------------------------------------------------|
+|  *Decimal*   |   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|--------------+----------+----------+----------+---------+----------+---------+---------+---------|
+|  *23*  --->  |0         |0         |0         |1        |0         |1        |1        |1        |
+|--------------+----------+----------+----------+---------+----------+---------+---------+---------|
+|  *84*  --->  |0         |1         |0         |1        |0         |1        |0        |0        |
+|--------------+----------+----------+----------+---------+----------+---------+---------+---------|
+|  *255* --->  |1         |1         |1         |1        |1         |1        |1        |1        |
+
+- You will notice in the examples above that we always write the
+  binary numbers using eight bits.
+- This is common practise, it is not incorrect to write the first
+  binary value as 10111 rather than 00010111 (Without the leading
+  zeros), but the second example is more commonly used as values are
+  often stored in bytes.
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Gold*: Convert the following decimal numbers into binary.
+#+BEGIN_SRC
+ 1. 19
+ 2. 63
+ 3. 142
+#+END_SRC
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*** Hexadecimal Number System
+- As mentioned previously, humans are not very good at remembering
+  long strings of numbers. For example which of these are easier to
+  remember: *0110111* or *6F*?
+- So to make it easier, we can represent every group of 4 bits
+  (Nibble) with a single digit.
+- The smallest value you can hold in 4 bits is *0000*. The largest
+  value is *1111*. This means that we need to represent the decimal
+  values 0 to 15 with a single digit.
+- As we only have 10 single digits in decimal (0 to 9), so to get
+  around this proble we use uppercase letters A to F for the remaining six digits.
+- The following table shows the hexadecimal digits and their decimal equivalents:
+
+|*Decimal*     |0 |1 |2 |3 |4 |5 |6 |7 |8 |9 |10|11|12|13|14|15|
+|--------------+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--|
+|*Hexadecimal* |0 |1 |2 |3 |4 |5 |6 |7 |8 |9 |A |B |C |D |E |F |
+
+*Useful Conversion Table*
+|*Decimal*| *Binary*  |*Hexadecimal*|
+|---------+-----------+-------------|
+|0        |0000       |0            | 
+|---------------------+-------------| 
+|1        |0001       |1            |
+|---------+-----------+-------------|
+|2        |0010       |2            |
+|---------+-----------+-------------|
+|3        |0011       |3            |
+|---------+-----------+-------------|
+|4        |0100       |4            |
+|---------+-----------+-------------|
+|5        |0101       |5            |
+|---------+-----------+-------------|
+|6        |0110       |6            |
+|---------+-----------+-------------|
+|7        |0111       |7            |
+|---------+-----------+-------------|
+|8        |1000       |8            |
+|---------+-----------+-------------|
+|9        |1001       |9            |
+|---------+-----------+-------------|
+|10       |1010       |A            |
+|---------+-----------+-------------|
+|11       |1011       |B            |
+|---------+-----------+-------------|
+|12       |1100       |C            |
+|---------+-----------+-------------|
+|13       |1101       |D            |
+|---------+-----------+-------------|
+|14       |1110       |E            |
+|---------+-----------+-------------|
+|15       |1111       |F            |
+|---------+-----------|-------------|
+|16       |0001 0000  |10           |
+|---------+-----------+-------------|
+|255      |1111 1111  |FF           |
+
+
+*Note for above table*
+- *Decimal Number 15* - A single digit replaces 4 bits, 15 is the biggest number you can have with 4 bits.
+- *Decimal Number 16* - So 16 is one group of 16 and no units.
+- *Decimal Number 255* - 255 is 15 groups of 16 + 15 units i.e. ((15 x 16) + 15 = 240 + 15).
+
+*Hexadecimal Explained*
+- The following video explains how hexadecimal number systems work.
+#+BEGIN_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5sS7w-CMHkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_html
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*** Converting Binary/Decimal to Hexadecimal
+- In GCSE computing you will only need to work with 8-bit binary
+  numbers, which can be represented as two hex digits.
+- The left-hand hex digit represents groups of 16, the right-hand hex
+  digits represents the units.
+- For example, to convert
+- There are two methods for converting Decimal to Hexadecimal:
+- *Method 1: Convert to Binary/Hex*
+- Using the tables and video above try and convert the following decimal
+  number: *112* first into Binary and then into Hexadecimal?
+- *Step 1*: First we need to use the *binary table* to work out the
+  Binary number.
+- *Step 2*: Does 128 go into 112? No, so we place a 0 under the 128
+  value, then does 64 go into 112? Yes, 112 - 64 = 48 - so we place a 1
+  under the 64 value.
+- *Step 3*: We can then check does 32 goes into 48? Yes, 48 - 32 =
+  16 - so we place a 1 under the 32 value.
+- *Step 4*: Repeat this until there is no remainder.
+
+|   *2^7*  |  *2^6*   |  *2^5*   |  *2^4*  |  *2^3*   |  *2^2*  |  *2^1*  |  *2^0*  |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|0         |1         |1         |1        |0         |0        |0        |0        |
+
+- This gives us 01110000 - We then need to split the byte (8 bits) into
+  two nibbles (4 bits).
+- Then starting at the least significant bit (The right side).
+- Read the 4 bits (0000) - Look at the conversion table above gives us
+  a *0*.
+- Read the next 4 bits (0111) - Again look at the coversion table
+  gives us a *7*.
+- So *112* in Decimal converts to *01110000* in Binary - Converts to
+  *70* in Hexadecimal.
+
+- *Method 2: Divide by 16*
+- To convert the decimal number *182* into hex the first step is to
+  work out how many groups of 16 there are in 182.
+- Secondly work out how many units are left over.
+- *182 / 16 = 11 remainder 6.*
+- *11* is *B* in hex, *6* is just *6*, so *182* in decimal = *B6* hex.
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*** Converting Hexadecimal to Binary/Decimal
+*Converting Hexadecimal to Binary*
+- Converting a hexadecimal number into binary is a simple matter of
+  converting each hex digit into a group of 4 binary digits. To convert the hex number *A7* to binary:
+- Use the Binary Conversion table above to look at the four left-hand
+  binary digits that represent the hex number *A* ---> *1010* and then
+  look at the next four binary digits that represent the hex number
+  *7* ---> *0111*.
+- So the hex number *A7* can be represented by the binary value
+  *10100111*
+
+*More Examples:*
+- *B5* ---> *1011 0101*
+- *FA* ---> *1111 1010*
+
+*Converting Hexadecimal to Decimal*
+- To convert a hexadeicmal number into decimal, multiply the heading
+  or place value by the hex digit value, to convert the hex number
+  *A7* to decimal. (Remember column place values are: 16 and 1, and A
+  = 10)
+- *A* = (10 x 16) + *7* = (7 x 1) = *167*
+
+*More Examples:*
+- *7F* ---> *112* + *15* = *127*
+- *CD* ---> *192* + *13* = *205*
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Platinum*: Conplete the following conversions:
+#+BEGIN_SRC
+Convert the following numbers from binary to hex:
+ 1. 00010111
+ 2. 11111100
+ 3. 00110010
+ 4. 11011100
+#+END_SRC
+#+BEGIN_SRC
+Convert the following numbers from decimal to hex:
+ 1. 77
+ 2. 255
+ 3. 186
+ 4. 18
+#+END_SRC
+#+BEGIN_SRC
+Convert the following hexadecimal numbers into binary:
+ 1. E4
+ 2. 8A
+ 3. FF
+ 4. C1
+#+END_SRC
+#+BEGIN_SRC
+Convert the following hexadecimal numbers into decimal:
+ 1. 77
+ 2. AF
+ 3. 17
+ 4. 20
+#+END_SRC
+
+*Uses of hexadecimal* 
+- Hex numbers are expressed more compactly than binary numbers, and are much easier to understand and remember.
+- For this reason, hexadecimal numbers are often used instead of binary numbers and have several applications in computing.
+- One application you are probably familiar with is picking colours for a graphic.
+- Hex numbers are also used in assembly language instructions such as ADD &4F3A.

@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.3.2 Converting Between Number Bases</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.3.2 Converting Between Number Bases</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Converting Between Number Bases</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Try It</a></li>
+<li><a href="#sec-1-3">Badge It</a></li>
+<li><a href="#sec-1-4">Learn It</a>
+<ul>
+<li><a href="#sec-1-4-1">Decimal to Binary Conversions</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">Badge It</a></li>
+<li><a href="#sec-1-6">Learn It</a>
+<ul>
+<li><a href="#sec-1-6-1">Hexadecimal Number System</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">Learn It</a>
+<ul>
+<li><a href="#sec-1-7-1">Converting Binary/Decimal to Hexadecimal</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-8">Learn It</a>
+<ul>
+<li><a href="#sec-1-8-1">Converting Hexadecimal to Binary/Decimal</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-9">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Converting Between Number Bases</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<b>Converting Between Number Bases</b>
+</p>
+<ul class="org-ul">
+<li>Different numbering systems exist for whole numbers, fractions,
+positive numbers and negative numbers. At GCSE level, you need only
+work with binary integers that have a decimal equivalent of between
+0 and 255.
+</li>
+</ul>
+
+<p>
+<b>Binary to Decimal Conversion</b>
+</p>
+<ul class="org-ul">
+<li>To convert a binary number into decimal, add up the column values
+where a *"1"* appears.
+</li>
+<li>For example, to convert the binary number <b>01101100</b> to decimal,
+write each number under a column heading, starting on the right with
+the least significant digit:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>2<sup>7</sup></b></th>
+<th scope="col" class="left"><b>2<sup>6</sup></b></th>
+<th scope="col" class="left"><b>2<sup>5</sup></b></th>
+<th scope="col" class="left"><b>2<sup>4</sup></b></th>
+<th scope="col" class="left"><b>2<sup>3</sup></b></th>
+<th scope="col" class="left"><b>2<sup>2</sup></b></th>
+<th scope="col" class="left"><b>2<sup>1</sup></b></th>
+<th scope="col" class="left"><b>2<sup>0</sup></b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><b>128</b></td>
+<td class="left"><b>64</b></td>
+<td class="left"><b>32</b></td>
+<td class="left"><b>16</b></td>
+<td class="left"><b>8</b></td>
+<td class="left"><b>4</b></td>
+<td class="left"><b>2</b></td>
+<td class="left"><b>1</b></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">0</td>
+<td class="left">1</td>
+<td class="left">1</td>
+<td class="left">0</td>
+<td class="left">1</td>
+<td class="left">1</td>
+<td class="left">0</td>
+<td class="left">0</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><b>This gives us the value: 64 + 32 + 8 + 4 = 108</b>
+</li>
+</ul>
+
+<p>
+<b>More Examples:</b>
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>Decimal</b></th>
+<th scope="col" class="right"><b>128</b></th>
+<th scope="col" class="right"><b>64</b></th>
+<th scope="col" class="right"><b>32</b></th>
+<th scope="col" class="right"><b>16</b></th>
+<th scope="col" class="right"><b>8</b></th>
+<th scope="col" class="right"><b>4</b></th>
+<th scope="col" class="right"><b>2</b></th>
+<th scope="col" class="right"><b>1</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><b>126</b>  &lt;---</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>213</b>  &lt;---</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>255</b>  &lt;---</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>
+<b>Binary Game</b>
+</p>
+<ul class="org-ul">
+<li>Try playing the binary game using the link below:
+</li>
+</ul>
+<iframe width="700" height="600" src="https://games.penjee.com/binary-numbers-game/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 badge">
+<h3 id="sec-1-3">Badge It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><b>Silver</b>: Convert the following binary numbers into decimal.
+</li>
+</ul>
+<pre class="example">
+1. 00010111
+2. 10010110
+3. 11111111
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1">Decimal to Binary Conversions</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>To convert a decimal number to a binary number, use the column
+headings. You need to find the highest column heading that you can
+take away from the number and start there.
+</li>
+<li>To convert the decimal number <b>57</b> into binary.
+</li>
+<li>The highest column heading we can take out of 57 is 32 (The next one
+is 64, too high):
+<ol class="org-ol">
+<li>We can start by placing a "1" in the column headed 32 (57 - 32 = 25).
+</li>
+<li>We can then place a "1" in the column headed 16 (25 - 16 = 9).
+</li>
+<li>Finally place "1"s in the columns 8 and 1 (9 - 8 = 1).
+</li>
+</ol>
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right"><b>128</b></th>
+<th scope="col" class="right"><b>64</b></th>
+<th scope="col" class="right"><b>32</b></th>
+<th scope="col" class="right"><b>16</b></th>
+<th scope="col" class="right"><b>8</b></th>
+<th scope="col" class="right"><b>4</b></th>
+<th scope="col" class="right"><b>2</b></th>
+<th scope="col" class="right"><b>1</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><b>This gives us the value: 57 = 00111001</b>
+</li>
+</ul>
+
+<p>
+<b>Here are some more examples:</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>Decimal</b></th>
+<th scope="col" class="right"><b>128</b></th>
+<th scope="col" class="right"><b>64</b></th>
+<th scope="col" class="right"><b>32</b></th>
+<th scope="col" class="right"><b>16</b></th>
+<th scope="col" class="right"><b>8</b></th>
+<th scope="col" class="right"><b>4</b></th>
+<th scope="col" class="right"><b>2</b></th>
+<th scope="col" class="right"><b>1</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><b>23</b>  &#x2014;&gt;</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>84</b>  &#x2014;&gt;</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>255</b> &#x2014;&gt;</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>You will notice in the examples above that we always write the
+binary numbers using eight bits.
+</li>
+<li>This is common practise, it is not incorrect to write the first
+binary value as 10111 rather than 00010111 (Without the leading
+zeros), but the second example is more commonly used as values are
+often stored in bytes.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li><b>Gold</b>: Convert the following decimal numbers into binary.
+</li>
+</ul>
+<pre class="example">
+1. 19
+2. 63
+3. 142
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-sec-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1">Hexadecimal Number System</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ul class="org-ul">
+<li>As mentioned previously, humans are not very good at remembering
+long strings of numbers. For example which of these are easier to
+remember: <b>0110111</b> or <b>6F</b>?
+</li>
+<li>So to make it easier, we can represent every group of 4 bits
+(Nibble) with a single digit.
+</li>
+<li>The smallest value you can hold in 4 bits is <b>0000</b>. The largest
+value is <b>1111</b>. This means that we need to represent the decimal
+values 0 to 15 with a single digit.
+</li>
+<li>As we only have 10 single digits in decimal (0 to 9), so to get
+around this proble we use uppercase letters A to F for the remaining six digits.
+</li>
+<li>The following table shows the hexadecimal digits and their decimal equivalents:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>Decimal</b></th>
+<th scope="col" class="right">0</th>
+<th scope="col" class="right">1</th>
+<th scope="col" class="right">2</th>
+<th scope="col" class="right">3</th>
+<th scope="col" class="right">4</th>
+<th scope="col" class="right">5</th>
+<th scope="col" class="right">6</th>
+<th scope="col" class="right">7</th>
+<th scope="col" class="right">8</th>
+<th scope="col" class="right">9</th>
+<th scope="col" class="right">10</th>
+<th scope="col" class="right">11</th>
+<th scope="col" class="right">12</th>
+<th scope="col" class="right">13</th>
+<th scope="col" class="right">14</th>
+<th scope="col" class="right">15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><b>Hexadecimal</b></td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">2</td>
+<td class="right">3</td>
+<td class="right">4</td>
+<td class="right">5</td>
+<td class="right">6</td>
+<td class="right">7</td>
+<td class="right">8</td>
+<td class="right">9</td>
+<td class="right">A</td>
+<td class="right">B</td>
+<td class="right">C</td>
+<td class="right">D</td>
+<td class="right">E</td>
+<td class="right">F</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>Useful Conversion Table</b>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right"><b>Decimal</b></th>
+<th scope="col" class="right"><b>Binary</b></th>
+<th scope="col" class="right"><b>Hexadecimal</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">0000</td>
+<td class="right">0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">0001</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">2</td>
+<td class="right">0010</td>
+<td class="right">2</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">3</td>
+<td class="right">0011</td>
+<td class="right">3</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">4</td>
+<td class="right">0100</td>
+<td class="right">4</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">5</td>
+<td class="right">0101</td>
+<td class="right">5</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">6</td>
+<td class="right">0110</td>
+<td class="right">6</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">7</td>
+<td class="right">0111</td>
+<td class="right">7</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">8</td>
+<td class="right">1000</td>
+<td class="right">8</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">9</td>
+<td class="right">1001</td>
+<td class="right">9</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">10</td>
+<td class="right">1010</td>
+<td class="right">A</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">11</td>
+<td class="right">1011</td>
+<td class="right">B</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">12</td>
+<td class="right">1100</td>
+<td class="right">C</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">13</td>
+<td class="right">1101</td>
+<td class="right">D</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">14</td>
+<td class="right">1110</td>
+<td class="right">E</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">15</td>
+<td class="right">1111</td>
+<td class="right">F</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">16</td>
+<td class="right">0001 0000</td>
+<td class="right">10</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">255</td>
+<td class="right">1111 1111</td>
+<td class="right">FF</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+<b>Note for above table</b>
+</p>
+<ul class="org-ul">
+<li><b>Decimal Number 15</b> - A single digit replaces 4 bits, 15 is the biggest number you can have with 4 bits.
+</li>
+<li><b>Decimal Number 16</b> - So 16 is one group of 16 and no units.
+</li>
+<li><b>Decimal Number 255</b> - 255 is 15 groups of 16 + 15 units i.e. ((15 x 16) + 15 = 240 + 15).
+</li>
+</ul>
+
+<p>
+<b>Hexadecimal Explained</b>
+</p>
+<ul class="org-ul">
+<li>The following video explains how hexadecimal number systems work.
+</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5sS7w-CMHkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 learn">
+<h3 id="sec-1-7">Learn It</h3>
+<div class="outline-text-3" id="text-1-7">
+</div>
+<div id="outline-container-sec-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1">Converting Binary/Decimal to Hexadecimal</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<ul class="org-ul">
+<li>In GCSE computing you will only need to work with 8-bit binary
+numbers, which can be represented as two hex digits.
+</li>
+<li>The left-hand hex digit represents groups of 16, the right-hand hex
+digits represents the units.
+</li>
+<li>For example, to convert
+</li>
+<li>There are two methods for converting Decimal to Hexadecimal:
+</li>
+<li><b>Method 1: Convert to Binary/Hex</b>
+</li>
+<li>Using the tables and video above try and convert the following decimal
+number: <b>112</b> first into Binary and then into Hexadecimal?
+</li>
+<li><b>Step 1</b>: First we need to use the <b>binary table</b> to work out the
+Binary number.
+</li>
+<li><b>Step 2</b>: Does 128 go into 112? No, so we place a 0 under the 128
+value, then does 64 go into 112? Yes, 112 - 64 = 48 - so we place a 1
+under the 64 value.
+</li>
+<li><b>Step 3</b>: We can then check does 32 goes into 48? Yes, 48 - 32 =
+16 - so we place a 1 under the 32 value.
+</li>
+<li><b>Step 4</b>: Repeat this until there is no remainder.
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>2<sup>7</sup></b></th>
+<th scope="col" class="left"><b>2<sup>6</sup></b></th>
+<th scope="col" class="left"><b>2<sup>5</sup></b></th>
+<th scope="col" class="left"><b>2<sup>4</sup></b></th>
+<th scope="col" class="left"><b>2<sup>3</sup></b></th>
+<th scope="col" class="left"><b>2<sup>2</sup></b></th>
+<th scope="col" class="left"><b>2<sup>1</sup></b></th>
+<th scope="col" class="left"><b>2<sup>0</sup></b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><b>128</b></td>
+<td class="left"><b>64</b></td>
+<td class="left"><b>32</b></td>
+<td class="left"><b>16</b></td>
+<td class="left"><b>8</b></td>
+<td class="left"><b>4</b></td>
+<td class="left"><b>2</b></td>
+<td class="left"><b>1</b></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">0</td>
+<td class="left">1</td>
+<td class="left">1</td>
+<td class="left">1</td>
+<td class="left">0</td>
+<td class="left">0</td>
+<td class="left">0</td>
+<td class="left">0</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>This gives us 01110000 - We then need to split the byte (8 bits) into
+two nibbles (4 bits).
+</li>
+<li>Then starting at the least significant bit (The right side).
+</li>
+<li>Read the 4 bits (0000) - Look at the conversion table above gives us
+a <b>0</b>.
+</li>
+<li>Read the next 4 bits (0111) - Again look at the coversion table
+gives us a <b>7</b>.
+</li>
+<li>So <b>112</b> in Decimal converts to <b>01110000</b> in Binary - Converts to
+<b>70</b> in Hexadecimal.
+</li>
+
+<li><b>Method 2: Divide by 16</b>
+</li>
+<li>To convert the decimal number <b>182</b> into hex the first step is to
+work out how many groups of 16 there are in 182.
+</li>
+<li>Secondly work out how many units are left over.
+</li>
+<li><b>182 / 16 = 11 remainder 6.</b>
+</li>
+<li><b>11</b> is <b>B</b> in hex, <b>6</b> is just <b>6</b>, so <b>182</b> in decimal = <b>B6</b> hex.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3 learn">
+<h3 id="sec-1-8">Learn It</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-sec-1-8-1" class="outline-4">
+<h4 id="sec-1-8-1">Converting Hexadecimal to Binary/Decimal</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<p>
+<b>Converting Hexadecimal to Binary</b>
+</p>
+<ul class="org-ul">
+<li>Converting a hexadecimal number into binary is a simple matter of
+converting each hex digit into a group of 4 binary digits. To convert the hex number <b>A7</b> to binary:
+</li>
+<li>Use the Binary Conversion table above to look at the four left-hand
+binary digits that represent the hex number <b>A</b> &#x2014;&gt; <b>1010</b> and then
+look at the next four binary digits that represent the hex number
+<b>7</b> &#x2014;&gt; <b>0111</b>.
+</li>
+<li>So the hex number <b>A7</b> can be represented by the binary value
+<b>10100111</b>
+</li>
+</ul>
+
+<p>
+<b>More Examples:</b>
+</p>
+<ul class="org-ul">
+<li><b>B5</b> &#x2014;&gt; <b>1011 0101</b>
+</li>
+<li><b>FA</b> &#x2014;&gt; <b>1111 1010</b>
+</li>
+</ul>
+
+<p>
+<b>Converting Hexadecimal to Decimal</b>
+</p>
+<ul class="org-ul">
+<li>To convert a hexadeicmal number into decimal, multiply the heading
+or place value by the hex digit value, to convert the hex number
+<b>A7</b> to decimal. (Remember column place values are: 16 and 1, and A
+= 10)
+</li>
+<li><b>A</b> = (10 x 16) + <b>7</b> = (7 x 1) = <b>167</b>
+</li>
+</ul>
+
+<p>
+<b>More Examples:</b>
+</p>
+<ul class="org-ul">
+<li><b>7F</b> &#x2014;&gt; <b>112</b> + <b>15</b> = <b>127</b>
+</li>
+<li><b>CD</b> &#x2014;&gt; <b>192</b> + <b>13</b> = <b>205</b>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3 badge">
+<h3 id="sec-1-9">Badge It</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li><b>Platinum</b>: Conplete the following conversions:
+</li>
+</ul>
+<pre class="example">
+Convert the following numbers from binary to hex:
+ 1. 00010111
+ 2. 11111100
+ 3. 00110010
+ 4. 11011100
+</pre>
+<pre class="example">
+Convert the following numbers from decimal to hex:
+ 1. 77
+ 2. 255
+ 3. 186
+ 4. 18
+</pre>
+<pre class="example">
+Convert the following hexadecimal numbers into binary:
+ 1. E4
+ 2. 8A
+ 3. FF
+ 4. C1
+</pre>
+<pre class="example">
+Convert the following hexadecimal numbers into decimal:
+ 1. 77
+ 2. AF
+ 3. 17
+ 4. 20
+</pre>
+
+<p>
+<b>Uses of hexadecimal</b> 
+</p>
+<ul class="org-ul">
+<li>Hex numbers are expressed more compactly than binary numbers, and are much easier to understand and remember.
+</li>
+<li>For this reason, hexadecimal numbers are often used instead of binary numbers and have several applications in computing.
+</li>
+<li>One application you are probably familiar with is picking colours for a graphic.
+</li>
+<li>Hex numbers are also used in assembly language instructions such as ADD &amp;4F3A.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
