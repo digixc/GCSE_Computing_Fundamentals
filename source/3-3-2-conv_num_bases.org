@@ -90,8 +90,8 @@
 
 *Binary to Decimal Conversion*
 - To convert a binary number into decimal, add up the column values
-  where a *"1"* appears.
-- For example, to convert the binary number *01101100* to decimal,
+  where a =1= appears.
+- For example, to convert the binary number =01101100= to decimal,
   write each number under a column heading, starting on the right with
   the least significant digit:
 
@@ -101,7 +101,7 @@
 |----------+----------+----------+---------+----------+---------+---------+---------|
 |0         |1         |1         |0        |1         |1        |0        |0        |
 
-- *This gives us the value: 64 + 32 + 8 + 4 = 108*
+- =This gives us the value: 64 + 32 + 8 + 4 = 108=
 
 *More Examples:*
 
@@ -146,12 +146,12 @@
 - To convert a decimal number to a binary number, use the column
   headings. You need to find the highest column heading that you can
   take away from the number and start there.
-- To convert the decimal number *57* into binary.
+- To convert the decimal number =57= into binary.
 - The highest column heading we can take out of 57 is 32 (The next one
   is 64, too high):
-  1. We can start by placing a "1" in the column headed 32 (57 - 32 = 25).
-  2. We can then place a "1" in the column headed 16 (25 - 16 = 9).
-  3. Finally place "1"s in the columns 8 and 1 (9 - 8 = 1).
+  1. We can start by placing a =1= in the column headed =32= (57 - 32 = 25).
+  2. We can then place a =1= in the column headed 16 (25 - 16 = 9).
+  3. Finally place =1s= in the columns =8= and =1= (9 - 8 = 1).
 
 |----------+----------+----------+---------+----------+---------+---------+---------|
 |   *128*  |   *64*   |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
@@ -196,11 +196,11 @@
 *** Hexadecimal Number System
 - As mentioned previously, humans are not very good at remembering
   long strings of numbers. For example which of these are easier to
-  remember: *0110111* or *6F*?
+  remember: =0110111= or =6F=
 - So to make it easier, we can represent every group of 4 bits
   (Nibble) with a single digit.
-- The smallest value you can hold in 4 bits is *0000*. The largest
-  value is *1111*. This means that we need to represent the decimal
+- The smallest value you can hold in 4 bits is =0000=. The largest
+  value is =1111=. This means that we need to represent the decimal
   values 0 to 15 with a single digit.
 - As we only have 10 single digits in decimal (0 to 9), so to get
   around this proble we use uppercase letters A to F for the remaining six digits.
@@ -271,10 +271,10 @@
 - The left-hand hex digit represents groups of 16, the right-hand hex
   digits represents the units.
 - For example, to convert
-- There are two methods for converting Decimal to Hexadecimal:
+- There are several methods for converting Decimal to Hexadecimal:
 - *Method 1: Convert to Binary/Hex*
 - Using the tables and video above try and convert the following decimal
-  number: *112* first into Binary and then into Hexadecimal?
+  number: =112= first into Binary and then into Hexadecimal?
 - *Step 1*: First we need to use the *binary table* to work out the
   Binary number.
 - *Step 2*: Does 128 go into 112? No, so we place a 0 under the 128
@@ -294,18 +294,28 @@
   two nibbles (4 bits).
 - Then starting at the least significant bit (The right side).
 - Read the 4 bits (0000) - Look at the conversion table above gives us
-  a *0*.
+  a =0=.
 - Read the next 4 bits (0111) - Again look at the coversion table
-  gives us a *7*.
-- So *112* in Decimal converts to *01110000* in Binary - Converts to
+  gives us a =7=.
+- So =112= in Decimal converts to =01110000= in Binary - Converts to
   *70* in Hexadecimal.
 
 - *Method 2: Divide by 16*
-- To convert the decimal number *182* into hex the first step is to
+- To convert the decimal number =182= into hex the first step is to
   work out how many groups of 16 there are in 182.
 - Secondly work out how many units are left over.
-- *182 / 16 = 11 remainder 6.*
-- *11* is *B* in hex, *6* is just *6*, so *182* in decimal = *B6* hex.
+- =182 / 16 = 11 remainder 6=
+- =11= is =B= in hex, =6= is just =6=, so =182= in decimal = =B6= hex.
+
+- *Method 3: Denary as a Middle Step*
+- With experience, you'll not need a table, as you'll come to recognise the hex equivalent for each nibble.
+- However, if you don't have a conversion table or can't remember the values, you can convert between binary and hex, by using denary as a middle step.
+- Lets start with the binary number =01011101=
+- Split it into nibbles - =0101 1101=
+- Convert to denary - =1*1 + 0*2 + 1*4 + 0*8= and = =1*1 + 0*2 + 1*4 + 1*8=
+- So we get - =5= and =13=
+- Now convert to Hex - =5= and =D=
+- So the Hex is 5D
 
 ** Learn It
 :PROPERTIES:
@@ -318,18 +328,18 @@
 - Use the Binary Conversion table above to look at the four left-hand
   binary digits that represent the hex number *A* ---> *1010* and then
   look at the next four binary digits that represent the hex number
-  *7* ---> *0111*.
-- So the hex number *A7* can be represented by the binary value
-  *10100111*
+  =7 ---> 0111=.
+- So the hex number =A7= can be represented by the binary value
+  =10100111=
 
 *More Examples:*
-- *B5* ---> *1011 0101*
-- *FA* ---> *1111 1010*
+- =B5 ---> 1011 0101=
+- =FA ---> 1111 1010=
 
 *Converting Hexadecimal to Decimal*
 - To convert a hexadeicmal number into decimal, multiply the heading
   or place value by the hex digit value, to convert the hex number
-  *A7* to decimal. (Remember column place values are: 16 and 1, and A
+  =A7= to decimal. (Remember column place values are: 16 and 1, and A
   = 10)
 - *A* = (10 x 16) + *7* = (7 x 1) = *167*
 

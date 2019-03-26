@@ -200,9 +200,9 @@ work with binary integers that have a decimal equivalent of between
 </p>
 <ul class="org-ul">
 <li>To convert a binary number into decimal, add up the column values
-where a *"1"* appears.
+where a <code>1</code> appears.
 </li>
-<li>For example, to convert the binary number <b>01101100</b> to decimal,
+<li>For example, to convert the binary number <code>01101100</code> to decimal,
 write each number under a column heading, starting on the right with
 the least significant digit:
 </li>
@@ -267,7 +267,7 @@ the least significant digit:
 </table>
 
 <ul class="org-ul">
-<li><b>This gives us the value: 64 + 32 + 8 + 4 = 108</b>
+<li><code>This gives us the value: 64 + 32 + 8 + 4 = 108</code>
 </li>
 </ul>
 
@@ -397,16 +397,16 @@ the least significant digit:
 headings. You need to find the highest column heading that you can
 take away from the number and start there.
 </li>
-<li>To convert the decimal number <b>57</b> into binary.
+<li>To convert the decimal number <code>57</code> into binary.
 </li>
 <li>The highest column heading we can take out of 57 is 32 (The next one
 is 64, too high):
 <ol class="org-ol">
-<li>We can start by placing a "1" in the column headed 32 (57 - 32 = 25).
+<li>We can start by placing a <code>1</code> in the column headed <code>32</code> (57 - 32 = 25).
 </li>
-<li>We can then place a "1" in the column headed 16 (25 - 16 = 9).
+<li>We can then place a <code>1</code> in the column headed 16 (25 - 16 = 9).
 </li>
-<li>Finally place "1"s in the columns 8 and 1 (9 - 8 = 1).
+<li>Finally place <code>1s</code> in the columns <code>8</code> and <code>1</code> (9 - 8 = 1).
 </li>
 </ol>
 </li>
@@ -582,13 +582,13 @@ often stored in bytes.
 <ul class="org-ul">
 <li>As mentioned previously, humans are not very good at remembering
 long strings of numbers. For example which of these are easier to
-remember: <b>0110111</b> or <b>6F</b>?
+remember: <code>0110111</code> or <code>6F</code>
 </li>
 <li>So to make it easier, we can represent every group of 4 bits
 (Nibble) with a single digit.
 </li>
-<li>The smallest value you can hold in 4 bits is <b>0000</b>. The largest
-value is <b>1111</b>. This means that we need to represent the decimal
+<li>The smallest value you can hold in 4 bits is <code>0000</code>. The largest
+value is <code>1111</code>. This means that we need to represent the decimal
 values 0 to 15 with a single digit.
 </li>
 <li>As we only have 10 single digits in decimal (0 to 9), so to get
@@ -869,12 +869,12 @@ digits represents the units.
 </li>
 <li>For example, to convert
 </li>
-<li>There are two methods for converting Decimal to Hexadecimal:
+<li>There are several methods for converting Decimal to Hexadecimal:
 </li>
 <li><b>Method 1: Convert to Binary/Hex</b>
 </li>
 <li>Using the tables and video above try and convert the following decimal
-number: <b>112</b> first into Binary and then into Hexadecimal?
+number: <code>112</code> first into Binary and then into Hexadecimal?
 </li>
 <li><b>Step 1</b>: First we need to use the <b>binary table</b> to work out the
 Binary number.
@@ -955,25 +955,44 @@ two nibbles (4 bits).
 <li>Then starting at the least significant bit (The right side).
 </li>
 <li>Read the 4 bits (0000) - Look at the conversion table above gives us
-a <b>0</b>.
+a <code>0</code>.
 </li>
 <li>Read the next 4 bits (0111) - Again look at the coversion table
-gives us a <b>7</b>.
+gives us a <code>7</code>.
 </li>
-<li>So <b>112</b> in Decimal converts to <b>01110000</b> in Binary - Converts to
+<li>So <code>112</code> in Decimal converts to <code>01110000</code> in Binary - Converts to
 <b>70</b> in Hexadecimal.
 </li>
 
 <li><b>Method 2: Divide by 16</b>
 </li>
-<li>To convert the decimal number <b>182</b> into hex the first step is to
+<li>To convert the decimal number <code>182</code> into hex the first step is to
 work out how many groups of 16 there are in 182.
 </li>
 <li>Secondly work out how many units are left over.
 </li>
-<li><b>182 / 16 = 11 remainder 6.</b>
+<li><code>182 / 16 = 11 remainder 6</code>
 </li>
-<li><b>11</b> is <b>B</b> in hex, <b>6</b> is just <b>6</b>, so <b>182</b> in decimal = <b>B6</b> hex.
+<li><code>11</code> is <code>B</code> in hex, <code>6</code> is just <code>6</code>, so <code>182</code> in decimal = <code>B6</code> hex.
+</li>
+
+<li><b>Method 3: Denary as a Middle Step</b>
+</li>
+<li>With experience, you'll not need a table, as you'll come to recognise the hex equivalent for each nibble.
+</li>
+<li>However, if you don't have a conversion table or can't remember the values, you can convert between binary and hex, by using denary as a middle step.
+</li>
+<li>Lets start with the binary number <code>01011101</code>
+</li>
+<li>Split it into nibbles - <code>0101 1101</code>
+</li>
+<li>Convert to denary - <code>1*1 + 0*2 + 1*4 + 0*8</code> and = <code>1*1 + 0*2 + 1*4 + 1*8</code>
+</li>
+<li>So we get - <code>5</code> and <code>13</code>
+</li>
+<li>Now convert to Hex - <code>5</code> and <code>D</code>
+</li>
+<li>So the Hex is 5D
 </li>
 </ul>
 </div>
@@ -997,10 +1016,10 @@ converting each hex digit into a group of 4 binary digits. To convert the hex nu
 <li>Use the Binary Conversion table above to look at the four left-hand
 binary digits that represent the hex number <b>A</b> &#x2014;&gt; <b>1010</b> and then
 look at the next four binary digits that represent the hex number
-<b>7</b> &#x2014;&gt; <b>0111</b>.
+<code>7 ---&gt; 0111</code>.
 </li>
-<li>So the hex number <b>A7</b> can be represented by the binary value
-<b>10100111</b>
+<li>So the hex number <code>A7</code> can be represented by the binary value
+<code>10100111</code>
 </li>
 </ul>
 
@@ -1008,9 +1027,9 @@ look at the next four binary digits that represent the hex number
 <b>More Examples:</b>
 </p>
 <ul class="org-ul">
-<li><b>B5</b> &#x2014;&gt; <b>1011 0101</b>
+<li><code>B5 ---&gt; 1011 0101</code>
 </li>
-<li><b>FA</b> &#x2014;&gt; <b>1111 1010</b>
+<li><code>FA ---&gt; 1111 1010</code>
 </li>
 </ul>
 
@@ -1020,7 +1039,7 @@ look at the next four binary digits that represent the hex number
 <ul class="org-ul">
 <li>To convert a hexadeicmal number into decimal, multiply the heading
 or place value by the hex digit value, to convert the hex number
-<b>A7</b> to decimal. (Remember column place values are: 16 and 1, and A
+<code>A7</code> to decimal. (Remember column place values are: 16 and 1, and A
 = 10)
 </li>
 <li><b>A</b> = (10 x 16) + <b>7</b> = (7 x 1) = <b>167</b>

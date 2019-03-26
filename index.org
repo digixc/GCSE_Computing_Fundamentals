@@ -105,7 +105,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.3.4 Binary Arithmetic]]
+[[file:pages/3-3-4-bin_sums.html][3.3.4 Binary Arithmetic]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
@@ -125,7 +125,6 @@
 #+BEGIN_HTML
 </details>
 #+END_HTML
-
 * 3.4 Computer Systems
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
@@ -216,11 +215,10 @@
 :HTML_CONTAINER_CLASS: link-heading
 :END:
 
-* [[file:docs/AQA_GCSE _CS_Revision_Guide.pdf][Exam Revision Guide]]
+* [[file:G:\Computing\Y11\Mr Fone\New Year 11K\New Revision Resources 2019/AQA_GCSE_CS_Revision_Guide.pdf][Exam Revision Guide]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-
 * AQA Sample Exam Papers
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
@@ -248,6 +246,32 @@
 </details>
 #+END_HTML
 
+* Programming Website Resources
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+#+BEGIN_HTML
+<details>
+<summary>Click here for the sub-sections</summary>
+<p></p>
+#+END_HTML
+
+[[file:https://www.codecademy.com/][Code Academy]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:https://codehs.com/][CodeHS]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:https://www.sololearn.com][Solo Learn]]
+#+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:https://codecombat.com/][Code Combat]]
+#+BEGIN_HTML
+</details>
+#+END_HTML
 * Older AQA Materials
 * [[file:pages/3-1-5-Scope.html][3.1.5 Scope]]
 :PROPERTIES:

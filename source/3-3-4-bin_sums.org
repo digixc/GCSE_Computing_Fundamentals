@@ -1,0 +1,280 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.3.4 Binary Arithmetic
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Binary Sums
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Binary Additions*
+- In the binary or base 2 number system, there are only two digits,
+  =0= and =1=.
+- This means that unlike in the denary number system =1 + 1= does not
+  equal =2=, it equals =10=.
+- Look at the following rules that apply when adding binary numbers
+  together:
+  - 0 + 0 = 0
+  - 0 + 1 = 1
+  - 1 + 0 = 1
+  - 1 + 1 = 10 (=0= and =carry the 1=)
+  - 1 + 1 + 1 = 11 (=1= and =carry the 1=)
+
+- Binary addition cab be performed using column addition. Because the
+  largest value, a one-digit binary number can have is 1, anything
+  that exceeds this must be carried over to the next column (2) in
+  the base-2 place value table:
+
+|----------|-------------------------------------------------------------|
+|          |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|----------|----------+---------+----------+---------+---------+---------|
+|          |          |         |          |         |         |1        |
+|----------+----------+---------+----------+---------+---------+---------|
+|*+*       |          |         |          |         |         |1        |
+|----------+----------+---------+----------+---------+---------+---------|
+|*Answer*  |          |         |          |         |*1*      |*0*      |
+|----------+----------+---------+----------+---------+---------+---------|
+|=Carried= |          |         |          |         |=1=      |         |
+
+- Look at how =0101= and =0111= have been added together using column
+  addition in the example below:
+
+|----------|-------------------------------------------------------------|
+|          |   *32*   |  *16*   |    *8*   |   *4*   |   *2*   |   *1*   |
+|----------|----------+---------+----------+---------+---------+---------|
+|          |          |         |0         |1        |0        |1        |
+|----------+----------+---------+----------+---------+---------+---------|
+|*+*       |          |         |0         |1        |1        |1        |
+|----------+----------+---------+----------+---------+---------+---------|
+|*Answer*  |          |         |*1*       |*1*      |*0*      |*0*      |
+|----------+----------+---------+----------+---------+---------+---------|
+|=Carried= |          |         |=1=       |=1=      |=1=      |         |
+
+- =1 + 1 = 10= and =10 + 1 = 11= so:
+- =1 + 1 + 1 = 11=
+
+*Overflow Errors*
+- An overflow error occurs when the answer to a binary addition
+  equation is larger thab the CPU is capable of handling.
+- For example, a CPU with a capacity of 8 bits can handle binary
+  numbers upto =11111111=. However, if one more bit was added to give
+  =100000000=, a 9-bit answer, the CPU would ignore the =1= and output
+  =00000000=, which is incorrect.
+
+*Binary Addition Explained*
+- The following video explains how to perform binary addition.
+#+BEGIN_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IRTgHrbyG9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_html
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Silver*: Complete the following binary additions:
+=1=
+|----------|----------------------------------------------------------------------------------|
+|          |  *128*   |  *64*   |   *32*   |  *16*   |   *8*    |   *4*   |   *2*   |   *1*   |
+|----------|----------+---------+----------+---------+----------+---------+---------+---------|
+|          |    0     |    0    |    1     |    1    |     1    |    0    |    1    |    1    |
+|----------+-------------------------------+---------+----------+---------+---------+---------|
+|*+*       |    0     |    1    |    0     |    1    |     0    |    0    |    0    |    1    |
+|----------+----------+---------+----------+---------+----------+---------+---------+---------|
+|*Answer*  |          |         |          |         |          |         |         |         |
+|----------+----------+---------+----------+---------+----------+---------+---------+---------|
+|=Carried= |          |         |          |         |          |         |         |         |
+
+=2=
+|----------|----------------------------------------------------------------------------------|
+|          |  *128*   |  *64*   |   *32*   |  *16*   |   *8*    |   *4*   |   *2*   |   *1*   |
+|----------|----------+---------+----------+---------+----------+---------+---------+---------|
+|          |    0     |   1     |    0     |   0     |    1     |    1    |    1    |    1    |
+|----------+-------------------------------+---------+----------+---------+---------+---------|
+|          |    0     |   1     |    0     |   1     |    0     |    1    |    1    |    1    |
+|----------+----------+---------+----------+---------+----------+---------+---------+---------|
+|*+*       |    1     |   0     |    0     |   1     |    0     |    1    |    0    |    0    |
+|----------+----------+---------+----------+---------+----------+---------+---------+---------|
+|*Answer*  |          |         |          |         |          |         |         |         |
+|----------+----------+---------+----------+---------+----------+---------+---------+---------|
+|=Carried= |          |         |          |         |          |         |         |         |
+
+=3=
+|----------|----------------------------------------------------------------------------------|
+|          |  *128*   |  *64*   |   *32*   |  *16*   |   *8*    |   *4*   |   *2*   |   *1*   |
+|----------|----------+---------+----------+---------+----------+---------+---------+---------|
+|          |    1     |    1    |    0     |    1    |    0     |    0    |    1    |    1    |
+|----------+-------------------------------+---------+----------+---------+---------+---------|
+|          |    1     |    1    |    1     |    0    |    1     |    1    |    1    |    1    |
+|----------+----------+---------+----------+---------+----------+---------+---------+---------|
+|*+*       |    0     |    0    |    0     |    1    |    0     |    1    |    0    |    0    |
+|----------+----------+---------+----------+---------+----------+---------+---------+---------|
+|*Answer*  |          |         |          |         |          |         |         |         |
+|----------+----------+---------+----------+---------+----------+---------+---------+---------|
+|=Carried= |          |         |          |         |          |         |         |         |
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*** Binary Shifts
+- In the binary or base 2 number system, the value of a digit changes
+  by a power of two, when its place in a number shifts to the left =(Multiplied)= or
+  to the right =(Divided)=
+- The following table shows how binary numbers are shift by the power
+  of two:
+                 
+|------------------|-----------------------------|--------------------------| 
+|                  |         *Shift Left*        |      *Shift Right*       |
+|------------------+-----------------------------+--------------------------|
+|*Shift 1 Place*   |         Multiply by 2       |       Divide by 2        |
+|------------------+-----------------------------+--------------------------|
+|*Shift 2 Places*  |         Multiply by 4       |       Divide by 4        |
+|------------------+-----------------------------+--------------------------|
+|*Shift 3 Places*  |         Multiply by 8       |       Divide by 8        |
+|------------------+-----------------------------+--------------------------|
+
+
+*Shifted to the Left (Multiplication) of a Binary Number)*
+- If the binary number is shifted to the left this is equivalent to
+  multiplying the number by 2 for each shift to the left.
+- For example: If we shift =two= places to the left:
+
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *0*    |   *0*    |   *0*    |  *0*    |    =1=   |   =1=   |   *1*   |   *1*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+
+<---------------------------------------------------                  
+
+- *This gives us the binary number:*
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *0*    |   *0*    |   =1=    |   =1=   |    *1*   |   *1*   |   *0*   |   *0*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+- *(Note: We fill empty binary positions with =0s= as we shift to the
+  left)*
+- The original binary number has a value of =15= (i.e. 8 + 4 + 2 + 1 =
+  15).
+- After shifting two places to the left the value is =60= (i.e. 32 +
+  16 + 8 + 2 + 1 = 15). It is multiplied by =4= or *2^2*
+
+*Shifted to the Right (Division) of a Binary Number)*
+- If the binary number is shifted to the right this is equivalent to
+  dividing the number by 2 for each shift to the left.
+- For example: If we shift =three= places to the right:
+
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *0*    |   =1=    |   =1=    |  =1=    |    *0*   |   *0*   |   *0*   |   *0*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+
+---------------------------------------------------->                  
+
+- *This gives us the binary number:*
+|----------+----------+----------+---------+----------+---------+---------+---------|
+|   *0*    |   *0*    |   *0*    |   *0*   |    =1=   |   =1=   |   =1=   |   *0*   |
+|----------+----------+----------+---------+----------+---------+---------+---------|
+- The original binary number has a value of =112= (i.e. 64 + 32 + 16 =
+  112).
+- After shifting three places to the right the value is =14= (i.e. 8 +
+  4 + 2 = 14). The number was divided by =8= and becomes *2^3*
+- *(Note: We fill empty binary positions with =0s= as we shift to the
+  right)*
+ 
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Gold*: Write down the results after the following shift operations
+  and write down the decimal values before and after the shifts:
+#+BEGIN_SRC
+ 1. The binary number 11001100 is shifted TWO places to the right.
+ 2. The binary number 00011001 is shifted TWO places to the left.
+ 3. The binary number 11001000 is shifted THREE places to the right.
+ 4. The binary number 00000111 is shifted FOUR places to the left.
+ 5. The binary number 10000000 is shifted FIVE places to the right.
+#+END_SRC
+
+*Binary Shift Accuracy with multiplication/division by Powers of 2* 
+- This method gives us an easy way to multiply and divide binary
+  numbers by powers of 2, but can come at the expense of accuracy.
+- For example =00000110= shifted right twice to divide by 4 would be
+  =00000001=. This is the equilvalent of decimal 1, but 6/4 = 1.5.
+ - Shifting right one place divides the number by 2.
+ - Shifting left one place multiplies the number by 2.
+- This is equivalent to shifting a decimal number right or left - For
+  example shifting 12300 right 1230, i.e. It divides the number
+  by 10. Shifting left multiplies a decimal number by 10.

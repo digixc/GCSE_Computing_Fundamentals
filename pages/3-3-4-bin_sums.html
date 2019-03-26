@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.3.4 Binary Arithmetic</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.3.4 Binary Arithmetic</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Binary Sums</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Badge It</a></li>
+<li><a href="#sec-1-3">Learn It</a>
+<ul>
+<li><a href="#sec-1-3-1">Binary Shifts</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Binary Sums</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<b>Binary Additions</b>
+</p>
+<ul class="org-ul">
+<li>In the binary or base 2 number system, there are only two digits,
+<code>0</code> and <code>1</code>.
+</li>
+<li>This means that unlike in the denary number system <code>1 + 1</code> does not
+equal <code>2</code>, it equals <code>10</code>.
+</li>
+<li>Look at the following rules that apply when adding binary numbers
+together:
+<ul class="org-ul">
+<li>0 + 0 = 0
+</li>
+<li>0 + 1 = 1
+</li>
+<li>1 + 0 = 1
+</li>
+<li>1 + 1 = 10 (<code>0</code> and <code>carry the 1</code>)
+</li>
+<li>1 + 1 + 1 = 11 (<code>1</code> and <code>carry the 1</code>)
+</li>
+</ul>
+</li>
+
+<li>Binary addition cab be performed using column addition. Because the
+largest value, a one-digit binary number can have is 1, anything
+that exceeds this must be carried over to the next column (2) in
+the base-2 place value table:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left"><b>32</b></th>
+<th scope="col" class="left"><b>16</b></th>
+<th scope="col" class="left"><b>8</b></th>
+<th scope="col" class="left"><b>4</b></th>
+<th scope="col" class="left"><b>2</b></th>
+<th scope="col" class="left"><b>1</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>+</b></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Answer</b></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left"><b>1</b></td>
+<td class="left"><b>0</b></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><code>Carried</code></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left"><code>1</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Look at how <code>0101</code> and <code>0111</code> have been added together using column
+addition in the example below:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left"><b>32</b></th>
+<th scope="col" class="left"><b>16</b></th>
+<th scope="col" class="left"><b>8</b></th>
+<th scope="col" class="left"><b>4</b></th>
+<th scope="col" class="left"><b>2</b></th>
+<th scope="col" class="left"><b>1</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">0</td>
+<td class="left">1</td>
+<td class="left">0</td>
+<td class="left">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>+</b></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">0</td>
+<td class="left">1</td>
+<td class="left">1</td>
+<td class="left">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Answer</b></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left"><b>1</b></td>
+<td class="left"><b>1</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><code>Carried</code></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left"><code>1</code></td>
+<td class="left"><code>1</code></td>
+<td class="left"><code>1</code></td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><code>1 + 1 = 10</code> and <code>10 + 1 = 11</code> so:
+</li>
+<li><code>1 + 1 + 1 = 11</code>
+</li>
+</ul>
+
+<p>
+<b>Overflow Errors</b>
+</p>
+<ul class="org-ul">
+<li>An overflow error occurs when the answer to a binary addition
+equation is larger thab the CPU is capable of handling.
+</li>
+<li>For example, a CPU with a capacity of 8 bits can handle binary
+numbers upto <code>11111111</code>. However, if one more bit was added to give
+<code>100000000</code>, a 9-bit answer, the CPU would ignore the <code>1</code> and output
+<code>00000000</code>, which is incorrect.
+</li>
+</ul>
+
+<p>
+<b>Binary Addition Explained</b>
+</p>
+<ul class="org-ul">
+<li>The following video explains how to perform binary addition.
+</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IRTgHrbyG9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 badge">
+<h3 id="sec-1-2">Badge It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li><b>Silver</b>: Complete the following binary additions:
+</li>
+</ul>
+<p>
+<code>1</code>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="right"><b>128</b></th>
+<th scope="col" class="right"><b>64</b></th>
+<th scope="col" class="right"><b>32</b></th>
+<th scope="col" class="right"><b>16</b></th>
+<th scope="col" class="right"><b>8</b></th>
+<th scope="col" class="right"><b>4</b></th>
+<th scope="col" class="right"><b>2</b></th>
+<th scope="col" class="right"><b>1</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>+</b></td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Answer</b></td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><code>Carried</code></td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<code>2</code>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="right"><b>128</b></th>
+<th scope="col" class="right"><b>64</b></th>
+<th scope="col" class="right"><b>32</b></th>
+<th scope="col" class="right"><b>16</b></th>
+<th scope="col" class="right"><b>8</b></th>
+<th scope="col" class="right"><b>4</b></th>
+<th scope="col" class="right"><b>2</b></th>
+<th scope="col" class="right"><b>1</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>+</b></td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Answer</b></td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><code>Carried</code></td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<code>3</code>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="right"><b>128</b></th>
+<th scope="col" class="right"><b>64</b></th>
+<th scope="col" class="right"><b>32</b></th>
+<th scope="col" class="right"><b>16</b></th>
+<th scope="col" class="right"><b>8</b></th>
+<th scope="col" class="right"><b>4</b></th>
+<th scope="col" class="right"><b>2</b></th>
+<th scope="col" class="right"><b>1</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>+</b></td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Answer</b></td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><code>Carried</code></td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">Binary Shifts</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>In the binary or base 2 number system, the value of a digit changes
+by a power of two, when its place in a number shifts to the left <code>(Multiplied)</code> or
+to the right <code>(Divided)</code>
+</li>
+<li>The following table shows how binary numbers are shift by the power
+of two:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left"><b>Shift Left</b></th>
+<th scope="col" class="left"><b>Shift Right</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><b>Shift 1 Place</b></td>
+<td class="left">Multiply by 2</td>
+<td class="left">Divide by 2</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Shift 2 Places</b></td>
+<td class="left">Multiply by 4</td>
+<td class="left">Divide by 4</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Shift 3 Places</b></td>
+<td class="left">Multiply by 8</td>
+<td class="left">Divide by 8</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+<b>Shifted to the Left (Multiplication) of a Binary Number)</b>
+</p>
+<ul class="org-ul">
+<li>If the binary number is shifted to the left this is equivalent to
+multiplying the number by 2 for each shift to the left.
+</li>
+<li>For example: If we shift <code>two</code> places to the left:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><code>1</code></td>
+<td class="left"><code>1</code></td>
+<td class="left"><b>1</b></td>
+<td class="left"><b>1</b></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+&lt;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;                  
+</p>
+
+<ul class="org-ul">
+<li><b>This gives us the binary number:</b>
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><code>1</code></td>
+<td class="left"><code>1</code></td>
+<td class="left"><b>1</b></td>
+<td class="left"><b>1</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li><b>(Note: We fill empty binary positions with <code>0s</code> as we shift to the
+left)</b>
+</li>
+<li>The original binary number has a value of <code>15</code> (i.e. 8 + 4 + 2 + 1 =
+15).
+</li>
+<li>After shifting two places to the left the value is <code>60</code> (i.e. 32 +
+16 + 8 + 2 + 1 = 15). It is multiplied by <code>4</code> or <b>2<sup>2</sup></b>
+</li>
+</ul>
+
+<p>
+<b>Shifted to the Right (Division) of a Binary Number)</b>
+</p>
+<ul class="org-ul">
+<li>If the binary number is shifted to the right this is equivalent to
+dividing the number by 2 for each shift to the left.
+</li>
+<li>For example: If we shift <code>three</code> places to the right:
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><b>0</b></td>
+<td class="left"><code>1</code></td>
+<td class="left"><code>1</code></td>
+<td class="left"><code>1</code></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+-&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&gt;                  
+</p>
+
+<ul class="org-ul">
+<li><b>This gives us the binary number:</b>
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><b>0</b></td>
+<td class="left"><code>1</code></td>
+<td class="left"><code>1</code></td>
+<td class="left"><code>1</code></td>
+<td class="left"><b>0</b></td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>The original binary number has a value of <code>112</code> (i.e. 64 + 32 + 16 =
+112).
+</li>
+<li>After shifting three places to the right the value is <code>14</code> (i.e. 8 +
+4 + 2 = 14). The number was divided by <code>8</code> and becomes <b>2<sup>3</sup></b>
+</li>
+<li><b>(Note: We fill empty binary positions with <code>0s</code> as we shift to the
+right)</b>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-4" class="outline-3 badge">
+<h3 id="sec-1-4">Badge It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li><b>Gold</b>: Write down the results after the following shift operations
+and write down the decimal values before and after the shifts:
+</li>
+</ul>
+<pre class="example">
+1. The binary number 11001100 is shifted TWO places to the right.
+2. The binary number 00011001 is shifted TWO places to the left.
+3. The binary number 11001000 is shifted THREE places to the right.
+4. The binary number 00000111 is shifted FOUR places to the left.
+5. The binary number 10000000 is shifted FIVE places to the right.
+</pre>
+
+<p>
+<b>Binary Shift Accuracy with multiplication/division by Powers of 2</b> 
+</p>
+<ul class="org-ul">
+<li>This method gives us an easy way to multiply and divide binary
+numbers by powers of 2, but can come at the expense of accuracy.
+</li>
+<li>For example <code>00000110</code> shifted right twice to divide by 4 would be
+<code>00000001</code>. This is the equilvalent of decimal 1, but 6/4 = 1.5.
+<ul class="org-ul">
+<li>Shifting right one place divides the number by 2.
+</li>
+<li>Shifting left one place multiplies the number by 2.
+</li>
+</ul>
+</li>
+<li>This is equivalent to shifting a decimal number right or left - For
+example shifting 12300 right 1230, i.e. It divides the number
+by 10. Shifting left multiplies a decimal number by 10.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
