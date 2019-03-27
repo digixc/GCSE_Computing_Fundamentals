@@ -117,7 +117,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.3.7 Representing Sound]]
+[[file:pages/3-1-7-sound.html][3.3.7 Representing Sound]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
