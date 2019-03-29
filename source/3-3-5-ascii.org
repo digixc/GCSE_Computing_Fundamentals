@@ -1,0 +1,203 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.3.5 Character Encoding
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* ASCII and Unicode
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Every time a character is typed on a keyboard a code number is
+  transmitted to the computer.
+- The code numbers are stored in binary on computers as =Character Sets= called =ASCII=.
+- The table below shows a version of ASCII that uses 7 bits to code
+  each character. The biggest number that can be held in 7-bits is
+  =1111111= in binary *(127 in decimal)*. Therefore 128 different
+  characters can be represented in the ASCII character set *(Using
+  codes 0 to 127)*. More than enough to cover all of the characters on
+  a standard English-Language keyboard.
+- Click [[https://theasciicode.com.ar/ascii-printable-characters/capital-letter-a-uppercase-ascii-code-65.html][here]] for the full ASCII table.
+[[file:img/ascii_table_lge.png]]
+
+#+BEGIN_SRC
+"Originally based on the English alphabet, ASCII encodes 128 specified characters into 7-bit
+binary integers as shown by the ASCII chart above.The characters encoded are numbers 0 to 9,
+lowercase letters a to z, uppercase letters A to Z, basic punctuation symbols, control codes
+that originated with Teletype machines, and a space. For example, lowercase j would become
+binary 1101010 and decimal 106. ASCII includes definitions for 128 characters: 33 are
+non-printing control characters (many now obsolete)that affect how text and space are
+processed and 95 printable characters, including the space." – from wikipedia
+#+END_SRC
+
+- The ASCII has been used for a long time. But it has some serious shortcomings:
+ 1. It only uses English alphabets.
+ 2. It is limited to 7-bits, so it can only represent 128 distinct characters.
+ 3. It is not usable for non-latin languages, such as Chinese.
+
+- Character form of a decimal digit In ASCII, the number character is
+  not the same as the actual number value. For example, the ASCII value 011 0100 will print the character '4', the binary value is actually equal to the decimal number 52. Therefore ASCII cannot be used for arithmetic.
+
+* Using the ASCII Table in Programming
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The character codes are grouped and run in sequence; i.e. If =A= is
+  =65= then =C= must be =67=.
+- The pattern applies to other groupings such as digits and lowercase
+  letters, so you can say that since =7= is =55=, =9= must be
+  =57=. Also, =7= < =9= and =a= > =A=.
+- Notice that the ASCII code value for =5= *(0011 0101)* is different
+  from the pure binary value for *5 (0000 0101)*. That's why you
+  cannot calculate with numbers which are input as strings.
+- Another example, the ASCII value =011 0100= will print the character =4=, the binary value is actually equal to the decimal number =52=.
+
+* Character Sets
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Extended ASCII*
+- The basic ASCII codes use 7-bits for each character (As shown in the
+  table above). This gives a total of 128 (2^7) possible unique symbols.
+- The =Extended ASCII= character set uses 8-bits, which gives an additional 128 characters (i.e. 256 in total).
+- The extra characters represent characters from foreign languages and
+  special symbols such as Ö € or →.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Unicode*
+- =Unicode= (Unique, Universal, and Uniform character enCoding) is the
+  new standard for representing characters of =all the languages of the World=. This has been introduced to address the shortcomings of ASCII.
+- The latest version of Unicode contains a repertoire of more than 120,000 characters covering 129 modern and historic scripts, as well
+  as multiple symbol sets.
+- ASCII character encoding is a subset of Unicode.
+- Unicode uses between =8= and =32= bits per character and has the
+  advantage that it represents many more unique characters than ASCII
+  because of the larger number of bits available to store a character
+  code. It uses the same codes as ASCII up to 127.
+- Its major advantage is that it provides a unique standard for all
+  the World's writing systems. It allows for multilingual text in any
+  language.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- =Unicode advantages over ASCII=
+ 1. Can have representation of a greater range of characters.
+ 2. More languages or all (modern) languages can be represented (in one character set).
+ 3. Improved portability of documents in Unicode as each character has a unique representation in Unicode.
+
+  
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Silver*: Translate the following ASCII code message into English. The decimal codes of the characters have been used. So 65
+ would be uppercase *A* and 97 would be lowercase *a*:
+#+BEGIN_SRC
+ 84 104 101 32 65 83 67 73 73 32 99 111 100 101 32 114 101 112 114 101 115 101
+110 116 115 32 99 104 97 114 97 99 116 101 114 115 46
+#+END_SRC
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Gold*: Answer the following question:
+#+BEGIN_SRC
+ 1. Using extended 8-bit ASCII, how many bytes would be required to store the phrase
+'Computer Science'?
+#+END_SRC
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Platinum*: Create an algorithm asking a user to input a sentence and then print the codes (in decimal) for each of the characters or
+  symbols with each one printed on a new line. Code and test the algorithm in Python. Extend this further by creating a function for
+  this and to also accept a decimal value which then returns the ASCII character.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python3/f6f06bdf4e" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML

@@ -109,7 +109,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.3.5 Character Encoding]]
+[[file:pages/3-3-5-ascii.html][3.3.5 Character Encoding]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
@@ -117,7 +117,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:pages/3-1-7-sound.html][3.3.7 Representing Sound]]
+[[file:pages/3-3-7-sound.html][3.3.7 Representing Sound]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
@@ -215,7 +215,7 @@
 :HTML_CONTAINER_CLASS: link-heading
 :END:
 
-* [[file:G:\Computing\Y11\Mr Fone\New Year 11K\New Revision Resources 2019/AQA_GCSE_CS_Revision_Guide.pdf][Exam Revision Guide]]
+* [[file:docs/AQA_GCSE _CS_Revision_Guide.pdf][Exam Revision Guide]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
@@ -244,8 +244,7 @@
 [[file:docs/AQA_85202_SMS.pdf][AQA Sample Paper 1 Marks Scheme]]
 #+BEGIN_HTML
 </details>
-#+END_HTML
-
+#+END_HTM
 * Programming Website Resources
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
