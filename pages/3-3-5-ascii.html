@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.3.5 Character Encoding</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.3.5 Character Encoding</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. ASCII and Unicode</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Using the ASCII Table in Programming</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Character Sets</a>
+<ul>
+<li><a href="#sec-3-1">Learn It</a></li>
+<li><a href="#sec-3-2">Badge It</a></li>
+<li><a href="#sec-3-3">Badge It</a></li>
+<li><a href="#sec-3-4">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> ASCII and Unicode</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Every time a character is typed on a keyboard a code number is
+transmitted to the computer.
+</li>
+<li>The code numbers are stored in binary on computers as <code>Character Sets</code> called <code>ASCII</code>.
+</li>
+<li>The table below shows a version of ASCII that uses 7 bits to code
+each character. The biggest number that can be held in 7-bits is
+<code>1111111</code> in binary <b>(127 in decimal)</b>. Therefore 128 different
+characters can be represented in the ASCII character set <b>(Using
+codes 0 to 127)</b>. More than enough to cover all of the characters on
+a standard English-Language keyboard.
+</li>
+<li>Click <a href="https://theasciicode.com.ar/ascii-printable-characters/capital-letter-a-uppercase-ascii-code-65.html">here</a> for the full ASCII table.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/ascii_table_lge.png" alt="ascii_table_lge.png" />
+</p>
+</div>
+
+<pre class="example">
+"Originally based on the English alphabet, ASCII encodes 128 specified characters into 7-bit
+binary integers as shown by the ASCII chart above.The characters encoded are numbers 0 to 9,
+lowercase letters a to z, uppercase letters A to Z, basic punctuation symbols, control codes
+that originated with Teletype machines, and a space. For example, lowercase j would become
+binary 1101010 and decimal 106. ASCII includes definitions for 128 characters: 33 are
+non-printing control characters (many now obsolete)that affect how text and space are
+processed and 95 printable characters, including the space." – from wikipedia
+</pre>
+
+<ul class="org-ul">
+<li>The ASCII has been used for a long time. But it has some serious shortcomings:
+<ol class="org-ol">
+<li>It only uses English alphabets.
+</li>
+<li>It is limited to 7-bits, so it can only represent 128 distinct characters.
+</li>
+<li>It is not usable for non-latin languages, such as Chinese.
+</li>
+</ol>
+</li>
+
+<li>Character form of a decimal digit In ASCII, the number character is
+not the same as the actual number value. For example, the ASCII value 011 0100 will print the character '4', the binary value is actually equal to the decimal number 52. Therefore ASCII cannot be used for arithmetic.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Using the ASCII Table in Programming</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>The character codes are grouped and run in sequence; i.e. If <code>A</code> is
+<code>65</code> then <code>C</code> must be <code>67</code>.
+</li>
+<li>The pattern applies to other groupings such as digits and lowercase
+letters, so you can say that since <code>7</code> is <code>55</code>, <code>9</code> must be
+<code>57</code>. Also, <code>7</code> &lt; <code>9</code> and <code>a</code> &gt; <code>A</code>.
+</li>
+<li>Notice that the ASCII code value for <code>5</code> <b>(0011 0101)</b> is different
+from the pure binary value for <b>5 (0000 0101)</b>. That's why you
+cannot calculate with numbers which are input as strings.
+</li>
+<li>Another example, the ASCII value <code>011 0100</code> will print the character <code>4</code>, the binary value is actually equal to the decimal number <code>52</code>.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Character Sets</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<b>Extended ASCII</b>
+</p>
+<ul class="org-ul">
+<li>The basic ASCII codes use 7-bits for each character (As shown in the
+table above). This gives a total of 128 (2<sup>7</sup>) possible unique symbols.
+</li>
+<li>The <code>Extended ASCII</code> character set uses 8-bits, which gives an additional 128 characters (i.e. 256 in total).
+</li>
+<li>The extra characters represent characters from foreign languages and
+special symbols such as Ö € or →.
+</li>
+</ul>
+<br>
+<p>
+<b>Unicode</b>
+</p>
+<ul class="org-ul">
+<li><code>Unicode</code> (Unique, Universal, and Uniform character enCoding) is the
+new standard for representing characters of <code>all the languages of the World</code>. This has been introduced to address the shortcomings of ASCII.
+</li>
+<li>The latest version of Unicode contains a repertoire of more than 120,000 characters covering 129 modern and historic scripts, as well
+as multiple symbol sets.
+</li>
+<li>ASCII character encoding is a subset of Unicode.
+</li>
+<li>Unicode uses between <code>8</code> and <code>32</code> bits per character and has the
+advantage that it represents many more unique characters than ASCII
+because of the larger number of bits available to store a character
+code. It uses the same codes as ASCII up to 127.
+</li>
+<li>Its major advantage is that it provides a unique standard for all
+the World's writing systems. It allows for multilingual text in any
+language.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><code>Unicode advantages over ASCII</code>
+<ol class="org-ol">
+<li>Can have representation of a greater range of characters.
+</li>
+<li>More languages or all (modern) languages can be represented (in one character set).
+</li>
+<li>Improved portability of documents in Unicode as each character has a unique representation in Unicode.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-2" class="outline-3 badge">
+<h3 id="sec-3-2">Badge It</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+<b>Silver</b>: Translate the following ASCII code message into English. The decimal codes of the characters have been used. So 65
+ would be uppercase <b>A</b> and 97 would be lowercase <b>a</b>:
+</p>
+<pre class="example">
+ 84 104 101 32 65 83 67 73 73 32 99 111 100 101 32 114 101 112 114 101 115 101
+110 116 115 32 99 104 97 114 97 99 116 101 114 115 46
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3 badge">
+<h3 id="sec-3-3">Badge It</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+<b>Gold</b>: Answer the following question:
+</p>
+<pre class="example">
+ 1. Using extended 8-bit ASCII, how many bytes would be required to store the phrase
+'Computer Science'?
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-3-4" class="outline-3 badge">
+<h3 id="sec-3-4">Badge It</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li><b>Platinum</b>: Create an algorithm asking a user to input a sentence and then print the codes (in decimal) for each of the characters or
+symbols with each one printed on a new line. Code and test the algorithm in Python. Extend this further by creating a function for
+this and to also accept a decimal value which then returns the ASCII character.
+</li>
+</ul>
+<iframe src="https://trinket.io/embed/python3/f6f06bdf4e" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
