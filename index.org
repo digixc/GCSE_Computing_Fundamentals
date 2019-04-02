@@ -121,7 +121,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.3.8 Data Compression]]
+[[file:pages/3-3-8-compression.html][3.3.8 Data Compression]]
 #+BEGIN_HTML
 </details>
 #+END_HTML
