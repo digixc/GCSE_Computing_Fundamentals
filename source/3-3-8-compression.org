@@ -1,0 +1,338 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.3.8 Data Compression
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Data Compression
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Files, especially graphic and audio files, can become very
+  large. Here are some intersting facts:
+  - On Facebook more than 350 million images are uploaded each day. On
+    Snapchat 8,796 images are uploaded per second. It has been
+    estimated that over 3.2 billion images are uploaded to social media sites each day!
+  - Every day millions of audio and video files are being downloaded.
+- When data is transmitted across the Internet, it will go through
+  many different physical links bewteen routers.
+- The connection from a computer or a LAN into the Internet is likely
+  to be the slowest part of this route, as you probably know from
+  experience.
+- At home you may have quite a slow network connection and it may take
+  a while for web pages to load.
+- One way of speeding the rate at which files can ve transmitted
+  across the Internet is to =compress= them to make them
+  smaller. =Smaller= files take =less time to transmit= over a network.
+- Understanding how compression affects files is important, as the
+  type of compression selected will affect how the image looks or the
+  audio track sounds. The final use of the file will dictate how much
+  you can compress the files and still have a file that is uasable.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- To summarise, compression is used in order to:
+ 1. Reduce the amount of storage needed on a computer to save files.
+ 2. Allow large files to be transmitted as an email attachment; many
+    email servers limit the size of a file that can be sent and
+    compression can reduce the file size to allow users to send it.
+ 3. Allow a file to be transmitted in less time, due to the smaller
+    file size.
+ 4. It reduces congestion on the Internet through smaller files.
+ 5. It makes audio and video files suitable for streaming.
+
+[[file:img/compression.png]]
+
+
+* Types of Compression
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Lossy Compression*
+- Is a data encoding method where files are compressed by removing some of the detail. For example, photographs can be stored using fewer colours so fewer bits are needed per pixel.
+- This type of compression is used to compress images, audio and video
+  files.
+- That is why it =cannot= be used for =text files or program files= - A
+  book with many missing words would be unreadable!
+- But lossy compression can be used for graphic and audio files as
+  they contain much data that can be discarded.
+- The most commonly used compression technique for graphic files was
+  developed by the =Joint Photographic Experts Group= and produces
+  =JPEG= files with the extension =.jpg=.
+- Here are two photographs to show the differences:
+[[file:img/jpg_gif_image.jpg]]
+
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Lossless Compression*
+- With a lossless data encoding method, a file is compressed =but no
+  data is lost= and the file can be decompressed with all of its information intact.
+- For example, bank records must keep all of the data; you cannot
+  transmit a bank statment and miss out a few zeros because they don't
+  matter too much!
+- It could be used to compress data files, for example by =Zipping=
+  them using  a utility program such as =WinZip=, before attaching them
+  to an email.
+#+BEGIN_SRC
+The size of an image file depends on the colour depth and dimensions. The size of an audio
+file depends on the sample rate and bit depth. The size of an image file and an audio file
+can be very large.
+#+END_SRC
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+Finish completing the following table showing different file types and file extensions used for different file formats.
+                                                                                                   
+|----------------------------+---------------+--------------------+----------------------------------------------------------------|
+| *Type*                     | *File Suffix* | *Compression Type* | *Explanation*                                                  |
+|----------------------------+---------------+--------------------+----------------------------------------------------------------|
+| Bitmap                     |.bmp           | -                  |Uncompressed still image file                                   |
+|----------------------------+---------------+--------------------+----------------------------------------------------------------|
+| JPEG                       |               |                    |Good for photos, colour depth=24bits, RGB, 16.7 million colours |
+|----------------------------+---------------+--------------------+----------------------------------------------------------------|
+| Graphic Interchange Format |               |Lossless            |                                                                |      
+|----------------------------+---------------+--------------------+----------------------------------------------------------------|
+| MP3                        |.mp3           |Lossy               |                                                                |
+|----------------------------+---------------+--------------------+----------------------------------------------------------------|
+
+* Run Length Encoding (RLE)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- =Run Length Encoding (RLE)= is a simple form of lossless data compression which works by reducing the physical size of a sequence of
+data having the =same value= and are stored using requency/data pairs.
+- This repeating string, called a =run=, is encoded into =two bytes=.
+- The first byte represents the number of characters in the run and
+  the second gives the character.
+- For example, let's look at the following string:
+  - =aaabbbbbbccccccccc=
+  - This string length is =18 bytes=.
+  - Using run length encoding, this could be compressed to:
+  - =3a6b9c=
+  - This string has been reduced to =6 bytes= using RLE.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- RLE provides very good compression ratios where there are long runs of one particular value like the following 1-bit black and white image:
+[[file:img/rle.png]]
+- When represented by a letter, the size of the file is 64 bytes: 8 bytes per line.
+- Using Run Length Encoding will reduce the file size of this =one character= from =64 bytes= to =48 bytes=.
+
+* Huffman Coding
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- =Huffman coding=, also known as =Huffman Encoding= or =Huffman
+  Compression=. Is an algorithm for lossless compression based on the frequency of the characters or symbols in the file.
+- It ensures that the more common characters have fewer bits to represent them than the less common characters that need more bits
+  to identify them.
+- Therefore the overall size of the file is reduced.
+- It is therefore called a =variable-length coding system= because the
+  codes for different characters have different lengths.
+- Huffman coding uses a structure called a =Binary Tree=, which consists of a root node and a number of nodes and branches as shown
+  in the diagram below:
+[[file:img/huff_tree1.png]]
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+*Constructing a Huffman Tree*
+- For this example we will construct a Huffman Tree for the sentence:
+  =BOURNE_GRAMMAR=.
+- *Step 1*: Draw a table showing the frequency of each character, including spaces. For example, there is one "B", one "E" and three
+  "R"s in the sentence.
+|-----------------+-------+-------+-------+-------+-------+-------+-------|-------+-------+-------|
+|   *Character*   |   B   |   E   |   G   |   N   |   O   |   U   | SPACE |   A   |   M   |   R   |
+|-----------------+-------+-------+-------+-------+-------+-------+-------|-------+-------+-------|
+|   *Frequency*   |   1   |   1   |   1   |   1   |   1   |   1   |   1   |   2   |   2   |   3   |
+- (Check that the frequencies add up to =14 characters= including
+  spaces as in the given sentence.) Ensure tha you write the
+  frequencies in ascending order as shown above. Currently the total
+  bit value for the uncompressed sentence is =14 chars x 7-bits = 98 bits=.
+- *Step 1*: Combine pairs of frequencies, always choosing the pair
+  that gives the smallest combined frequency. For example, =B= and =E=
+  each have a frequency of =1=. So =B= and =E= have a combined
+  frequency of =2=.
+- Create a node containing the combined frequencies of the first two
+  pairs =(2)= and a branch for each of =B= and =E=.
+[[file:img/tree1.png]]
+- *Step 2*: The next smallest frequency pair is formed by pairing the
+  letters are =G= and =N= each also have a frequency of =1=. These can
+  then be grouped to form a =new node= with a value of =4=.
+[[file:img/tree2.png]]
+- *Step 3*: The next smallest frequency pair is formed by pairing =O=
+  with the existing frequency pair =B=, =E= and =G= and =N=. This can
+  then be grouped to form a =new node= with a value of =5=.
+[[file:img/tree3.png]]
+- *Step 4*: We have a choice when placing =U= and =SPACE=, it can be
+  paired with the previous subtree or a new subtree. To keep the tree
+  balanced we will create a new subtree with a frequency value of =2=.
+[[file:img/tree4.png]]
+- *Step 5*: The next two frequency pairs are =A= and =M=, each have a frequency of =2=. These can
+  then be grouped to form a =subtree= with a value of =4=, which can
+  then be grouped together with the previous subtree to form a =new node= with a value of =6=.
+[[file:img/tree5.png]]
+- *Step 6*: We have another choice when placing =R= which has a
+  frequency value of =3=, it can be paired with either of the two subtrees or a new node. To keep the tree
+  balanced we will create a =new node= with a new frequency value of =9=.
+[[file:img/tree6.png]]
+- *Step 7*: We need to add a =root node= to join the two =subtrees= together.
+[[file:img/tree7.png]]
+- *Step 8*: The tree is now complete. You can add the labels below to
+  each branch, with the left branches labelled =0= and the right branches labelled =1=.
+[[file:img/tree8.png]]
+
+#+BEGIN_SRC
+Using a Huffman Tree, the coding for each character is derived from the path taken from the
+root node to the character. Branching left at a node is coded 0, branching right is coded 1.
+Notice that the characters that occur most frequently are nearer the top and therefore
+require fewer characters to encode them.
+Therefore the character 'R' would be represented by the bit pattern 10 because from the top
+of the tree, you go right, then left to reach 'R'.
+The encoding for 'G' would be 0010 and for 'B', 0000.
+The total number of bits needed to represent the sentence 'BOURNE GRAMMAR' would be
+14 chars x 7-bits = 98 bits using 7-bit ASCII.
+Through using Huffman Encoding the number of bits required would be 45 bits, representing a 
+saving of 53 bits in the compressed format, with a 54% reduction in size.
+#+END_SRC
+- We can reassemble our sentence with the Huffman Encoded binary
+  values below each character, counting the number of bits gives us
+  =45 bits= compared to the original =98 bits= that's a reduction of =54%=.
+|-----------------+-------+-------+-------+-------+-------+-------+-------+-------+-------|-------+-------+-------+-------+-------|
+|   *Sentence*    |   B   |   O   |   U   |   R   |   N   |   E   | SPACE |   G   |   R   |   A   |   M   |   M   |   A   |   R   |
+|-----------------+-------+-------+-------+-------+-------+-------+-------|-------+-------+-------+-------+-------+-------|-------|
+|   *Binary*      |  0000 |  0010 | 1100  |  10   |  0011 |  0001 |  1101 |  0010 |  10   | 1110  |  1111 |  1111 |  1110 |   10  |
+
+*Huffman Coding Explained*
+- The following video explains how a Huffman Tree works:
+#+BEGIN_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iiGZ947Tcck" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_html
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Silver*: For the following 1-bit graphic, calculate:
+- (a) The result of applying a run length encoding algorithm.
+- (b) The original file size and size after appplying run length encoding.
+[[file:img/rle_silver.png]]
+
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Gold*: The following Huffman Tree represents the text;'HELEN FEEDS THE EELS'
+[[file:img/huff_badge.jpg]]
+- (a) Complete the table showing the Huffman coding for S, T and
+  SPACE.
+|-----------------+----------------------|
+| *Character*     | *Huffman Coding*     |
+|----------------------------------------|
+| S               |                      |
+|-----------------+----------------------|
+| T               |                      |
+|-----------------+----------------------|
+| SPACE           |                      |      
+|----------------------------------------|
+- (b) What does the following code represent?
+- =1101000011111100101101=
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Platinum*: Using the Huffman code sentence 'HELEN FEEDS THE EELS' which can be stored in 57 bits. Calculate the number of bits that
+  would be needed to store the sentence in ASCII?
