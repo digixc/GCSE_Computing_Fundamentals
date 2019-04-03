@@ -96,7 +96,7 @@
   experience.
 - At home you may have quite a slow network connection and it may take
   a while for web pages to load.
-- One way of speeding the rate at which files can ve transmitted
+- One way of speeding the rate at which files can be transmitted
   across the Internet is to =compress= them to make them
   smaller. =Smaller= files take =less time to transmit= over a network.
 - Understanding how compression affects files is important, as the
@@ -237,9 +237,13 @@ data having the =same value= and are stored using requency/data pairs.
 |-----------------+-------+-------+-------+-------+-------+-------+-------|-------+-------+-------|
 |   *Frequency*   |   1   |   1   |   1   |   1   |   1   |   1   |   1   |   2   |   2   |   3   |
 - (Check that the frequencies add up to =14 characters= including
-  spaces as in the given sentence.) Ensure tha you write the
+  spaces as in the given sentence.) Ensure that you write the
   frequencies in ascending order as shown above. Currently the total
-  bit value for the uncompressed sentence is =14 chars x 7-bits = 98 bits=.
+  bit value for the uncompressed sentence is =14 chars x 7-bits = 98
+  bits=.
+#+BEGIN_html
+<br>
+#+END_html
 - *Step 1*: Combine pairs of frequencies, always choosing the pair
   that gives the smallest combined frequency. For example, =B= and =E=
   each have a frequency of =1=. So =B= and =E= have a combined
@@ -251,48 +255,49 @@ data having the =same value= and are stored using requency/data pairs.
   letters are =G= and =N= each also have a frequency of =1=. These can
   then be grouped to form a =new node= with a value of =4=.
 [[file:img/tree2.png]]
-- *Step 3*: The next smallest frequency pair is formed by pairing =O=
-  with the existing frequency pair =B=, =E= and =G= and =N=. This can
-  then be grouped to form a =new node= with a value of =5=.
-[[file:img/tree3.png]]
-- *Step 4*: We have a choice when placing =U= and =SPACE=, it can be
+- *Step 3*: We have a choice when placing =U= and =SPACE=, it can be
   paired with the previous subtree or a new subtree. To keep the tree
   balanced we will create a new subtree with a frequency value of =2=.
 [[file:img/tree4.png]]
-- *Step 5*: The next two frequency pairs are =A= and =M=, each have a frequency of =2=. These can
-  then be grouped to form a =subtree= with a value of =4=, which can
-  then be grouped together with the previous subtree to form a =new node= with a value of =6=.
+- *Step 4*: The next two frequency pairs are =O= and =A=, having a
+  frequency of =1= and =2=. These can then be grouped to form a
+  =subtree= with a value of =3=, which can then be grouped together with the previous subtree to form a =new node= with a value of =5=.
 [[file:img/tree5.png]]
-- *Step 6*: We have another choice when placing =R= which has a
-  frequency value of =3=, it can be paired with either of the two subtrees or a new node. To keep the tree
-  balanced we will create a =new node= with a new frequency value of =9=.
+- *Step 5*: We have another choice when placing =M= which has a
+  frequency value of =2=, it can be paired with either of the two subtrees or a new node. To keep the tree
+  balanced we will create a =new node= with a new frequency value of =7=.
 [[file:img/tree6.png]]
+- *Step 6*: We have another choice when placing =R= which has a
+  frequency value of =3=, it can be paired with either of the two
+  subtrees or a new node. To keep the tree balanced we will create a =new node= with a new frequency value of =7=.
+[[file:img/tree3a.png]]
 - *Step 7*: We need to add a =root node= to join the two =subtrees= together.
 [[file:img/tree7.png]]
 - *Step 8*: The tree is now complete. You can add the labels below to
   each branch, with the left branches labelled =0= and the right branches labelled =1=.
 [[file:img/tree8.png]]
 
+
 #+BEGIN_SRC
 Using a Huffman Tree, the coding for each character is derived from the path taken from the
 root node to the character. Branching left at a node is coded 0, branching right is coded 1.
 Notice that the characters that occur most frequently are nearer the top and therefore
 require fewer characters to encode them.
-Therefore the character 'R' would be represented by the bit pattern 10 because from the top
-of the tree, you go right, then left to reach 'R'.
+Therefore the character 'R' would be represented by the bit pattern 01 because from the top
+of the tree, you go left, then right to reach 'R'.
 The encoding for 'G' would be 0010 and for 'B', 0000.
 The total number of bits needed to represent the sentence 'BOURNE GRAMMAR' would be
 14 chars x 7-bits = 98 bits using 7-bit ASCII.
-Through using Huffman Encoding the number of bits required would be 45 bits, representing a 
-saving of 53 bits in the compressed format, with a 54% reduction in size.
+Through using Huffman Encoding the number of bits required would be 46 bits, representing a 
+saving of 52 bits in the compressed format, with a 53% reduction in size.
 #+END_SRC
 - We can reassemble our sentence with the Huffman Encoded binary
   values below each character, counting the number of bits gives us
-  =45 bits= compared to the original =98 bits= that's a reduction of =54%=.
+  =46 bits= compared to the original =98 bits= that's a reduction of =53%=.
 |-----------------+-------+-------+-------+-------+-------+-------+-------+-------+-------|-------+-------+-------+-------+-------|
 |   *Sentence*    |   B   |   O   |   U   |   R   |   N   |   E   | SPACE |   G   |   R   |   A   |   M   |   M   |   A   |   R   |
 |-----------------+-------+-------+-------+-------+-------+-------+-------|-------+-------+-------+-------+-------+-------|-------|
-|   *Binary*      |  0000 |  0010 | 1100  |  10   |  0011 |  0001 |  1101 |  0010 |  10   | 1110  |  1111 |  1111 |  1110 |   10  |
+|   *Binary*      |  0000 |  1110 | 1100  |  01   |  0011 |  0001 |  1101 |  0010 |  01   | 1111  |  10   |  10   |  1111 |   01  |
 
 *Huffman Coding Explained*
 - The following video explains how a Huffman Tree works:
@@ -334,5 +339,12 @@ saving of 53 bits in the compressed format, with a 54% reduction in size.
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- *Platinum*: Using the Huffman code sentence 'HELEN FEEDS THE EELS' which can be stored in 57 bits. Calculate the number of bits that
-  would be needed to store the sentence in ASCII?
+- *Platinum*: Using the Huffman code sentence 'HELEN FEEDS THE EELS'
+  which can be stored in 57 bits. 
+- (a) Calculate the number of bits that would be needed to store the sentence in ASCII?
+- A frequency table for characters in a document is shown below:
+|-------+-------|-------+-------+-------|
+|   A   |   B   |   C   |   D   |   E   |
+|-------+-------|-------+-------+-------|
+|   20  |   15  |   9   |   8   |   5   |
+- (b) Create a Huffman Tree for this set of characters.

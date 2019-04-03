@@ -203,7 +203,7 @@ experience.
 <li>At home you may have quite a slow network connection and it may take
 a while for web pages to load.
 </li>
-<li>One way of speeding the rate at which files can ve transmitted
+<li>One way of speeding the rate at which files can be transmitted
 across the Internet is to <code>compress</code> them to make them
 smaller. <code>Smaller</code> files take <code>less time to transmit</code> over a network.
 </li>
@@ -527,10 +527,14 @@ in the diagram below:
 </table>
 <ul class="org-ul">
 <li>(Check that the frequencies add up to <code>14 characters</code> including
-spaces as in the given sentence.) Ensure tha you write the
+spaces as in the given sentence.) Ensure that you write the
 frequencies in ascending order as shown above. Currently the total
-bit value for the uncompressed sentence is <code>14 chars x 7-bits = 98 bits</code>.
+bit value for the uncompressed sentence is <code>14 chars x 7-bits = 98
+  bits</code>.
 </li>
+</ul>
+<br>
+<ul class="org-ul">
 <li><b>Step 1</b>: Combine pairs of frequencies, always choosing the pair
 that gives the smallest combined frequency. For example, <code>B</code> and <code>E</code>
 each have a frequency of <code>1</code>. So <code>B</code> and <code>E</code> have a combined
@@ -557,18 +561,7 @@ then be grouped to form a <code>new node</code> with a value of <code>4</code>.
 </p>
 </div>
 <ul class="org-ul">
-<li><b>Step 3</b>: The next smallest frequency pair is formed by pairing <code>O</code>
-with the existing frequency pair <code>B</code>, <code>E</code> and <code>G</code> and <code>N</code>. This can
-then be grouped to form a <code>new node</code> with a value of <code>5</code>.
-</li>
-</ul>
-
-<div class="figure">
-<p><img src="img/tree3.png" alt="tree3.png" />
-</p>
-</div>
-<ul class="org-ul">
-<li><b>Step 4</b>: We have a choice when placing <code>U</code> and <code>SPACE</code>, it can be
+<li><b>Step 3</b>: We have a choice when placing <code>U</code> and <code>SPACE</code>, it can be
 paired with the previous subtree or a new subtree. To keep the tree
 balanced we will create a new subtree with a frequency value of <code>2</code>.
 </li>
@@ -579,9 +572,9 @@ balanced we will create a new subtree with a frequency value of <code>2</code>.
 </p>
 </div>
 <ul class="org-ul">
-<li><b>Step 5</b>: The next two frequency pairs are <code>A</code> and <code>M</code>, each have a frequency of <code>2</code>. These can
-then be grouped to form a <code>subtree</code> with a value of <code>4</code>, which can
-then be grouped together with the previous subtree to form a <code>new node</code> with a value of <code>6</code>.
+<li><b>Step 4</b>: The next two frequency pairs are <code>O</code> and <code>A</code>, having a
+frequency of <code>1</code> and <code>2</code>. These can then be grouped to form a
+<code>subtree</code> with a value of <code>3</code>, which can then be grouped together with the previous subtree to form a <code>new node</code> with a value of <code>5</code>.
 </li>
 </ul>
 
@@ -590,14 +583,25 @@ then be grouped together with the previous subtree to form a <code>new node</cod
 </p>
 </div>
 <ul class="org-ul">
-<li><b>Step 6</b>: We have another choice when placing <code>R</code> which has a
-frequency value of <code>3</code>, it can be paired with either of the two subtrees or a new node. To keep the tree
-balanced we will create a <code>new node</code> with a new frequency value of <code>9</code>.
+<li><b>Step 5</b>: We have another choice when placing <code>M</code> which has a
+frequency value of <code>2</code>, it can be paired with either of the two subtrees or a new node. To keep the tree
+balanced we will create a <code>new node</code> with a new frequency value of <code>7</code>.
 </li>
 </ul>
 
 <div class="figure">
 <p><img src="img/tree6.png" alt="tree6.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Step 6</b>: We have another choice when placing <code>R</code> which has a
+frequency value of <code>3</code>, it can be paired with either of the two
+subtrees or a new node. To keep the tree balanced we will create a <code>new node</code> with a new frequency value of <code>7</code>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/tree3a.png" alt="tree3a.png" />
 </p>
 </div>
 <ul class="org-ul">
@@ -620,23 +624,24 @@ each branch, with the left branches labelled <code>0</code> and the right branch
 </p>
 </div>
 
+
 <pre class="example">
 Using a Huffman Tree, the coding for each character is derived from the path taken from the
 root node to the character. Branching left at a node is coded 0, branching right is coded 1.
 Notice that the characters that occur most frequently are nearer the top and therefore
 require fewer characters to encode them.
-Therefore the character 'R' would be represented by the bit pattern 10 because from the top
-of the tree, you go right, then left to reach 'R'.
+Therefore the character 'R' would be represented by the bit pattern 01 because from the top
+of the tree, you go left, then right to reach 'R'.
 The encoding for 'G' would be 0010 and for 'B', 0000.
 The total number of bits needed to represent the sentence 'BOURNE GRAMMAR' would be
 14 chars x 7-bits = 98 bits using 7-bit ASCII.
-Through using Huffman Encoding the number of bits required would be 45 bits, representing a 
-saving of 53 bits in the compressed format, with a 54% reduction in size.
+Through using Huffman Encoding the number of bits required would be 46 bits, representing a 
+saving of 52 bits in the compressed format, with a 53% reduction in size.
 </pre>
 <ul class="org-ul">
 <li>We can reassemble our sentence with the Huffman Encoded binary
 values below each character, counting the number of bits gives us
-<code>45 bits</code> compared to the original <code>98 bits</code> that's a reduction of <code>54%</code>.
+<code>46 bits</code> compared to the original <code>98 bits</code> that's a reduction of <code>53%</code>.
 </li>
 </ul>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -696,19 +701,19 @@ values below each character, counting the number of bits gives us
 <tr>
 <td class="left"><b>Binary</b></td>
 <td class="right">0000</td>
-<td class="right">0010</td>
+<td class="right">1110</td>
 <td class="right">1100</td>
-<td class="right">10</td>
+<td class="right">01</td>
 <td class="right">0011</td>
 <td class="right">0001</td>
 <td class="right">1101</td>
 <td class="right">0010</td>
-<td class="right">10</td>
-<td class="right">1110</td>
+<td class="right">01</td>
 <td class="right">1111</td>
-<td class="right">1111</td>
-<td class="right">1110</td>
 <td class="right">10</td>
+<td class="right">10</td>
+<td class="right">1111</td>
+<td class="right">01</td>
 </tr>
 </tbody>
 </table>
@@ -803,8 +808,49 @@ SPACE.
 <h3 id="sec-4-5">Badge It</h3>
 <div class="outline-text-3" id="text-4-5">
 <ul class="org-ul">
-<li><b>Platinum</b>: Using the Huffman code sentence 'HELEN FEEDS THE EELS' which can be stored in 57 bits. Calculate the number of bits that
-would be needed to store the sentence in ASCII?
+<li><b>Platinum</b>: Using the Huffman code sentence 'HELEN FEEDS THE EELS'
+which can be stored in 57 bits. 
+</li>
+<li>(a) Calculate the number of bits that would be needed to store the sentence in ASCII?
+</li>
+<li>A frequency table for characters in a document is shown below:
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">A</th>
+<th scope="col" class="right">B</th>
+<th scope="col" class="right">C</th>
+<th scope="col" class="right">D</th>
+<th scope="col" class="right">E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">20</td>
+<td class="right">15</td>
+<td class="right">9</td>
+<td class="right">8</td>
+<td class="right">5</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>(b) Create a Huffman Tree for this set of characters.
 </li>
 </ul>
 </div>
