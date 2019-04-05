@@ -113,7 +113,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.3.6 Representing Images]]
+[[file:pages/3-3-6-representing_images.html][3.3.6 Representing Images]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML

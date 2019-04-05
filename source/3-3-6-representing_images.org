@@ -1,0 +1,228 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.3.6 Representing Images
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Representation of Images
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Bitmap Images*
+- An image is divided into pixels (Short for =Picture Element=), each
+  pixel represents the smallest single point on the screen.
+- A pixel can only be one colour at a time, and when a picture is
+  saved, the colour of =each individual pixel= must be stored in =binary=.
+- The more bits that are used to store each pixel, the more colours
+  are potentially available. VDUs display output using millions of
+  pixels.
+- Each pixel is represented by a number of bits and programs can
+  specify where each pixel is placed on the screen and what colour it is going to be.
+- An image represented this way is called a =Bitmap=.
+- The following 1-bit image shows how pixels are made up of binary
+  code.
+- The digit =0= is used for =Black= and the digit =1= is used for
+  =White=.
+- In reality, images are far more complexed than the image shown, with
+  =colour depth= and =image resolution= having a big impact on the quality
+  and file size of an image.
+[[file:img/invader_bin.png]]
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- The image above *(Which has been enlarged)* is 8 pixels by 8, so =64
+  pixels= in total.
+- Only black and white are being used, so a single =bit= would be enough to store each pixel.
+- Using =0= for black and =1= for white we would use =64-bits= or =8-bytes= to store the pixels in this image.
+
+* Colour Depth
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The number of bits per pixel is referred to as the =Colour Depth=. It is important for the quality of the colours in an image.
+- If =1-bit= is used to encode each pixel, then only two colours can
+  be used (2^1). As we mentioned before, the =0= represents black and the =1= represents white.
+- To be able to represent more than two colours in an image, each
+  pixel requires more bits.
+- To work out the minimum required colour depth from the number of colours in the image, convert the number of
+  colours to a power of 2.
+- For Example:
+ - A =1-bit= image can display 2^1, or =2 colours=.
+ - A =2-bit= image can display 2^2, or =4 colours=.
+ - A =3-bit= image can display 2^3, or =8 colours=.
+ - A =4-bit= image can display 2^4, or =16 colours=.
+ - A =5-bit= image can display 2^5, or =32 colours=.
+ - A =6-bit= image can display 2^6, or =64 colours=.
+ - A =7-bit= image can display 2^7, or =128 colours=.
+ - A =8-bit= image can display 2^8, or =256 colours=.
+ - A =16-bit= image can display 2^16, or =65,536 colours=.
+- If the colour depth is increased, more bits are used to represent
+  each pixel, and the overall size of the file will increase.
+- The following image demonstrates how the quality of an image changes
+  depending on the number of bits used. 
+[[file:img/16-bit_image.png]]
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Silver*: Complete the two questions below:
+- (a) Convert the following binary data into a 5 x 5 pixel image, where 0 represents black and 1 represents white: =11111 00100 00100 00100 00100=. 
+- (b) Convert the black and white image below into binary data, where 0 represents black and 1 represents white.
+[[file:img/rle_silver.png]]
+
+
+* Image Resolution
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Image Resolution- Also known as Image Size*
+- Resolution is the number of pixels (*Picture Elements*) or dots =(Dots per inch - dpi)= that make up an image.
+- The =greater= the number of pixels per inch ---> the =sharper= the
+  image will be, the greater the =quality= and the =larger the files size= of the image.
+- Pixel density is measured in pixels per inch =(PPI)= and is used to describe the resolution of a computer screen, camera or scanner.
+- An image on the Internet is typically =72PPI=, which is a low resolution. If you try to enlarge the image on the screen, the image
+  will become pixelated and blurry. See example below showing how an
+  image becomes blurred if you increase its size on the screen:
+[[file:img/raster_vs_vector_1.jpg]]
+#+BEGIN_SRC
+The size of an image file depends on the colour depth and dimensions. The size of an audio
+file depends on the sample rate and bit depth. The size of an image file and an audio file
+can be very large.
+#+END_SRC
+* Calculating the File Size
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The =file size= of an image depends on the =colour depth= and the
+  =number of pixels= in the image.
+ - =Size in bits= = Image Width x Image Height x Colour Depth
+ - =Size in bytes= = )Image Width x Image Height x Colour Depth)/8-bits
+#+BEGIN_SRC
+W ---> The width of an image, measured in pixels.
+H ---> The height of an image, measured in pixels.
+D ---> The colour depth; the number of bits used to store each pixel.
+To convert file size from *bytes* to *kilobytes*, divide the number of bytes by 1,000.
+To convert from *bytes* to *megabytes*, divide the number of bytes by 1,000,000.
+#+END_SRC
+
+#+BEGIN_HTML
+<br>
+#+END_HTML
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+*Example 1*
+- An image captured in =128 colours=, with a =size of 2,000 pixels by 1,000 pixels=, is saved on a memory stick. 
+- What is the size in bytes/MB of the file?
+#+BEGIN_SRC
+Size in bytes = (Width x Height x Colour Depth)/8-bits
+= (2,000 x 1,000 x 7)/8-bits
+= 1,750,000 bytes (1.75MB)
+#+END_SRC
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Gold*: Answer the following questions:
+- (a) Define the term =Pixel=?
+- (a) Calculate the =size in bytes= of a =black and white image= that is =96-pixels wide and 1,024 pixels high=.
+
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Platinum*: Calculate the files sizes of the following digital images:
+- (a) An image captured in =512 colours=, with a =size of 3,100 pixels by 2,000 pixels=. 
+- (b) An image captured with a colour depth of 24-bits, with a =size of 4220 pixels by 2641 pixels=.
+- (c) An image captured in =256 colours=, with a =size of 640 pixels by 480 pixels=.
