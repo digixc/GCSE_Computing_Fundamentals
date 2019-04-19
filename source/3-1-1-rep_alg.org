@@ -1,0 +1,411 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.1 Representing Algorithms
+#+AUTHOR: Alex Smith and Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+
+* Representing Algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Algorithms?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*What is an Algorithm?*
+#+BEGIN_SRC
+An Algorithm is a sequence of instructions or steps that can be followed by humans and
+computers to complete a specific task.
+#+END_SRC
+- An =Algorithm= is a series of steps that can be followed to complete
+  a specific tasks.
+- It is not the same thing as a computer program which is an
+  implementation of an algorithm!
+- We use algorithms as part of the =planning stage=, so that before we can write the program, we have to work out the steps needed to solve
+  a given problem.
+- A working algorithm will always finish and return an answer or perform a series of tasks that it was supposed to.
+- We can use algorithms to carry out everyday tasks, often without really thinking about them.
+- Here are some examples of algorithms that you may be familiar with:
+ - /Baking a Cake/,
+ - /Recipes/,
+ - /Directions/,
+ - /Knitting Patterns/,
+ - /Instruction manual for building something/.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Here's a Problem*
+- How can we create an algorithm to show the steps in getting ready
+  for school:
+ 1. Get out of bed.
+ 2. Take a shower and clean teeth.
+ 3. Get dressed.
+ 4. Turn on the kettle.
+ 5. Put bread in the toaster and turn it on.
+ 6. Wait for the kettle to boil and make tea.
+ 7. Wait for bread to toast, butter it and add Jam.
+ 8. Drink tea and eat toast.
+ 9. Gather school books and put in bag.
+ 10. Put on shoes and coat.
+ 11. Leave the house.
+#+BEGIN_SRC
+The Algorithm above shows the sequence of tasks. Different people will design different
+algorithms, as they will do things in a different order, meaning there can be many
+solutions to the same problem. Some of these tasks could be further devided into
+sub-tasks as they might be made up of smaller steps.
+For example "Cleaning your Teeth' could involve many different steps including applying
+toothpaste to the brush, checking if all teeth are clean and rinsing out your mouth etc...
+#+END_SRC
+*Steps to creating an Algorithm*
+1. An algorithm does not have to be written in code.
+2. The first steps to working out the design will be to =draw diagrams= or =list the steps= involved.
+3. Break down the problem and then structure a solution using standard
+   tools called =flowcharts= and =pseudocode=.
+4. Only when the solution has some structure can you effectively start
+   coding it.
+5. =Pseudocode= is the first step to actually coding your solution, as it outlines the programming contructs, but doesn't
+   rely on any specific language syntax.
+
+* Flowcharts and Pseudocode
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Flowcharts and Pseudocode
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In computing we either write programs or create computer systems to
+  =solve a problem=. The =problem= is the requirement or needs that
+  have to be met.
+- The solution could be a simple program or a complex
+  hardware/software real-world scenario, which needs to be broken down
+  into many problems or sub-problems.
+- Understanding how to solve the problem is important and we cannot
+  just start coding at line 1 and hope to get a working solution
+  quickly!
+- So the first step is to write an =algorithm=, as we learned before
+  this is a series of steps needed to solve the problem.
+- The following section will demonstrate how we can develop algorithms
+  using tools like, =flowcharts= and =pseudocode=.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Flowcharts*
+- Flowcharts can be used to represent algorithms visually, they use =diagrams= which use particular symbols to show the
+  =flow of data=, =processing= and =input/output= that takes place
+  within a program or task.
+- The image below shows that standard flowchart symbols that we use:
+[[file:img/Flowchartsymbols.png]]
+
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Pseudocode*
+- Pseudocode is a form of =Structured English= for writing an algorithm.
+- It uses programming-style constructs, but is not written in an
+  actual programming language.
+- You do not need to worry about the detailed syntax or be precise
+  about how the code will complete a particular task.
+- Writing in pseudocode helps you concentrate on the =logic (Process)=
+  and =efficiency= of your algorithm before you have to start thinking
+  about the actual code you will be using.
+- [[file:docs/AQA_Pseudo_Code.pdf][AQA Pseudocode Guide]]
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Example AQA Pseudocode*
+[[file:img/pseudo.png]]
+
+*Basic Programming Constructs*
+- There are =three= basic constructs that are used to write algorithms
+in pseudocode:
+ 1. *Sequence* - This is writing the steps down in the order that they
+    need to happen.
+ 2. *Selection* - This is the =IF= ... =THEN= ... =ELSE= constructs that
+    allow you to choose between options.
+ 3. *Iteration* - Finally there is iteration (loop) constructs that you will learn when you program - There are three; =FOR=
+    ... =UNTIL= ... =WHILE=.
+
+
+* Decomposition
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Decomposition
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+*Let's break it down!*
+#+BEGIN_SRC
+Decomposition is the process of breaking a problem down into smaller, simpler steps or
+stages so that problems can be solved much easier.
+#+END_SRC
+- It is one of the =four cornerstones= of *Computational Thinking*.
+*Advantages of using Decomposition*
+- Breaking a problem down into smaller =sub-problems= has a number of
+  advantages:
+ 1. =Smaller problems= are easier to solve than =larger problems=.
+ 2. Each =sub-problem= can be developed separately, making planning and working to a timescale easier.
+ 3. =Sub-problems= are easier to distribute amongst a team than one large problem.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Sub-Problem Example*
+- Think of decomposition as like being faced with a *15ft wall*. It's unrealistic to think you could just jump/climb to the top.
+
+- However, if we break that wall down into *15 1ft tall steps*, we can tackle one step at a time to make it to the top. 
+
+file:img/Decompositionexample.png
+
+*Checkmate*
+
+- Let's think of another example... /Chess!/.
+
+- If we were going to create a program for a chess game, it'd seem quite daunting at first.
+
+- However, if we *Decompose* the problem, we see the individual problems within a chess game.
+
+file:img/Chessgameexample1.png
+
+- Starting with just /"chess game"/ we can *Decompose* it into 5 problems which are easier to solve.
+
+- But this can be *Decomposed* even further...
+
+file:img/Chessgameexample2.png
+
+- This is now much easier to understand and can be used to create a *flowchart* or *pseudocode*.
+
+** Badge It: Rock...Paper...Scisssors!
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Silver*: Decompose the steps involved in the game of Rock, Paper and Scissors:
+
+- *Decompose* the game of Rock Paper Scissors
+
+- You can do this as a *numbered list* or *bullet pointed list*
+
+- /Upload to Algorithms - Decomposition: Silver on BourneToLearn/
+
+
+** Badge It: Rock...Paper...Scisssors!
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Gold*: Create a flowchart for the game:
+
+- Use your silver *decomposition* to create a *flowchart*
+
+[[file:img/Flowchartsymbols.png]]
+
+- /Make sure you use the correct symbols!/
+
+- /Upload to Algorithms - Decomposition: Gold on BourneToLearn/
+
+** Badge It: Rock...Paper...Scisssors!
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Platinum*: Using your algorithm, code a solution for the game:
+
+- Using your *numbered list* or *bullet pointed list* and *flowchart*,
+  write the solution in *Python*
+
+- /Upload to Algorithms - Decomposition: Platinum on BourneToLearn/
+
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/9048a87ff8" width="100%" 
+height="600" frameborder="0" marginwidth="0" marginheight="0" 
+allowfullscreen></iframe>
+#+END_HTML
+
+
+* Abstraction
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Abstraction
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Abstraction is the process of removing all unneccesary details from a problem, until
+all that remains is what is needed to solve the problem.
+#+END_SRC
+
+- It is also one of the =four cornerstones= of *Computational Thinking*.
+
+- We use this to make the problem *simplier* but also consequently *less realistic*.
+
+- Watch the video below and see if you can spot how *Abstraction* is used:
+
+#+BEGIN_HTML
+<iframe width="659" height="494" src="https://www.youtube.com/embed/Bg3pfUqdLp4" 
+frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+#+END_HTML
+
+** Badge It: Definition & Classroom Example
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Silver*: Complete the following abstraction task:
+
+- Perform *Abstraction* on this classroom.
+
+- Think about what details can be *Abstracted*.
+
+- Do we need the walls? chairs? keyboards? Think about the seating plan as an example.
+
+- Produce an *Abstracted* image of the classroom
+  (Paint/Word/PowerPoint).
+
+- /Upload to Algorithms - Abstraction: Silver on BourneToLearn/
+
+** Badge It: Abstraction Definition Guide
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Gold*: Complete the following:
+1. Write a definition of abstraction.
+
+2. Create a guide with a series of top tips for anyone looking to
+   abstract a problem.
+
+- /Upload to Algorithms - Abstraction: Gold on BourneToLearn/
+
+** Badge It: Abstraction Definition Guide
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Platinum*: Write an algorithm is Pseudocode for the following
+problem:
+- Weight Conversion Program that takes a user input as either KG or
+  Stones and then stores this value in a suitable variable.
+- Give the user a choice of converting either KG to Stones or Stones to KG.
+- Finally output the correct conversion value to the user.
+
+* Pattern Recognition
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Pattern Recognition
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Pattern Recognition is something we all do everyday. Most problems share patterns that have
+similarities or characteristics. It involves finding the similarities or patterns among
+small, decomposed problems that can help us solve more complex problems more efficiently.
+#+END_SRC
+
+- It is also one of the /four cornerstones/ of *Computational Thinking*
+
+- Without being told, we can find patterns in data.
+
+- For example, a set of numbers *2, 4, 8, 16, 32, 64*.
+
+- Can you guess what the next number will be?
+
+- ...
+
+- ...
+
+- ...
+
+- /Ping!/
+
+- That's right! *124*!
+
+- We can assume that the next number will be *124* because we *recognise* the *pattern* of /squaring 2/.
+
+- /This pattern also relates to/ *Binary*
+
+** Try It: Illusion Example
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+/Old or Young Woman?/
+
+- Can you see a *Pattern* in this image?
+ 
+- Some people see a *young* woman, some see an *old* woman
+[[file:img/patternrecog.png]]
+- This is to do with how our /brain/ automatically *recognises patterns* in pictures we look at
+

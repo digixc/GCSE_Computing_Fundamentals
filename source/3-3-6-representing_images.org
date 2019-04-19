@@ -148,7 +148,7 @@
 *Silver*: Complete the two questions below:
 - (a) Convert the following binary data into a 5 x 5 pixel image, where 0 represents black and 1 represents white: =11111 00100 00100 00100 00100=. 
 - (b) Convert the black and white image below into binary data, where 0 represents black and 1 represents white.
-[[file:img/rle_silver.png]]
+[[file:img/rle_silver.png]
 
 
 * Image Resolution
@@ -183,8 +183,8 @@ can be very large.
 :END:
 - The =file size= of an image depends on the =colour depth= and the
   =number of pixels= in the image.
- - =Size in bits= = Image Width x Image Height x Colour Depth
- - =Size in bytes= = )Image Width x Image Height x Colour Depth)/8-bits
+ - =Size in bits= = image width x image height x colour depth
+ - =Size in bytes= = (image width x image height x colour depth)/8-bits
 #+BEGIN_SRC
 W ---> The width of an image, measured in pixels.
 H ---> The height of an image, measured in pixels.
@@ -204,7 +204,7 @@ To convert from *bytes* to *megabytes*, divide the number of bytes by 1,000,000.
 - An image captured in =128 colours=, with a =size of 2,000 pixels by 1,000 pixels=, is saved on a memory stick. 
 - What is the size in bytes/MB of the file?
 #+BEGIN_SRC
-Size in bytes = (Width x Height x Colour Depth)/8-bits
+Size in bytes = (width x height x colour depth)/8-bits
 = (2,000 x 1,000 x 7)/8-bits
 = 1,750,000 bytes (1.75MB)
 #+END_SRC
@@ -215,7 +215,7 @@ Size in bytes = (Width x Height x Colour Depth)/8-bits
 :END:
 *Gold*: Answer the following questions:
 - (a) Define the term =Pixel=?
-- (a) Calculate the =size in bytes= of a =black and white image= that is =96-pixels wide and 1,024 pixels high=.
+- (b) Calculate the =size in bytes= of a =black and white image= that is =96-pixels wide and 1,024 pixels high=.
 
 
 ** Badge It
