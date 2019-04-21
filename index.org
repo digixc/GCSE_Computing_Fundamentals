@@ -3,11 +3,11 @@
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil 
 #+TITLE: AQA 8520 GCSE Computer Science
-#+AUTHOR: Steve Fone and Alex Smith
+#+AUTHOR: Stephen Fone
 
 #+BEGIN_HTML
 <div class=ribbon>
-<a href="https://github.com/stsb11/GCSE_Computing_Fundamentals">Fork me on GitHub</a>
+<a href="https://github.com/">Fork me on GitHub</a>
 </div>
 <div class=logo>
 <img src="pages/img/logo.png">
@@ -39,7 +39,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.1.2 Efficiency of Algorithms]]
+[[file:pages/3-1-2-eff_alg.html][3.1.2 Efficiency of Algorithms]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
