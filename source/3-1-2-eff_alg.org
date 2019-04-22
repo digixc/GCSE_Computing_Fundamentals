@@ -96,11 +96,11 @@ takes 30 instructions.
 - These two algorithms use =different methods= to swap items in a list:
  - *Method 1*: Temporary Variable:
 #+BEGIN_HTML
-<iframe src="https://trinket.io/embed/python/6e0f709608" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/ddcaa0c106" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 #+END_HTML
  - *Method 2*: In-line place swap:
 #+BEGIN_HTML
-<iframe src="https://trinket.io/embed/python/6e0f709608" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/9744a4bc37" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 #+END_HTML
 
 - As we  can see from the two algorithms above, the first method that
