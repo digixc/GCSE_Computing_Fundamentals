@@ -102,7 +102,6 @@ takes 30 instructions.
 #+BEGIN_HTML
 <iframe src="https://trinket.io/embed/python/9744a4bc37" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 #+END_HTML
-
 - As we  can see from the two algorithms above, the first method that
   uses a =temporary variable= to store a list item solves the sort
   problem using =9 lines of code=.
