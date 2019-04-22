@@ -1,0 +1,233 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.2 Efficiency of Algorithms
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+
+* Efficiency of Algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What is Efficiency?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Efficiency - A measure to compare two different algorithms that solve the same problem.
+A more efficient algorithm is a better choice. Efficiency can be measured in a number
+of different ways, but at GCSE level, you only need to worry about TIME efficiency.
+An algorithm that can be executed in 20 instructions, is more efficient than one that
+takes 30 instructions.
+#+END_SRC
+- The following trinket windows demonstrate the =efficiency= of an
+  algorithm to solve a simple sorting problem.
+- These two algorithms use =different methods= to swap items in a list:
+ - *Method 1*: Temporary Variable:
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/6e0f709608" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+ - *Method 2*: In-line place swap:
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/6e0f709608" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+- As we  can see from the two algorithms above, the first method that
+  uses a =temporary variable= to store a list item solves the sort
+  problem using =9 lines of code=.
+- The second method that uses the =In-line place swap= to switch the
+  list items only uses =7 lines of code=.
+- Not a huge difference, but when you are trying to solve a big
+  problem that involves hundreds of lines of code, being more
+  efficient with your code will:
+ 1. Reduce the number of lines of code,
+ 2. Be easier to debug,
+ 3. Will execute alot faster.
+#+BEGIN_SRC
+In the next two topics 3.1.3 and 3.1.4, we will look in more detail at comparing the
+efficiency of algorithms and explain how some algorithms are more efficient than
+others in solving the same problem.
+#+END_SRC
+
+* Interpreting Algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Trace Tables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In most cases with GCSE exam question, you may be provided with an
+  algorithm and asked what it does or what the output would be, so you
+  need to be able to read and understand algorithms.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*For Example*
+[[file:img/Trace_Code.png]]
+#+BEGIN_SRC
+Interpreting an algorithm works best when you do so, one line at a time, as a computer
+would. A TRACE TABLE can and should be used to keep track of variables that change
+throughout the algorithm.
+The variables in this program are called 'number' and 'result'.
+#+END_SRC
+
+*Trace Table*
+
+|  *loop*   | *number* | *result* |                                 *Explanation*                                        |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         1 |     3    |     1    |In lines '1' and '2', the variables are given these values.                           |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         2 |     3    |     1    |In line '3', the loop starts and will run as long as'number' is greater than '1'.     |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         3 |     3    |     3    |In line '4', 'result' is set to itself, multiplied by 'number'. '1' times '3' is '3'. |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         4 |     2    |     3    |Line '5' says that 'number' should have '1' subtracted from it.                       |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         5 |     2    |     3    |Line '6' is the end of the loop, so we go back to the start.                          |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         6 |     2    |     3    |'number' is still greater than '1', so the loop runs again.                           |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         7 |     2    |     6    |Line '4', 'result' is set to itself, multiplied by 'number'. '2' times '3' is '6'.    |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         8 |     1    |     6    |Line '5' says that 'number' should have '1' subtracted from it.                       |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|         9 |     1    |     6    |Line '6' is the end of the loop, so we go back to the start.                          |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|        10 |     1    |     6    |Loop will not run again, as 'number' is not greater than '1'. so we exit the loop.    |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+|        11 |     1    |     6    |'result' is displayed, which is currently '6'.                                        |
+|-----------+----------+----------+--------------------------------------------------------------------------------------|
+#+BEGIN_SRC
+Looking at an algorithm as a whole can be daunting, but follow it one line at a time makes
+it much simpler, no individual line is particularly complicated, and errors can be easily
+identified.
+#+END_SRC
+
+#+BEGIN_HTML
+<br>
+#+END_HTML
+** Try It: Efficiency of Algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- To summarise, many problems, both simple and complex, have more than
+  one solution.
+- Consider the problem of finding the sum of the inetgers from 1 to n.
+- Here are two different algorithms for solving the same problem:
+*Algorithm 1*
+[[file:img/Algor1.png]]
+*Algorithm 2*
+[[file:img/Algor2.png]]
+- The second algorithm is clearly much more efficient, as only one
+  instruction is executed.
+** Badge It: Definitions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Silver*: Answer the following questions:
+
+1. *Define* the term *Algorithm*?
+2. State *two* properties of an algorithm that could be considered
+   when describing it as *Efficient*?
+3. *Explain* how a *Trace Table* is used to test a computer program to
+   check for early errors?
+
+- /Upload to Algorithms - Efficiency: Silver on BourneToLearn/
+
+** Badge It: Efficiency
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Gold*: Using Algorithm examples 1 and 2 above, answer the following:
+1. How many instructions are executed using each of the algorithms if
+   *n* = 1000?
+
+- /Upload to Algorithms - Efficiency: Gold on BourneToLearn/
+
+** Badge It: Trace Tables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Platinum*: Create a *Trace Table* to show the outputs of the following
+algorithm:
+[[file:img/Trace_Tbl6.png]]
+- /Upload to Algorithms - Efficiency: Platinum on BourneToLearn/
+
+
+
+

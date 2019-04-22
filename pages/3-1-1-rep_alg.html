@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.1.1 Representing Algorithms</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.1.1 Representing Algorithms</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Representing Algorithms</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are Algorithms?</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Flowcharts and Pseudocode</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: Flowcharts and Pseudocode</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Decomposition</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: Decomposition</a></li>
+<li><a href="#sec-3-2">Badge It: Rock&#x2026;Paper&#x2026;Scisssors!</a></li>
+<li><a href="#sec-3-3">Badge It: Rock&#x2026;Paper&#x2026;Scisssors!</a></li>
+<li><a href="#sec-3-4">Badge It: Rock&#x2026;Paper&#x2026;Scisssors!</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Abstraction</a>
+<ul>
+<li><a href="#sec-4-1">Learn It: Abstraction</a></li>
+<li><a href="#sec-4-2">Badge It: Definition &amp; Classroom Example</a></li>
+<li><a href="#sec-4-3">Badge It: Abstraction Definition Guide</a></li>
+<li><a href="#sec-4-4">Badge It: Abstraction Definition Guide</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Pattern Recognition</a>
+<ul>
+<li><a href="#sec-5-1">Learn It: Pattern Recognition</a></li>
+<li><a href="#sec-5-2">Try It: Illusion Example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Representing Algorithms</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are Algorithms?</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<b>What is an Algorithm?</b>
+</p>
+<pre class="example">
+An Algorithm is a sequence of instructions or steps that can be followed by humans and
+computers to complete a specific task.
+</pre>
+<ul class="org-ul">
+<li>An <code>Algorithm</code> is a series of steps that can be followed to complete
+a specific tasks.
+</li>
+<li>It is not the same thing as a computer program which is an
+implementation of an algorithm!
+</li>
+<li>We use algorithms as part of the <code>planning stage</code>, so that before we can write the program, we have to work out the steps needed to solve
+a given problem.
+</li>
+<li>A working algorithm will always finish and return an answer or perform a series of tasks that it was supposed to.
+</li>
+<li>We can use algorithms to carry out everyday tasks, often without really thinking about them.
+</li>
+<li>Here are some examples of algorithms that you may be familiar with:
+<ul class="org-ul">
+<li><i>Baking a Cake</i>,
+</li>
+<li><i>Recipes</i>,
+</li>
+<li><i>Directions</i>,
+</li>
+<li><i>Knitting Patterns</i>,
+</li>
+<li><i>Instruction manual for building something</i>.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<p>
+<b>Here's a Problem</b>
+</p>
+<ul class="org-ul">
+<li>How can we create an algorithm to show the steps in getting ready
+for school:
+<ol class="org-ol">
+<li>Get out of bed.
+</li>
+<li>Take a shower and clean teeth.
+</li>
+<li>Get dressed.
+</li>
+<li>Turn on the kettle.
+</li>
+<li>Put bread in the toaster and turn it on.
+</li>
+<li>Wait for the kettle to boil and make tea.
+</li>
+<li>Wait for bread to toast, butter it and add Jam.
+</li>
+<li>Drink tea and eat toast.
+</li>
+<li>Gather school books and put in bag.
+</li>
+<li>Put on shoes and coat.
+</li>
+<li>Leave the house.
+</li>
+</ol>
+</li>
+</ul>
+<pre class="example">
+The Algorithm above shows the sequence of tasks. Different people will design different
+algorithms, as they will do things in a different order, meaning there can be many
+solutions to the same problem. Some of these tasks could be further devided into
+sub-tasks as they might be made up of smaller steps.
+For example "Cleaning your Teeth' could involve many different steps including applying
+toothpaste to the brush, checking if all teeth are clean and rinsing out your mouth etc...
+</pre>
+<p>
+<b>Steps to creating an Algorithm</b>
+</p>
+<ol class="org-ol">
+<li>An algorithm does not have to be written in code.
+</li>
+<li>The first steps to working out the design will be to <code>draw diagrams</code> or <code>list the steps</code> involved.
+</li>
+<li>Break down the problem and then structure a solution using standard
+tools called <code>flowcharts</code> and <code>pseudocode</code>.
+</li>
+<li>Only when the solution has some structure can you effectively start
+coding it.
+</li>
+<li><code>Pseudocode</code> is the first step to actually coding your solution, as it outlines the programming contructs, but doesn't
+rely on any specific language syntax.
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Flowcharts and Pseudocode</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: Flowcharts and Pseudocode</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>In computing we either write programs or create computer systems to
+<code>solve a problem</code>. The <code>problem</code> is the requirement or needs that
+have to be met.
+</li>
+<li>The solution could be a simple program or a complex
+hardware/software real-world scenario, which needs to be broken down
+into many problems or sub-problems.
+</li>
+<li>Understanding how to solve the problem is important and we cannot
+just start coding at line 1 and hope to get a working solution
+quickly!
+</li>
+<li>So the first step is to write an <code>algorithm</code>, as we learned before
+this is a series of steps needed to solve the problem.
+</li>
+<li>The following section will demonstrate how we can develop algorithms
+using tools like, <code>flowcharts</code> and <code>pseudocode</code>.
+</li>
+</ul>
+<br>
+<p>
+<b>Flowcharts</b>
+</p>
+<ul class="org-ul">
+<li>Flowcharts can be used to represent algorithms visually, they use <code>diagrams</code> which use particular symbols to show the
+<code>flow of data</code>, <code>processing</code> and <code>input/output</code> that takes place
+within a program or task.
+</li>
+<li>The image below shows that standard flowchart symbols that we use:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Flowchartsymbols.png" alt="Flowchartsymbols.png" />
+</p>
+</div>
+
+<br>
+<p>
+<b>Pseudocode</b>
+</p>
+<ul class="org-ul">
+<li>Pseudocode is a form of <code>Structured English</code> for writing an algorithm.
+</li>
+<li>It uses programming-style constructs, but is not written in an
+actual programming language.
+</li>
+<li>You do not need to worry about the detailed syntax or be precise
+about how the code will complete a particular task.
+</li>
+<li>Writing in pseudocode helps you concentrate on the <code>logic (Process)</code>
+and <code>efficiency</code> of your algorithm before you have to start thinking
+about the actual code you will be using.
+</li>
+<li><a href="docs/AQA_Pseudo_Code.pdf">AQA Pseudocode Guide</a>
+</li>
+</ul>
+<br>
+<p>
+<b>Example AQA Pseudocode</b>
+<img src="img/pseudo.png" alt="pseudo.png" />
+</p>
+
+<p>
+<b>Basic Programming Constructs</b>
+</p>
+<ul class="org-ul">
+<li>There are <code>three</code> basic constructs that are used to write algorithms
+</li>
+</ul>
+<p>
+in pseudocode:
+</p>
+<ol class="org-ol">
+<li><b>Sequence</b> - This is writing the steps down in the order that they
+need to happen.
+</li>
+<li><b>Selection</b> - This is the <code>IF</code> &#x2026; <code>THEN</code> &#x2026; <code>ELSE</code> constructs that
+allow you to choose between options.
+</li>
+<li><b>Iteration</b> - Finally there is iteration (loop) constructs that you will learn when you program - There are three; <code>FOR</code>
+    &#x2026; <code>UNTIL</code> &#x2026; <code>WHILE</code>.
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Decomposition</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: Decomposition</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>
+<b>Let's break it down!</b>
+</p>
+<pre class="example">
+Decomposition is the process of breaking a problem down into smaller, simpler steps or
+stages so that problems can be solved much easier.
+</pre>
+<ul class="org-ul">
+<li>It is one of the <code>four cornerstones</code> of <b>Computational Thinking</b>.
+</li>
+</ul>
+<p>
+<b>Advantages of using Decomposition</b>
+</p>
+<ul class="org-ul">
+<li>Breaking a problem down into smaller <code>sub-problems</code> has a number of
+advantages:
+<ol class="org-ol">
+<li><code>Smaller problems</code> are easier to solve than <code>larger problems</code>.
+</li>
+<li>Each <code>sub-problem</code> can be developed separately, making planning and working to a timescale easier.
+</li>
+<li><code>Sub-problems</code> are easier to distribute amongst a team than one large problem.
+</li>
+</ol>
+</li>
+</ul>
+<br>
+<p>
+<b>Sub-Problem Example</b>
+</p>
+<ul class="org-ul">
+<li>Think of decomposition as like being faced with a <b>15ft wall</b>. It's unrealistic to think you could just jump/climb to the top.
+</li>
+
+<li>However, if we break that wall down into <b>15 1ft tall steps</b>, we can tackle one step at a time to make it to the top. 
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/Decompositionexample.png" alt="Decompositionexample.png" />
+</p>
+</div>
+
+<p>
+<b>Checkmate</b>
+</p>
+
+<ul class="org-ul">
+<li>Let's think of another example&#x2026; <i>Chess!</i>.
+</li>
+
+<li>If we were going to create a program for a chess game, it'd seem quite daunting at first.
+</li>
+
+<li>However, if we <b>Decompose</b> the problem, we see the individual problems within a chess game.
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/Chessgameexample1.png" alt="Chessgameexample1.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Starting with just /"chess game"/ we can <b>Decompose</b> it into 5 problems which are easier to solve.
+</li>
+
+<li>But this can be <b>Decomposed</b> even further&#x2026;
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/Chessgameexample2.png" alt="Chessgameexample2.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>This is now much easier to understand and can be used to create a <b>flowchart</b> or <b>pseudocode</b>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3 badge">
+<h3 id="sec-3-2">Badge It: Rock&#x2026;Paper&#x2026;Scisssors!</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+<b>Silver</b>: Decompose the steps involved in the game of Rock, Paper and Scissors:
+</p>
+
+<ul class="org-ul">
+<li><b>Decompose</b> the game of Rock Paper Scissors
+</li>
+
+<li>You can do this as a <b>numbered list</b> or <b>bullet pointed list</b>
+</li>
+
+<li><i>Upload to Algorithms - Decomposition: Silver on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-3" class="outline-3 badge">
+<h3 id="sec-3-3">Badge It: Rock&#x2026;Paper&#x2026;Scisssors!</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+<b>Gold</b>: Create a flowchart for the game:
+</p>
+
+<ul class="org-ul">
+<li>Use your silver <b>decomposition</b> to create a <b>flowchart</b>
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/Flowchartsymbols.png" alt="Flowchartsymbols.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><i>Make sure you use the correct symbols!</i>
+</li>
+
+<li><i>Upload to Algorithms - Decomposition: Gold on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3-4" class="outline-3 badge">
+<h3 id="sec-3-4">Badge It: Rock&#x2026;Paper&#x2026;Scisssors!</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+<b>Platinum</b>: Using your algorithm, code a solution for the game:
+</p>
+
+<ul class="org-ul">
+<li>Using your <b>numbered list</b> or <b>bullet pointed list</b> and <b>flowchart</b>,
+write the solution in <b>Python</b>
+</li>
+
+<li><i>Upload to Algorithms - Decomposition: Platinum on BourneToLearn</i>
+</li>
+</ul>
+
+<iframe src="https://trinket.io/embed/python/9048a87ff8" width="100%" 
+height="600" frameborder="0" marginwidth="0" marginheight="0" 
+allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Abstraction</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It: Abstraction</h3>
+<div class="outline-text-3" id="text-4-1">
+<pre class="example">
+Abstraction is the process of removing all unneccesary details from a problem, until
+all that remains is what is needed to solve the problem.
+</pre>
+
+<ul class="org-ul">
+<li>It is also one of the <code>four cornerstones</code> of <b>Computational Thinking</b>.
+</li>
+
+<li>We use this to make the problem <b>simplier</b> but also consequently <b>less realistic</b>.
+</li>
+
+<li>Watch the video below and see if you can spot how <b>Abstraction</b> is used:
+</li>
+</ul>
+
+<iframe width="659" height="494" src="https://www.youtube.com/embed/Bg3pfUqdLp4" 
+frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3 badge">
+<h3 id="sec-4-2">Badge It: Definition &amp; Classroom Example</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<p>
+<b>Silver</b>: Complete the following abstraction task:
+</p>
+
+<ul class="org-ul">
+<li>Perform <b>Abstraction</b> on this classroom.
+</li>
+
+<li>Think about what details can be <b>Abstracted</b>.
+</li>
+
+<li>Do we need the walls? chairs? keyboards? Think about the seating plan as an example.
+</li>
+
+<li>Produce an <b>Abstracted</b> image of the classroom
+(Paint/Word/PowerPoint).
+</li>
+
+<li><i>Upload to Algorithms - Abstraction: Silver on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3 badge">
+<h3 id="sec-4-3">Badge It: Abstraction Definition Guide</h3>
+<div class="outline-text-3" id="text-4-3">
+
+<p>
+<b>Gold</b>: Complete the following:
+</p>
+<ol class="org-ol">
+<li>Write a definition of abstraction.
+</li>
+
+<li>Create a guide with a series of top tips for anyone looking to
+abstract a problem.
+</li>
+
+<li><i>Upload to Algorithms - Abstraction: Gold on BourneToLearn</i>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4" class="outline-3 badge">
+<h3 id="sec-4-4">Badge It: Abstraction Definition Guide</h3>
+<div class="outline-text-3" id="text-4-4">
+
+<p>
+<b>Platinum</b>: Write an algorithm is Pseudocode for the following
+problem:
+</p>
+<ul class="org-ul">
+<li>Weight Conversion Program that takes a user input as either KG or
+Stones and then stores this value in a suitable variable.
+</li>
+<li>Give the user a choice of converting either KG to Stones or Stones to KG.
+</li>
+<li>Finally output the correct conversion value to the user.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> Pattern Recognition</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 learn">
+<h3 id="sec-5-1">Learn It: Pattern Recognition</h3>
+<div class="outline-text-3" id="text-5-1">
+<pre class="example">
+Pattern Recognition is something we all do everyday. Most problems share patterns that have
+similarities or characteristics. It involves finding the similarities or patterns among
+small, decomposed problems that can help us solve more complex problems more efficiently.
+</pre>
+
+<ul class="org-ul">
+<li>It is also one of the <i>four cornerstones</i> of <b>Computational Thinking</b>
+</li>
+
+<li>Without being told, we can find patterns in data.
+</li>
+
+<li>For example, a set of numbers <b>2, 4, 8, 16, 32, 64</b>.
+</li>
+
+<li>Can you guess what the next number will be?
+</li>
+
+<li>&#x2026;
+</li>
+
+<li>&#x2026;
+</li>
+
+<li>&#x2026;
+</li>
+
+<li><i>Ping!</i>
+</li>
+
+<li>That's right! <b>124</b>!
+</li>
+
+<li>We can assume that the next number will be <b>124</b> because we <b>recognise</b> the <b>pattern</b> of <i>squaring 2</i>.
+</li>
+
+<li><i>This pattern also relates to</i> <b>Binary</b>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3 try">
+<h3 id="sec-5-2">Try It: Illusion Example</h3>
+<div class="outline-text-3" id="text-5-2">
+
+<p>
+<i>Old or Young Woman?</i>
+</p>
+
+<ul class="org-ul">
+<li>Can you see a <b>Pattern</b> in this image?
+</li>
+
+<li>Some people see a <b>young</b> woman, some see an <b>old</b> woman
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/patternrecog.png" alt="patternrecog.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>This is to do with how our <i>brain</i> automatically <b>recognises patterns</b> in pictures we look at
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Computational Thinking</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Alex Smith and Steve Fone" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<linhhhk href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Computational Thinking</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Decomposition</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: Decomposition</a></li>
+<li><a href="#sec-1-2">Badge It: Rock&#x2026;Paper&#x2026;Scisssors!</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Abstraction</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: Abstraction</a></li>
+<li><a href="#sec-2-2">Badge It: Definition &amp; Classroom Example</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Pattern Recognition</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: Pattern Recognition</a></li>
+<li><a href="#sec-3-2">Try It: Illusion Example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Decomposition</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: Decomposition</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>
+<i>Let's break it down!</i>
+</p>
+
+<ul class="org-ul">
+<li><b>Decomposition</b> is the process of breaking a problem down into smaller problems which can be solved much easier
+</li>
+
+<li>It is one of the <i>four cornerstones</i> of <b>Computational Thinking</b>
+</li>
+
+<li>Think of it like being faced with a <b>15ft wall</b>. It's unrealistic to think you could just jump/climb to the top.
+</li>
+
+<li>However, if we break that wall down into <b>15 1ft tall steps</b>, we can tackle one step at a time to make it to the top. 
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/Decompositionexample.png" alt="Decompositionexample.png" />
+</p>
+</div>
+
+<p>
+<i>Checkmate..</i>
+</p>
+
+<ul class="org-ul">
+<li>Let's think of another example&#x2026; <i>Chess!</i>.
+</li>
+
+<li>If we were going to create a program for a chess game, it'd seem quite daunting at first.
+</li>
+
+<li>However, if we <b>Decompose</b> the problem, we see the individual problems within a chess game.
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/Chessgameexample1.png" alt="Chessgameexample1.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Starting with just /"chess game"/ we can <b>Decompose</b> it into 5 problems which are easier to solve.
+</li>
+
+<li>But this can be <b>Decomposed</b> even further&#x2026;
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/Chessgameexample2.png" alt="Chessgameexample2.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>This is now much easier to understand and can be used to create a <b>flowchart</b> or <b>pseudocode</b>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 badge">
+<h3 id="sec-1-2">Badge It: Rock&#x2026;Paper&#x2026;Scisssors!</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Silver</b>
+<i>Upload to Algorithms - Decomposition: Silver on BourneToLearn</i>
+</p>
+
+<ul class="org-ul">
+<li><b>Decompose</b> the game of Rock Paper Scissors
+</li>
+
+<li>You can do this as a <b>numbered list</b> or <b>bullet pointed list</b>
+</li>
+</ul>
+
+<p>
+<b>Gold</b>
+<i>Upload to Algorithms - Decomposition: Gold on BourneToLearn</i>
+</p>
+
+<ul class="org-ul">
+<li>Use your silver <b>decomposition</b> to create a <b>flowchart</b>
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/Flowchartsymbols.png" alt="Flowchartsymbols.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><i>Make sure you use the correct symbols!</i>
+</li>
+</ul>
+
+<p>
+<b>Platinum</b>
+<i>Upload to Algorithms - Decomposition: Platinum on BourneToLearn</i>
+</p>
+
+<ul class="org-ul">
+<li>Using your <b>numbered list</b> or <b>bullet pointed list</b> and <b>flowchart</b>, write the solution in <b>Python</b>
+</li>
+</ul>
+
+<iframe src="https://trinket.io/embed/python/9048a87ff8" width="100%" 
+height="600" frameborder="0" marginwidth="0" marginheight="0" 
+allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Abstraction</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: Abstraction</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul class="org-ul">
+<li><b>Abstraction</b> is the process of removing unneccesary details until all that remains is
+what is needed to solve the problem
+</li>
+
+<li>It is also one of the <i>four cornerstones</i> of <b>Computational Thinking</b>
+</li>
+
+<li>We use this to make the problem <b>more simple</b> but also consiquently <b>less realistic</b>
+</li>
+
+<li>Watch the video below and see if you can spot how <b>Abstraction</b> is used
+</li>
+</ul>
+
+<iframe width="659" height="494" src="https://www.youtube.com/embed/Bg3pfUqdLp4" 
+frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 badge">
+<h3 id="sec-2-2">Badge It: Definition &amp; Classroom Example</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>
+<i>Task - Gold</i>
+</p>
+
+<ul class="org-ul">
+<li>Perform <b>Abstraction</b> on this classroom
+</li>
+
+<li>Think about what details can be <b>Abstracted</b>
+</li>
+
+<li>Do we need the walls? chairs? keyboards? Think about the seating plan as an example
+</li>
+
+<li>Produce an <b>Abstracted</b> image of the classroom (Paint/Word/PowerPoint)
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Pattern Recognition</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: Pattern Recognition</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul class="org-ul">
+<li><b>Pattern Recognition</b> is something we all do everyday.
+</li>
+
+<li>It is also one of the <i>four cornerstones</i> of <b>Computational Thinking</b>
+</li>
+
+<li>Without being told, we can find patterns in data.
+</li>
+
+<li>For example, a set of numbers <b>2, 4, 8, 16, 32, 64</b>.
+</li>
+
+<li>Can you guess what the next number will be?
+</li>
+
+<li>&#x2026;
+</li>
+
+<li>&#x2026;
+</li>
+
+<li>&#x2026;
+</li>
+
+<li><i>Ping!</i>
+</li>
+
+<li>That's right! <b>124</b>!
+</li>
+
+<li>We can assume that the next number will be <b>124</b> because we <b>recognise</b> the <b>pattern</b> of <i>squaring 2</i>.
+</li>
+
+<li><i>This pattern also relates to</i> <b>Binary</b>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3 try">
+<h3 id="sec-3-2">Try It: Illusion Example</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>
+<i>Old or Young Woman?</i>
+</p>
+
+<ul class="org-ul">
+<li>Can you see a <b>Pattern</b> in this image?
+</li>
+
+<li>Some people see a <b>young</b> woman, some see an <b>old</b> woman
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/patternrecog.png" alt="patternrecog.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>This is to do with how our <i>brain</i> automatically <b>recognises patterns</b> in pictures we look at
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Alex Smith and Steve Fone</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
