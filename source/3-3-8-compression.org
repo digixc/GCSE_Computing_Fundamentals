@@ -85,12 +85,12 @@
 :END:
 - Files, especially graphic and audio files, can become very
   large. Here are some intersting facts:
-  - On Facebook more than 350 million images are uploaded each day. On
-    Snapchat 8,796 images are uploaded per second. It has been
-    estimated that over 3.2 billion images are uploaded to social media sites each day!
+  - On Facebook more than =350 million images are uploaded each day=. On
+    =Snapchat 8,796 images= are uploaded =per second=. It has been
+    estimated that =over 3.2 billion images= are =uploaded= to social media sites =each day!=
   - Every day millions of audio and video files are being downloaded.
 - When data is transmitted across the Internet, it will go through
-  many different physical links bewteen routers.
+  many different physical links between routers.
 - The connection from a computer or a LAN into the Internet is likely
   to be the slowest part of this route, as you probably know from
   experience.
