@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.1.3 Searching Algorithms</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.1.3 Searching Algorithms</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Searching Algorithms</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are Searching Algorithms?</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Linear Searching Algorithms</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What is a Linear Search?</a></li>
+<li><a href="#sec-2-2">Badge It: Linear Search Algorithm</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Binary Searching Algorithms</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: What is a Binary Search?</a></li>
+<li><a href="#sec-3-2">Badge It: Binary Search Algorithm</a></li>
+<li><a href="#sec-3-3">Badge It: Trace Tables</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Comparing Linear and Binary Searching Algorithms</a>
+<ul>
+<li><a href="#sec-4-1">Learn It: Pro's and Con's of each search?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Searching Algorithms</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are Searching Algorithms?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Searching Algorithms are used to determine whether a specific piece of data exists within
+a data structure.
+If it does exist, a search algorithm will locate it and retrieve the information.
+</pre>
+<ul class="org-ul">
+<li>Thousands of software applications, including <code>databases</code> or <code>commercial search engines</code> such as <code>Google</code>, depend on the ability to <code>quickly search</code> through huge amounts of data to <code>find a particular item</code>.
+</li>
+<li>There are many different types of searching algorithms. We will look at <code>two well-known algorithms</code> for searching and sorting: <code>Linear and Binary search algorithms</code>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Searching_Algorithms.png" alt="Searching_Algorithms.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Searching and Sorting Algorithms are used in lots of programs to
+make <code>data easier</code> to <code>access</code> and <code>understand</code>.
+</li>
+<li>Computer game leader boards are sorted from the <i>highest</i> score to the
+<i>lowest</i> score to make it easy to find the winner and your position
+in the list.
+</li>
+<li>Search engines like Google use <code>special algorithms</code> to help us find
+the <code>most useful search results</code>.
+</li>
+<li><code>Online shopping websites</code> order their products by type, so that you
+can click straight to the department that you're looking for, rather
+than searching through the whole site.
+</li>
+</ul>
+
+<pre class="example">
+Question - Can you think of other online companies that store huge amounts of data,
+which often requires you to search through so that you can find a particular item quickly?
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Linear Searching Algorithms</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What is a Linear Search?</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+Linear Search - A search algorithm that begins at one end of a data structure, checking each
+data item in turn until the required item is found, or the end of the structure is reached.
+</pre>
+<ul class="org-ul">
+<li><code>When the data is unsorted</code>, the only sensible option when searching
+for a particular item is to use a <code>Linear Search</code>.
+</li>
+<li>Linear Searches <code>start</code> at the <code>beginning</code> and <code>sequentially</code> look at
+<code>each item</code> in a list <code>until you find the one</code> you are <code>looking for</code> or
+until <code>all</code> of the <code>items</code> have been <code>searched</code>.
+</li>
+<li>You could be lucky and quickly find the item at the beginning of the
+list, or it could be at the end.
+</li>
+<li>Linear Searches are <code>relatively simple</code>, but they are <code>inefficient</code> when
+searching through <code>long lists</code>.
+</li>
+</ul>
+<br>
+<p>
+<b>Linear and Binary Searching Algorithms Explained</b>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JQhciTuD3E8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>
+<b>Linear Search Example</b>
+<img src="img/linear_search.gif" alt="linear_search.gif" />
+<b>Here is an algorithm for a Linear Search</b>
+</p>
+
+
+<div class="figure">
+<p><img src="img/Linear_Algor.png" alt="Linear_Algor.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2-2" class="outline-3 badge">
+<h3 id="sec-2-2">Badge It: Linear Search Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>
+<b>Silver</b>: Complete the Linear Search Algorithm shown in the Trinket
+window below:
+</p>
+
+<iframe src="https://trinket.io/embed/python/fafddae417" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<ul class="org-ul">
+<li><i>Upload to Algorithms - Searching Algorithms: Silver on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Binary Searching Algorithms</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: What is a Binary Search?</h3>
+<div class="outline-text-3" id="text-3-1">
+<pre class="example">
+Binary Search - A search algorithm that begins in the middle of a data structure,
+eliminating half of the remaining data with each pass.
+Binary searches are only appropriate when the data to be search is sorted.
+</pre>
+<ul class="org-ul">
+<li><code>When the data is sorted</code>,(<i>i.e. in numerical or alphabetical order</i>), you can use a much more <code>efficient</code> algorithm called a <code>Binary Search</code>. 
+</li>
+<li>It works by <code>repeatedly dividing in half</code> the portion of the data list that could contain the required data item. 
+</li>
+<li>This is <code>continued</code> until there is <code>only one item in the list</code> you are examining.
+</li>
+<li>Binary Searches are quicker because, at each stage, half of the
+remaining data is disregarded.
+</li>
+<li>If a list of <code>one million elements</code> were to be searched using a binary
+search, it would take no more than <code>20 iterations</code> to find a
+particular piece of data or discover that the data is not in the
+list.
+</li>
+<li>A list of <code>one billion items</code> would only require <code>30 iterations</code>.
+</li>
+<li>A <code>binary search</code> is <code>more efficient</code> than a <code>linear search</code> since it
+will, on average, find a search items more quickly than a linear
+search. However, binary searches <b>do not</b> work on <code>unsorted data</code>, so
+efficiency is not the only consideration.
+</li>
+</ul>
+<br>
+
+<p>
+<b>Binary Search Example</b>
+<img src="img/binary_search.gif" alt="binary_search.gif" />
+</p>
+
+<p>
+<b>Example 1 - Uneven List Binary Search</b>
+</p>
+<ul class="org-ul">
+<li>Consider the following ordered list of 15 items. We want to find out
+whether the number <code>51</code> is in the list.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Binary_Step1.png" alt="Binary_Step1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Step 1:</b> The middle term is 44; therefore, we can discard all data
+items less than or equal to 44.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Binary_Step2.png" alt="Binary_Step2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Step 2:</b> The middle term is 62, so we can discard all data items
+greater than or equal to 62.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Binary_Step3.png" alt="Binary_Step3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Step 3:</b> The middle term is 51 – So we have found the data item.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>Note:</b> That if there are an even number of items in the list, for
+example 8 items, the fourth, not the fifth item is taken to be the
+middle item.
+</li>
+</ul>
+<br>
+<p>
+<b>Example 2 - Even List Binary Search</b>
+</p>
+<ul class="org-ul">
+<li>Consider the following list of 10 items. We want to find out whether the number <code>50</code> is in the list of items.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Bin_Even1.png" alt="Bin_Even1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Step 1:</b> The fifth number in the list is taken to be the middle number - we can therefore discard all data items less than or equal to 37.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Bin_Even2.png" alt="Bin_Even2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Step 2:</b> The third number in the list is now the middle number - we can therefore discard all data items less than or equal to 43.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Bin_Even3.png" alt="Bin_Even3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Step 3:</b> As there are now only two numbers left in the list, when split 48 becomes the middle number. Once we discard 48 we are left with the number <code>50</code>.
+</li>
+</ul>
+<pre class="example">
+In an even list, the number left of the central split is taken to be the middle number.
+</pre>
+<br>
+<p>
+<b>Here is an algorithm for a Binary Search</b>
+</p>
+
+
+<div class="figure">
+<p><img src="img/Binary_Algor.png" alt="Binary_Algor.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-2" class="outline-3 badge">
+<h3 id="sec-3-2">Badge It: Binary Search Algorithm</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>
+<b>Gold</b>: Look at the Binary Search Algorithm shown in the Trinket
+below:
+</p>
+<ul class="org-ul">
+<li>Change the binary list to fifteen integer numbers and ask the user
+to input a value to search for.
+</li>
+<li>Output a message to say that the value is found or not in the list.
+</li>
+</ul>
+
+<iframe src="https://trinket.io/embed/python/e5ead1b453" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<ul class="org-ul">
+<li><i>Upload to Algorithms - Searching Algorithms: Gold on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-3" class="outline-3 badge">
+<h3 id="sec-3-3">Badge It: Trace Tables</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<p>
+<b>Platinum</b>: Answer the following questions:
+</p>
+<ol class="org-ol">
+<li>A programmer wants to implement a search algorithm to be used with
+small lists [4,6,8,12,15,16,21].
+<ul class="org-ul">
+<li>Explain how a linear search would search for the integer '15'.
+</li>
+</ul>
+</li>
+<li>What property of this list [4,6,8,12,15,21], means the programmer
+could use a binary search algorithm?
+</li>
+<li>The programmer knows that a binary search algorithm is more
+efficient than a linear search algorithm. Explain why the
+efficiency of these two algorithms in not an important factor when
+choosing what algorithm to implement for the list shown above?
+</li>
+
+<li><i>Upload to Algorithms - Efficiency: Platinum on BourneToLearn</i>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Comparing Linear and Binary Searching Algorithms</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It: Pro's and Con's of each search?</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+<b>Linear Vs Binary Search Algorithms</b>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>Linear Search</b></th>
+<th scope="col" class="left"><b>Binary Search</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">+ Works with unsorted lists</td>
+<td class="left">+ Far more efficient</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">- Slower than a binary search</td>
+<td class="left">- Will not work on unsorted lists</td>
+</tr>
+</tbody>
+</table>
+
+<pre class="example">
+The linear search algorithm is fine for small lists, but very inefficient for large lists.
+The average time taken to search a thoussand items would be 100 times longer than the time
+taken to search 10 items.
+If you had to search a database of 10 million car registrations to find who owns a certain
+car, it would take a very long time.
+</pre>
+<pre class="example">
+In contrast, the binary search algorithm is extremely efficient. Each time an item is
+examined, if it is not the correct item, half of the list is discarded.
+In a list of 10 million items, only 24 items would need to be examined. That's because
+10,000,000 is less than 2^24.
+In general, if there are fewer than 2^n items (but at least 2^n-1), the maximum number
+of items to be examined is n.
+</pre>
+<pre class="example">
+A key benefit of the linear search is that it can be done on an unsorted list - The items
+do not have to be in sequence.
+If items are frequently added or deleted from a list, this would save the extra work
+needed to keep the list in sequence in order to perform a binary search.
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
