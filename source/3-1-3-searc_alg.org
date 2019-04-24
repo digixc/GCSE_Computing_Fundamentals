@@ -1,0 +1,310 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.3 Searching Algorithms
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+
+* Searching Algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Searching Algorithms?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Searching Algorithms are used to determine whether a specific piece of data exists within
+a data structure.
+If it does exist, a search algorithm will locate it and retrieve the information.
+#+END_SRC
+- Thousands of software applications, including =databases= or =commercial search engines= such as =Google=, depend on the ability to =quickly search= through huge amounts of data to =find a particular item=.
+- There are many different types of searching algorithms. We will look at =two well-known algorithms= for searching and sorting: =Linear and Binary search algorithms=.
+[[file:img/Searching_Algorithms.png]]
+
+- Searching and Sorting Algorithms are used in lots of programs to
+  make =data easier= to =access= and =understand=.
+- Computer game leader boards are sorted from the /highest/ score to the
+  /lowest/ score to make it easy to find the winner and your position
+  in the list.
+- Search engines like Google use =special algorithms= to help us find
+  the =most useful search results=.
+- =Online shopping websites= order their products by type, so that you
+  can click straight to the department that you're looking for, rather
+  than searching through the whole site.
+ 
+#+BEGIN_SRC
+Question - Can you think of other online companies that store huge amounts of data,
+which often requires you to search through so that you can find a particular item quickly?
+#+END_SRC
+
+* Linear Searching Algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What is a Linear Search?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Linear Search - A search algorithm that begins at one end of a data structure, checking each
+data item in turn until the required item is found, or the end of the structure is reached.
+#+END_SRC
+- =When the data is unsorted=, the only sensible option when searching
+  for a particular item is to use a =Linear Search=.
+- Linear Searches =start= at the =beginning= and =sequentially= look at
+  =each item= in a list =until you find the one= you are =looking for= or
+  until =all= of the =items= have been =searched=.
+- You could be lucky and quickly find the item at the beginning of the
+  list, or it could be at the end.
+- Linear Searches are =relatively simple=, but they are =inefficient= when
+  searching through =long lists=.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Linear and Binary Searching Algorithms Explained*
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JQhciTuD3E8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+
+*Linear Search Example*
+[[file:img/linear_search.gif]]
+*Here is an algorithm for a Linear Search*
+
+[[file:img/Linear_Algor.png]]
+
+
+** Badge It: Linear Search Algorithm
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Silver*: Complete the Linear Search Algorithm shown in the Trinket
+window below:
+
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/fafddae417" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+- /Upload to Algorithms - Searching Algorithms: Silver on BourneToLearn/
+
+* Binary Searching Algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What is a Binary Search?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Binary Search - A search algorithm that begins in the middle of a data structure,
+eliminating half of the remaining data with each pass.
+Binary searches are only appropriate when the data to be search is sorted.
+#+END_SRC
+- =When the data is sorted=,(/i.e. in numerical or alphabetical order/), you can use a much more =efficient= algorithm called a =Binary Search=. 
+- It works by =repeatedly dividing in half= the portion of the data list that could contain the required data item. 
+- This is =continued= until there is =only one item in the list= you are examining.
+- Binary Searches are quicker because, at each stage, half of the
+  remaining data is disregarded.
+- If a list of =one million elements= were to be searched using a binary
+  search, it would take no more than =20 iterations= to find a
+  particular piece of data or discover that the data is not in the
+  list.
+- A list of =one billion items= would only require =30 iterations=.
+- A =binary search= is =more efficient= than a =linear search= since it
+  will, on average, find a search items more quickly than a linear
+  search. However, binary searches *do not* work on =unsorted data=, so
+  efficiency is not the only consideration.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+
+*Binary Search Example*
+[[file:img/binary_search.gif]]
+
+*Example 1 - Uneven List Binary Search*
+- Consider the following ordered list of 15 items. We want to find out
+  whether the number =51= is in the list.
+[[file:img/Binary_Step1.png]]
+- *Step 1:* The middle term is 44; therefore, we can discard all data
+  items less than or equal to 44.
+[[file:img/Binary_Step2.png]]
+- *Step 2:* The middle term is 62, so we can discard all data items
+  greater than or equal to 62.
+[[file:img/Binary_Step3.png]]
+- *Step 3:* The middle term is 51 – So we have found the data item.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *Note:* That if there are an even number of items in the list, for
+  example 8 items, the fourth, not the fifth item is taken to be the
+  middle item.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Example 2 - Even List Binary Search*
+- Consider the following list of 10 items. We want to find out whether the number =50= is in the list of items.
+[[file:img/Bin_Even1.png]]
+- *Step 1:* The fifth number in the list is taken to be the middle number - we can therefore discard all data items less than or equal to 37.
+[[file:img/Bin_Even2.png]]
+- *Step 2:* The third number in the list is now the middle number - we can therefore discard all data items less than or equal to 43.
+[[file:img/Bin_Even3.png]]
+- *Step 3:* As there are now only two numbers left in the list, when split 48 becomes the middle number. Once we discard 48 we are left with the number =50=.
+#+BEGIN_SRC
+In an even list, the number left of the central split is taken to be the middle number.
+#+END_SRC
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Here is an algorithm for a Binary Search*
+
+[[file:img/Binary_Algor.png]]
+
+
+** Badge It: Binary Search Algorithm
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Gold*: Look at the Binary Search Algorithm shown in the Trinket
+below:
+- Change the binary list to fifteen integer numbers and ask the user
+  to input a value to search for.
+- Output a message to say that the value is found or not in the list.
+
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/e5ead1b453" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+- /Upload to Algorithms - Searching Algorithms: Gold on BourneToLearn/
+
+
+** Badge It: Trace Tables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Platinum*: Answer the following questions:
+1. A programmer wants to implement a search algorithm to be used with
+   small lists [4,6,8,12,15,16,21].
+ - Explain how a linear search would search for the integer '15'.
+2. What property of this list [4,6,8,12,15,21], means the programmer
+   could use a binary search algorithm?
+3. The programmer knows that a binary search algorithm is more
+   efficient than a linear search algorithm. Explain why the
+   efficiency of these two algorithms in not an important factor when
+   choosing what algorithm to implement for the list shown above?
+
+- /Upload to Algorithms - Efficiency: Platinum on BourneToLearn/
+
+* Comparing Linear and Binary Searching Algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Pro's and Con's of each search?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Linear Vs Binary Search Algorithms*
+|          *Linear Search*         |          *Binary Search*          |
+|----------------------------------+-----------------------------------|
+| + Works with unsorted lists      | + Far more efficient              |
+|----------------------------------+-----------------------------------|
+| - Slower than a binary search    | - Will not work on unsorted lists |
+|----------------------------------+-----------------------------------|
+
+#+BEGIN_SRC
+The linear search algorithm is fine for small lists, but very inefficient for large lists.
+The average time taken to search a thoussand items would be 100 times longer than the time
+taken to search 10 items.
+If you had to search a database of 10 million car registrations to find who owns a certain
+car, it would take a very long time.
+#+END_SRC
+#+BEGIN_SRC
+In contrast, the binary search algorithm is extremely efficient. Each time an item is
+examined, if it is not the correct item, half of the list is discarded.
+In a list of 10 million items, only 24 items would need to be examined. That's because
+10,000,000 is less than 2^24.
+In general, if there are fewer than 2^n items (but at least 2^n-1), the maximum number
+of items to be examined is n.
+#+END_SRC
+#+BEGIN_SRC
+A key benefit of the linear search is that it can be done on an unsorted list - The items
+do not have to be in sequence.
+If items are frequently added or deleted from a list, this would save the extra work
+needed to keep the list in sequence in order to perform a binary search.
+#+END_SRC
+
+
+
