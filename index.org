@@ -47,7 +47,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.1.4 Sorting Algorithms]]
+[[file:pages/3-1-4-sort_alg.html][3.1.4 Sorting Algorithms]]
 #+BEGIN_HTML
 </details>
 #+END_HTML
