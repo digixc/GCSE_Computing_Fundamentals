@@ -232,42 +232,6 @@ In an even list, the number left of the central split is taken to be the middle 
 [[file:img/Binary_Algor.png]]
 
 
-** Badge It: Binary Search Algorithm
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: badge
-:END:
-
-*Gold*: Look at the Binary Search Algorithm shown in the Trinket
-below:
-- Change the binary list to fifteen integer numbers and ask the user
-  to input a value to search for.
-- Output a message to say that the value is found or not in the list.
-
-#+BEGIN_HTML
-<iframe src="https://trinket.io/embed/python/e5ead1b453" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-#+END_HTML
-
-- /Upload to Algorithms - Searching Algorithms: Gold on BourneToLearn/
-
-
-** Badge It: Trace Tables
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: badge
-:END:
-
-*Platinum*: Answer the following questions:
-1. A programmer wants to implement a search algorithm to be used with
-   small lists [4,6,8,12,15,16,21].
- - Explain how a linear search would search for the integer '15'.
-2. What property of this list [4,6,8,12,15,21], means the programmer
-   could use a binary search algorithm?
-3. The programmer knows that a binary search algorithm is more
-   efficient than a linear search algorithm. Explain why the
-   efficiency of these two algorithms in not an important factor when
-   choosing what algorithm to implement for the list shown above?
-
-- /Upload to Algorithms - Efficiency: Platinum on BourneToLearn/
-
 * Comparing Linear and Binary Searching Algorithms
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
@@ -305,6 +269,41 @@ do not have to be in sequence.
 If items are frequently added or deleted from a list, this would save the extra work
 needed to keep the list in sequence in order to perform a binary search.
 #+END_SRC
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Gold*: Answer the following questions:
+1. A programmer wants to implement a search algorithm to be used with
+   small lists [4,6,8,12,15,16,21].
+ - Explain how a linear search would search for the integer '15'.
+2. What property of this list [4,6,8,12,15,21], means the programmer
+   could use a binary search algorithm?
+3. The programmer knows that a binary search algorithm is more
+   efficient than a linear search algorithm. Explain why the
+   efficiency of these two algorithms in not an important factor when
+   choosing what algorithm to implement for the list shown above?
+
+- /Upload to Algorithms - Efficiency: Gold on BourneToLearn/
+
+** Badge It: Binary Search Algorithm
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+*Platinum*: Look at the Pseudocode for a Binary Search shown in the Trinket
+below:
+1. Using the Pseudocode, create a Python program function.
+2. Add a binary list of fifteen integer numbers and ask the user to input a value to search for.
+3. Output a message to say that the value is found or not in the list.
+
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/ee8f475b62" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+- /Upload to Algorithms - Searching Algorithms: Platinum on BourneToLearn/
 
 
 
