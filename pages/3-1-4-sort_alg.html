@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.1.4 Sorting Algorithms</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.1.4 Sorting Algorithms</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Sorting Algorithms</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are Sorting Algorithms?</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Bubble Sort Algorithm</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What is a Bubble Sort?</a></li>
+<li><a href="#sec-2-2">Badge It: Bubble Sort Algorithm</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Merge Sort Algorithm</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: What is a Merge Sort?</a></li>
+<li><a href="#sec-3-2">Badge It: Exam Questions</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Comparing Bubble and Merge Sorting Algorithms</a>
+<ul>
+<li><a href="#sec-4-1">Learn It: Pro's and Con's of each sort?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Sorting Algorithms</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are Sorting Algorithms?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Sorting Algorithms are used to arrange data within a list into a defined order.
+Whether that be numerical order, alphabetical order or chronological order,
+ascending (A-Z) or descending (Z-A).
+</pre>
+<ul class="org-ul">
+<li>When sorting data items it is essential to <code>compare</code> them with each
+other, so that they can be <code>put</code> into the <code>correct order</code>.
+</li>
+<li>There may be millions of items of data to compare, so sorting
+algorithms must carry out the task as efficiently as possible, so
+as not to cause a <code>bottleneck</code> (<i>Another part of the program may not
+be able to run until the sorting has been carried out</i>).
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/sorting1.png" alt="sorting1.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Searching and Sorting Algorithms are used in lots of programs to
+make <code>data easier</code> to <code>access</code> and <code>understand</code>.
+</li>
+<li>Computer game leader boards are <code>sorted</code> from the <i>highest</i> score to the
+<i>lowest</i> score to make it easy to find the winner and your position
+in the list.
+</li>
+</ul>
+
+<pre class="example">
+Key Term - Compare: Assess how items of data are similar or different to each
+other, to help decide which order they should go in.
+</pre>
+<pre class="example">
+Key Term - Adjacent Items: Items of data that are next to each other.
+</pre>
+
+<ul class="org-ul">
+<li>In the last topic we learned about searching algorithms and how they
+are used to search for data.
+</li>
+<li>In this topic we will look at sorting algorithms, there are many
+different sorting algorithms, but we will only be looking at two of
+them:
+<ol class="org-ol">
+<li>Bubble Sort.
+</li>
+<li>Merge Sort.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Bubble Sort Algorithm</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What is a Bubble Sort?</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+Bubble Sort - A bubble sort works by repeatedly going through the list to be
+sorted comparing each pair of adjacent elements.
+If the elements are in the wrong order they are swapped, if not, move on to
+the next pair.
+</pre>
+<p>
+<img src="img/bubble_sort_ani.gif" alt="bubble_sort_ani.gif" />
+<b>Bubble Sort Explained</b>
+<img src="img/bubble_sort_pass.png" alt="bubble_sort_pass.png" />
+</p>
+<ul class="org-ul">
+<li><b>Step 1:</b> Compare the first two items in the list. If they are in
+the correct order, leave them. If items are not in the correct
+order, swap them. In the example above '5' is larger than '1', so
+they need to be swapped.
+</li>
+<li><b>Step 2:</b> Repeat the step 1 process for items '2' and '3' in the list. In the
+example above '5' is smaller than '6', so they do not need to be
+swapped.
+</li>
+<li><b>Step 3:</b> Continue applying the step 1 process to the rest of the
+items in the list.
+</li>
+<li>Once one pass is completed, repeat the process again and again until
+no swaps are required and all the numbers are in the correct order.
+</li>
+<li>A Bubble Sort is likely to require muliple passes through the list,
+so it can be inefficient and unsuitable for larger files.
+</li>
+</ul>
+<br>
+<p>
+<b>Bubble Sort Algorithm Video</b>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V-XP4gqxFZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>
+<b>Algorithm for a Bubble Sort</b>
+</p>
+<ul class="org-ul">
+<li>In this algorithm, <code>number</code> is in a <code>list</code> holding nine numbers.
+</li>
+<li>Each <code>element</code> of the list is referred to using an <code>index</code> in square
+brackets.
+</li>
+<li>In the list below, the first element of the list is '6' and is at
+<code>index position [0]</code>, and the last element of the list is '19' and
+is at <code>index position [8]</code>.
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/bubble_sort_algor.png" alt="bubble_sort_algor.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We use the flag variable to set <i>False</i> at the beginning of each
+pass. As soon as a swap is made, the flag is set to <i>True</i>.
+</li>
+<li>If a pass is completed without any swaps being made, the flag
+remains <i>Flase</i> and the <i>WHILE</i> loop ends. The sort is complete.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 badge">
+<h3 id="sec-2-2">Badge It: Bubble Sort Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>
+<b>Silver</b>: Complete the Bubble Sort Algorithm shown in the Trinket
+window below:
+</p>
+
+<iframe src="https://trinket.io/embed/python/6b4ccdc6e4" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<ul class="org-ul">
+<li><i>Upload to Algorithms - Sorting Algorithms: Silver on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Merge Sort Algorithm</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: What is a Merge Sort?</h3>
+<div class="outline-text-3" id="text-3-1">
+<pre class="example">
+Merge Sort - Is a 'Divide and Conquer' algorithm that splits a list into decrete
+elements and then merges the elements back together in order.
+A merge sort is quicker and more efficient than a bubble sort when using longer
+lists. However, it uses more memory and can take longer to sort shorter lists.
+</pre>
+<p>
+<img src="img/merge_sort_ani.gif" alt="merge_sort_ani.gif" />
+<b>Merge Sort Explained</b>
+<img src="img/Merge_sort2.png" alt="Merge_sort2.png" />
+</p>
+<ul class="org-ul">
+<li><b>Step 1:</b> Split the list in half to create two subsets.
+</li>
+<li><b>Step 2:</b> Continue to split the subsets in half, until only
+individual items remain.
+</li>
+<li><b>Step 3:</b> Merge individual items back together in pairs, putting
+them back together in order.
+</li>
+<li><b>Step 4:</b> Continue to merge the pairs together, with each subset
+being sorted in order.
+</li>
+<li><b>Step 5:</b> Once all subsets have been combined, the list should be in
+the correct order.
+</li>
+</ul>
+<br>
+<p>
+<b>Merge Sort Algorithm Video</b>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-v_tAQFUTPw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+<b>Merge Sort Algorithm</b>
+</p>
+<ul class="org-ul">
+<li><b>Note:</b> You would not be expected to code a merge sort in Python,
+but you should be able to explain how the sorting algorithm works.
+</li>
+<li>In the Trinket window below is an example of a merge sort, try it to
+see how it splits the list into subsets and then merges them back
+together in the correct order.
+</li>
+</ul>
+<iframe src="https://trinket.io/embed/python/91f60cbb9e" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 badge">
+<h3 id="sec-3-2">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>
+<b>Gold</b>: Answer the following exam questions:
+</p>
+<ol class="org-ol">
+<li>Which of the following processes describes a merge sort?
+<ul class="org-ul">
+<li>(a) Repeatedly splits the data in half until each 'list' contains
+only a single data item. Then, having broken it into smaller parts,
+repeatedly combines these 'lists' back together, this time putting
+them in their required order (Ascending or Descending in value).
+</li>
+<li>(b) Compares the first two items, checks which one is larger and
+swaps them if necessary so that the larger is first. Then it checks
+the next pair, and so on.
+</li>
+</ul>
+</li>
+<li>Use a bubble sort to sort the dataset [6, 2, 4, 1, 8] in ascending
+order. Show your working and state the number of steps required.
+</li>
+<li>Complete the merge sort example shown:
+</li>
+</ol>
+
+<div class="figure">
+<p><img src="img/merge_sort_ques.jpg" alt="merge_sort_ques.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li><i>Upload to Algorithms - Efficiency: Gold on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Comparing Bubble and Merge Sorting Algorithms</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It: Pro's and Con's of each sort?</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+<b>Bubble Vs Merge Sort Algorithms</b>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>Bubble Sort</b></th>
+<th scope="col" class="left"><b>Merge Sort</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">+ Simplest and easiest to code</td>
+<td class="left">+ Far more efficient and fast</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">+ Uses less memory</td>
+<td class="left">+ Consistent runnung time</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">- Slower with larger lists</td>
+<td class="left">- Uses more memory</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">- Inefficient and slow</td>
+<td class="left">- More complexed to program</td>
+</tr>
+</tbody>
+</table>
+
+<pre class="example">
+The bubble sort algorithm is very slow and inefficient for sorting more than a very few
+items. As previously seen, that even with a list of just eight items, seven passes of the
+dataset was required to complete the sort.
+On each pass, it is likely that some items will need to be swapped. You can imagine how
+long it would take to sort a million items using a bubble sort! Roughly speaking, to sort
+n items will need n^2 comparisons.
+</pre>
+<pre class="example">
+In contrast, the merge sort, rather like the binary search, works by successively halving
+the dataset. In this algorithm, this operation is repeated until each sublist is only one
+item long. Then the sublists are merged back together.
+This is a much more efficient process than the bubble sort as it takes much less time to
+execute.
+</pre>
+<pre class="example">
+The merge sort has its disadvantages, as it is more difficult and complexed to implement.
+Another disadvantage is that it requires more memory to store the sublists, which can be
+a problem with a very large list.
+We have looked at two algorithms for sorting a list. In each case, either of the algorithms
+can be used to solve the problem, but one algorithm is much more efficient.
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

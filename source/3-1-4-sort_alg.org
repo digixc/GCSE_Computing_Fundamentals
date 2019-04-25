@@ -2,7 +2,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
-#+TITLE: 3.1.3 Searching Algorithms
+#+TITLE: 3.1.4 Sorting Algorithms
 #+AUTHOR: Stephen Fone
 
 #+BEGIN_HTML
@@ -76,136 +76,148 @@
 :END:
 
 
-* Searching Algorithms
+* Sorting Algorithms
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-** Learn It: What are Searching Algorithms?
+** Learn It: What are Sorting Algorithms?
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
 #+BEGIN_SRC
-Searching Algorithms are used to determine whether a specific piece of data exists within
-a data structure.
-If it does exist, a search algorithm will locate it and retrieve the information.
+Sorting Algorithms are used to arrange data within a list into a defined order.
+Whether that be numerical order, alphabetical order or chronological order,
+ascending (A-Z) or descending (Z-A).
 #+END_SRC
-- Thousands of software applications, including =databases= or =commercial search engines= such as =Google=, depend on the ability to =quickly search= through huge amounts of data to =find a particular item=.
-- There are many different types of searching algorithms. We will look at =two well-known algorithms= for searching and sorting: =Linear and Binary search algorithms=.
-[[file:img/Searching_Algorithms.png]]
+- When sorting data items it is essential to =compare= them with each
+  other, so that they can be =put= into the =correct order=.
+- There may be millions of items of data to compare, so sorting
+  algorithms must carry out the task as efficiently as possible, so
+  as not to cause a =bottleneck= (/Another part of the program may not
+  be able to run until the sorting has been carried out/).
+
+[[file:img/sorting1.png]]
 
 - Searching and Sorting Algorithms are used in lots of programs to
   make =data easier= to =access= and =understand=.
-- Computer game leader boards are sorted from the /highest/ score to the
+- Computer game leader boards are =sorted= from the /highest/ score to the
   /lowest/ score to make it easy to find the winner and your position
   in the list.
-- Search engines like Google use =special algorithms= to help us find
-  the =most useful search results=.
-- =Online shopping websites= order their products by type, so that you
-  can click straight to the department that you're looking for, rather
-  than searching through the whole site.
  
 #+BEGIN_SRC
-Question - Can you think of other online companies that store huge amounts of data,
-which often requires you to search through so that you can find a particular item quickly?
+Key Term - Compare: Assess how items of data are similar or different to each
+other, to help decide which order they should go in.
+#+END_SRC
+#+BEGIN_SRC
+Key Term - Adjacent Items: Items of data that are next to each other.
 #+END_SRC
 
-* Linear Searching Algorithms
+- In the last topic we learned about searching algorithms and how they
+  are used to search for data.
+- In this topic we will look at sorting algorithms, there are many
+  different sorting algorithms, but we will only be looking at two of
+  them:
+ 1. Bubble Sort.
+ 2. Merge Sort.
+
+* Bubble Sort Algorithm
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-** Learn It: What is a Linear Search?
+** Learn It: What is a Bubble Sort?
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
 #+BEGIN_SRC
-Linear Search - A search algorithm that begins at one end of a data structure, checking each
-data item in turn until the required item is found, or the end of the structure is reached.
+Bubble Sort - A bubble sort works by repeatedly going through the list to be
+sorted comparing each pair of adjacent elements.
+If the elements are in the wrong order they are swapped, if not, move on to
+the next pair.
 #+END_SRC
-- =When the data is unsorted=, the only sensible option when searching
-  for a particular item is to use a =Linear Search=.
-- Linear Searches =start= at the =beginning= and =sequentially= look at
-  =each item= in a list =until you find the one= you are =looking for= or
-  until =all= of the =items= have been =searched=.
-- You could be lucky and quickly find the item at the beginning of the
-  list, or it could be at the end.
-- Linear Searches are =relatively simple=, but they are =inefficient= when
-  searching through =long lists=.
+[[file:img/bubble_sort_ani.gif]]
+*Bubble Sort Explained*
+[[file:img/bubble_sort_pass.png]]
+- *Step 1:* Compare the first two items in the list. If they are in
+  the correct order, leave them. If items are not in the correct
+  order, swap them. In the example above '5' is larger than '1', so
+  they need to be swapped.
+- *Step 2:* Repeat the step 1 process for items '2' and '3' in the list. In the
+  example above '5' is smaller than '6', so they do not need to be
+  swapped.
+- *Step 3:* Continue applying the step 1 process to the rest of the
+  items in the list.
+- Once one pass is completed, repeat the process again and again until
+  no swaps are required and all the numbers are in the correct order.
+- A Bubble Sort is likely to require muliple passes through the list,
+  so it can be inefficient and unsuitable for larger files.
 #+BEGIN_HTML
 <br>
 #+END_HTML
-*Linear and Binary Searching Algorithms Explained*
+*Bubble Sort Algorithm Video*
 #+BEGIN_HTML
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JQhciTuD3E8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V-XP4gqxFZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 #+END_HTML
 
-*Linear Search Example*
-[[file:img/linear_search.gif]]
-*Here is an algorithm for a Linear Search*
+*Algorithm for a Bubble Sort*
+- In this algorithm, =number= is in a =list= holding nine numbers.
+- Each =element= of the list is referred to using an =index= in square
+  brackets.
+- In the list below, the first element of the list is '6' and is at
+  =index position [0]=, and the last element of the list is '19' and
+  is at =index position [8]=.
 
-[[file:img/Linear_Algor.png]]
+[[file:img/bubble_sort_algor.png]]
+- We use the flag variable to set /False/ at the beginning of each
+  pass. As soon as a swap is made, the flag is set to /True/.
+- If a pass is completed without any swaps being made, the flag
+  remains /Flase/ and the /WHILE/ loop ends. The sort is complete.
 
-
-** Badge It: Linear Search Algorithm
+** Badge It: Bubble Sort Algorithm
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
 
-*Silver*: Complete the Linear Search Algorithm shown in the Trinket
+*Silver*: Complete the Bubble Sort Algorithm shown in the Trinket
 window below:
 
 #+BEGIN_HTML
-<iframe src="https://trinket.io/embed/python/fafddae417" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/6b4ccdc6e4" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 #+END_HTML
 
-- /Upload to Algorithms - Searching Algorithms: Silver on BourneToLearn/
+- /Upload to Algorithms - Sorting Algorithms: Silver on BourneToLearn/
 
-* Binary Searching Algorithms
+* Merge Sort Algorithm
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-** Learn It: What is a Binary Search?
+** Learn It: What is a Merge Sort?
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
 #+BEGIN_SRC
-Binary Search - A search algorithm that begins in the middle of a data structure,
-eliminating half of the remaining data with each pass.
-Binary searches are only appropriate when the data to be search is sorted.
+Merge Sort - Is a 'Divide and Conquer' algorithm that splits a list into decrete
+elements and then merges the elements back together in order.
+A merge sort is quicker and more efficient than a bubble sort when using longer
+lists. However, it uses more memory and can take longer to sort shorter lists.
 #+END_SRC
-- =When the data is sorted=,(/i.e. in numerical or alphabetical order/), you can use a much more =efficient= algorithm called a =Binary Search=. 
-- It works by =repeatedly dividing in half= the portion of the data list that could contain the required data item. 
-- This is =continued= until there is =only one item in the list= you are examining.
-- Binary Searches are quicker because, at each stage, half of the
-  remaining data is disregarded.
-- If a list of =one million elements= were to be searched using a binary
-  search, it would take no more than =20 iterations= to find a
-  particular piece of data or discover that the data is not in the
-  list.
-- A list of =one billion items= would only require =30 iterations=.
-- A =binary search= is =more efficient= than a =linear search= since it
-  will, on average, find a search items more quickly than a linear
-  search. However, binary searches *do not* work on =unsorted data=, so
-  efficiency is not the only consideration.
+[[file:img/merge_sort_ani.gif]]
+*Merge Sort Explained*
+[[file:img/Merge_sort2.png]]
+- *Step 1:* Split the list in half to create two subsets.
+- *Step 2:* Continue to split the subsets in half, until only
+  individual items remain.
+- *Step 3:* Merge individual items back together in pairs, putting
+  them back together in order.
+- *Step 4:* Continue to merge the pairs together, with each subset
+  being sorted in order.
+- *Step 5:* Once all subsets have been combined, the list should be in
+  the correct order.
 #+BEGIN_HTML
 <br>
 #+END_HTML
-
-*Binary Search Example*
-[[file:img/binary_search.gif]]
-
-*Example 1 - Uneven List Binary Search*
-- Consider the following ordered list of 15 items. We want to find out
-  whether the number =51= is in the list.
-[[file:img/Binary_Step1.png]]
-- *Step 1:* The middle term is 44; therefore, we can discard all data
-  items less than or equal to 44.
-[[file:img/Binary_Step2.png]]
-- *Step 2:* The middle term is 62, so we can discard all data items
-  greater than or equal to 62.
-[[file:img/Binary_Step3.png]]
-- *Step 3:* The middle term is 51 – So we have found the data item.
+*Merge Sort Algorithm Video*
 #+BEGIN_HTML
-<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-v_tAQFUTPw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 #+END_HTML
 - *Note:* That if there are an even number of items in the list, for
   example 8 items, the fourth, not the fifth item is taken to be the
