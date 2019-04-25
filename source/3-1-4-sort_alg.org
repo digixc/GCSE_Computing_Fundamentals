@@ -195,7 +195,7 @@ window below:
 :HTML_CONTAINER_CLASS: learn
 :END:
 #+BEGIN_SRC
-Merge Sort - Is a 'Divide and Conquer' algorithm that splits a list into decrete
+Merge Sort - Is a 'Divide and Conquer' algorithm that splits a list into discrete
 elements and then merges the elements back together in order.
 A merge sort is quicker and more efficient than a bubble sort when using longer
 lists. However, it uses more memory and can take longer to sort shorter lists.
@@ -219,102 +219,71 @@ lists. However, it uses more memory and can take longer to sort shorter lists.
 #+BEGIN_HTML
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-v_tAQFUTPw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 #+END_HTML
-- *Note:* That if there are an even number of items in the list, for
-  example 8 items, the fourth, not the fifth item is taken to be the
-  middle item.
+- *Note:* You would not be expected to code a merge sort in Python, but you should be able to explain how the sorting algorithm works.
+- In the Trinket window below is an example of a merge sort, try it to see how it splits the list into subsets and then merges them back together in the correct order.
 #+BEGIN_HTML
-<br>
+<iframe src="https://trinket.io/embed/python/91f60cbb9e" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 #+END_HTML
-*Example 2 - Even List Binary Search*
-- Consider the following list of 10 items. We want to find out whether the number =50= is in the list of items.
-[[file:img/Bin_Even1.png]]
-- *Step 1:* The fifth number in the list is taken to be the middle number - we can therefore discard all data items less than or equal to 37.
-[[file:img/Bin_Even2.png]]
-- *Step 2:* The third number in the list is now the middle number - we can therefore discard all data items less than or equal to 43.
-[[file:img/Bin_Even3.png]]
-- *Step 3:* As there are now only two numbers left in the list, when split 48 becomes the middle number. Once we discard 48 we are left with the number =50=.
-#+BEGIN_SRC
-In an even list, the number left of the central split is taken to be the middle number.
-#+END_SRC
-#+BEGIN_HTML
-<br>
-#+END_HTML
-*Here is an algorithm for a Binary Search*
-
-[[file:img/Binary_Algor.png]]
-
-
-* Comparing Linear and Binary Searching Algorithms
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
-:END:
-** Learn It: Pro's and Con's of each search?
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: learn
-:END:
-*Linear Vs Binary Search Algorithms*
-|          *Linear Search*         |          *Binary Search*          |
-|----------------------------------+-----------------------------------|
-| + Works with unsorted lists      | + Far more efficient              |
-|----------------------------------+-----------------------------------|
-| - Slower than a binary search    | - Will not work on unsorted lists |
-|----------------------------------+-----------------------------------|
-
-#+BEGIN_SRC
-The linear search algorithm is fine for small lists, but very inefficient for large lists.
-The average time taken to search a thoussand items would be 100 times longer than the time
-taken to search 10 items.
-If you had to search a database of 10 million car registrations to find who owns a certain
-car, it would take a very long time.
-#+END_SRC
-#+BEGIN_SRC
-In contrast, the binary search algorithm is extremely efficient. Each time an item is
-examined, if it is not the correct item, half of the list is discarded.
-In a list of 10 million items, only 24 items would need to be examined. That's because
-10,000,000 is less than 2^24.
-In general, if there are fewer than 2^n items (but at least 2^n-1), the maximum number
-of items to be examined is n.
-#+END_SRC
-#+BEGIN_SRC
-A key benefit of the linear search is that it can be done on an unsorted list - The items
-do not have to be in sequence.
-If items are frequently added or deleted from a list, this would save the extra work
-needed to keep the list in sequence in order to perform a binary search.
-#+END_SRC
 
 ** Badge It: Exam Questions
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
 
-*Gold*: Answer the following questions:
-1. A programmer wants to implement a search algorithm to be used with
-   small lists [4,6,8,12,15,16,21].
- - Explain how a linear search would search for the integer '15'.
-2. What property of this list [4,6,8,12,15,21], means the programmer
-   could use a binary search algorithm?
-3. The programmer knows that a binary search algorithm is more efficient than a linear search algorithm. 
- - Explain why the efficiency of these two algorithms in not an important factor when
-   choosing what algorithm to implement for the list shown above?
+*Gold:* Answer the following exam questions:
 
-- /Upload to Algorithms - Efficiency: Gold on BourneToLearn/
+1. Which of the following processes describes a merge sort?
+ - (a) Repeatedly splits the data in half until each 'list' contains only a single data item. Then, having broken it into smaller parts, repeatedly combines these 'lists' back together, this time putting them in their required order (Ascending or Descending in value).
+ - (b) Compares the first two items, checks which one is larger and swaps them if necessary so that the larger is first. Then it checks the next pair, and so on.
+2. Use a bubble sort to sort the dataset [6, 2, 4, 1, 8] in ascending order. Show your working and state the number of steps required.
+3. Complete the merge sort example shown below:
 
-** Badge It: Binary Search Algorithm
+[[file:img/merge_sort_ques.jpg]]
+
+- /Upload to Algorithms - Merge Sort: Gold on BourneToLearn/
+
+* Comparing Bubble and Merge Sorting Algorithms
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: badge
+:HTML_CONTAINER_CLASS: activity
 :END:
+** Learn It: Pro's and Con's of each sort?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Bubble Vs Merge Sort Algorithms*
+|          *Bubble Sort*           |          *Merge Sort*             |
+|----------------------------------+-----------------------------------|
+| + Simplest and easiest to code   | + Far more efficient and fast     |
+|----------------------------------+-----------------------------------|
+| + Uses less momory               | + Consistent running time         |
+|----------------------------------+-----------------------------------|
+| - Slower with larger lists       | - Uses more memory                |
+|----------------------------------+-----------------------------------|
+| - Inefficient and slow           | - More complexed to program       |
+|----------------------------------+-----------------------------------|
 
-*Platinum*: Look at the Pseudocode for a Binary Search shown in the Trinket
-below:
-1. Using the Pseudocode, create a Python program function.
-2. Add a binary list of fifteen integer numbers and ask the user to input a value to search for.
-3. Output a message to say that the value is found or not in the list.
-
-#+BEGIN_HTML
-<iframe src="https://trinket.io/embed/python/ee8f475b62" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-#+END_HTML
-
-- /Upload to Algorithms - Searching Algorithms: Platinum on BourneToLearn/
+#+BEGIN_SRC
+The bubble sort algorithm is very slow and inefficient for sorting more than a very few
+items. As previously seen, that even with a list of just eight items, seven passes of the
+dataset was required to complete the sort.
+On each pass, it is likely that some items will need to be swapped. You can imagine how
+long it would take to sort a million items using a bubble sort! Roughly speaking, to sort
+n items will need n^2 comparisons.
+#+END_SRC
+#+BEGIN_SRC
+In contrast, the merge sort, rather like the binary search, works by successively halving
+the dataset. In this algorithm, this operation is repeated until each sublist is only one
+item long. Then the sublists are merged back together.
+This is a much more efficient process than the bubble sort as it takes much less time to
+execute.
+#+END_SRC
+#+BEGIN_SRC
+The merge sort has its disadvantages, as it is more difficult and complexed to implement.
+Another disadvantage is that it requires more memory to store the sublists, which can be
+a problem with a very large list.
+We have looked at two algorithms for sorting a list. In each case, either of the algorithms
+can be used to solve the problem, but one algorithm is much more efficient.
+#+END_SRC
 
 
 
