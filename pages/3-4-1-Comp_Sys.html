@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.4.1 Computer Systems - Hardware &amp; Software</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.4.1 Computer Systems - Hardware &amp; Software</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Hardware and Software</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What is a Computer System?</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Hardware</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What is Hardware?</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Software</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: What is Software?</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Relationship between Hardware and Software</a>
+<ul>
+<li><a href="#sec-4-1">Learn It: Software working with the hardware</a></li>
+<li><a href="#sec-4-2">Badge It: Hardware and Software Table</a></li>
+<li><a href="#sec-4-3">Badge It: Types of Computer Systems Table</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Hardware and Software</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What is a Computer System?</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>A computer system is made up of both <code>hardware</code> and <code>software</code> components and is capable of:
+<ul class="org-ul">
+<li><b>Data Input</b> – Allowing users to input the instructions using <code>input devices</code>,
+</li>
+<li><b>Data Processing</b> – Using a microprocessor, typically the <code>Central Processing Unit (CPU)</code> to process instructions,
+</li>
+<li><b>Data Storage</b> – Storing user instructions,
+</li>
+<li><b>Data Output</b> – Output processed instructions using <code>output devices</code>.
+</li>
+<li><b>Data Transmission</b> - Ensuring that data can be transferred to or from another computer system
+</li>
+</ul>
+</li>
+<li>As well as the personal computer, this definition applies to any equipment which uses computer technology.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Comp_Sys.png" alt="Comp_Sys.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><b>Hardware</b> is any <code>physical components</code> that make up the computer.
+</li>
+<li><b>Software</b> is any <code>program</code> that <code>runs</code> on the computer.
+</li>
+<li>Computer systems are all around us. They are not just <code>desktop PCs</code>,
+but also include <code>mobile phones</code>, <code>tablets</code>, <code>supermarket
+  tills</code>, <code>ATM cash machines</code> and <code>engine management systems</code> in modern day cars.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Hardware</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What is Hardware?</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+Hardware is the physical parts of the computer that you can touch.
+</pre>
+<ul class="org-ul">
+<li>The hardware on a computer are the components of a computer you can physically touch. This includes the computer itself, the parts inside the computer and any peripherals (i.e. things that are attached to the computer):
+<ul class="org-ul">
+<li>Monitor,
+</li>
+<li>Keyboard,
+</li>
+<li>Mouse,
+</li>
+<li>Computer Case,
+</li>
+<li>Printer,
+</li>
+<li>Graphics card,
+</li>
+<li>Power supply unit,
+</li>
+<li>Motherboard,
+</li>
+<li>CPU,
+</li>
+<li>RAM,
+</li>
+<li>Storage (HDD, DVD-ROM).
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/hardware.png" alt="hardware.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Software</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: What is Software?</h3>
+<div class="outline-text-3" id="text-3-1">
+<pre class="example">
+Software are the programs that control how the computer works.
+</pre>
+<ul class="org-ul">
+<li>Software is any program that runs on a computer system. It can be
+grouped into <b>two main</b> categories:
+<ul class="org-ul">
+<li><b>System Software:</b> Programs that are needed to enable the computer
+to function, including the <code>operating system</code>, <code>utilities software</code>,
+<code>library routines</code> and <code>programming language translators</code>.
+</li>
+</ul>
+</li>
+<li><b>Application Software:</b> Programs that enable a user to perform particular
+tasks like; <code>word processing</code>, <code>spreadsheet calculations</code>, <code>databases management</code>,
+<code>gaming</code>, <code>web browsing</code>, <code>mobile phone apps</code>, <code>graphics design</code>,
+<code>programming</code>, <code>music editing</code> and many more programs for specific
+applications such as <code>payroll</code>, <code>accounts</code>, <code>air traffic control</code>
+etc.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/software.png" alt="software.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Relationship between Hardware and Software</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It: Software working with the hardware</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Some people find it easy to remember the difference between the hardware and software of a computer system if they think of them in terms of the human body and their thoughts. 
+</li>
+<li>The body, brain and all the mushy bits inside us could be compared to the hardware of our system, these are the bits we could touch. Our thoughts, dreams and feelings could be compared to the software of our human system.
+</li>
+<li>You cannot have a living and functioning person without both the hardware and the software working together. It is the same in a computer system; it needs both the hardware and the software to be working together for the computer system to function correctly.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3 badge">
+<h3 id="sec-4-2">Badge It: Hardware and Software Table</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<p>
+<b>Silver</b>: Answer the following questions and complete the table below
+and place a tick in the column to show if the item is hardware or
+software.
+</p>
+<ol class="org-ol">
+<li>Describe what hardware is?
+</li>
+<li>Define software and give some examples?
+</li>
+</ol>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>Item</b></th>
+<th scope="col" class="left">*Hardware</th>
+<th scope="col" class="left"><b>Software</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Spreadsheet</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Graphics Tablet</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Touch Screen</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Internet Browser</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Light Sensor</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Headphones</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Network Cable</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Mouse</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Windows/Mac OS/IOS</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">CPU</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">RAM</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><i>Upload to Algorithms - Computer Systems: Silver on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3 badge">
+<h3 id="sec-4-3">Badge It: Types of Computer Systems Table</h3>
+<div class="outline-text-3" id="text-4-3">
+
+<p>
+<b>Gold</b>: Read the information about computer systems below and then
+ copy and complete the table detailing each type of computer system.
+</p>
+<ul class="org-ul">
+<li>A computer is an electronics device that processes data.
+</li>
+<li>There are many types of computers, from small, embedded computers, such as those used in watches and calculators, to huge supercomputers that are used to perform computationally intensive tasks, such as weather forecasting.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left"><b>General Purpose Systems</b></th>
+<th scope="col" class="left"><b>Dedicated Systems</b></th>
+<th scope="col" class="left">*Control Systems</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><b>Purpose</b></td>
+<td class="left">Programmed to perform a wide range of tasks.</td>
+<td class="left">Perform a specific function or set of functions.</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Features</b></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left"><b>Examples</b></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">Fitness monitors, baby incubators, security alarms</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li><i>Upload to Algorithms - Computer Systems: Gold on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

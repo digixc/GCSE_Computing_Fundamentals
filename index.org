@@ -135,7 +135,7 @@
 <p></p>
 #+END_HTML
 
-[[file:UnderConstruction2.html][3.4.1 Hardware and Software]]
+[[file:pages/3-4-1-Comp_Sys.html][3.4.1 Hardware and Software]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML

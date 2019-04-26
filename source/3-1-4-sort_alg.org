@@ -255,7 +255,7 @@ lists. However, it uses more memory and can take longer to sort shorter lists.
 |----------------------------------+-----------------------------------|
 | + Simplest and easiest to code   | + Far more efficient and fast     |
 |----------------------------------+-----------------------------------|
-| + Uses less momory               | + Consistent running time         |
+| + Uses less memory               | + Consistent running time         |
 |----------------------------------+-----------------------------------|
 | - Slower with larger lists       | - Uses more memory                |
 |----------------------------------+-----------------------------------|
