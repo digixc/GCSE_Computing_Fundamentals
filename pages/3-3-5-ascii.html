@@ -285,10 +285,24 @@ as multiple symbol sets.
 </li>
 <li>ASCII character encoding is a subset of Unicode.
 </li>
-<li>Unicode uses between <code>8</code> and <code>32</code> bits per character and has the
+<li>Unicode can be implemented by different character encodings. The
+Unicode standard defines <code>UTF-8</code>, <code>UTF-16</code> and <code>UTF-32</code>.
+</li>
+<li>So, these use between <code>8 and 32 bits</code> per character and has the
 advantage that it represents many more unique characters than ASCII
-because of the larger number of bits available to store a character
-code. It uses the same codes as ASCII up to 127.
+because of the larger number of bits available to store a character code.
+</li>
+<li>It uses the same codes as ASCII up to 127.
+</li>
+<li><code>UTF-8</code>, the dominant encoding on the World Wide Web (<i>used in over
+92% of websites</i>), uses one byte for the first 128 code points, and
+up to 4 bytes for other characters. The first 128 Unicode code
+points are the ASCII characters, which means that any ASCII text is
+also a UTF-8 text.
+</li>
+<li><code>UTF-16</code>, uses <code>16 bits</code> to represent each character. This means that it is capable of representing <code>65,536 different characters</code>.
+</li>
+<li><code>UTF-32</code>, uses <code>32 bits</code> to represent each character, meaning it can represent a character set of <code>4,294,967,296 possible characters</code>, enough for all known languages.
 </li>
 <li>Its major advantage is that it provides a unique standard for all
 the World's writing systems. It allows for multilingual text in any
@@ -297,7 +311,7 @@ language.
 </ul>
 <br>
 <ul class="org-ul">
-<li><code>Unicode advantages over ASCII</code>
+<li><b>Unicode advantages over ASCII</b>
 <ol class="org-ol">
 <li>Can have representation of a greater range of characters.
 </li>

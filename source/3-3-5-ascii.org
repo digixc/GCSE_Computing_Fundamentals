@@ -154,17 +154,26 @@ processed and 95 printable characters, including the space." – from wikipedia
 - The latest version of Unicode contains a repertoire of more than 120,000 characters covering 129 modern and historic scripts, as well
   as multiple symbol sets.
 - ASCII character encoding is a subset of Unicode.
-- Unicode uses between =8= and =32= bits per character and has the
+- Unicode can be implemented by different character encodings. The
+  Unicode standard defines =UTF-8=, =UTF-16= and =UTF-32=.
+- So, these use between =8 and 32 bits= per character and has the
   advantage that it represents many more unique characters than ASCII
-  because of the larger number of bits available to store a character
-  code. It uses the same codes as ASCII up to 127.
+  because of the larger number of bits available to store a character code.
+- It uses the same codes as ASCII up to 127.
+- =UTF-8=, the dominant encoding on the World Wide Web (/used in over
+  92% of websites/), uses one byte for the first 128 code points, and
+  up to 4 bytes for other characters. The first 128 Unicode code
+  points are the ASCII characters, which means that any ASCII text is
+  also a UTF-8 text.
+- =UTF-16=, uses =16 bits= to represent each character. This means that it is capable of representing =65,536 different characters=.
+- =UTF-32=, uses =32 bits= to represent each character, meaning it can represent a character set of =4,294,967,296 possible characters=, enough for all known languages.
 - Its major advantage is that it provides a unique standard for all
   the World's writing systems. It allows for multilingual text in any
   language.
 #+BEGIN_HTML
 <br>
 #+END_HTML
-- =Unicode advantages over ASCII=
+- *Unicode advantages over ASCII*
  1. Can have representation of a greater range of characters.
  2. More languages or all (modern) languages can be represented (in one character set).
  3. Improved portability of documents in Unicode as each character has a unique representation in Unicode.
