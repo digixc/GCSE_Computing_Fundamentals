@@ -175,7 +175,7 @@ processed and 95 printable characters, including the space." – from wikipedia
 #+END_HTML
 - *Unicode advantages over ASCII*
  1. Can have representation of a greater range of characters.
- 2. More languages or all (modern) languages can be represented (in one character set).
+ 2. More languages or all (/modern/) languages can be represented (in one character set).
  3. Improved portability of documents in Unicode as each character has a unique representation in Unicode.
 
   
