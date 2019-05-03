@@ -139,7 +139,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.4.2 Boolean Logic]]
+[[file:pages/3-4-2-bool_logic.html][3.4.2 Boolean Logic]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
