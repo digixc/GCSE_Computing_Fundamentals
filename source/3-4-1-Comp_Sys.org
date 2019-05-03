@@ -170,7 +170,7 @@ and place a tick in the column to show if the item is hardware or
 software.
 1. Describe what hardware is?
 2. Define software and give some examples?
-|          *Item*             |  *Hardware  |  *Software* |
+|          *Item*             | *Hardware*  |  *Software* |
 |-----------------------------+-------------+-------------|
 | Spreadsheet                 |             |             |
 |-----------------------------+-------------+-------------|

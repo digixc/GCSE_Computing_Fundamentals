@@ -148,7 +148,7 @@
 *Silver*: Complete the two questions below:
 - (a) Convert the following binary data into a 5 x 5 pixel image, where 0 represents black and 1 represents white: =11111 00100 00100 00100 00100=. 
 - (b) Convert the black and white image below into binary data, where 0 represents black and 1 represents white.
-[[file:img/rle_silver.png]
+[[file:img/rle_silver.png]]
 
 
 * Image Resolution

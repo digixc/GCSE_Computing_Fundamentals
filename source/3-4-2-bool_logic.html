@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.4.2 Computer Systems - Boolean Logic</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.4.2 Computer Systems - Boolean Logic</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Boolean Logic</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: Types of Logic Gates</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Logic Circuits</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What are Logic Circuits?</a></li>
+<li><a href="#sec-2-2">Badge It: Logic Gates - Exam Style Questions</a></li>
+<li><a href="#sec-2-3">Badge It: Logic Expressions</a></li>
+<li><a href="#sec-2-4">Badge It: Logic Circuitss</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Boolean Logic</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: Types of Logic Gates</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><b>George Boole (1815 - 1864)</b> was an English mathematician and the author of <b>“Mathematical Analysis of Logic”</b> written in 1847, in which he introduced the world to <code>Boolean logic</code>.
+</li>
+<li><b>Boolean logic</b> is very important to computer science because of the
+way in which computers work.
+</li>
+<li>Computers operate as <code>digital devices</code> using <code>transistors</code> that are in
+one of two states, <code>on</code> or <code>off</code>.
+</li>
+<li>The transistors either transmit an electrical current (<i>on</i>) or they
+do not (<i>off</i>).
+</li>
+<li>These two states of <code>on</code> or <code>off</code> can be used to represent the <code>two
+  conditions</code> of <code>True</code> (on) or <code>False</code> (off).
+</li>
+<li>These <code>two states</code> are also <code>represented</code> by the <code>binary</code> digits <code>1</code> and <code>0</code>.
+</li>
+<li>The three logic gates you need to know and understand, <code>NOT</code>, <code>AND</code>
+  and <code>OR</code> logic gates.
+</li>
+</ul>
+<pre class="example">
+Truth Tables - Each of the NOT, AND and OR gates can represented by a truth table
+showing the output given for each possible input or combination of inputs.
+Inputs are usually given algebraic letters such as A, B and C and output is usually
+represented by P or Q.
+Logic gates are often displayed using logic diagrams and truth tables.
+Truth tables show how the input(s) of a logic gate relate to its output.
+</pre>
+
+<pre class="example">
+Compound Statement - Transistors can be combined into logic circuits in order to solve
+problems using Boolean logic. When multiple Boolean operators are used in a statement,
+they work together to examine if several conditions are true or false.
+</pre>
+
+<p>
+<b>NOT Gate</b>
+<img src="img/NOT_Gate.png" alt="NOT_Gate.png" />
+</p>
+
+<p>
+<b>AND Gate</b>
+<img src="img/AND_Gate.png" alt="AND_Gate.png" />
+</p>
+
+<p>
+<b>OR Gate</b>
+<img src="img/OR_Gate.png" alt="OR_Gate.png" />
+</p>
+
+<p>
+<b>Real World Example</b>
+<img src="img/Logic_Alarm.png" alt="Logic_Alarm.png" />
+</p>
+
+<ul class="org-ul">
+<li>You can click on the input buttons to see what each of the following
+gates do.
+</li>
+
+<li>The first logic gate is the <code>NOT</code> gate, sometimes called an <code>inverter</code>.
+</li>
+</ul>
+<object data="js/NOT.html" width='200px' height='100px'></object>
+
+<ul class="org-ul">
+<li>Then there is the AND gate
+</li>
+</ul>
+<object data="js/AND.html" width='200px' height='100px'></object>
+<ul class="org-ul">
+<li>And finally this is an OR gate
+</li>
+</ul>
+<object data="js/OR.html" width='200px' height='100px'></object>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Logic Circuits</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What are Logic Circuits?</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+Logic Circuits - Logic gates are often combined to create logic circuits that can
+perform more complex operations.
+A logic circuit is designed with multiple logic gates, so that it can take a variety
+of inputs (can be hundreds) and process them to allow decisions to be made according
+to the various inputs.
+They are the basic building blocks of many electronic circuits found in computer RAM,
+household devices, games consoles, and sensors in a cars or plane, or at different
+points in a production line in a factory.
+</pre>
+<p>
+<b>Example Logic Circuits</b>
+<img src="img/Example1_Logic.png" alt="Example1_Logic.png" />
+<img src="img/Example2_Logic.png" alt="Example2_Logic.png" />
+<img src="img/Example3_Logic.png" alt="Example3_Logic.png" />
+</p>
+
+<p>
+<b>Logic Puzzler Game</b>
+</p>
+<ul class="org-ul">
+<li>Test your knowledge with the following Boolean Logic Game:
+</li>
+</ul>
+<script src="https://www.khanacademy.org/computer-programming/logic-gate-puzzler/1522357785/embed.js?editor=no&buttons=no&author=no&embed=yes"></script>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2-2" class="outline-3 badge">
+<h3 id="sec-2-2">Badge It: Logic Gates - Exam Style Questions</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<b>Silver</b>: Answer the following exam questions:
+</p>
+<ol class="org-ol">
+<li>A logic gate can be written as <b>P = A AND B</b>.
+<ul class="org-ul">
+<li>a) State the value of <b>input B</b> when <b>input A</b> is <b>1</b> and <b>output P</b> is <b>0</b>?
+</li>
+<li>b) A <b>NOT</b> logic gate is placed after the <b>AND</b> logic gate to make the
+logic diagram below. <b>State</b> the <b>input values</b> when output <b>P</b> is <b>0</b>?
+</li>
+</ul>
+</li>
+</ol>
+
+<div class="figure">
+<p><img src="img/Silver_Q1.png" alt="Silver_Q1.png" />
+</p>
+</div>
+
+<ol class="org-ol">
+<li>A series of transistors make a two-level logic circuit (NOT A) AND (B AND C).
+<ul class="org-ul">
+<li>a) Complete the truth table below:
+</li>
+</ul>
+</li>
+</ol>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right"><b>A</b></th>
+<th scope="col" class="right"><b>B</b></th>
+<th scope="col" class="right"><b>C</b></th>
+<th scope="col" class="left"><b>NOT A</b></th>
+<th scope="col" class="left"><b>B AND C</b></th>
+<th scope="col" class="left"><b>(NOT A) AND (B AND C)</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul class="org-ul">
+<li><i>Upload to Computer Systems - Boolean Logic: Silver on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3 badge">
+<h3 id="sec-2-3">Badge It: Logic Expressions</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+<b>Gold</b>: Answer the following questions:
+</p>
+<ol class="org-ol">
+<li>Look at the three logic expressions in the box below:
+</li>
+</ol>
+
+<div class="figure">
+<p><img src="img/Gold_Q1.png" alt="Gold_Q1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>a) Draw a logic circuit for each expression.
+</li>
+<li>b) Construct a truth table for each expression.
+</li>
+
+<li><i>Upload to Computer Systems - Boolean Logic: Gold on BourneToLearn</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3 badge">
+<h3 id="sec-2-4">Badge It: Logic Circuitss</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<b>Platinum</b>: Answer the following questions:
+</p>
+<ol class="org-ol">
+<li>Complete the truth table for the following logic diagram:
+</li>
+</ol>
+
+<div class="figure">
+<p><img src="img/Plat_Q1.png" alt="Plat_Q1.png" />
+</p>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right"><b>A</b></th>
+<th scope="col" class="right"><b>B</b></th>
+<th scope="col" class="right"><b>C</b></th>
+<th scope="col" class="left"><b>D = A AND B</b></th>
+<th scope="col" class="left"><b>P = D OR C</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="right">1</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">0</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="right">1</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ol class="org-ol">
+<li>A car uses a logic circuit to decide whether to start the engine or
+not.
+<ul class="org-ul">
+<li>The car has two buttons, labelled <b>S</b> (START) and <b>D</b> (DRIVE).
+</li>
+<li>The engine also starts if the ignition switch <b>I</b> is turned on.
+</li>
+<li>a) Draw the logic circuit for this system, with <b>Z</b> as an output.
+</li>
+<li>b) Write a Boolean expression for this logic circuit.
+</li>
+<li>c) State all possible values of the inputs and outputs if:
+<ul class="org-ul">
+<li>i) Button <b>D</b> is on but the car doesn't start.
+</li>
+<li>ii) Button <b>I</b> and <b>S</b> are both on. 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><i>Upload to Computer Systems - Boolean Logic: Platinum on BourneToLearn</i>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
