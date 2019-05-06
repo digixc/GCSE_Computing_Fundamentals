@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.4.4 Computer Systems - Systems Architecture</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.4.4 Computer Systems - Systems Architecture</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Computer Architecture</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: Von Neumann Architecture</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. The Central Processing Unit (CPU)</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What is the CPU?</a></li>
+<li><a href="#sec-2-2">Learn It: Functions of the CPU</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Factors Affecting the Performance of the CPU</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: CPU Performance</a></li>
+<li><a href="#sec-3-2">Research It</a></li>
+<li><a href="#sec-3-3">Document It</a></li>
+<li><a href="#sec-3-4">Research It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. The CPU and Fetch-Decode-Execute Cycle</a>
+<ul>
+<li><a href="#sec-4-1">Learn It: Understanding the Fetch-Execute Cycle?</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Graphics Processing Unit (GPU)</a>
+<ul>
+<li><a href="#sec-5-1">Learn It: What are GPUs?</a></li>
+<li><a href="#sec-5-2">Research It</a></li>
+<li><a href="#sec-5-3">Document It</a></li>
+<li><a href="#sec-5-4">Research It</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Memory</a>
+<ul>
+<li><a href="#sec-6-1">Learn It: What is Memory?</a></li>
+<li><a href="#sec-6-2">Learn It: Random Access Memory (RAM)</a>
+<ul>
+<li><a href="#sec-6-2-1">Random Access Memory (RAM)</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-3">Learn It: Read Only Memory (ROM)</a>
+<ul>
+<li><a href="#sec-6-3-1">Read Only Memory (ROM)</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-4">Research It</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Secondary Storage</a>
+<ul>
+<li><a href="#sec-7-1">Learn It: What is Secondary Storage?</a></li>
+<li><a href="#sec-7-2">Learn It: Secondary Storage Size</a></li>
+<li><a href="#sec-7-3">Learn It: Magnetic Storage</a>
+<ul>
+<li><a href="#sec-7-3-1">Magnetic Storage</a></li>
+<li><a href="#sec-7-3-2">Solid State Storage</a></li>
+<li><a href="#sec-7-3-3">Optical Storage</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-4">Try It</a>
+<ul>
+<li><a href="#sec-7-4-1">Advantages</a></li>
+<li><a href="#sec-7-4-2">Disadvantages</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-5">Learn It</a></li>
+<li><a href="#sec-7-6">Try It</a>
+<ul>
+<li><a href="#sec-7-6-1">Answer the following questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Cloud Storage</a>
+<ul>
+<li><a href="#sec-8-1">Learn It: What is Cloud Storage?</a></li>
+<li><a href="#sec-8-2">Badge It: Exam Questions</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Embedded Systems</a>
+<ul>
+<li><a href="#sec-9-1">Learn It: What are Embedded systems?</a></li>
+<li><a href="#sec-9-2">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-9-2-1">Gold - Answer the three following exam questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-9-3">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-9-3-1">Platinum - Answer the following questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Computer Architecture</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: Von Neumann Architecture</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><b>Computer architecture</b> refers to the <i>functionality</i>, <i>organisation</i>,
+<i>structure</i> and <i>implementation</i> of a <b>computer system</b>.
+</li>
+<li>The processor known as the <code>Central Processing Unit</code> <b>(CPU)</b> is the
+brains of the computer. It is here where data processing takes place. 
+</li>
+<li>The <code>first computer systems</code> developed were <code>not able</code> to <code>store</code> programs
+and program <code>data</code> was <code>inputted</code> using <code>switches</code>.
+</li>
+<li>In <b>1945</b> <code>John Von Neumann</code> was credited with designing the fundamental concept
+behind all modern computer systems.
+</li>
+<li><code>Von Neumann Architecture</code> describes a system where a single
+<b>control unit</b> manages the <code>Fetch-Execute cycle</code>, and both <b>instructions</b> and <b>data</b>
+are <b>stored</b> in the same <b>memory unit</b>.
+</li>
+<li>His design included a <b>processing unit</b>, a <b>program counter</b>, <b>memory</b> to
+<b>store data</b> and <b>instructions</b> and <b>external storage</b> and <b>input</b>
+and <b>output</b> mechanisms.
+</li>
+<li>In the <b>Von Neumann</b> architecture:
+<ul class="org-ul">
+<li>The <b>program</b> is <b>stored</b> in the <b>main memory</b> and <b>instructions</b> are <b>fetched</b> and <b>executed sequentially</b>.
+</li>
+<li>There is a <b>single memory</b> and <b>bus system</b> for accessing both <b>data</b> and <b>programs</b>.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<p>
+<b>Von Neumann Architecture Diagram</b>
+<img src="img/Von_CPU.png" alt="Von_CPU.png" />
+</p>
+<ul class="org-ul">
+<li>The diagram above shows the components of the central processing unit <b>(CPU)</b> and how they communicate with each other and with the
+other computer system components.
+</li>
+<li>Take a close look at the components, their functions and the way in which program instructions are executed will be
+described later in this topic.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> The Central Processing Unit (CPU)</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What is the CPU?</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>The CPU lies at the heart of any Computer System, and is analogous
+to the brain in a human. There are many processors in a modern
+computer. CPUs can contain one or more processing units known as
+cores.
+</li>
+<li>It is common for computers to have <code>two (dual)</code>, <code>four (quad)</code> or even more cores. <b>CPUs</b> with <code>multiple cores</code> have <code>more power</code> to run <code>multiple programs</code> at the <code>same time</code>.
+</li>
+<li>A CPU is an integrated circuit that is responsible for <code>performing arithmetic</code>, <code>logical</code> and <code>I/O operations</code>.
+</li>
+<li>CPUs perform these operations as instructed by a computer program.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>A CPU is made up of three components:</b>
+<ul class="org-ul">
+<li>An Arithmetic &amp; Logic Unit <b>(ALU)</b>.
+</li>
+<li>A Control Unit <b>(CU)</b>.
+</li>
+<li>Registers <b>(Cache)</b>.
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/cpu_image.png" alt="cpu_image.png" />
+</p>
+</div>
+<pre class="example">
+CPU - The CPU (Central Processing Unit) is responsible for processing and executing
+program instructions, performing calculations and comparisons, as well as coordinating
+the behaviour of other hardware. The CPU comprises of several different components as
+shown in the image below.
+</pre>
+
+<div class="figure">
+<p><img src="img/cpu_cu_alu.png" alt="cpu_cu_alu.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 learn">
+<h3 id="sec-2-2">Learn It: Functions of the CPU</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>The table below details how each part of the CPU functions:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/cpu-table.png" alt="cpu-table.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Factors Affecting the Performance of the CPU</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: CPU Performance</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Many factors can have an affect on the <code>speed</code> and <code>performance</code> of
+a <code>computer system</code>, but usually the <code>biggest factors</code> are to do with the <code>hardware</code>.
+</li>
+<li>A CPU with a <code>higher rate</code> of performance can execute instructions more <code>quickly</code> than a CPU with a lower rate.
+</li>
+<li>Your choice of <b>CPU</b>, <b>RAM</b> and <b>GPU</b> can all have <code>big effects</code> on <code>performance</code>.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>We will look at the following factors that can have an affect on a CPU's performance:</b>
+<ul class="org-ul">
+<li>Clock Speed.
+</li>
+<li>Number of Cores.
+</li>
+<li>Type and Size of Cache.
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<img src="img/clock_speed.png" alt="clock_speed.png" />
+<img src="img/num_cores.png" alt="num_cores.png" />
+<img src="img/size_cache.png" alt="size_cache.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 research">
+<h3 id="sec-3-2">Research It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Watch this exciting and interesting video explaining the different types of CPU cache.
+</li>
+</ul>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/PIXJM6fCG30" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 document">
+<h3 id="sec-3-3">Document It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Make notes on the information provided in the video.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 research">
+<h3 id="sec-3-4">Research It</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Explain how clock speed and cache memory size can affect the performance of a computer?
+</li>
+<li>Which type of memory is the most expensive?
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> The CPU and Fetch-Decode-Execute Cycle</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It: Understanding the Fetch-Execute Cycle?</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>For a program to be run <b>(executed)</b> on a computer, it must be <code>loaded</code> into the <code>computer’s main memory</code>.
+</li>
+<li>The <code>processor</code> then <code>locates</code> and <code>accesses</code> the program, which it
+then runs each instruction in turn.
+</li>
+<li>When the program is loaded, the processor is given a start address of where the program is <code>stored</code> in the <code>main memory</code> in order to
+access it.
+</li>
+<li>To run the program, the processor <code>fetches</code> an instruction, <code>decodes
+  it</code> and then <code>executes it</code>.
+</li>
+<li>The program executes <code>one instruction at a time</code> and this is known
+as the <code>Fetch-Decode-Execute cycle</code>.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li>The <b>Fetch-Decode-Execute cycle</b> works in <code>4 steps</code>: 
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="img/fetch-execute.png" alt="fetch-execute.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> Graphics Processing Unit (GPU)</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+In many modern computer systems, the task of rendering graphics is handled by the Graphics Card, which has it's own processor called a <b>GPU</b>.
+</p>
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 learn">
+<h3 id="sec-5-1">Learn It: What are GPUs?</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li><b>GPUs</b> are very <code>specialised processors</code>, designed to <code>process</code> and
+<code>render</code> graphical output to the display screen.
+</li>
+<li><b>A Graphics Card</b> will contain, not only a <code>GPU</code>, but also its own <code>dedicated RAM</code>, that can hold a complete screen image.
+</li>
+<li>In many machines, the Graphics card is a separate device that is plugged into the Motherboard, but in laptops and mobile devices, it
+is often integrated with the Motherboard and so can't be upgraded.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/gpu.jpg" alt="gpu.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3 research">
+<h3 id="sec-5-2">Research It</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+<b>Watch the following video on what a GPU does:</b>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qyXKedcx6Iw" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3 document">
+<h3 id="sec-5-3">Document It</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Ensure your notes contain basic information about Graphics Cards and what the roll of the GPU is in Computer systems.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3 research">
+<h3 id="sec-5-4">Research It</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>GPUs are now often used in <i>Altcoin</i> mining, such as <i>Bitcoin</i>.
+</li>
+<li>Do some research to find out about how most crypto-currencies are mined, and why GPUs are more appropriate to this task than CPUs.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2 activity">
+<h2 id="sec-6"><span class="section-number-2">6</span> Memory</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-sec-6-1" class="outline-3 learn">
+<h3 id="sec-6-1">Learn It: What is Memory?</h3>
+<div class="outline-text-3" id="text-6-1">
+<pre class="example">
+Memory refers to the part of a computer system that stores data for use by the central
+processing unit (CPU). The data includes program files and data files used by programs.
+The main memory components are situated on computer chips, known as semi-conductors.
+A semi-conductor is a material that can conduct electricity under certain conditions,
+but not in others, making it useful for controlling electrical current.
+</pre>
+
+<div class="figure">
+<p><img src="img/memory_pyramid.gif" alt="memory_pyramid.gif" />
+</p>
+</div>
+<ul class="org-ul">
+<li>There are different types of memory that a computer system uses, they can be classified as <code>volatile</code>, <code>Non-volatile</code> and <code>Virtual Memory</code>. Details
+of each are shown below:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/types_ram.png" alt="types_ram.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-2" class="outline-3 learn">
+<h3 id="sec-6-2">Learn It: Random Access Memory (RAM)</h3>
+<div class="outline-text-3" id="text-6-2">
+</div>
+<div id="outline-container-sec-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1">Random Access Memory (RAM)</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<ul class="org-ul">
+<li><b>RAM</b> is used to hold programs currently being executed, and the data the programs are using.
+</li>
+<li>When a <code>program</code> is to be <code>executed</code>, it has to be <code>loaded</code> from the <code>hard disk</code> into the <code>main memory</code>, so that the processor can access the
+instructions.
+</li>
+<li>Any data needed for that program to run is also loaded into main memory. The <i>processor cannot access secondary storage directly</i>.
+</li>
+<li>The <code>main purpose of RAM</code> is to act as a <code>temporary storage</code> for
+programs and data, while the program is being executed.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>There are two types of RAM:</b>
+<ul class="org-ul">
+<li><b>Static RAM (SRAM)</b>: Can hold data without being refreshed for as
+long as there is a power supply. More expensive than DRAM.
+</li>
+<li><b>Dynamic RAM (DRAM)</b>: Needs to be refreshed by frequently reading
+and rewriting the contents because its stored charge does not last
+very long. DRAM is more widely used because it is cheaper and
+takes up less space than SRAM.
+</li>
+</ul>
+</li>
+</ul>
+<p>
+<img src="img/ram_sticks.jpg" alt="ram_sticks.jpg" />
+<b>Benefits of having more RAM</b>
+</p>
+<ul class="org-ul">
+<li>Having more RAM can mean a <code>Faster</code> or <code>Smoother</code> System for the
+following reasons:
+<ul class="org-ul">
+<li>Computers with <code>less RAM</code> may <code>run slowly</code> due to having to make use
+of <code>Virtual Memory</code>.
+</li>
+<li>Computers with <code>more RAM</code> can run more applications or more
+<code>memory-intensive</code> applications making the system <code>run faster
+    overall</code>.
+</li>
+<li><code>Upgrading RAM</code> is relatively cheap and easy to do, replacing RAM
+with a higher capacity or higher speed, will improve the system
+performance.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-3" class="outline-3 learn">
+<h3 id="sec-6-3">Learn It: Read Only Memory (ROM)</h3>
+<div class="outline-text-3" id="text-6-3">
+</div>
+<div id="outline-container-sec-6-3-1" class="outline-4">
+<h4 id="sec-6-3-1">Read Only Memory (ROM)</h4>
+<div class="outline-text-4" id="text-6-3-1">
+<ul class="org-ul">
+<li><b>ROM</b> is a type of <code>non-volatile memory</code> that <code>stores</code> essential data
+such as a <code>computer's configuration settings</code>.
+</li>
+<li>Essential data is pre-installed onto ROM chips when a computer
+system is made. This type of memory is necessary to enable a
+computer to <code>optain instructions</code> and <code>information</code> about the <code>hardware</code>
+from the moment it is switched on.
+</li>
+<li>Once a file has been stored on a <b>ROM</b>, it can be read but <code>cannot</code> be
+<code>changed</code> by the user.
+</li>
+<li>ROM can be accessed even if your computer has been switched off for months.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/rom_chip.jpg" alt="rom_chip.jpg" />
+</p>
+</div>
+
+<p>
+<b>RAM Vs ROM</b>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left"><b>RAM</b></th>
+<th scope="col" class="left"><b>ROM</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Volatile - Data is lost when power is turned off (Temporary Memory)</td>
+<td class="left">Non-volatile - Data is not lost when power is turned off (Permanent Memory)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Stores user data/programs/part operating system currently in use</td>
+<td class="left">Used to store BIOS/Bootstrap loader which is required at start-up</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Memory can be written to or read from</td>
+<td class="left">Memory can only be read from, but not written to</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-4" class="outline-3 research">
+<h3 id="sec-6-4">Research It</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>Find out some of the other tasks that the BIOS enables in a computer system.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2 activity">
+<h2 id="sec-7"><span class="section-number-2">7</span> Secondary Storage</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-sec-7-1" class="outline-3 learn">
+<h3 id="sec-7-1">Learn It: What is Secondary Storage?</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li><b>Secondary storage</b> is a means of <b>permanently</b> storing <b>large amounts of data</b> and programs that are not currently running on the
+CPU or being stored in the main memory.
+</li>
+<li>It is a <b>non-volatile</b> form of storage, meaning that data is retained even when the power supply is turned off, so it needs to
+robust and reliable.
+</li>
+<li>Secondary storage holds much more data than main memory and is much cheaper per MB than main memory, although secondary storage
+technologies tend to have slower access speeds than main memory.
+</li>
+<li>Secondary storage can be internal - such as a computer hard drive, Optical drive or external - such as a <i>Solid-State Drive (SSD), a USB Flash Drive or a Memory Card</i>.
+</li>
+<li>Internal storage is used to store a computer's operating system, software and user files.
+</li>
+<li>External storage is used for backing up data, transferring files, transporting files or as an extension to internal storage.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3 learn">
+<h3 id="sec-7-2">Learn It: Secondary Storage Size</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>There are <b>three classes of secondary storage</b> - <i>Magnetic, Optical</i> and <i>Solid-State</i>.
+</li>
+<li>Secondary storage sizes are measured in bytes.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Bytes</th>
+<th scope="col" class="left">Name</th>
+<th scope="col" class="left">Abbreviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">1,000</td>
+<td class="left">Kilo</td>
+<td class="left">1kB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000</td>
+<td class="left">Mega</td>
+<td class="left">1MB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000</td>
+<td class="left">Giga</td>
+<td class="left">1GB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000</td>
+<td class="left">Tera</td>
+<td class="left">1TB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000,000</td>
+<td class="left">Peta</td>
+<td class="left">1PB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000,000,000</td>
+<td class="left">Exa</td>
+<td class="left">1EB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000,000,000,000</td>
+<td class="left">Zetta</td>
+<td class="left">1ZB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000,000,000,000,000</td>
+<td class="left">Yota</td>
+<td class="left">1YB</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-7-3" class="outline-3 learn">
+<h3 id="sec-7-3">Learn It: Magnetic Storage</h3>
+<div class="outline-text-3" id="text-7-3">
+</div>
+<div id="outline-container-sec-7-3-1" class="outline-4">
+<h4 id="sec-7-3-1">Magnetic Storage</h4>
+<div class="outline-text-4" id="text-7-3-1">
+<p>
+<img src="img/magnetic_info.png" alt="magnetic_info.png" />
+<img src="img/hard_disk.png" alt="hard_disk.png" />
+<img src="img/magnetic_media.png" alt="magnetic_media.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-3-2" class="outline-4">
+<h4 id="sec-7-3-2">Solid State Storage</h4>
+<div class="outline-text-4" id="text-7-3-2">
+<p>
+<img src="img/ssd_info.png" alt="ssd_info.png" />
+<img src="img/ssd_struct.png" alt="ssd_struct.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-3-3" class="outline-4">
+<h4 id="sec-7-3-3">Optical Storage</h4>
+<div class="outline-text-4" id="text-7-3-3">
+<p>
+<img src="img/optical_info.png" alt="optical_info.png" />
+<img src="img/optical_media.png" alt="optical_media.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7-4" class="outline-3 try">
+<h3 id="sec-7-4">Try It</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>Arrange the following advantages and disadvantages into the tables below.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-7-4-1" class="outline-4">
+<h4 id="sec-7-4-1">Advantages</h4>
+<div class="outline-text-4" id="text-7-4-1">
+<ul class="org-ul">
+<li>Fairly quick
+</li>
+<li>Easy to carry around
+</li>
+<li>Extremely fast read and write speeds
+</li>
+<li>Easy to use
+</li>
+<li>Large capacity
+</li>
+<li>Easily replaced or upgraded
+</li>
+<li>Can be used in many types of devices (not just computers)
+</li>
+<li>Long lasting (if cared for)
+</li>
+<li>No mechanical requirements
+</li>
+<li>Silent when used
+</li>
+<li>Very cheap per MB of data
+</li>
+<li>Light weight and small
+</li>
+<li>Use very little power
+</li>
+<li>Very cheap, and disposable
+</li>
+<li>Very durable even if dropped or knocked around
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-4-2" class="outline-4">
+<h4 id="sec-7-4-2">Disadvantages</h4>
+<div class="outline-text-4" id="text-7-4-2">
+<ul class="org-ul">
+<li>Contains moving parts that will eventually fail
+</li>
+<li>Limited storage capacity
+</li>
+<li>Can be noisy
+</li>
+<li>Easily broken if not protected
+</li>
+<li>Use a large amount of power
+</li>
+<li>Have read/write limits - a few 100000 times before cells become corrupt
+</li>
+<li>Require special drives to read
+</li>
+<li>Very expensive per MB of data
+</li>
+<li>Can be easily damaged if dropped or knocked around
+</li>
+<li>Fairly expensive per GB although price is rapidly dropping
+</li>
+<li>Easily damaged by scratching, heat and light
+</li>
+<li>Write speeds are slow, compared to read speeds.
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Magnetic Advantages</th>
+<th scope="col" class="left">Magnetic Disadvantages</th>
+<th scope="col" class="left">Optical Advantages</th>
+<th scope="col" class="left">Optical Disadvantages</th>
+<th scope="col" class="left">Solid State Advantages</th>
+<th scope="col" class="left">Solid State Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-5" class="outline-3 learn">
+<h3 id="sec-7-5">Learn It</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>Magnetic Storage is used in Hard Drives and tape drives. Tape drives are often used for backing up large volumes of data.
+</li>
+<li>Optical Storage is used in CDs, DVDs and Blu-Ray.
+</li>
+<li>Solid State is used in Hard Drives, Memory Sticks and Flash memory cards.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-6" class="outline-3 try">
+<h3 id="sec-7-6">Try It</h3>
+<div class="outline-text-3" id="text-7-6">
+</div>
+<div id="outline-container-sec-7-6-1" class="outline-4">
+<h4 id="sec-7-6-1">Answer the following questions:</h4>
+<div class="outline-text-4" id="text-7-6-1">
+<ol class="org-ol">
+<li>Explain how data can be read or written with a magnetic disk. (5 marks)
+</li>
+<li>Explain why digital video cameras are now more likely to use solid state storage rather than magnetic tape storage. (4 marks)
+</li>
+<li>Which are cheaper, HDDs or SSDs? Is there a big difference in price? Which has the larger capacity? (3 marks)
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2 activity">
+<h2 id="sec-8"><span class="section-number-2">8</span> Cloud Storage</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-sec-8-1" class="outline-3 learn">
+<h3 id="sec-8-1">Learn It: What is Cloud Storage?</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li><b>Cloud storage</b> involves <b>uploading data</b> to a <b>remote server</b> or computer via an <b>Internet connection</b>.
+</li>
+<li>This <b>data storage system</b> is <b>maintained</b> by a <b>third party</b>, for example: <i>Dropbox, Google Drive, Microsoft OneDrive and Apple iCloud</i>.
+</li>
+<li><b>Instead</b> of saving data on your computer's hard drive or other local storage device, you save it in a remote storage facility, and access
+it via the Internet.
+</li>
+<li><b>Clients pay</b> for online storage space to which they can upload data such as <i>photos, videos, music and documents</i>.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>There are several advantages of cloud storage:</b>
+<ul class="org-ul">
+<li>There is a reduced risk of physical damage.
+</li>
+<li>You can access the data anytime and from anywhere in the World.
+</li>
+<li>You can share the data with other people in different locations.
+</li>
+<li>Backups are no longer an issue, as it is the responsibility of the
+provider to keep the data safe.
+</li>
+<li>It is a secure form of storage - As long as the password is kept
+private.
+</li>
+<li>Storage capacity on your local machine is freed up, giving you
+more storage space.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>There are also some disadvantages of cloud storage:</b>
+<ul class="org-ul">
+<li>You must have an Internet connection to access your data.
+</li>
+<li>Data is at risk of hacking.
+</li>
+<li>Basic storage plans are usually free, but larger storage
+capacities often require payment.
+</li>
+<li>The speed at which you can access your data is limited by your
+Internet connection, therefore it might take a long time to upload and download large files.
+</li>
+</ul>
+</li>
+</ul>
+<pre class="example">
+Cloud Storage - The data is stored, usally on hard disks, but increasingly on solid-State
+drives, in remote locations in different countries.
+</pre>
+
+<div class="figure">
+<p><img src="img/google_cloud.jpg" alt="google_cloud.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8-2" class="outline-3 badge">
+<h3 id="sec-8-2">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+<b>Silver</b>: Answer the three following exam questions:
+</p>
+<ol class="org-ol">
+<li>Discuss three advantages and/or disadvantages of using cloud storage over a memory stick to transfer files between computers. (6 marks)
+</li>
+
+<li><i>Upload to Computer Systems - Systems Architecture: Silver on BourneToLearn</i>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2 activity">
+<h2 id="sec-9"><span class="section-number-2">9</span> Embedded Systems</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-sec-9-1" class="outline-3 learn">
+<h3 id="sec-9-1">Learn It: What are Embedded systems?</h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li><b>Embedded systems</b> refer to device s around the home that use <code>microprocessors/CPUs/microcontrollers</code> to control their functions.
+</li>
+<li>The <code>control devices</code> are usually <code>located</code> on a <code>single microprocessor</code> store within the device, which is a cip that contains both storage and processing capabilities.
+</li>
+<li>They usually <code>do not</code> need an <code>operating system</code> as tasks are usually quite simple and repeated, and the input is usually done by
+pressing a button or setting a control.
+</li>
+</ul>
+<p>
+<b>Unlike the software in a computer or other type of non-embedded systems:</b>
+</p>
+<ul class="org-ul">
+<li>The system is held on <code>non-volatile memory</code> such as <b>ROM</b> or <b>EPROM</b> (<i>Erasable Programmable Read-Only Memory</i>) and is rarely if ever
+changed during the lifetime of the device.
+</li>
+<li>Some <code>firmware</code> devices are <code>permanently installed</code> and cannot be changed after mnufacture.
+</li>
+<li>It is <b>not usually possible</b> to <b>upgrade</b> the <b>hardware</b> or attach peripherals.
+</li>
+</ul>
+<p>
+<img src="img/traffic_lights.png" alt="traffic_lights.png" />
+<b>Non-Embedded VS Embedded Systems</b>
+<img src="img/embed_compare.png" alt="embed_compare.png" />
+<b>Examples of Embedded and Non-Embedded Systems</b>
+<img src="img/examples_embed.png" alt="examples_embed.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-9-2" class="outline-3 badge">
+<h3 id="sec-9-2">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-9-2">
+</div>
+<div id="outline-container-sec-9-2-1" class="outline-4">
+<h4 id="sec-9-2-1">Gold - Answer the three following exam questions:</h4>
+<div class="outline-text-4" id="text-9-2-1">
+<ol class="org-ol">
+<li>Describe in detail four functions of a typical operating system?
+</li>
+<li>Explain why certain household devices may not need an operating
+system?
+</li>
+<li>Give <b>one</b> example of a utility program?
+</li>
+</ol>
+
+<p>
+<b><i>Upload to Computer Systems - Systems Architecture: Gold on BourneToLearn</i></b>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9-3" class="outline-3 badge">
+<h3 id="sec-9-3">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-9-3">
+</div>
+<div id="outline-container-sec-9-3-1" class="outline-4">
+<h4 id="sec-9-3-1">Platinum - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-9-3-1">
+<ol class="org-ol">
+<li>What is the difference between volatile and non-volatile memory? Give an example of each. (3 marks)
+</li>
+<li>Briefly describe the 'Fetch-Exexcute Cycle'? (2 marks)
+</li>
+<li>Why are both RAM and ROM unsuitable alternatives to secondary
+storage? (2 marks)
+</li>
+<li>Below are three types of memory. Tick the fastest from these types
+of memory. (1 mark)
+<ul class="org-ul">
+<li>a) L1 Cache
+</li>
+<li>b) RAM
+</li>
+<li>c) L2 Cache
+</li>
+</ul>
+</li>
+<li>When might a computer use virtual memory? (1 marke)
+</li>
+<li>Describe why a computer uses cache memory? (2 marks)
+</li>
+<li>Describe what a 'bus' is on a computer system? (2 marks)
+</li>
+<li>Inaddition to the CPU clock speed, name <b>two</b> factors that can
+affect the CPU's performance? (2 marks)
+</li>
+<li>What is the difference between a '-R' and '-RW' in relation to an
+optical disc? (2 marks)
+</li>
+<li>A small organisation wants to transfer all of its data onto a <b>cloud storage plan</b>. Discuss the advantages and disadvantages of
+this option? (8 marks)
+</li>
+<li>Explain, using an example, what is an <b>Embedded System</b>? (2 marks)
+</li>
+<li>Tablet computers and smartphones tend to use solid-state media for
+storage rather than hard drives. Describe <b>two</b> reasons, other than cost and capacity, why solid-state is used? (4 marks)
+</li>
+</ol>
+
+<p>
+<b><i>Upload to Computer Systems - Systems Architecture: Platinum on BourneToLearn</i></b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
