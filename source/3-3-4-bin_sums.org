@@ -95,7 +95,7 @@
   - 1 + 1 = 10 (=0= and =carry the 1=)
   - 1 + 1 + 1 = 11 (=1= and =carry the 1=)
 
-- Binary addition cab be performed using column addition. Because the
+- Binary addition can be performed using column addition. Because the
   largest value, a one-digit binary number can have is 1, anything
   that exceeds this must be carried over to the next column (2) in
   the base-2 place value table:
@@ -146,7 +146,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- *Silver*: Complete the following binary additions:
+*** Silver - Complete the following binary additions:
 =1=
 |----------|----------------------------------------------------------------------------------|
 |          |  *128*   |  *64*   |   *32*   |  *16*   |   *8*    |   *4*   |   *2*   |   *1*   |
@@ -186,6 +186,9 @@
 |*Answer*  |          |         |          |         |          |         |         |         |
 |----------+----------+---------+----------+---------+----------+---------+---------+---------|
 |=Carried= |          |         |          |         |          |         |         |         |
+
+*/Upload to Data Representation - Binary Arithmetic: Silver on BourneToLearn/*
+
 
 ** Learn It
 :PROPERTIES:
@@ -258,8 +261,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- *Gold*: Write down the results after the following shift operations
-  and write down the decimal values before and after the shifts:
+*** Gold - Write down the results after the following shift operations and write down the decimal values before and after the shifts:
 #+BEGIN_SRC
  1. The binary number 11001100 is shifted TWO places to the right.
  2. The binary number 00011001 is shifted TWO places to the left.
@@ -268,6 +270,10 @@
  5. The binary number 10000000 is shifted FIVE places to the right.
 #+END_SRC
 
+*/Upload to Data Representation - Binary Arithmetic: Gold on BourneToLearn/*
+#+BEGIN_HTML
+<br>
+#+END_HTML
 *Binary Shift Accuracy with multiplication/division by Powers of 2* 
 - This method gives us an easy way to multiply and divide binary
   numbers by powers of 2, but can come at the expense of accuracy.
@@ -278,3 +284,21 @@
 - This is equivalent to shifting a decimal number right or left - For
   example shifting 12300 right 1230, i.e. It divides the number
   by 10. Shifting left multiplies a decimal number by 10.
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Answer the following questions:
+ 1. Computers can encounter overflow when adding binary numbers.
+   - i) Give an example of an 8-bit binary addition where an overflow
+  occurs?
+   - ii) Explain how a computer deals with the overflow?
+ 2. Carry out the following binary additions:
+   - i) 00011100 + 01110011 + 01001101
+   - ii) 11101001 + 01010101 + 11111111
+ 3. Complete a 3 place left shift on the binary number: 00011010
+ 4. State an appropriate shift to divide a binary number by 4 and use it on: 11010100
+ 5. Tim says "Adding a binary number to itself is the same as a 2 place left shift." Is he correct? Explain your answer.
+
+*/Upload to Data Representation - Binary Arithmetic: Platinum on BourneToLearn/*

@@ -541,7 +541,7 @@ drives, in remote locations in different countries.
    - a) L1 Cache
    - b) RAM
    - c) L2 Cache
-5. When might a computer use virtual memory? (1 marke)
+5. When might a computer use virtual memory? (1 mark)
 6. Describe why a computer uses cache memory? (2 marks)
 7. Describe what a 'bus' is on a computer system? (2 marks)
 8. Inaddition to the CPU clock speed, name *two* factors that can
