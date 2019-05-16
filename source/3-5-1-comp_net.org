@@ -1,0 +1,313 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.5.1 Computer Networks
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Computer Networks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/computer-network.jpg]]
+** Learn It: What are Networks?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- When =two= or =more= *computers/devices* are connected together
+  through a =communication medium=, allowing them to =exchange data=, =share resources= and =communicate=, we have a *computer network*.
+- Often a computer network conforms to the =server= / =client= model.
+- *Examples of networks could include:*
+  - Mobile Phones/Devices using Bluetooth (PAN).
+  - Bourne Grammar School using wired or wireless (LAN).
+  - The Internet (WAN).
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- The largest and most famous =Wide Area Network (WAN)= in the World is the Internet. This is a collection of
+    inter-connected networks *(LANs)*.
+- The Internet is a =Worldwide collection= of =computers/devices= and
+  =networks=, not owned or managed by any one group of people. Anyone
+  can access the Internet using either wired or wireless connections.
+- The World Wide Web (WWW) - Is a =collection of html documents= and
+  =web pages= that are all linked to each other using =hyperlinks=. *Sir Tim Berners-Lee* invented the WWW in 1989.
+- *Websites* are stored on =web servers= connected to the Internet,
+  and each website has a =unique web address= (/IP Address/), so that
+  it can be accessed. All information on the WWW is stored as =HTML
+  documents= known as =web pages=.
+- *Web Pages* can be accessed using a program called a =Web Browser= such as /Google Chrome, Firefox/ or /Safari/.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *Let's define some of those terms:*
+  - =Communication Media= refers to the connection between computers. This could be standard copper cable (/normally Cat5e or 6/), /Fibre Optic cable/ or /Wireless Radio/.
+  - =Resources= are devices such as /printers/ or /storage devices/, that computers on the network have shared access to.
+  - =Servers= are just another computer. They may sometimes be very high-powered if the service they are providing is computationally hard (such as serving millions of web-pages or performing advanced modelling) or they can be tiny devices such as a Raspberry Pi (/serving media over a home network/).
+  - =Clients= are computers that *use* the services provided by the server.
+
+** Try It: Benefits and Risks of Computer Networks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Networking provides many benefits because of the ability to communicate between users and devices, but there are also risks!
+- *Research and *complete* the following table explaining the *benefits* & *risks* of *computer networks*:
+[[file:img/pro_con_net.png]]
+
+** Try It: Research Advantages and Disadvantages of Computer Networks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:  
+
+- *Research* and make use each of the *keywords* shown below to write sentences describing the =advantages= and =disadvantages= of networking computers
+- *Advantages of Networks:*
+  1. Files
+  2. Communication
+  3. Resources
+  4. Distance
+  5. Software, server
+  6. Security
+  7. Licensing, money
+  8. Backups
+- *Disadvantages of Networks:*
+  1. Malware
+  2. Single point of failure
+  3. Infrastructure cost
+  4. Administrative cost
+  5. Hackers
+
+*Networks Explained Video*
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3QhU9jd03a0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+
+* Types of Computer Networks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are the main types of Networks?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Computer networks allows computers and devices to be connected together to share data. This includes:
+  - Computer to computer communications.
+  - Computers communicating with devices such as printers, a mouse and
+    a keyboard.
+  - Mobile phone networks.
+  - Smart Devices (/Televisions, Digital Assistants, Fridges, iKettles, iToasters, wearable tech, Smart Home Devices etc../)
+  - Tablets amd media players downloading/streaming videos and music and playing them through external devices such as speakers and digital projectors.
+
+*Personal Area Networks (PANs)*
+[[file:img/PAN_Info.png]]
+[[file:img/PAN_Image.png]]
+
+*Local Area Networks (LANs)*
+[[file:img/LAN_Info.png]]
+[[file:img/LAN_Image.png]]
+
+*Wide Area Networks (WANs)*
+[[file:img/WAN_Info.png]]
+[[file:img/WAN_Image.png]]
+
+* Network Hardware
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Networks made of?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+In order to connect to a network, a computer device needs some hardware and also software that allows it to communicate with each other.
+- =A Network Interface Card (NIC)= is a component that *connects a device to a network*. It formats the data sent into the required format according to the *protocols (rules)* of the network. NICs can exist for both *wired* and *wireless* connections.
+[[file:img/NIC_Card.png]]
+- =Switch= – Switches *connect devices on a LAN*. Switches receive data (*in units called frames*) from one device and transmit this data to the device on the network with the correct *MAC address*. They *build* up a *table* of *MAC addresses* on the
+  network.
+[[file:img/Switch.png]]
+- =Routers= – Are responsible for transmitting data *between networks* – They’re always connected to at least two different networks. Routers have a crucial role on the Internet, directing data (*in units called packets*) to their destination. They are used in *homes and offices* to connect the *LAN* to the *Internet*.
+[[file:img/Router.png]]
+- =MAC Address (Media Access Control)= – Every device needs a *unique identifier* so that it can be found on a network  that allow data to
+  be sent to the correct component. They are unique to the device and *cannot be changed*. MAC addresses are *48 bits* in length and are usually displayed as a *12-digit hexadecimal number*.
+[[file:img/MAC.png]]
+
+* Transmission Media
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What Networks use to communicate?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+In order for a network to communicate, it requires a form of transmission media. The two ways that network devices communicate over
+a network are either by =cable= or =radio waves= (/Wired or
+Wireless/).
+- =Ethernet Cables= – The most common Ethernet cables are *CAT5e* and
+  *CAT6*, they containing *four pairs* of *copper wires* that are *twisted* together to reduce internal *interference*. *Data* is sent
+  as *electrical currents*.
+ [[file:img/Ethernet.png]]
+- =Fibre Optic Cables= - Uses *glass* (/or plastic/) threads
+  (/fibres/) to transmit data. A fibre optic cable consists of a bundle of glass threads, each of which is capable of transmitting
+  messages modulated onto *light waves*. Pulses of light are generated by a =light emitting diode (LED)= or *a laser*.
+[[file:img/Fibre.png]]
+- =Wireless (Wi-Fi) Wireless Fidelity= – Like mobile phones and TVs, wireless networks use *radio waves* to *transmit data*. Microwaves are a type of
+  radiowave that consist of *electromagnetic radiation* travelling in waves with a *frequency higher* that *1 gigahertz* (/1GHz to 300GHz
+  per second/). Data is transmitted across the network in
+  *frequency bands* of between *2.4* and *5GHz*.
+- The bands are *split* into *numbered* /channels/ that each cover a small
+  frequency range. They also use different *Wi-Fi spectrums* for example; /802.11b, 802.11g/ and /802.11n/.
+[[file:img/Wireless.png]]
+
+** Try It: Benefits and Risks of Wired Compared to Wireless Networks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- As we have previously learned, connections between computers on a network can either be *wired* or *wireless*.
+- In a wired network, computers are connected through wires or cables,
+  whereas in a wireless network, radio waves are used to transmit data, so no cables are needed.
+- Mobile phones and televisions also use radio waves to transmit data.
+- Wi-Fi is the standard used in wireless networks.
+*Complete the following table comparing wired and wireless computer networks:*
+[[file:img/comp_wire_table.png]]
+[[file:img/net_factors.png]]
+
+** Learn It: Client-Server and Peer-to-Peer (P2P) Networks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Client_Server_Info.png]]
+#+BEGIN_HTML
+<br>
+#+END_HTML
+[[file:img/P2P_Info.png]]
+
+** Learn It: Network Topologies
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are many different ways of configuring hardware on a computer network. The =two= main =topologies= are
+  - Bus
+[[file:img/Bus_Info.png]]
+[[file:img/Bus_Topology.png]]
+
+  - Star
+[[file:img/Star_Info.png]]
+[[file:img/Star_Topology.png]]
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Answer the following exam questions:
+1. In an office there are six computers, a scanner and a router
+   connected together in a Local Area Network (LAN).
+  - a) Define the term Local Area Network (LAN)? (1 Mark)
+  - b) State three advantages of connecting the computers together
+    into a Local Area Network? (3 Marks)
+
+/Upload to Fundamentals of Computer Networks - Computer Networks: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following exam questions:
+1. Dishley Academy is connected to other schools in the area using a Wide Area Network (WAN).
+  - a) Describe what is meant by a Wide Area Network (WAN)? (2 Marks)
+  - b) Explain *two* of the potential benefits of using a WAN to connect the Academy to other schools? (4 Marks)
+  - c) Explain *three* factors that can affect the performance of a network? (6 Marks)
+
+/Upload to Fundamentals of Computer Networks - Computer Networks: Gold on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Answer the following two exam questions:
+1. Jane works from home. She connects her laptop and television to her
+   home Local Area Network (LAN). Jane uses a home router to connect her LAN together.
+  - a) State the name of the hardware device inside the laptop that connects it to the LAN? (1 Mark)
+  - b) Jane connects her devices to the router using either Ethernet or Wi-Fi.
+    - i) State how an Ethernet connection is different to a Wi-Fi connection? (1 Mark)
+    - ii) Jane's television lacks any wireless capability. State the
+      name of the hardware Jane can use to allow her television to
+      connect to the LAN wirelessy? (1 Mark)
+
+2. Bill's graphic design business has ten members of staff, each
+     with their own computer. The staff work together by sharing files
+     between their computers.
+  - a) The staff's computers are connected together in a Peer-to-Peer network.
+    - i)Describe what is meant by a Peer-to-Peer (P2P) network? (2 Marks)
+    - ii) Identify *two* benefits and *two* drawbacks of using a Peer-to-Peer (P2P) network? (4 Marks)
+  - b) An IT consultant suggests the company should adopt a Client-Server network setup.
+    - i) Describe what is meant by a Client-Server network? (2 Marks)
+    - ii) Identify *two* benefits and *two* drawbacks of changing from
+      a Peer-to-Peer (P2P) network to a Client-Server network? (4 Marks)
+
+/Upload to Fundamentals of Computer Networks - Computer Networks: Platinum on BourneToLearn/

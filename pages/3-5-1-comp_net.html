@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.5.1 Computer Networks</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.5.1 Computer Networks</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Computer Networks</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are Networks?</a></li>
+<li><a href="#sec-1-2">Try It: Benefits and Risks of Computer Networks</a></li>
+<li><a href="#sec-1-3">Try It: Research Advantages and Disadvantages of Computer Networks</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Types of Computer Networks</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What are the main types of Networks?</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Network Hardware</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: What are Networks made of?</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Transmission Media</a>
+<ul>
+<li><a href="#sec-4-1">Learn It: What Networks use to communicate?</a></li>
+<li><a href="#sec-4-2">Try It: Benefits and Risks of Wired Compared to Wireless Networks</a></li>
+<li><a href="#sec-4-3">Learn It: Client-Server and Peer-to-Peer (P2P) Networks</a></li>
+<li><a href="#sec-4-4">Learn It: Network Topologies</a></li>
+<li><a href="#sec-4-5">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-4-5-1">Silver - Answer the following exam questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-6">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-4-6-1">Gold - Answer the following exam questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-7">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-4-7-1">Platinum - Answer the following two exam questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Computer Networks</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/computer-network.jpg" alt="computer-network.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are Networks?</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>When <code>two</code> or <code>more</code> <b>computers/devices</b> are connected together
+through a <code>communication medium</code>, allowing them to <code>exchange data</code>, <code>share resources</code> and <code>communicate</code>, we have a <b>computer network</b>.
+</li>
+<li>Often a computer network conforms to the <code>server</code> / <code>client</code> model.
+</li>
+<li><b>Examples of networks could include:</b>
+<ul class="org-ul">
+<li>Mobile Phones/Devices using Bluetooth (PAN).
+</li>
+<li>Bourne Grammar School using wired or wireless (LAN).
+</li>
+<li>The Internet (WAN).
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li>The largest and most famous <code>Wide Area Network (WAN)</code> in the World is the Internet. This is a collection of
+inter-connected networks <b>(LANs)</b>.
+</li>
+<li>The Internet is a <code>Worldwide collection</code> of <code>computers/devices</code> and
+<code>networks</code>, not owned or managed by any one group of people. Anyone
+can access the Internet using either wired or wireless connections.
+</li>
+<li>The World Wide Web (WWW) - Is a <code>collection of html documents</code> and
+<code>web pages</code> that are all linked to each other using <code>hyperlinks</code>. <b>Sir Tim Berners-Lee</b> invented the WWW in 1989.
+</li>
+<li><b>Websites</b> are stored on <code>web servers</code> connected to the Internet,
+and each website has a <code>unique web address</code> (<i>IP Address</i>), so that
+it can be accessed. All information on the WWW is stored as <code>HTML
+  documents</code> known as <code>web pages</code>.
+</li>
+<li><b>Web Pages</b> can be accessed using a program called a <code>Web Browser</code> such as <i>Google Chrome, Firefox</i> or <i>Safari</i>.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>Let's define some of those terms:</b>
+<ul class="org-ul">
+<li><code>Communication Media</code> refers to the connection between computers. This could be standard copper cable (<i>normally Cat5e or 6</i>), <i>Fibre Optic cable</i> or <i>Wireless Radio</i>.
+</li>
+<li><code>Resources</code> are devices such as <i>printers</i> or <i>storage devices</i>, that computers on the network have shared access to.
+</li>
+<li><code>Servers</code> are just another computer. They may sometimes be very high-powered if the service they are providing is computationally hard (such as serving millions of web-pages or performing advanced modelling) or they can be tiny devices such as a Raspberry Pi (<i>serving media over a home network</i>).
+</li>
+<li><code>Clients</code> are computers that <b>use</b> the services provided by the server.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It: Benefits and Risks of Computer Networks</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Networking provides many benefits because of the ability to communicate between users and devices, but there are also risks!
+</li>
+<li><b>Research and *complete</b> the following table explaining the <b>benefits</b> &amp; <b>risks</b> of <b>computer networks</b>:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/pro_con_net.png" alt="pro_con_net.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 try">
+<h3 id="sec-1-3">Try It: Research Advantages and Disadvantages of Computer Networks</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<ul class="org-ul">
+<li><b>Research</b> and make use each of the <b>keywords</b> shown below to write sentences describing the <code>advantages</code> and <code>disadvantages</code> of networking computers
+</li>
+<li><b>Advantages of Networks:</b>
+<ol class="org-ol">
+<li>Files
+</li>
+<li>Communication
+</li>
+<li>Resources
+</li>
+<li>Distance
+</li>
+<li>Software, server
+</li>
+<li>Security
+</li>
+<li>Licensing, money
+</li>
+<li>Backups
+</li>
+</ol>
+</li>
+<li><b>Disadvantages of Networks:</b>
+<ol class="org-ol">
+<li>Malware
+</li>
+<li>Single point of failure
+</li>
+<li>Infrastructure cost
+</li>
+<li>Administrative cost
+</li>
+<li>Hackers
+</li>
+</ol>
+</li>
+</ul>
+
+<p>
+<b>Networks Explained Video</b>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3QhU9jd03a0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Types of Computer Networks</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What are the main types of Networks?</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Computer networks allows computers and devices to be connected together to share data. This includes:
+<ul class="org-ul">
+<li>Computer to computer communications.
+</li>
+<li>Computers communicating with devices such as printers, a mouse and
+a keyboard.
+</li>
+<li>Mobile phone networks.
+</li>
+<li>Smart Devices (<i>Televisions, Digital Assistants, Fridges, iKettles, iToasters, wearable tech, Smart Home Devices etc..</i>)
+</li>
+<li>Tablets amd media players downloading/streaming videos and music and playing them through external devices such as speakers and digital projectors.
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<b>Personal Area Networks (PANs)</b>
+<img src="img/PAN_Info.png" alt="PAN_Info.png" />
+<img src="img/PAN_Image.png" alt="PAN_Image.png" />
+</p>
+
+<p>
+<b>Local Area Networks (LANs)</b>
+<img src="img/LAN_Info.png" alt="LAN_Info.png" />
+<img src="img/LAN_Image.png" alt="LAN_Image.png" />
+</p>
+
+<p>
+<b>Wide Area Networks (WANs)</b>
+<img src="img/WAN_Info.png" alt="WAN_Info.png" />
+<img src="img/WAN_Image.png" alt="WAN_Image.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Network Hardware</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: What are Networks made of?</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+In order to connect to a network, a computer device needs some hardware and also software that allows it to communicate with each other.
+</p>
+<ul class="org-ul">
+<li><code>A Network Interface Card (NIC)</code> is a component that <b>connects a device to a network</b>. It formats the data sent into the required format according to the <b>protocols (rules)</b> of the network. NICs can exist for both <b>wired</b> and <b>wireless</b> connections.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/NIC_Card.png" alt="NIC_Card.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><code>Switch</code> – Switches <b>connect devices on a LAN</b>. Switches receive data (<b>in units called frames</b>) from one device and transmit this data to the device on the network with the correct <b>MAC address</b>. They <b>build</b> up a <b>table</b> of <b>MAC addresses</b> on the
+network.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Switch.png" alt="Switch.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><code>Routers</code> – Are responsible for transmitting data <b>between networks</b> – They’re always connected to at least two different networks. Routers have a crucial role on the Internet, directing data (<b>in units called packets</b>) to their destination. They are used in <b>homes and offices</b> to connect the <b>LAN</b> to the <b>Internet</b>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Router.png" alt="Router.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><code>MAC Address (Media Access Control)</code> – Every device needs a <b>unique identifier</b> so that it can be found on a network  that allow data to
+be sent to the correct component. They are unique to the device and <b>cannot be changed</b>. MAC addresses are <b>48 bits</b> in length and are usually displayed as a <b>12-digit hexadecimal number</b>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/MAC.png" alt="MAC.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Transmission Media</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It: What Networks use to communicate?</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+In order for a network to communicate, it requires a form of transmission media. The two ways that network devices communicate over
+a network are either by <code>cable</code> or <code>radio waves</code> (<i>Wired or
+Wireless</i>).
+</p>
+<ul class="org-ul">
+<li><code>Ethernet Cables</code> – The most common Ethernet cables are <b>CAT5e</b> and
+ <b>CAT6</b>, they containing <b>four pairs</b> of <b>copper wires</b> that are <b>twisted</b> together to reduce internal <b>interference</b>. <b>Data</b> is sent
+ as <b>electrical currents</b>.
+<img src="img/Ethernet.png" alt="Ethernet.png" />
+</li>
+<li><code>Fibre Optic Cables</code> - Uses <b>glass</b> (<i>or plastic</i>) threads
+(<i>fibres</i>) to transmit data. A fibre optic cable consists of a bundle of glass threads, each of which is capable of transmitting
+messages modulated onto <b>light waves</b>. Pulses of light are generated by a <code>light emitting diode (LED)</code> or <b>a laser</b>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Fibre.png" alt="Fibre.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><code>Wireless (Wi-Fi) Wireless Fidelity</code> – Like mobile phones and TVs, wireless networks use <b>radio waves</b> to <b>transmit data</b>. Microwaves are a type of
+radiowave that consist of <b>electromagnetic radiation</b> travelling in waves with a <b>frequency higher</b> that <b>1 gigahertz</b> (<i>1GHz to 300GHz
+per second</i>). Data is transmitted across the network in
+<b>frequency bands</b> of between <b>2.4</b> and <b>5GHz</b>.
+</li>
+<li>The bands are <b>split</b> into <b>numbered</b> <i>channels</i> that each cover a small
+frequency range. They also use different <b>Wi-Fi spectrums</b> for example; <i>802.11b, 802.11g</i> and <i>802.11n</i>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Wireless.png" alt="Wireless.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3 try">
+<h3 id="sec-4-2">Try It: Benefits and Risks of Wired Compared to Wireless Networks</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>As we have previously learned, connections between computers on a network can either be <b>wired</b> or <b>wireless</b>.
+</li>
+<li>In a wired network, computers are connected through wires or cables,
+whereas in a wireless network, radio waves are used to transmit data, so no cables are needed.
+</li>
+<li>Mobile phones and televisions also use radio waves to transmit data.
+</li>
+<li>Wi-Fi is the standard used in wireless networks.
+</li>
+</ul>
+<p>
+<b>Complete the following table comparing wired and wireless computer networks:</b>
+<img src="img/comp_wire_table.png" alt="comp_wire_table.png" />
+<img src="img/net_factors.png" alt="net_factors.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3 learn">
+<h3 id="sec-4-3">Learn It: Client-Server and Peer-to-Peer (P2P) Networks</h3>
+<div class="outline-text-3" id="text-4-3">
+
+<div class="figure">
+<p><img src="img/Client_Server_Info.png" alt="Client_Server_Info.png" />
+</p>
+</div>
+<br>
+
+<div class="figure">
+<p><img src="img/P2P_Info.png" alt="P2P_Info.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4" class="outline-3 learn">
+<h3 id="sec-4-4">Learn It: Network Topologies</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>There are many different ways of configuring hardware on a computer network. The <code>two</code> main <code>topologies</code> are
+<ul class="org-ul">
+<li>Bus
+</li>
+</ul>
+</li>
+</ul>
+<p>
+<img src="img/Bus_Info.png" alt="Bus_Info.png" />
+<img src="img/Bus_Topology.png" alt="Bus_Topology.png" />
+</p>
+
+<ul class="org-ul">
+<li>Star
+</li>
+</ul>
+<p>
+<img src="img/Star_Info.png" alt="Star_Info.png" />
+<img src="img/Star_Topology.png" alt="Star_Topology.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-5" class="outline-3 badge">
+<h3 id="sec-4-5">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-4-5">
+</div>
+<div id="outline-container-sec-4-5-1" class="outline-4">
+<h4 id="sec-4-5-1">Silver - Answer the following exam questions:</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ol class="org-ol">
+<li>In an office there are six computers, a scanner and a router
+connected together in a Local Area Network (LAN).
+<ul class="org-ul">
+<li>a) Define the term Local Area Network (LAN)? (1 Mark)
+</li>
+<li>b) State three advantages of connecting the computers together
+into a Local Area Network? (3 Marks)
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Computer Networks: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-6" class="outline-3 badge">
+<h3 id="sec-4-6">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-4-6">
+</div>
+<div id="outline-container-sec-4-6-1" class="outline-4">
+<h4 id="sec-4-6-1">Gold - Answer the following exam questions:</h4>
+<div class="outline-text-4" id="text-4-6-1">
+<ol class="org-ol">
+<li>Dishley Academy is connected to other schools in the area using a Wide Area Network (WAN).
+<ul class="org-ul">
+<li>a) Describe what is meant by a Wide Area Network (WAN)? (2 Marks)
+</li>
+<li>b) Explain <b>two</b> of the potential benefits of using a WAN to connect the Academy to other schools? (4 Marks)
+</li>
+<li>c) Explain <b>three</b> factors that can affect the performance of a network? (6 Marks)
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Computer Networks: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-7" class="outline-3 badge">
+<h3 id="sec-4-7">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-4-7">
+</div>
+<div id="outline-container-sec-4-7-1" class="outline-4">
+<h4 id="sec-4-7-1">Platinum - Answer the following two exam questions:</h4>
+<div class="outline-text-4" id="text-4-7-1">
+<ol class="org-ol">
+<li>Jane works from home. She connects her laptop and television to her
+home Local Area Network (LAN). Jane uses a home router to connect her LAN together.
+<ul class="org-ul">
+<li>a) State the name of the hardware device inside the laptop that connects it to the LAN? (1 Mark)
+</li>
+<li>b) Jane connects her devices to the router using either Ethernet or Wi-Fi.
+<ul class="org-ul">
+<li>i) State how an Ethernet connection is different to a Wi-Fi connection? (1 Mark)
+</li>
+<li>ii) Jane's television lacks any wireless capability. State the
+name of the hardware Jane can use to allow her television to
+connect to the LAN wirelessy? (1 Mark)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>Bill's graphic design business has ten members of staff, each
+with their own computer. The staff work together by sharing files
+between their computers.
+<ul class="org-ul">
+<li>a) The staff's computers are connected together in a Peer-to-Peer network.
+<ul class="org-ul">
+<li>i)Describe what is meant by a Peer-to-Peer (P2P) network? (2 Marks)
+</li>
+<li>ii) Identify <b>two</b> benefits and <b>two</b> drawbacks of using a Peer-to-Peer (P2P) network? (4 Marks)
+</li>
+</ul>
+</li>
+<li>b) An IT consultant suggests the company should adopt a Client-Server network setup.
+<ul class="org-ul">
+<li>i) Describe what is meant by a Client-Server network? (2 Marks)
+</li>
+<li>ii) Identify <b>two</b> benefits and <b>two</b> drawbacks of changing from
+a Peer-to-Peer (P2P) network to a Client-Server network? (4 Marks)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Computer Networks: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
