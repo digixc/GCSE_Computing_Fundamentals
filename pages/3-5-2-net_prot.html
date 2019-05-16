@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.5.2 Network Protocols</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.5.2 Network Protocols</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Network Protocols</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are Protocols?</a></li>
+<li><a href="#sec-1-2">Learn It: Ethernet Protocol</a></li>
+<li><a href="#sec-1-3">Learn It: Wi-Fi</a></li>
+<li><a href="#sec-1-4">Learn It: TCP/IP and UDP Protocols</a></li>
+<li><a href="#sec-1-5">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-5-1">Silver - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-6-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-7-1">Platinum - Answer the following questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Network Protocols</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Protocols_Image.png" alt="Protocols_Image.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are Protocols?</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><b>Network Protocols</b> are the <code>rules</code> and <code>standards</code> that <code>govern</code> how a
+<b>devices communicates on a network</b>.
+</li>
+<li><b>Network protocols</b> govern all aspects of network communication from
+<i>sending</i> and <i>receiving messages</i>, to <i>formatting files</i> for different types of messages.
+</li>
+<li><b>Without protocols</b>, <code>communications</code> between computers devices <code>would be impossible</code>.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>A network protocol will specify, for example:</b>
+<ul class="org-ul">
+<li>The format of data packets.
+</li>
+<li>The addressing system.
+</li>
+<li>Error-checking procedures used.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Ethernet Protocol</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<img src="img/Protocols.png" alt="Protocols.png" />
+<b>Ethernet Protocols</b>
+</p>
+<ul class="org-ul">
+<li>The <b>Ethernet</b> refers to a <code>family of related networking rules</code> or <code>protocols</code> widely used in <code>Local Area Networks (LAN)</code>.
+</li>
+<li>This is <code>set of rules</code> that <code>governs</code> how <code>data frames</code> are <code>formatted</code> ready for <code>transmission</code> between <code>computers</code> on the <code>same network</code>.
+<ul class="org-ul">
+<li><i>This is similar to polite human conversation, nodes wait until the connection is quiet before attempting to 'Speak' or transmit.</i>
+</li>
+<li><i>Two nodes attempting to transmit simultaneously will stop and each will wait a random period of time before re-attempting transmission.</i>
+</li>
+</ul>
+</li>
+<li>Each Ethernet device has a unique <code>48-bit MAC address</code> and these addresses specify the <code>source</code> and <code>destination</code> of each frame. These are are usually displayed as a 12-digit hexadecimal number.
+</li>
+<li>All <b>new computers</b> have <code>Ethernet interfaces built-in</code> to motherboards, and older machines can be fitted with NIC cards.
+</li>
+<li>The <b>standard network cable</b> used with Ethernet are often referred to as <code>Ethernet cables</code>. It uses <code>twisted-pair copper</code> cabling or <code>fibre-optics</code>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It: Wi-Fi</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+<img src="img/Wi_Fi.png" alt="Wi_Fi.png" />
+<b>Wi-Fi</b>
+</p>
+<ul class="org-ul">
+<li>Wi-Fi is also a <code>family of related rules</code> or <code>protocols</code> that allow <i>electronic devices</i> to <code>connect</code>, <code>control</code> and <code>transmit data</code> on a
+<b>wireless local area network (WLAN)</b>.
+</li>
+<li>Devices which can use Wi-Fi technology include; <i>personal computers, games consoles, smartphones, digital cameras, smart home devices</i> and <i>tablet computers.</i>
+</li>
+<li><b>Wi-Fi compatible devices</b> can connect to the Internet via a <code>wireless LAN</code> and a <code>Wireless Access Point (WAP)</code>.
+</li>
+<li>The <b>WAP receives data</b> from a network via its <code>physical connection</code>. The <code>transmitter</code> then <code>converts</code> this <code>data</code> into <code>radio waves</code> which are then <code>transmitted</code>.
+</li>
+<li><b>Any device</b> on the network <code>receives</code> this <code>radio signal</code> via a <code>Wi-Fi adaptor</code> which allows it to <code>communicate</code> or <code>download data</code> from the
+data source.
+</li>
+<li>This also works in the reverse direction when a device wishes to send data over the network to another computer.
+</li>
+<li>In 1999, the <b>Wi-Fi Alliance</b> was established to set the <b>international standards</b> for network connections.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/WAP.png" alt="WAP.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It: TCP/IP and UDP Protocols</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li><b>TCP/IP</b> consists of <code>two very important</code> and <code>separate protocols</code> which dictate how data is sent between networks.
+</li>
+</ul>
+<p>
+<b>The two protocols serve the following functions:</b>
+</p>
+<ol class="org-ol">
+<li><b>Transmission Control Protocol (TCP)</b> is a <code>transport layer protocol</code> that sets the <code>rules</code> for how devices connect on the network. It’s in charge of <code>splitting</code> the <code>data</code> into <code>smaller
+   numbered pieces</code> called <code>packets</code> that allows it to be transported. <b>TCP</b> then <code>reassembles</code> the <code>packets</code> back into the <code>original data</code> once they reach the receiving device. It also
+<code>detects</code> <code>errors</code> and <code>resends</code> <b>lost packets</b>. The sending device gets a <code>confirmation</code> when the <b>transfer is complete</b>.
+</li>
+<li><b>Internet Protocol (IP)</b> is an <code>Internet layer protocol</code> that is <code>responsible</code> for <code>packet switching</code>. IP is the <code>standard</code> set of <code>rules</code> used to ensure that computers on the Internet <code>send
+   information</code> to the <code>correct address</code>. Every <code>computer</code> on a <code>network</code> must have its own <code>unique address</code> known as an <code>IP address</code>. The IP protocol <code>identifies</code> the <code>location</code> of a device on
+the Internet and <code>routes</code> the <b>individual packets</b> from source to the destination via <code>routers</code>.
+</li>
+</ol>
+<br>
+<ul class="org-ul">
+<li><b>User Datagram Protocol (UDP)</b> uses a <code>simple connectionless transmission model</code> where data is <code>split</code> into <code>packets without numbering them</code>. They are <code>read</code> by the <code>receiving device</code> in the order that they arrive - <b>Even if that's not the order they were sent</b>. With UDP, computer applications can send messages referred to as <code>datagrams</code> to other hosts on an IP network. It is an alternative to TCP but has <code>no error checking</code> or <code>correction</code>.
+</li>
+</ul>
+<br>
+<p>
+<b>TCP Versus UDP</b>
+</p>
+<ul class="org-ul">
+<li>UDP is suitable for applications that need <code>fast, efficient transmission</code>, <b>e.g. Online gaming sessions, live video streaming</b> <i>(Video quality can be poor due to missing packets, but is faster
+and smoother for live video streaming).</i>
+</li>
+<li>TCP is better when you need a <code>reliable connection</code>, for example, <b>downloading files, sending data</b> or <b>emails</b>. <i>Missing data packets could cause files to become corrupt and unreadable.</i>
+</li>
+</ul>
+<p>
+<b>Other Protocols</b>
+<img src="img/Protocol_Table.png" alt="Protocol_Table.png" />
+</p>
+
+<p>
+<b>Data Packets Explained Video</b>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C3sr7_0FyPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-sec-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1">Silver - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ol class="org-ol">
+<li>Define the term network protocol? (2 Marks)
+</li>
+<li>State which would be the most suitable protocol in each of the
+ following situations. Select one in each case, from the following:
+ TCP/IP HTTP HTTPS FTP IMAP SMTP
+i) Making a payment securely when purchasing something over the Internet. (1 Mark)
+ii) Transferring a file to another computer on a wide area network. (1 Mark)
+iii) Transferring an email from one server to another server. (1 Mark)
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Network Protocols: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 badge">
+<h3 id="sec-1-6">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-sec-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ol class="org-ol">
+<li>Joe is live streaming a football match over the Internet to his computer.
+<ul class="org-ul">
+<li>a) Explain why Joe's computer needs an IP address to communicate on the Internet? (2 Marks)
+</li>
+<li>b) Would it be better to use TCP or UDP when sending the data packets to Joe's computer? Explain your answer. (5 Marks)
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Network Protocols: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 badge">
+<h3 id="sec-1-7">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-7">
+</div>
+<div id="outline-container-sec-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1">Platinum - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<ol class="org-ol">
+<li>Jane sends an email to Joe over the Internet using her smartphone. Joe receives the email on his laptop.
+<ul class="org-ul">
+<li>a) Explain why Jane and Joe's device need IP addresses to connect to the Internet? (2 Marks)
+</li>
+<li>b) Jane's email is split into packets and sent over the network using packet switching. Outline the possible actions of Joe's laptop and Jane's smartphone when:
+<ul class="org-ul">
+<li>i) One of the packets is lost in transit? (3 Marks)
+</li>
+<li>ii) One of the packets is corrupted in transit? (3 Marks)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Network Protocols: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

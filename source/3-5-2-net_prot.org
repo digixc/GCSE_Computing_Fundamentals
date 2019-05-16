@@ -1,0 +1,203 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.5.2 Network Protocols
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Network Protocols
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Protocols_Image.png]]
+** Learn It: What are Protocols?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- *Network Protocols* are the =rules= and =standards= that =govern= how a
+  *devices communicates on a network*.
+- *Network protocols* govern all aspects of network communication from
+  /sending/ and /receiving messages/, to /formatting files/ for different types of messages.
+- *Without protocols*, =communications= between computers devices =would be impossible=.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *A network protocol will specify, for example:*
+  - The format of data packets.
+  - The addressing system.
+  - Error-checking procedures used.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+
+** Learn It: Ethernet Protocol
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Protocols.png]]
+*Ethernet Protocols*
+- The *Ethernet* refers to a =family of related networking rules= or =protocols= widely used in =Local Area Networks (LAN)=.
+- This is =set of rules= that =governs= how =data frames= are =formatted= ready for =transmission= between =computers= on the =same network=.
+  - /This is similar to polite human conversation, nodes wait until the connection is quiet before attempting to 'Speak' or transmit./
+  - /Two nodes attempting to transmit simultaneously will stop and each will wait a random period of time before re-attempting transmission./
+- Each Ethernet device has a unique =48-bit MAC address= and these addresses specify the =source= and =destination= of each frame. These are are usually displayed as a 12-digit hexadecimal number.
+- All *new computers* have =Ethernet interfaces built-in= to motherboards, and older machines can be fitted with NIC cards.
+- The *standard network cable* used with Ethernet are often referred to as =Ethernet cables=. It uses =twisted-pair copper= cabling or =fibre-optics=.
+
+** Learn It: Wi-Fi
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Wi_Fi.png]]
+*Wi-Fi*
+- Wi-Fi is also a =family of related rules= or =protocols= that allow /electronic devices/ to =connect=, =control= and =transmit data= on a
+  *wireless local area network (WLAN)*.
+- Devices which can use Wi-Fi technology include; /personal computers, games consoles, smartphones, digital cameras, smart home devices/ and /tablet computers./
+- *Wi-Fi compatible devices* can connect to the Internet via a =wireless LAN= and a =Wireless Access Point (WAP)=.
+- The *WAP receives data* from a network via its =physical connection=. The =transmitter= then =converts= this =data= into =radio waves= which are then =transmitted=.
+- *Any device* on the network =receives= this =radio signal= via a =Wi-Fi adaptor= which allows it to =communicate= or =download data= from the
+  data source.
+- This also works in the reverse direction when a device wishes to send data over the network to another computer.
+- In 1999, the *Wi-Fi Alliance* was established to set the *international standards* for network connections.
+[[file:img/WAP.png]]
+
+** Learn It: TCP/IP and UDP Protocols
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- *TCP/IP* consists of =two very important= and =separate protocols= which dictate how data is sent between networks.
+*The two protocols serve the following functions:*
+1. *Transmission Control Protocol (TCP)* is a =transport layer protocol= that sets the =rules= for how devices connect on the network. It’s in charge of =splitting= the =data= into =smaller
+   numbered pieces= called =packets= that allows it to be transported. *TCP* then =reassembles= the =packets= back into the =original data= once they reach the receiving device. It also
+   =detects= =errors= and =resends= *lost packets*. The sending device gets a =confirmation= when the *transfer is complete*.
+2. *Internet Protocol (IP)* is an =Internet layer protocol= that is =responsible= for =packet switching=. IP is the =standard= set of =rules= used to ensure that computers on the Internet =send
+   information= to the =correct address=. Every =computer= on a =network= must have its own =unique address= known as an =IP address=. The IP protocol =identifies= the =location= of a device on
+   the Internet and =routes= the *individual packets* from source to the destination via =routers=.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *User Datagram Protocol (UDP)* uses a =simple connectionless transmission model= where data is =split= into =packets without numbering them=. They are =read= by the =receiving device= in the order that they arrive - *Even if that's not the order they were sent*. With UDP, computer applications can send messages referred to as =datagrams= to other hosts on an IP network. It is an alternative to TCP but has =no error checking= or =correction=.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*TCP Versus UDP*
+- UDP is suitable for applications that need =fast, efficient transmission=, *e.g. Online gaming sessions, live video streaming* /(Video quality can be poor due to missing packets, but is faster
+  and smoother for live video streaming)./
+- TCP is better when you need a =reliable connection=, for example, *downloading files, sending data* or *emails*. /Missing data packets could cause files to become corrupt and unreadable./
+*Other Protocols*
+[[file:img/Protocol_Table.png]]
+
+*Data Packets Explained Video*
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C3sr7_0FyPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Answer the following questions:
+1. Define the term network protocol? (2 Marks)
+2. State which would be the most suitable protocol in each of the
+   following situations. Select one in each case, from the following:
+   TCP/IP HTTP HTTPS FTP IMAP SMTP
+  i) Making a payment securely when purchasing something over the Internet. (1 Mark)
+  ii) Transferring a file to another computer on a wide area network. (1 Mark)
+  iii) Transferring an email from one server to another server. (1 Mark)
+
+/Upload to Fundamentals of Computer Networks - Network Protocols: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. Joe is live streaming a football match over the Internet to his computer.
+  - a) Explain why Joe's computer needs an IP address to communicate on the Internet? (2 Marks)
+  - b) Would it be better to use TCP or UDP when sending the data packets to Joe's computer? Explain your answer. (5 Marks)
+
+/Upload to Fundamentals of Computer Networks - Network Protocols: Gold on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Answer the following questions:
+1. Jane sends an email to Joe over the Internet using her smartphone. Joe receives the email on his laptop.
+  - a) Explain why Jane and Joe's device need IP addresses to connect to the Internet? (2 Marks)
+  - b) Jane's email is split into packets and sent over the network using packet switching. Outline the possible actions of Joe's laptop and Jane's smartphone when:
+    - i) One of the packets is lost in transit? (3 Marks)
+    - ii) One of the packets is corrupted in transit? (3 Marks)
+
+
+/Upload to Fundamentals of Computer Networks - Network Protocols: Platinum on BourneToLearn/

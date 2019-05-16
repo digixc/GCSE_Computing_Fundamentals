@@ -333,7 +333,7 @@ saving of 52 bits in the compressed format, with a 53% reduction in size.
 | SPACE           |                      |      
 |----------------------------------------|
 - (b) What does the following code represent?
-- =1101000011111100101101=
+- *0101 00 0100 011 110 100 00 101 101 110 011 1111 00 101 101*
 
 ** Badge It
 :PROPERTIES:
