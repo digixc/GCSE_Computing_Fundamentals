@@ -129,7 +129,11 @@
 - This also works in the reverse direction when a device wishes to send data over the network to another computer.
 - In 1999, the *Wi-Fi Alliance* was established to set the *international standards* for network connections.
 [[file:img/WAP.png]]
-
+** Try It: Ethernet and Wi-Fi Protocols
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Make notes on how Ethernet and Wi-Fi protocols are used for data transfer on a network.
 ** Learn It: TCP/IP and UDP Protocols
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
@@ -156,9 +160,12 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-*Data Packets Explained Video*
+*IP Packets and Packet Switching Explained*
 #+BEGIN_HTML
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C3sr7_0FyPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3uhA8bdz8gI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 #+END_HTML
 *Data Packets*
 - We have already learned that most networks use TCP/IP as the network protocol, or set of rules for communication between devices, and the rules of TCP/IP require information to be split into small pieces called =packets= that =contain= both a =segment of data= to be transferred and the =address= where the data is to be sent.
@@ -178,7 +185,11 @@
 - The *packets* are then *sent out* on their various journeys to their recipient computer. They *do not* all follow the *same route*. In fact, they do not all necessarily arrive in the correct order, but because they are labelled the receiving computer can put the packages back together in the correct order.
 - The delivery of the packets is accomplished by devices called =Routers=. The *routers direct* the packets along the *best route* depending on network traffic.
 [[file:img/packetswitching.png]]
-
+** Try It: IP Packets and Packet Switching
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Make notes detailing what IP packets consist of and how packet switching works.
 ** Badge It: Exam Questions
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
