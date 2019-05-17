@@ -147,20 +147,23 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-1">Learn It: What are Protocols?</a></li>
 <li><a href="#sec-1-2">Learn It: Ethernet Protocol</a></li>
 <li><a href="#sec-1-3">Learn It: Wi-Fi</a></li>
-<li><a href="#sec-1-4">Learn It: TCP/IP and UDP Protocols</a></li>
-<li><a href="#sec-1-5">Badge It: Exam Questions</a>
+<li><a href="#sec-1-4">Try It: Ethernet and Wi-Fi Protocols</a></li>
+<li><a href="#sec-1-5">Learn It: TCP/IP and UDP Protocols</a></li>
+<li><a href="#sec-1-6">Learn It: Data Packets and Packet Switching</a></li>
+<li><a href="#sec-1-7">Try It: IP Packets and Packet Switching</a></li>
+<li><a href="#sec-1-8">Badge It: Exam Questions</a>
 <ul>
-<li><a href="#sec-1-5-1">Silver - Answer the following questions:</a></li>
+<li><a href="#sec-1-8-1">Silver - Answer the following questions:</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-6">Badge It: Exam Questions</a>
+<li><a href="#sec-1-9">Badge It: Exam Questions</a>
 <ul>
-<li><a href="#sec-1-6-1">Gold - Answer the following questions:</a></li>
+<li><a href="#sec-1-9-1">Gold - Answer the following questions:</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-7">Badge It: Exam Questions</a>
+<li><a href="#sec-1-10">Badge It: Exam Questions</a>
 <ul>
-<li><a href="#sec-1-7-1">Platinum - Answer the following questions:</a></li>
+<li><a href="#sec-1-10-1">Platinum - Answer the following questions:</a></li>
 </ul>
 </li>
 </ul>
@@ -218,7 +221,7 @@ for the JavaScript code in this tag.
 <b>Ethernet Protocols</b>
 </p>
 <ul class="org-ul">
-<li>The <b>Ethernet</b> refers to a <code>family of related networking rules</code> or <code>protocols</code> widely used in <code>Local Area Networks (LAN)</code>.
+<li>The <b>Ethernet</b> refers to a <code>family</code> of <b>related networking rules</b> or <code>protocols</code> widely used in <code>Local Area Networks</code> <b>(LAN)</b>.
 </li>
 <li>This is <code>set of rules</code> that <code>governs</code> how <code>data frames</code> are <code>formatted</code> ready for <code>transmission</code> between <code>computers</code> on the <code>same network</code>.
 <ul class="org-ul">
@@ -230,7 +233,7 @@ for the JavaScript code in this tag.
 </li>
 <li>Each Ethernet device has a unique <code>48-bit MAC address</code> and these addresses specify the <code>source</code> and <code>destination</code> of each frame. These are are usually displayed as a 12-digit hexadecimal number.
 </li>
-<li>All <b>new computers</b> have <code>Ethernet interfaces built-in</code> to motherboards, and older machines can be fitted with NIC cards.
+<li>All <b>new computers</b> have <code>Ethernet</code> interfaces <b>built-in</b> to <b>motherboards</b>, and older machines can be fitted with NIC cards.
 </li>
 <li>The <b>standard network cable</b> used with Ethernet are often referred to as <code>Ethernet cables</code>. It uses <code>twisted-pair copper</code> cabling or <code>fibre-optics</code>.
 </li>
@@ -246,7 +249,7 @@ for the JavaScript code in this tag.
 <b>Wi-Fi</b>
 </p>
 <ul class="org-ul">
-<li>Wi-Fi is also a <code>family of related rules</code> or <code>protocols</code> that allow <i>electronic devices</i> to <code>connect</code>, <code>control</code> and <code>transmit data</code> on a
+<li>Wi-Fi is also a <code>family</code> of <b>related rules</b> or <code>protocols</code> that allow <i>electronic devices</i> to <code>connect</code>, <code>control</code> and <code>transmit data</code> on a
 <b>wireless local area network (WLAN)</b>.
 </li>
 <li>Devices which can use Wi-Fi technology include; <i>personal computers, games consoles, smartphones, digital cameras, smart home devices</i> and <i>tablet computers.</i>
@@ -270,30 +273,34 @@ data source.
 </div>
 </div>
 </div>
-
-<div id="outline-container-sec-1-4" class="outline-3 learn">
-<h3 id="sec-1-4">Learn It: TCP/IP and UDP Protocols</h3>
+<div id="outline-container-sec-1-4" class="outline-3 try">
+<h3 id="sec-1-4">Try It: Ethernet and Wi-Fi Protocols</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
-<li><b>TCP/IP</b> consists of <code>two very important</code> and <code>separate protocols</code> which dictate how data is sent between networks.
+<li>Make notes on how Ethernet and Wi-Fi protocols are used for data transfer on a network.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 learn">
+<h3 id="sec-1-5">Learn It: TCP/IP and UDP Protocols</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li><b>TCP/IP</b> consists of <b>two very important</b> and <code>separate protocols</code> which dictate how data is sent between networks.
 </li>
 </ul>
 <p>
 <b>The two protocols serve the following functions:</b>
 </p>
 <ol class="org-ol">
-<li><b>Transmission Control Protocol (TCP)</b> is a <code>transport layer protocol</code> that sets the <code>rules</code> for how devices connect on the network. It’s in charge of <code>splitting</code> the <code>data</code> into <code>smaller
-   numbered pieces</code> called <code>packets</code> that allows it to be transported. <b>TCP</b> then <code>reassembles</code> the <code>packets</code> back into the <code>original data</code> once they reach the receiving device. It also
-<code>detects</code> <code>errors</code> and <code>resends</code> <b>lost packets</b>. The sending device gets a <code>confirmation</code> when the <b>transfer is complete</b>.
+<li><b>Transmission Control Protocol (TCP)</b> is a <code>transport layer protocol</code> that sets the <code>rules</code> for how devices connect on the network. It’s in charge of <code>splitting</code> the <code>data</code> into <code>smaller numbered pieces</code> called <code>packets</code> that allows it to be transported. <b>TCP</b> then <code>reassembles</code> the <code>packets</code> back into the <code>original data</code> once they reach the receiving device. It also <code>detects</code> <code>errors</code> and <code>resends</code> <b>lost packets</b>. The sending device gets a <code>confirmation</code> when the <b>transfer is complete</b>.
 </li>
-<li><b>Internet Protocol (IP)</b> is an <code>Internet layer protocol</code> that is <code>responsible</code> for <code>packet switching</code>. IP is the <code>standard</code> set of <code>rules</code> used to ensure that computers on the Internet <code>send
-   information</code> to the <code>correct address</code>. Every <code>computer</code> on a <code>network</code> must have its own <code>unique address</code> known as an <code>IP address</code>. The IP protocol <code>identifies</code> the <code>location</code> of a device on
-the Internet and <code>routes</code> the <b>individual packets</b> from source to the destination via <code>routers</code>.
+<li><b>Internet Protocol (IP)</b> is an <code>Internet layer protocol</code> that is <code>responsible</code> for <code>packet switching</code>. IP is the <code>standard</code> set of <code>rules</code> used to ensure that computers on the Internet <code>send information</code> to the <code>correct address</code>. Every <b>computer</b> on a <b>network</b> must have its own <code>unique address</code> known as an <code>IP address</code>. The IP protocol <code>identifies</code> the <b>location</b> of a device on the Internet and <code>routes</code> the <b>individual packets</b> from source to the destination via <code>routers</code>.
 </li>
 </ol>
 <br>
 <ul class="org-ul">
-<li><b>User Datagram Protocol (UDP)</b> uses a <code>simple connectionless transmission model</code> where data is <code>split</code> into <code>packets without numbering them</code>. They are <code>read</code> by the <code>receiving device</code> in the order that they arrive - <b>Even if that's not the order they were sent</b>. With UDP, computer applications can send messages referred to as <code>datagrams</code> to other hosts on an IP network. It is an alternative to TCP but has <code>no error checking</code> or <code>correction</code>.
+<li><b>User Datagram Protocol (UDP)</b> uses a <code>simple</code> <b>connectionless transmission model</b> where data is <code>split</code> into <code>packets</code> <b>without numbering them</b>. They are <code>read</code> by the <code>receiving device</code> in the order that they arrive - <b>Even if that's not the order they were sent</b>. With UDP, computer applications can send messages referred to as <code>datagrams</code> to other hosts on an IP network. It is an alternative to TCP but has <code>no error checking</code> or <code>correction</code>.
 </li>
 </ul>
 <br>
@@ -311,31 +318,96 @@ and smoother for live video streaming).</i>
 <b>Other Protocols</b>
 <img src="img/Protocol_Table.png" alt="Protocol_Table.png" />
 </p>
+</div>
+</div>
 
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It: Data Packets and Packet Switching</h3>
+<div class="outline-text-3" id="text-1-6">
 <p>
-<b>Data Packets Explained Video</b>
+<b>IP Packets and Packet Switching Explained</b>
 </p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C3sr7_0FyPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3uhA8bdz8gI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+<b>Data Packets</b>
+</p>
+<ul class="org-ul">
+<li>We have already learned that most networks use TCP/IP as the network protocol, or set of rules for communication between devices, and the rules of TCP/IP require information to be split into small pieces called <code>packets</code> that <code>contain</code> both a <code>segment of data</code> to be transferred and the <code>address</code> where the data is to be sent.
+</li>
+<li><b>Files</b> could be <b>million of bytes</b> in size, which is <code>too large</code> to send in one go, which is why <code>files</code> are <code>broken up</code> into <code>packets</code>.
+</li>
+<li><b>Each packet</b> has an average size of about <code>1.5KB</code>.
+</li>
+<li><b>IP addresses</b> <code>identify</code> each connected device.
+</li>
+<li><b>MAC addresses</b> <code>identify</code> <i>Routers, default gateways</i> and <i>device NICs.</i>
+</li>
+</ul>
 
-
-<div id="outline-container-sec-1-5" class="outline-3 badge">
-<h3 id="sec-1-5">Badge It: Exam Questions</h3>
-<div class="outline-text-3" id="text-1-5">
+<div class="figure">
+<p><img src="img/IP_Packet.png" alt="IP_Packet.png" />
+</p>
 </div>
-<div id="outline-container-sec-1-5-1" class="outline-4">
-<h4 id="sec-1-5-1">Silver - Answer the following questions:</h4>
-<div class="outline-text-4" id="text-1-5-1">
+<ul class="org-ul">
+<li><b>A Packet Consists of:</b> 
+<ul class="org-ul">
+<li>A <b>Header</b> containing the <code>source</code> and <code>destination addresses</code> and the <code>position</code> of this packet in the complete message or file.
+</li>
+<li>The <b>Body</b> containing part of the complete message <code>data</code> <i>(known as the payload).</i>
+</li>
+<li>A <b>Footer</b> <i>(also known as the trailer)</i> that informs the receiving device that it has reached the end of the packet and can also be used for <code>error checking</code> to ensure the complete packet has been delivered intact.
+</li>
+</ul>
+</li>
+</ul>
+<p>
+<b>Packet Switching</b>
+</p>
+<br>
+<ul class="org-ul">
+<li>The <b>packets</b> are then <b>sent out</b> on their various journeys to their recipient computer. They <b>do not</b> all follow the <b>same route</b>. In fact, they do not all necessarily arrive in the correct order, but because they are labelled the receiving computer can put the packages back together in the correct order.
+</li>
+<li>The delivery of the packets is accomplished by devices called <code>Routers</code>. The <b>routers direct</b> the packets along the <b>best route</b> depending on network traffic.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/packetswitching.png" alt="packetswitching.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 try">
+<h3 id="sec-1-7">Try It: IP Packets and Packet Switching</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Make notes detailing what IP packets consist of and how packet switching works.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 badge">
+<h3 id="sec-1-8">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-sec-1-8-1" class="outline-4">
+<h4 id="sec-1-8-1">Silver - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-8-1">
 <ol class="org-ol">
 <li>Define the term network protocol? (2 Marks)
 </li>
 <li>State which would be the most suitable protocol in each of the
- following situations. Select one in each case, from the following:
- TCP/IP HTTP HTTPS FTP IMAP SMTP
-i) Making a payment securely when purchasing something over the Internet. (1 Mark)
-ii) Transferring a file to another computer on a wide area network. (1 Mark)
-iii) Transferring an email from one server to another server. (1 Mark)
+following situations. Select one in each case, from the following:
+TCP/IP HTTP HTTPS FTP IMAP SMTP
+<ul class="org-ul">
+<li>i) Making a payment securely when purchasing something over the Internet. (1 Mark)
+</li>
+<li>ii) Transferring a file to another computer on a wide area network. (1 Mark)
+</li>
+<li>iii) Transferring an email from one server to another server. (1 Mark)
+</li>
+</ul>
 </li>
 </ol>
 
@@ -346,13 +418,13 @@ iii) Transferring an email from one server to another server. (1 Mark)
 </div>
 </div>
 
-<div id="outline-container-sec-1-6" class="outline-3 badge">
-<h3 id="sec-1-6">Badge It: Exam Questions</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-sec-1-9" class="outline-3 badge">
+<h3 id="sec-1-9">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-9">
 </div>
-<div id="outline-container-sec-1-6-1" class="outline-4">
-<h4 id="sec-1-6-1">Gold - Answer the following questions:</h4>
-<div class="outline-text-4" id="text-1-6-1">
+<div id="outline-container-sec-1-9-1" class="outline-4">
+<h4 id="sec-1-9-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-9-1">
 <ol class="org-ol">
 <li>Joe is live streaming a football match over the Internet to his computer.
 <ul class="org-ul">
@@ -371,13 +443,13 @@ iii) Transferring an email from one server to another server. (1 Mark)
 </div>
 </div>
 
-<div id="outline-container-sec-1-7" class="outline-3 badge">
-<h3 id="sec-1-7">Badge It: Exam Questions</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-sec-1-10" class="outline-3 badge">
+<h3 id="sec-1-10">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-10">
 </div>
-<div id="outline-container-sec-1-7-1" class="outline-4">
-<h4 id="sec-1-7-1">Platinum - Answer the following questions:</h4>
-<div class="outline-text-4" id="text-1-7-1">
+<div id="outline-container-sec-1-10-1" class="outline-4">
+<h4 id="sec-1-10-1">Platinum - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-10-1">
 <ol class="org-ol">
 <li>Jane sends an email to Joe over the Internet using her smartphone. Joe receives the email on his laptop.
 <ul class="org-ul">

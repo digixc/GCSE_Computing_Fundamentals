@@ -105,12 +105,12 @@
 :END:
 [[file:img/Protocols.png]]
 *Ethernet Protocols*
-- The *Ethernet* refers to a =family of related networking rules= or =protocols= widely used in =Local Area Networks (LAN)=.
+- The *Ethernet* refers to a =family= of *related networking rules* or =protocols= widely used in =Local Area Networks= *(LAN)*.
 - This is =set of rules= that =governs= how =data frames= are =formatted= ready for =transmission= between =computers= on the =same network=.
   - /This is similar to polite human conversation, nodes wait until the connection is quiet before attempting to 'Speak' or transmit./
   - /Two nodes attempting to transmit simultaneously will stop and each will wait a random period of time before re-attempting transmission./
 - Each Ethernet device has a unique =48-bit MAC address= and these addresses specify the =source= and =destination= of each frame. These are are usually displayed as a 12-digit hexadecimal number.
-- All *new computers* have =Ethernet interfaces built-in= to motherboards, and older machines can be fitted with NIC cards.
+- All *new computers* have =Ethernet= interfaces *built-in* to *motherboards*, and older machines can be fitted with NIC cards.
 - The *standard network cable* used with Ethernet are often referred to as =Ethernet cables=. It uses =twisted-pair copper= cabling or =fibre-optics=.
 
 ** Learn It: Wi-Fi
@@ -119,7 +119,7 @@
 :END:
 [[file:img/Wi_Fi.png]]
 *Wi-Fi*
-- Wi-Fi is also a =family of related rules= or =protocols= that allow /electronic devices/ to =connect=, =control= and =transmit data= on a
+- Wi-Fi is also a =family= of *related rules* or =protocols= that allow /electronic devices/ to =connect=, =control= and =transmit data= on a
   *wireless local area network (WLAN)*.
 - Devices which can use Wi-Fi technology include; /personal computers, games consoles, smartphones, digital cameras, smart home devices/ and /tablet computers./
 - *Wi-Fi compatible devices* can connect to the Internet via a =wireless LAN= and a =Wireless Access Point (WAP)=.
@@ -129,23 +129,23 @@
 - This also works in the reverse direction when a device wishes to send data over the network to another computer.
 - In 1999, the *Wi-Fi Alliance* was established to set the *international standards* for network connections.
 [[file:img/WAP.png]]
-
+** Try It: Ethernet and Wi-Fi Protocols
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Make notes on how Ethernet and Wi-Fi protocols are used for data transfer on a network.
 ** Learn It: TCP/IP and UDP Protocols
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- *TCP/IP* consists of =two very important= and =separate protocols= which dictate how data is sent between networks.
+- *TCP/IP* consists of *two very important* and =separate protocols= which dictate how data is sent between networks.
 *The two protocols serve the following functions:*
-1. *Transmission Control Protocol (TCP)* is a =transport layer protocol= that sets the =rules= for how devices connect on the network. It’s in charge of =splitting= the =data= into =smaller
-   numbered pieces= called =packets= that allows it to be transported. *TCP* then =reassembles= the =packets= back into the =original data= once they reach the receiving device. It also
-   =detects= =errors= and =resends= *lost packets*. The sending device gets a =confirmation= when the *transfer is complete*.
-2. *Internet Protocol (IP)* is an =Internet layer protocol= that is =responsible= for =packet switching=. IP is the =standard= set of =rules= used to ensure that computers on the Internet =send
-   information= to the =correct address=. Every =computer= on a =network= must have its own =unique address= known as an =IP address=. The IP protocol =identifies= the =location= of a device on
-   the Internet and =routes= the *individual packets* from source to the destination via =routers=.
+1. *Transmission Control Protocol (TCP)* is a =transport layer protocol= that sets the =rules= for how devices connect on the network. It’s in charge of =splitting= the =data= into =smaller numbered pieces= called =packets= that allows it to be transported. *TCP* then =reassembles= the =packets= back into the =original data= once they reach the receiving device. It also =detects= =errors= and =resends= *lost packets*. The sending device gets a =confirmation= when the *transfer is complete*.
+2. *Internet Protocol (IP)* is an =Internet layer protocol= that is =responsible= for =packet switching=. IP is the =standard= set of =rules= used to ensure that computers on the Internet =send information= to the =correct address=. Every *computer* on a *network* must have its own =unique address= known as an =IP address=. The IP protocol =identifies= the *location* of a device on the Internet and =routes= the *individual packets* from source to the destination via =routers=.
 #+BEGIN_HTML
 <br>
 #+END_HTML
-- *User Datagram Protocol (UDP)* uses a =simple connectionless transmission model= where data is =split= into =packets without numbering them=. They are =read= by the =receiving device= in the order that they arrive - *Even if that's not the order they were sent*. With UDP, computer applications can send messages referred to as =datagrams= to other hosts on an IP network. It is an alternative to TCP but has =no error checking= or =correction=.
+- *User Datagram Protocol (UDP)* uses a =simple= *connectionless transmission model* where data is =split= into =packets= *without numbering them*. They are =read= by the =receiving device= in the order that they arrive - *Even if that's not the order they were sent*. With UDP, computer applications can send messages referred to as =datagrams= to other hosts on an IP network. It is an alternative to TCP but has =no error checking= or =correction=.
 #+BEGIN_HTML
 <br>
 #+END_HTML
@@ -156,12 +156,40 @@
 *Other Protocols*
 [[file:img/Protocol_Table.png]]
 
-*Data Packets Explained Video*
+** Learn It: Data Packets and Packet Switching
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*IP Packets and Packet Switching Explained*
 #+BEGIN_HTML
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C3sr7_0FyPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 #+END_HTML
-
-
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3uhA8bdz8gI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+*Data Packets*
+- We have already learned that most networks use TCP/IP as the network protocol, or set of rules for communication between devices, and the rules of TCP/IP require information to be split into small pieces called =packets= that =contain= both a =segment of data= to be transferred and the =address= where the data is to be sent.
+- *Files* could be *million of bytes* in size, which is =too large= to send in one go, which is why =files= are =broken up= into =packets=.
+- *Each packet* has an average size of about =1.5KB=.
+- *IP addresses* =identify= each connected device.
+- *MAC addresses* =identify= /Routers, default gateways/ and /device NICs./
+[[file:img/IP_Packet.png]]
+- *A Packet Consists of:* 
+  - A *Header* containing the =source= and =destination addresses= and the =position= of this packet in the complete message or file.
+  - The *Body* containing part of the complete message =data= /(known as the payload)./
+  - A *Footer* /(also known as the trailer)/ that informs the receiving device that it has reached the end of the packet and can also be used for =error checking= to ensure the complete packet has been delivered intact.
+*Packet Switching*
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- The *packets* are then *sent out* on their various journeys to their recipient computer. They *do not* all follow the *same route*. In fact, they do not all necessarily arrive in the correct order, but because they are labelled the receiving computer can put the packages back together in the correct order.
+- The delivery of the packets is accomplished by devices called =Routers=. The *routers direct* the packets along the *best route* depending on network traffic.
+[[file:img/packetswitching.png]]
+** Try It: IP Packets and Packet Switching
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Make notes detailing what IP packets consist of and how packet switching works.
 ** Badge It: Exam Questions
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
@@ -171,9 +199,9 @@
 2. State which would be the most suitable protocol in each of the
    following situations. Select one in each case, from the following:
    TCP/IP HTTP HTTPS FTP IMAP SMTP
-  i) Making a payment securely when purchasing something over the Internet. (1 Mark)
-  ii) Transferring a file to another computer on a wide area network. (1 Mark)
-  iii) Transferring an email from one server to another server. (1 Mark)
+ - i) Making a payment securely when purchasing something over the Internet. (1 Mark)
+ - ii) Transferring a file to another computer on a wide area network. (1 Mark)
+ - iii) Transferring an email from one server to another server. (1 Mark)
 
 /Upload to Fundamentals of Computer Networks - Network Protocols: Silver on BourneToLearn/
 
