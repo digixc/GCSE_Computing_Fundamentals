@@ -210,10 +210,9 @@ permitted onto, or blocked from a network.
 #+END_SRC
 [[file:img/MAC_Filter2.png]]
 *MAC Address Filtering*
-- MAC address filtering =creates= a list of =allowed devices= which you need on your Wi-Fi and the =list= of =denied devices= which you don’t want on your Wi-Fi. It helps in preventing unwanted access to the network. So, we can blacklist or white list certain computers based on their MAC address.
-- We can also *configure* the filter to *allow connection only* to those devices *included* in the =white list=. *White lists* provide =greater security= than =blacklists= because the router grants access only to *selected devices*.
+- MAC address filtering =creates= a list of =allowed devices= which you need on your Wi-Fi and the =list= of =denied devices= which you don’t want on your Wi-Fi. It helps in preventing unwanted access to the network. So, we can *blacklist* or *whitelist* certain computers *based* on their *MAC address*.
+- We can also *configure* the filter to *allow connection only* to those devices *included* in the =whitelist=. *White lists* provide =greater security= than =blacklists= because the router grants access only to *selected devices*.
 - This has a =weakness= in that on a wireless network the device with the proper =credentials= such as =SSID= and =password= can *authenticate* with the *router* and *join* the network which gets an *IP address* and *access to the internet* and any *shared resources*, but it =does not identify= which =individual= is *using a device*.
-- This has a weakness in that although it identifies the permitted devices, it does not identify which individual is using a device.
 - That has to be done using a *username* and *password combination*, *user access levels, encryption* or *using the firewall* to block certain =ports= or =IP addresses=.
 - MAC address filtering adds an =extra layer of security= that =checks= the *device’s MAC address* against a list of *agreed addresses*. If the *client’s address* /matches/ one on the router’s list, *access is granted* otherwise it *doesn’t join the network*.
 
@@ -246,7 +245,7 @@ permitted onto, or blocked from a network.
 :HTML_CONTAINER_CLASS: badge
 :END:
 *** Platinum - Answer the following questions:
-1. Identify the difference between whitelist and blacklist filtering. Explain which is the more secure. Explain which one is more flexible? (4 Marks)
+1. Identify the difference between *whitelist* and *blacklist* filtering. Explain which is the more secure. Explain which one is more flexible? (4 Marks)
 2. "Schools should ban all onsite wireless connectivity for students." Discuss this statement? (8 Marks)
 
 
