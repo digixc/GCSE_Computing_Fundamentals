@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.5.3 Network Security</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.5.3 Network Security</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Network Security</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: The Importance of Network Security</a></li>
+<li><a href="#sec-1-2">Learn It: Methods of keeping a Network Secure</a></li>
+<li><a href="#sec-1-3">Learn It: Authentication</a></li>
+<li><a href="#sec-1-4">Learn It: Encryption</a></li>
+<li><a href="#sec-1-5">Try It: Caesar Cipher</a></li>
+<li><a href="#sec-1-6">Learn It: Firewalls</a></li>
+<li><a href="#sec-1-7">Learn It: MAC Address Filtering</a></li>
+<li><a href="#sec-1-8">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-8-1">Silver - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-9">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-9-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-10">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-10-1">Platinum - Answer the following questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Network Security</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Network_Security.png" alt="Network_Security.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: The Importance of Network Security</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><b>Internet Protocol Address (IP Address)</b> - A <code>unique number</code> that <code>identifies</code> every <b>computer/device</b> connected to the Internet. <b>No two IP
+addresses</b> are the <b>same</b>.
+</li>
+<li>If your computer <code>requests</code> a web page, your computer/device's IP address specifies where that web page should ultimately be delivered.
+</li>
+<li><b>Networks</b> are much <code>more vulnerable</code> to <b>hackers</b> than <code>standalone computers/devices</code>, since a <b>hacker</b> can <b>access</b> a network through <code>one computer/device</code> in order to gain access to other devices on the same network.
+</li>
+<li>This can have <code>serious implications</code> for an <b>organisation</b>, resulting in <i>data theft, corruption of data, denial of service,/ or /other damage caused by malware</i> being installed on <b>network servers</b>.
+</li>
+<li><b>Security</b> on a network is <code>very important</code> to <b>prevent unauthorised</b> <code>access</code> to data, <code>misuse</code> or <code>modification</code> of data including installing <i>viruses and other malware</i>.
+</li>
+<li>With more data being shared, more data is falling into the wrong hands. <b>Organisations</b> are now <b>hiring dedicated professionals</b> to keep <code>data secure</code>, as breaches can <code>damage</code> an <b>organisation's profitability</b>
+  and <b>reputation</b>.
+</li>
+<li>Even an <b>individual</b> can lose out financially if their <code>credit card</code> details are <code>stolen</code>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Methods of keeping a Network Secure</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Network security has two main goals:</b>
+</p>
+<ul class="org-ul">
+<li>To prevent <b>unauthorised</b> people from <b>accessing resources</b>.
+</li>
+<li>To allow <b>authorised</b> people <i>to</i> <b>access the resources</b> they need.
+</li>
+</ul>
+<p>
+<b>Methods used to maintain network security include:</b>
+</p>
+<ul class="org-ul">
+<li>Authentication.
+</li>
+<li>Encryption.
+</li>
+<li>Firewalls.
+</li>
+<li>MAC Address Filtering.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It: Authentication</h3>
+<div class="outline-text-3" id="text-1-3">
+<pre class="example">
+Measures put in place to ensure that a person trying to access data on a network, are who
+they say they are! I.E. a genuine authorised user.
+</pre>
+<p>
+<img src="img/Authent_Img.png" alt="Authent_Img.png" />
+<b>Authentication can take place in a number of ways:</b>
+<b>Password Protection</b>
+</p>
+<ul class="org-ul">
+<li>In a networked environment like Bourne Grammar School or a business, there are <b>many computers/devices</b> being <b>used</b> by <b>more</b> than <b>one person</b>.
+</li>
+<li>Students may or may not have their <code>own computers/devices</code> and the <b>easiest</b> way to <b>stop unauthorised access</b> to your computer or your files is to use a combination of a <code>Username</code> and <code>Password</code>.
+</li>
+<li>Passwords should <code>never</code> be <b>shared</b> with other people, <b>written</b> down and should be <b>strong</b>, this means not easy to guess (<i>6-8 characters, upper/lower case letters, symbols and numbers</i>).
+</li>
+<li>Some companies including Bourne Grammar School <code>make</code> students <code>change</code> <b>their passwords every month/term</b>.
+</li>
+<li>For <code>additional security</code> against people <code>trying</code> lots of different passwords to <b>get into</b> someone else's account, the <code>account</code> can be <code>locked</code> after a <b>certain number of attempts</b>.
+</li>
+</ul>
+<p>
+<b>User Access Levels</b>
+</p>
+<ul class="org-ul">
+<li>User access levels can be <code>set</code> for <i>disks, folders</i> and <i>files</i>, so that <b>users</b> can <b>only access</b> what they are <b>allowed</b> to access.
+</li>
+<li>Here at school you can only <code>read</code> files on a shared area <b>(Open DriveG:)</b>, but you are <b>not able</b> to <code>edit</code> them as they are <b>Read-Only-Access</b>. <i>Some folders you won't even be able to see.</i>
+</li>
+<li>The teacher will have <b>Read-Write Access</b> to these file and folders.
+</li>
+<li>In a <code>work environment</code>, the <b>Accounts staff</b> will hav <b>access</b> to <code>payroll details</code>, but other departments will not.
+</li>
+<li><b>The Data Protection Act 1998</b>, says that <code>employers</code> <b>must keep</b> <i>personal data secure</i>, so setting the appropriate access rights is a legal responsibility as well as a good idea.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/User_Access.png" alt="User_Access.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Test your password strength: <a href="https://howsecureismypassword.net/">Click here</a>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It: Encryption</h3>
+<div class="outline-text-3" id="text-1-4">
+<pre class="example">
+Scrambling data using a key to ensure that it makes no sense to anyone who intercepts it.
+When it is received, the recipient also has a key, which is used to decrypt the data,
+returning it to its readable format.
+</pre>
+<p>
+<img src="img/Encryption.png" alt="Encryption.png" />
+<b>Encryption</b>
+</p>
+<ul class="org-ul">
+<li><b>Encryption</b> is <code>primarily</code> used to <b>protect data</b> and <b>prevent</b> it from <code>being hacked</code> or <code>accessed illegally</code>.
+</li>
+<li><b>Data</b> that is being <code>transferred</code> over a network or the Internet is <b>vulnerable to hackers</b>. For example, someone who uses an online shopping site will have to type in their *payment details8, such as <i>credit or debit card numbers</i> - It is <code>essential</code> that this <code>information</code> is <code>kept secure</code>.
+</li>
+<li>If they were paying by using <b>another payment system</b> such as, <code>PayPal</code> or <code>ApplePay</code>, they would have to type in their <b>email address</b> and <b>password</b>, which needs to be <code>kept safe</code> from anyone <code>intercepting</code> the transmission.
+</li>
+<li><b>Online Banking</b> - Accessing your <b>bank account details online</b> needs to be <code>very secure</code> to protect from hackers trying to <b>steal this data</b>.
+</li>
+<li>Whilst <b>encryption won't prevent hacking</b>, it <code>makes</code> the <code>data unreadable</code> unless the recipient has the necessary decryption tools.
+</li>
+</ul>
+<p>
+<b>Encryption Technology uses:</b>
+</p>
+<ul class="org-ul">
+<li><b>Plaintext</b> - The original message/data to be encrypted.
+</li>
+<li><b>Ciphertext</b> - The encrypted message/data.
+</li>
+<li><b>Encryption</b> - The process of converting plaintext into ciphertext.
+</li>
+<li><b>Decryption</b> - The process of converting ciphertext into plaintext.
+</li>
+<li><b>Key</b> - A sequence of numbers used to encrypt or decrypt, often
+using a mathematical formula.
+</li>
+<li><b>Encryption Algorithm</b> - The method for encrypting the plaintext.
+</li>
+</ul>
+<br>
+<p>
+A very simple example encryption cipher is <code>Caesar Shift Cipher</code>, in which each letter is replaced by a letter <i>n</i> number of positions further in the alphabet. The key in this case is 3.
+<img src="img/Caesar_Cipher.png" alt="Caesar_Cipher.png" />
+</p>
+<ul class="org-ul">
+<li>Obviously this is not a very useful methof of encryption in
+practice, since it is very easy to discover they key and decrypt the
+message. There are many methods of <b>strong encryption</b> which make
+the ciphertext virtually impossible to break. 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 try">
+<h3 id="sec-1-5">Try It: Caesar Cipher</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Given the key 5, decode the following encrypted message: <b>KNWJHWFHPJW BNQQ QTXJ</b>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It: Firewalls</h3>
+<div class="outline-text-3" id="text-1-6">
+<pre class="example">
+These can either be hardware, software or both. A firewall can be instructed to block
+certain traffic (Such as all emails or any traffic from a suspect IP address) or to
+only allow certain traffic (Such as from a single, trusted device), blocking everything
+else.
+</pre>
+<p>
+<img src="img/Firewall.png" alt="Firewall.png" />
+<b>Firewalls</b>
+</p>
+<ul class="org-ul">
+<li>A <b>firewall</b> is a <code>network security system</code> that <b>monitors</b> and <b>controls</b> <i>incoming</i> and <i>outgoing</i> network traffic based on <b>predetermined security rules</b>.
+</li>
+<li>A firewall typically <code>establishes</code> a <b>barrier</b> between a <b>trusted internal network</b> and <b>untrusted external network</b>, <i>such as the Internet</i>.
+</li>
+<li>A *Firewall is primarily designed to prevent unwanted Internet traffic from gaining access to the LAN.
+</li>
+<li><code>Unauthorised</code> users external to the network are <code>blocked</code> by the firewall, which can also <b>block any attempts</b> to gain access via <code>certain ports</code> used for restricting data transmission such as <code>FTP</code>.
+</li>
+<li>Typical firewall <code>mechanisms</code> for <code>restricting data</code> include, <b>blocking data</b> from a <code>particular IP address</code> or on certain <code>ports</code> that indicated a type of traffic that was not wanted, such as an attempt to access FTP.
+</li>
+<li><b>Operating Systems (OS)</b>, like <code>Microsoft Windows</code> and <code>macOS</code> have <b>firewall utilities</b> built-in, but you can also buy firewall software separately.
+</li>
+<li><code>Third-party firewall</code> software also exist, such as <b>Zone Alarm, Norton Personal Firewall, Tiny, Black Ice Protection,* and *McAfee Personal Firewall</b>. Many of these offer free versions or trials of their commercial versions.
+</li>
+</ul>
+<p>
+<b>Several types of firewalls exist:</b>
+</p>
+<ul class="org-ul">
+<li>Packet filtering.
+</li>
+<li>Circuit-level gateway implementation.
+</li>
+<li>Acting as a proxy server.
+</li>
+<li>Web application firewall.
+</li>
+</ul>
+<p>
+<b>Firewalls Explained Video</b>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x1YLj06c3hM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 learn">
+<h3 id="sec-1-7">Learn It: MAC Address Filtering</h3>
+<div class="outline-text-3" id="text-1-7">
+<pre class="example">
+Each computer/device has a MAC (Media Access Control) address which, unlike an IP address,
+cannot be changed. Based on this unique identifier, specific devices can be either
+permitted onto, or blocked from a network.
+</pre>
+<p>
+<img src="img/MAC_Filter2.png" alt="MAC_Filter2.png" />
+<b>MAC Address Filtering</b>
+</p>
+<ul class="org-ul">
+<li>MAC address filtering <code>creates</code> a list of <code>allowed devices</code> which you need on your Wi-Fi and the <code>list</code> of <code>denied devices</code> which you don’t want on your Wi-Fi. It helps in preventing unwanted access to the network. So, we can blacklist or white list certain computers based on their MAC address.
+</li>
+<li>We can also <b>configure</b> the filter to <b>allow connection only</b> to those devices <b>included</b> in the <code>white list</code>. <b>White lists</b> provide <code>greater security</code> than <code>blacklists</code> because the router grants access only to <b>selected devices</b>.
+</li>
+<li>This has a <code>weakness</code> in that on a wireless network the device with the proper <code>credentials</code> such as <code>SSID</code> and <code>password</code> can <b>authenticate</b> with the <b>router</b> and <b>join</b> the network which gets an <b>IP address</b> and <b>access to the internet</b> and any <b>shared resources</b>, but it <code>does not identify</code> which <code>individual</code> is <b>using a device</b>.
+</li>
+<li>This has a weakness in that although it identifies the permitted devices, it does not identify which individual is using a device.
+</li>
+<li>That has to be done using a <b>username</b> and <b>password combination</b>, <b>user access levels, encryption</b> or <b>using the firewall</b> to block certain <code>ports</code> or <code>IP addresses</code>.
+</li>
+<li>MAC address filtering adds an <code>extra layer of security</code> that <code>checks</code> the <b>device’s MAC address</b> against a list of <b>agreed addresses</b>. If the <b>client’s address</b> <i>matches</i> one on the router’s list, <b>access is granted</b> otherwise it <b>doesn’t join the network</b>.
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-8" class="outline-3 badge">
+<h3 id="sec-1-8">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-sec-1-8-1" class="outline-4">
+<h4 id="sec-1-8-1">Silver - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<ol class="org-ol">
+<li>What are the <b>two</b> main goals of network security? (2 Marks)
+</li>
+<li>What are the <b>four</b> methods used to maintain network security? (4 Marks)
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Network Security: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3 badge">
+<h3 id="sec-1-9">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-9">
+</div>
+<div id="outline-container-sec-1-9-1" class="outline-4">
+<h4 id="sec-1-9-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-9-1">
+<ol class="org-ol">
+<li>Jane is a network administrator at a secondary school. She has put in place measures to prevent attacks on the school's network, including firewalls, MAC address filtering and different user access levels.
+<ul class="org-ul">
+<li>a) Explain how a firewall can prevent attacks on the school's network? (2 Marks)
+</li>
+<li>b) Explain why the school's network needs to have different user access levels? (3 Marks)
+</li>
+<li>c) Describe how MAC address filtering supports security on the school's network? (3 Marks)
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Network Security: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3 badge">
+<h3 id="sec-1-10">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-10">
+</div>
+<div id="outline-container-sec-1-10-1" class="outline-4">
+<h4 id="sec-1-10-1">Platinum - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-10-1">
+<ol class="org-ol">
+<li>Identify the difference between whitelist and blacklist filtering. Explain which is the more secure. Explain which one is more flexible? (4 Marks)
+</li>
+<li>"Schools should ban all onsite wireless connectivity for students." Discuss this statement? (8 Marks)
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Network Security: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
