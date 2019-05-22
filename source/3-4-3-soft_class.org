@@ -137,7 +137,7 @@ to be launched, it will be launched from the operating system.
     before the processor's attention swithches to the next process.
 [[file:img/Task_Manager.jpg]]
  - *Memory Management* - The operating system:
-  - Loads program abd data from backup storage to the main memory.
+  - Loads program and data from backup storage to the main memory.
   - Removes un-needed programs and data to make room for more.
   - Manages *virtual memory* where a part of the secondary storage is
     used an an overflow area for the main memory.
@@ -206,7 +206,7 @@ space, removing viruses or ensuring that data is backed up regularly.
    software. Give *one* example of application software?
 3. Describe what a device driver does?
 
-- /Upload to Algorithms - Software Classification: Silver on BourneToLearn/
+- /Upload to Computer Systems - Software Classification: Silver on BourneToLearn/
 
 ** Badge It: Exam Questions
 :PROPERTIES:
@@ -218,4 +218,4 @@ space, removing viruses or ensuring that data is backed up regularly.
    system?
 3. Give *one* example of a utility program?
 
-- /Upload to Algorithms - Software Classification: Gold on BourneToLearn/
+- /Upload to Computer Systems - Software Classification: Gold on BourneToLearn/
