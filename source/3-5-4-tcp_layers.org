@@ -1,0 +1,161 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.5.4 TCP/IP Model
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* TCP/IP Layers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/TCP_Layer_Example.png]]
+** Learn It: The Concept of using Layers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The *TCP/IP Model* consists of =four layers=, each =containing= a number of =protocols=, creating a modular design with *each layer* being *responsible* for a *small part* of the /communication process/.
+- The advantage of this modular design is that it lets suppliers such as *Micorsoft* or *Apple* easily adapt the protocol software to specific hardware and operating systems.
+- For example, software for an =Ethernet system= can be *adapted* to an *optical-fibre* network by *changing* only the =link layer= and *not affecting* any of the *other layers*.
+- =Packets of data= are *sent* down through the *layers*, =protocols= at each layer *perform their individual functions*, such as =breaking down= and
+  =re-packaging= the *data* into *smaller units*, which are then *passed* to the *layer below*.
+- *Data* is then *transmitted* =across the network= and at the *receiving end*, the *packets* are then =reassembled= and =passed back-up= through the *layers* to the /application they are intended for/. 
+
+** Learn It: Protocols working at each Layer
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Network Protocols:*
+ - When we talk about *Network Protocols*, we mean the =rules= devices have to follow in *order* to *communicate* with *each other* when they are /requesting and providing data and services/.
+- With a complicated process such as =sending data packets=, *rules*, called *protocols*, are *essential*.
+[[file:img/TCP_Layer_Table.png]]
+
+
+** Learn It: Advantages of using Layers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- *Networking technologies* are *separated* or compartmentalised into *layers*, *each one* containing =specific= /hardware/ and /software/ =protocols=.
+- =Each layer= *performs specific tasks* and =interacts= with *adjacent layers* in the network model.
+*The advantages of this approach are:*
+1. It simplifies the overall model by dividing it into four parts.
+2. Each layer is specialised to perform a particular function.
+3. The different layers can be combined in different ways as required.
+4. One layer can be developed or changed without affecting the other layers.
+5. It makes it easier to identify and correct networking errors and problems.
+6. It provides a universal standard for hardware and software manufacturers to follow, so that they will be able to communicate with each other.
+
+*TCP/IP Layer Model Explained Video*
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KEWe-5Bk3Q0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+
+** Try It: Application Layer
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- What other websites might require the use of HTTPS?
+
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Answer the following questions:
+1. The network manager at a company works with layers of network protocols.
+  - a) Describe what is meant by a layer of network protocols? (2 Marks)
+  - b) State the name of *one* layer of network protocols and outline its function? (2 Marks)
+   
+
+/Upload to Fundamentals of Computer Networks - TCP/IP Model: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. Identify *three benefits* of using layers when working with network protocols? (3 Marks)
+2. Explain what is meant by a protocol? (1 Mark)
+
+/Upload to Fundamentals of Computer Networks - TCP/IP Model: Gold on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Answer the following questions:
+1. What elements may be found on the Application Layer of the 4-layer Internet model? (2 Marks)
+2. What purpose does the Transport Layer serve? (2 Marks)
+3. Describe *two* families of protocols that work on the link layer of the TCP/IP model? (4 Marks)
+
+
+/Upload to Fundamentals of Computer Networks - Network Security: Platinum on BourneToLearn/

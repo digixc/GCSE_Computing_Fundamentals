@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.5.4 TCP/IP Model</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.5.4 TCP/IP Model</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. TCP/IP Layers</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: The Concept of using Layers</a></li>
+<li><a href="#sec-1-2">Learn It: Protocols working at each Layer</a></li>
+<li><a href="#sec-1-3">Learn It: Advantages of using Layers</a></li>
+<li><a href="#sec-1-4">Try It: Application Layer</a></li>
+<li><a href="#sec-1-5">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-5-1">Silver - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-6-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-7-1">Platinum - Answer the following questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> TCP/IP Layers</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/TCP_Layer_Example.png" alt="TCP_Layer_Example.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: The Concept of using Layers</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>The <b>TCP/IP Model</b> consists of <code>four layers</code>, each <code>containing</code> a number of <code>protocols</code>, creating a modular design with <b>each layer</b> being <b>responsible</b> for a <b>small part</b> of the <i>communication process</i>.
+</li>
+<li>The advantage of this modular design is that it lets suppliers such as <b>Micorsoft</b> or <b>Apple</b> easily adapt the protocol software to specific hardware and operating systems.
+</li>
+<li>For example, software for an <code>Ethernet system</code> can be <b>adapted</b> to an <b>optical-fibre</b> network by <b>changing</b> only the <code>link layer</code> and <b>not affecting</b> any of the <b>other layers</b>.
+</li>
+<li><code>Packets of data</code> are <b>sent</b> down through the <b>layers</b>, <code>protocols</code> at each layer <b>perform their individual functions</b>, such as <code>breaking down</code> and
+<code>re-packaging</code> the <b>data</b> into <b>smaller units</b>, which are then <b>passed</b> to the <b>layer below</b>.
+</li>
+<li><b>Data</b> is then <b>transmitted</b> <code>across the network</code> and at the <b>receiving end</b>, the <b>packets</b> are then <code>reassembled</code> and <code>passed back-up</code> through the <b>layers</b> to the <i>application they are intended for</i>. 
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Protocols working at each Layer</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Network Protocols:</b>
+</p>
+<ul class="org-ul">
+<li>When we talk about <b>Network Protocols</b>, we mean the <code>rules</code> devices have to follow in <b>order</b> to <b>communicate</b> with <b>each other</b> when they are <i>requesting and providing data and services</i>.
+</li>
+<li>With a complicated process such as <code>sending data packets</code>, <b>rules</b>, called <b>protocols</b>, are <b>essential</b>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/TCP_Layer_Table.png" alt="TCP_Layer_Table.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It: Advantages of using Layers</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><b>Networking technologies</b> are <b>separated</b> or compartmentalised into <b>layers</b>, <b>each one</b> containing <code>specific</code> <i>hardware</i> and <i>software</i> <code>protocols</code>.
+</li>
+<li><code>Each layer</code> <b>performs specific tasks</b> and <code>interacts</code> with <b>adjacent layers</b> in the network model.
+</li>
+</ul>
+<p>
+<b>The advantages of this approach are:</b>
+</p>
+<ol class="org-ol">
+<li>It simplifies the overall model by dividing it into four parts.
+</li>
+<li>Each layer is specialised to perform a particular function.
+</li>
+<li>The different layers can be combined in different ways as required.
+</li>
+<li>One layer can be developed or changed without affecting the other layers.
+</li>
+<li>It makes it easier to identify and correct networking errors and problems.
+</li>
+<li>It provides a universal standard for hardware and software manufacturers to follow, so that they will be able to communicate with each other.
+</li>
+</ol>
+
+<p>
+<b>TCP/IP Layer Model Explained Video</b>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KEWe-5Bk3Q0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 try">
+<h3 id="sec-1-4">Try It: Application Layer</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>What other websites might require the use of HTTPS?
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-sec-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1">Silver - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ol class="org-ol">
+<li>The network manager at a company works with layers of network protocols.
+<ul class="org-ul">
+<li>a) Describe what is meant by a layer of network protocols? (2 Marks)
+</li>
+<li>b) State the name of <b>one</b> layer of network protocols and outline its function? (2 Marks)
+</li>
+</ul>
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - TCP/IP Model: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 badge">
+<h3 id="sec-1-6">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-sec-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ol class="org-ol">
+<li>Identify <b>three benefits</b> of using layers when working with network protocols? (3 Marks)
+</li>
+<li>Explain what is meant by a protocol? (1 Mark)
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - TCP/IP Model: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 badge">
+<h3 id="sec-1-7">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-7">
+</div>
+<div id="outline-container-sec-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1">Platinum - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<ol class="org-ol">
+<li>What elements may be found on the Application Layer of the 4-layer Internet model? (2 Marks)
+</li>
+<li>What purpose does the Transport Layer serve? (2 Marks)
+</li>
+<li>Describe <b>two</b> families of protocols that work on the link layer of the TCP/IP model? (4 Marks)
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of Computer Networks - Network Security: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
