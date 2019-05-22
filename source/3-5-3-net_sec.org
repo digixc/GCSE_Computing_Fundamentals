@@ -1,0 +1,252 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.5.3 Network Security
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Network Security
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Network_Security.png]]
+** Learn It: The Importance of Network Security
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- *Internet Protocol Address (IP Address)* - A =unique number= that =identifies= every *computer/device* connected to the Internet. *No two IP
+  addresses* are the *same*.
+- If your computer =requests= a web page, your computer/device's IP address specifies where that web page should ultimately be delivered.
+- *Networks* are much =more vulnerable= to *hackers* than =standalone computers/devices=, since a *hacker* can *access* a network through =one computer/device= in order to gain access to other devices on the same network.
+- This can have =serious implications= for an *organisation*, resulting in /data theft, corruption of data, denial of service,/ or /other damage caused by malware/ being installed on *network servers*.
+- *Security* on a network is =very important= to *prevent unauthorised* =access= to data, =misuse= or =modification= of data including installing /viruses and other malware/.
+- With more data being shared, more data is falling into the wrong hands. *Organisations* are now *hiring dedicated professionals* to keep =data secure=, as breaches can =damage= an *organisation's profitability*
+  and *reputation*.
+- Even an *individual* can lose out financially if their =credit card= details are =stolen=.
+
+** Learn It: Methods of keeping a Network Secure
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Network security has two main goals:*
+ - To prevent *unauthorised* people from *accessing resources*.
+ - To allow *authorised* people /to/ *access the resources* they need.
+*Methods used to maintain network security include:*
+- Authentication.
+- Encryption.
+- Firewalls.
+- MAC Address Filtering.
+
+** Learn It: Authentication
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Measures put in place to ensure that a person trying to access data on a network, are who
+they say they are! I.E. a genuine authorised user.
+#+END_SRC
+[[file:img/Authent_Img.png]]
+*Authentication can take place in a number of ways:*
+*Password Protection*
+- In a networked environment like Bourne Grammar School or a business, there are *many computers/devices* being *used* by *more* than *one person*.
+- Students may or may not have their =own computers/devices= and the *easiest* way to *stop unauthorised access* to your computer or your files is to use a combination of a =Username= and =Password=.
+- Passwords should =never= be *shared* with other people, *written* down and should be *strong*, this means not easy to guess (/6-8 characters, upper/lower case letters, symbols and numbers/).
+- Some companies including Bourne Grammar School =make= students =change= *their passwords every month/term*.
+- For =additional security= against people =trying= lots of different passwords to *get into* someone else's account, the =account= can be =locked= after a *certain number of attempts*.
+*User Access Levels*
+- User access levels can be =set= for /disks, folders/ and /files/, so that *users* can *only access* what they are *allowed* to access.
+- Here at school you can only =read= files on a shared area *(Open DriveG:)*, but you are *not able* to =edit= them as they are *Read-Only-Access*. /Some folders you won't even be able to see./
+- The teacher will have *Read-Write Access* to these file and folders.
+- In a =work environment=, the *Accounts staff* will hav *access* to =payroll details=, but other departments will not.
+- *The Data Protection Act 1998*, says that =employers= *must keep* /personal data secure/, so setting the appropriate access rights is a legal responsibility as well as a good idea.
+[[file:img/User_Access.png]]
+- Test your password strength: [[https://howsecureismypassword.net/][Click here]].
+
+** Learn It: Encryption
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Scrambling data using a key to ensure that it makes no sense to anyone who intercepts it.
+When it is received, the recipient also has a key, which is used to decrypt the data,
+returning it to its readable format.
+#+END_SRC
+[[file:img/Encryption.png]]
+*Encryption*
+- *Encryption* is =primarily= used to *protect data* and *prevent* it from =being hacked= or =accessed illegally=.
+- *Data* that is being =transferred= over a network or the Internet is *vulnerable to hackers*. For example, someone who uses an online shopping site will have to type in their *payment details8, such as /credit or debit card numbers/ - It is =essential= that this =information= is =kept secure=.
+- If they were paying by using *another payment system* such as, =PayPal= or =ApplePay=, they would have to type in their *email address* and *password*, which needs to be =kept safe= from anyone =intercepting= the transmission.
+- *Online Banking* - Accessing your *bank account details online* needs to be =very secure= to protect from hackers trying to *steal this data*.
+- Whilst *encryption won't prevent hacking*, it =makes= the =data unreadable= unless the recipient has the necessary decryption tools.
+*Encryption Technology uses:*
+- *Plaintext* - The original message/data to be encrypted.
+- *Ciphertext* - The encrypted message/data.
+- *Encryption* - The process of converting plaintext into ciphertext.
+- *Decryption* - The process of converting ciphertext into plaintext.
+- *Key* - A sequence of numbers used to encrypt or decrypt, often
+  using a mathematical formula.
+- *Encryption Algorithm* - The method for encrypting the plaintext.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+A very simple example encryption cipher is =Caesar Shift Cipher=, in which each letter is replaced by a letter /n/ number of positions further in the alphabet. The key in this case is 3.
+[[file:img/Caesar_Cipher.png]]
+- Obviously this is not a very useful methof of encryption in
+  practice, since it is very easy to discover they key and decrypt the
+  message. There are many methods of *strong encryption* which make
+  the ciphertext virtually impossible to break. 
+** Try It: Caesar Cipher
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Given the key 5, decode the following encrypted message: *KNWJHWFHPJW BNQQ QTXJ*
+
+** Learn It: Firewalls
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+These can either be hardware, software or both. A firewall can be instructed to block
+certain traffic (Such as all emails or any traffic from a suspect IP address) or to
+only allow certain traffic (Such as from a single, trusted device), blocking everything
+else.
+#+END_SRC
+[[file:img/Firewall.png]]
+*Firewalls*
+- A *firewall* is a =network security system= that *monitors* and *controls* /incoming/ and /outgoing/ network traffic based on *predetermined security rules*.
+- A firewall typically =establishes= a *barrier* between a *trusted internal network* and *untrusted external network*, /such as the Internet/.
+- A *Firewall is primarily designed to prevent unwanted Internet traffic from gaining access to the LAN.
+- =Unauthorised= users external to the network are =blocked= by the firewall, which can also *block any attempts* to gain access via =certain ports= used for restricting data transmission such as =FTP=.
+- Typical firewall =mechanisms= for =restricting data= include, *blocking data* from a =particular IP address= or on certain =ports= that indicated a type of traffic that was not wanted, such as an attempt to access FTP.
+- *Operating Systems (OS)*, like =Microsoft Windows= and =macOS= have *firewall utilities* built-in, but you can also buy firewall software separately.
+- =Third-party firewall= software also exist, such as *Zone Alarm, Norton Personal Firewall, Tiny, Black Ice Protection,* and *McAfee Personal Firewall*. Many of these offer free versions or trials of their commercial versions.
+*Several types of firewalls exist:*
+- Packet filtering.
+- Circuit-level gateway implementation.
+- Acting as a proxy server.
+- Web application firewall.
+*Firewalls Explained Video*
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x1YLj06c3hM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+
+** Learn It: MAC Address Filtering
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Each computer/device has a MAC (Media Access Control) address which, unlike an IP address,
+cannot be changed. Based on this unique identifier, specific devices can be either
+permitted onto, or blocked from a network.
+#+END_SRC
+[[file:img/MAC_Filter2.png]]
+*MAC Address Filtering*
+- MAC address filtering =creates= a list of =allowed devices= which you need on your Wi-Fi and the =list= of =denied devices= which you don’t want on your Wi-Fi. It helps in preventing unwanted access to the network. So, we can *blacklist* or *whitelist* certain computers *based* on their *MAC address*.
+- We can also *configure* the filter to *allow connection only* to those devices *included* in the =whitelist=. *White lists* provide =greater security= than =blacklists= because the router grants access only to *selected devices*.
+- This has a =weakness= in that on a wireless network the device with the proper =credentials= such as =SSID= and =password= can *authenticate* with the *router* and *join* the network which gets an *IP address* and *access to the internet* and any *shared resources*, but it =does not identify= which =individual= is *using a device*.
+- That has to be done using a *username* and *password combination*, *user access levels, encryption* or *using the firewall* to block certain =ports= or =IP addresses=.
+- MAC address filtering adds an =extra layer of security= that =checks= the *device’s MAC address* against a list of *agreed addresses*. If the *client’s address* /matches/ one on the router’s list, *access is granted* otherwise it *doesn’t join the network*.
+
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Answer the following questions:
+1. What are the *two* main goals of network security? (2 Marks)
+2. What are the *four* methods used to maintain network security? (4 Marks)
+   
+
+/Upload to Fundamentals of Computer Networks - Network Security: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. Jane is a network administrator at a secondary school. She has put in place measures to prevent attacks on the school's network, including firewalls, MAC address filtering and different user access levels.
+  - a) Explain how a firewall can prevent attacks on the school's network? (2 Marks)
+  - b) Explain why the school's network needs to have different user access levels? (3 Marks)
+  - c) Describe how MAC address filtering supports security on the school's network? (3 Marks)
+
+/Upload to Fundamentals of Computer Networks - Network Security: Gold on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Answer the following questions:
+1. Identify the difference between *whitelist* and *blacklist* filtering. Explain which is the more secure. Explain which one is more flexible? (4 Marks)
+2. "Schools should ban all onsite wireless connectivity for students." Discuss this statement? (8 Marks)
+
+
+/Upload to Fundamentals of Computer Networks - Network Security: Platinum on BourneToLearn/
