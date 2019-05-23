@@ -1,0 +1,263 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.6.1 Cyber Security Threats
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Cyber Security Threats
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Cyber_Sec_Main.png]]
+** Learn It: What is Cyber Security?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Cyber Security – The use of technology, working practices, processes and precautions
+designed to protect networks, computers, programs and data from attack, damage or
+unauthorised access.
+#+END_SRC
+- *Cyber Security* is defines as the =protection of computer systems=, =networks= and =data= from /criminal activity/.
+- *Cybercrime* can take =many forms=, including planting =viruses=, acquiring and using personal or =confidential data= and =disrupting= a *website or service*.
+- *Vulnerability* of a computer network is often due to a =flawed system= which is =open= to =attack=. An attacker or =hacker= can then =exploit= this =weakness=.
+- *Human error* is one of the =biggest issues= in =security breaches=. For example, in *2010 GCHQ* /lost 35 laptops/ with all the =security data= stored on these devices; there are numerous other cases of where government officials have left /USB Memory sticks/ and/or /other electronic devices/ on *public transport*.
+** Learn It: Cyber Security Threats
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/usb_stick.png]]
+*Removable Media*
+- Removable media such as /memory sticks, memory cards/ and /removable hard drives/, can present *two major threats*: =Data Theft= and =Virus Infection=.
+- Any storage device that is =highly portable= can easily be =used= to /steal, corrupt, destroy, delete, hack/ or /steal data/ or *introduce* *malware* onto a /computer/network system./
+- An example of an issue that could occur when using removable media, is when students has a =copy= of their =school work= on a memory stick which they =take home= to use in their own computer. If their =computer= *does not* have adequate =virus protection= then their memory stick coud become =infected=, and if =used at school= could =infect= the /whole school network./
+
+** Try It: Removable Media
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q1: Suppose that you found an USB Memory stick, what are the risks of using this unidentified memory stick in your computer?
+
+** Learn It: Weak and Default Passwords
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Weak_Pass.png]]
+*Weak and Default Passwords*
+- *Password strength* is a measure of the =effectiveness= of a password *against guessing* or *brute-force attacks*.
+- In its usual form, it estimates =how many= tries an attacker who does not have direct access to the password would need, on average, to
+  *guess it correctly*. The =strength= of a password is a function of /length, complexity,/ and /unpredictability./
+- *Using* /strong passwords/ =lowers= overall =risk= of a =security breach=, but strong passwords =do not replace= the *need* for other /effective security controls./
+- *Passwords* =should contain= a combination of *upper* and *lower-case* /letters/ as well as /numbers/ and /symbols/. *(E.G. $tROng p@s$worDs).*
+- Simarly, *default passwords* can be a problem. For example, a router's new owner might =not change= the *default password* from *'admin'*
+  or *'password'* when they buy it.The =default password= is usually found in the =instruction manual= or /on the device itself./
+- Leaving a =default password= is one of the =major factors= in *compromising* the /security of a system./
+ 
+** Learn It: Misconfigured Access Rights
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Access_Rights.png]]
+- *Access Rights* are the =rules= that tell a *computer system* which user should have =access= to which =files= and =other resources=.
+- When user accounts have =incorrect permissions=, this can cause big problems as people who are lower down the chain of command could =have access= to *private information* that managers could have. They could =wrongly= have =access= to /employee records/ or /customer data./
+- In a school or business, =usernames= are =used= to *identify the access rights* of /each user./
+- *Each user* is =assigned= individual =access rights=, *according* to *their role*, and it is important that these should be correctly set.
+- For example, most =network users= *should not* have *access* to the =setup= and =configuration=, /as a hacker who gains access to the user's computer could then cause damage./
+- *Access rights* can also be =applied= to =indiviual files=. This means that *specific files* stored in an area to which full access is normally allowed, can still be given =restrictions= such as being made =read-only=.
+
+** Learn It: Unpatched or Outdated Software
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Unpatched or Outdated Software*
+[[file:img/Unpatched.png]]
+- *Unpatched Software* - When a *security risk* is *identified* in a program, the =developer= will *release* a =patch=, which is an add-on program that =fixes= the =security risk=. If a *user* =does not= *install* the patch, their computer is /not secure./
+- Based on a sample size of *163 million computers*, =55%= of =all= /programs installed on personal computers running Windows/ are =outdated= according to a recent report, exposing their users to security risks because of =unpatched vulnerabilities=.
+- The top most out-of-date Windows programs installed on PCs around the world shows that in more than =94% of cases=, users who have /installed Adobe Shockwave, VLC Media Player/, and /Skype/ on their computers =haven't updated= them to the *latest versions*.
+- *Out-of-date* /Microsoft Office programs/ are another category of applications which put their users at risk, especially given that =15% of all Office installations= are Enterprise 2007, an Office version *Microsoft* /has stopped supporting since 2017/ which means that it =hasn't received= any *bug fixes* or *security patches* /for almost two years./
+- *Threats* will often *exist in combination*. A =username= acquired via =phishing= could be used in *collaboration* with a =weak, easy-to-guess password= to introduce a =virus= that *specifically* seeks out =unpatched software=.
+- Other cyber security threats including * social engineering* and *malicious code* and will be covered in detail with the next topic.
+
+** Learn It: Social Engineering
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Identity_Theft.png]]
+*Social Engineering - Summary (/This is covered in detail in 3.6.2 - Social Engineering/)*
+- =People= are often the =weakest point= in *security systems*, *social engineering* focuses on /people/ rather than on *technology*, as the weak point in any security system. There are many different ways to =manipulate= people to =surrender= their
+  *confidential information* or *data.*
+*Social Engineering includes the following techniques:*
+ - Blagging.
+ - Phishing.
+ - Pharming.
+ - Shouldering (Shoulder Surfing).
+
+** Learn It: Malicious Code
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Malicious_Code.png]]
+*Malicious Code - Summary (/This is covered in detail in 3.6.2 - Social Enginnering/)*
+- Malicious code is the term used to describe any =code= in any part of a =software system= or =script= that is =intended= to =cause= *undesired effects*, *security breaches* or *damage* to a system.
+- *Malicious code* is an =application security threat= that *cannot* be efficiently *controlled* by /conventional antivirus software alone/.
+#+BEGIN_SRC
+Malware - Is a term used to describe a variety of hostile or instrusive programs or
+software. Viruses, Spyware, Adware and Trojans are all types of malware, although
+there are others.
+#+END_SRC
+*Malware includes the following:*
+ - Viruses.
+ - Spyware.
+ - Adware.
+ - Trojans.
+
+** Try It: Malware
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q2: Can a CD or DVD containing games software, bought new from a reputable retailer, contain a virus? Why is this unlikely?
+
+** Learn It: Penetration Testing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Penetration_Testing.png]]
+*What is penetration testing?*
+- *Penetration Testing* is used to find any =security weaknesses= in a system. It is the *process* of =attempting= to *gain access* to /resources/ *without* knowledge of /usernames, passwords/ and /other normal means of access./
+- Penetration testing is also called =pen testing= or =ethical hacking=, is the practice of *testing a computer system, network* or *web application* to find =security vulnerabilities= that a =hacker= could =exploit=.
+- *Penetration testing* can be =automated= with software applications or =performed manually=.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- The strategy is to:
+  - Gather information about the target of possible attacks.
+  - Identify possible entry points.
+  - Attempt to break in.
+  - Report back the findings.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Black-box Penetration Test*
+- The =aim= of =black-box pentration testing= is to =simulate= an *external hacking* or *cyber warfare attack.*
+- *Testers* are =given very little= or =no information= about the *network* prior to the test. The *test* could target /email servers, web servers/ or /firewalls./
+- *The objective is to find out:*
+  - Whether a hacker can get in.
+  - How far they can get.
+  - What they can do on the system.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*White-box Penetration Test*
+- The =aim of white-box penetration testing= is to =simulate= a =malicious insider= who has *knowledge of* and possibly *basic credentials* for the =target system=.
+- *Testers* are given =basic information= about the network in advance of the testing. This could include /IP addresses, network protocols/ and /even passwords./
+- It puts the tester in the =position= of =an insider=, to *determine* how *much damage* a /disgruntled/ or /dishonest employee could cause./
+
+** Try It: Penetration Testing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q3: Name some possible weaknesses or vulnerablities that (a) a black-box penetration test and (b) a white-box penetration test might identify?
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Answer the following questions:
+1. Define the term Cyber Security? (2 Marks)
+2. Explain why removable media can be a threat to the security of a network? (2 Marks)
+
+/Upload to Fundamentals of Cyber Security - Cyber Security Threats: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. The school network adminstrator notices that a lot of network user's haven't changed their default password or have chosen a weak password.
+  - a) Explain why this is a problem? (2 Marks)
+  - b) Suggest *two* requirements that could be imposed on passwords to ensure that they are strong? (2 Marks)
+
+/Upload to Fundamentals of Cyber Security - Cyber Security Threats: Gold on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Answer the following questions:
+1. A mail-order company stores thousands of customers' details, including debit and credit card details, on its computer network. The company is concerned about the security of this information.
+  - a) Explain *three* measures that the company could take to prevent unauthorised access to their computer system? (3 Marks)
+  - b) *Describe* a measure that the company could take to prevent employees from accessing information that they are not permitted to view? (2 Marks)
+  - c) Explain how penetration testing can assist the company in improving its security? (3 Marks)
+
+
+/Upload to Fundamentals of Cyber Security - Cyber Security Threats: Platinum on BourneToLearn/
