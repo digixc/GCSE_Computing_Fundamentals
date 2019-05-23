@@ -189,23 +189,15 @@
 <p></p>
 #+END_HTML
 
-[[file:UnderConstruction2.html][3.6.1 Cyber Security]]
+[[file:pages/3-6-1-cyber_sec_threats.html][3.6.1 Cyber Security Threats]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.6.2 Cyber Security Threats]]
+[[file:UnderConstruction2.html][3.6.2 Social Engineering & Malicious Code]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.6.3 Social Engineering]]
-#+BEGIN_HTML
-<p></p>
-#+END_HTML
-[[file:UnderConstruction2.html][3.6.4 Malicious Code]]
-#+BEGIN_HTML
-<p></p>
-#+END_HTML
-[[file:UnderConstruction2.html][3.6.5 Methods to Detect & Prevent Cyber Security Threats]]
+[[file:UnderConstruction2.html][3.6.3 Methods to Detect & Prevent Cyber Security Threats]]
 #+BEGIN_HTML
 </details>
 #+END_HTML

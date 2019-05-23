@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.6.1 Cyber Security Threats</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.6.1 Cyber Security Threats</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Cyber Security Threats</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What is Cyber Security?</a></li>
+<li><a href="#sec-1-2">Learn It: Cyber Security Threats</a></li>
+<li><a href="#sec-1-3">Try It: Removable Media</a></li>
+<li><a href="#sec-1-4">Learn It: Weak and Default Passwords</a></li>
+<li><a href="#sec-1-5">Learn It: Misconfigured Access Rights</a></li>
+<li><a href="#sec-1-6">Learn It: Unpatched or Outdated Software</a></li>
+<li><a href="#sec-1-7">Learn It: Social Engineering</a></li>
+<li><a href="#sec-1-8">Learn It: Malicious Code</a></li>
+<li><a href="#sec-1-9">Try It: Malware</a></li>
+<li><a href="#sec-1-10">Learn It: Penetration Testing</a></li>
+<li><a href="#sec-1-11">Try It: Penetration Testing</a></li>
+<li><a href="#sec-1-12">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-12-1">Silver - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-13">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-13-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-14">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-14-1">Platinum - Answer the following questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Cyber Security Threats</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Cyber_Sec_Main.png" alt="Cyber_Sec_Main.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What is Cyber Security?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Cyber Security – The use of technology, working practices, processes and precautions
+designed to protect networks, computers, programs and data from attack, damage or
+unauthorised access.
+</pre>
+<ul class="org-ul">
+<li><b>Cyber Security</b> is defines as the <code>protection of computer systems</code>, <code>networks</code> and <code>data</code> from <i>criminal activity</i>.
+</li>
+<li><b>Cybercrime</b> can take <code>many forms</code>, including planting <code>viruses</code>, acquiring and using personal or <code>confidential data</code> and <code>disrupting</code> a <b>website or service</b>.
+</li>
+<li><b>Vulnerability</b> of a computer network is often due to a <code>flawed system</code> which is <code>open</code> to <code>attack</code>. An attacker or <code>hacker</code> can then <code>exploit</code> this <code>weakness</code>.
+</li>
+<li><b>Human error</b> is one of the <code>biggest issues</code> in <code>security breaches</code>. For example, in <b>2010 GCHQ</b> <i>lost 35 laptops</i> with all the <code>security data</code> stored on these devices; there are numerous other cases of where government officials have left <i>USB Memory sticks</i> and/or <i>other electronic devices</i> on <b>public transport</b>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Cyber Security Threats</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<img src="img/usb_stick.png" alt="usb_stick.png" />
+<b>Removable Media</b>
+</p>
+<ul class="org-ul">
+<li>Removable media such as <i>memory sticks, memory cards</i> and <i>removable hard drives</i>, can present <b>two major threats</b>: <code>Data Theft</code> and <code>Virus Infection</code>.
+</li>
+<li>Any storage device that is <code>highly portable</code> can easily be <code>used</code> to <i>steal, corrupt, destroy, delete, hack</i> or <i>steal data</i> or <b>introduce</b> <b>malware</b> onto a <i>computer/network system.</i>
+</li>
+<li>An example of an issue that could occur when using removable media, is when students has a <code>copy</code> of their <code>school work</code> on a memory stick which they <code>take home</code> to use in their own computer. If their <code>computer</code> <b>does not</b> have adequate <code>virus protection</code> then their memory stick coud become <code>infected</code>, and if <code>used at school</code> could <code>infect</code> the <i>whole school network.</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 try">
+<h3 id="sec-1-3">Try It: Removable Media</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Q1: Suppose that you found an USB Memory stick, what are the risks of using this unidentified memory stick in your computer?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It: Weak and Default Passwords</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<img src="img/Weak_Pass.png" alt="Weak_Pass.png" />
+<b>Weak and Default Passwords</b>
+</p>
+<ul class="org-ul">
+<li><b>Password strength</b> is a measure of the <code>effectiveness</code> of a password <b>against guessing</b> or <b>brute-force attacks</b>.
+</li>
+<li>In its usual form, it estimates <code>how many</code> tries an attacker who does not have direct access to the password would need, on average, to
+<b>guess it correctly</b>. The <code>strength</code> of a password is a function of <i>length, complexity,/ and /unpredictability.</i>
+</li>
+<li><b>Using</b> <i>strong passwords</i> <code>lowers</code> overall <code>risk</code> of a <code>security breach</code>, but strong passwords <code>do not replace</code> the <b>need</b> for other <i>effective security controls.</i>
+</li>
+<li><b>Passwords</b> <code>should contain</code> a combination of <b>upper</b> and <b>lower-case</b> <i>letters</i> as well as <i>numbers</i> and <i>symbols</i>. <b>(E.G. $tROng p@s$worDs).</b>
+</li>
+<li>Simarly, <b>default passwords</b> can be a problem. For example, a router's new owner might <code>not change</code> the <b>default password</b> from *'admin'*
+or *'password'* when they buy it.The <code>default password</code> is usually found in the <code>instruction manual</code> or <i>on the device itself.</i>
+</li>
+<li>Leaving a <code>default password</code> is one of the <code>major factors</code> in <b>compromising</b> the <i>security of a system.</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3 learn">
+<h3 id="sec-1-5">Learn It: Misconfigured Access Rights</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<div class="figure">
+<p><img src="img/Access_Rights.png" alt="Access_Rights.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Access Rights</b> are the <code>rules</code> that tell a <b>computer system</b> which user should have <code>access</code> to which <code>files</code> and <code>other resources</code>.
+</li>
+<li>When user accounts have <code>incorrect permissions</code>, this can cause big problems as people who are lower down the chain of command could <code>have access</code> to <b>private information</b> that managers could have. They could <code>wrongly</code> have <code>access</code> to <i>employee records</i> or <i>customer data.</i>
+</li>
+<li>In a school or business, <code>usernames</code> are <code>used</code> to <b>identify the access rights</b> of <i>each user.</i>
+</li>
+<li><b>Each user</b> is <code>assigned</code> individual <code>access rights</code>, <b>according</b> to <b>their role</b>, and it is important that these should be correctly set.
+</li>
+<li>For example, most <code>network users</code> <b>should not</b> have <b>access</b> to the <code>setup</code> and <code>configuration</code>, <i>as a hacker who gains access to the user's computer could then cause damage.</i>
+</li>
+<li><b>Access rights</b> can also be <code>applied</code> to <code>indiviual files</code>. This means that <b>specific files</b> stored in an area to which full access is normally allowed, can still be given <code>restrictions</code> such as being made <code>read-only</code>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It: Unpatched or Outdated Software</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+<b>Unpatched or Outdated Software</b>
+<img src="img/Unpatched.png" alt="Unpatched.png" />
+</p>
+<ul class="org-ul">
+<li><b>Unpatched Software</b> - When a <b>security risk</b> is <b>identified</b> in a program, the <code>developer</code> will <b>release</b> a <code>patch</code>, which is an add-on program that <code>fixes</code> the <code>security risk</code>. If a <b>user</b> <code>does not</code> <b>install</b> the patch, their computer is <i>not secure.</i>
+</li>
+<li>Based on a sample size of <b>163 million computers</b>, <code>55%</code> of <code>all</code> <i>programs installed on personal computers running Windows</i> are <code>outdated</code> according to a recent report, exposing their users to security risks because of <code>unpatched vulnerabilities</code>.
+</li>
+<li>The top most out-of-date Windows programs installed on PCs around the world shows that in more than <code>94% of cases</code>, users who have <i>installed Adobe Shockwave, VLC Media Player</i>, and <i>Skype</i> on their computers <code>haven't updated</code> them to the <b>latest versions</b>.
+</li>
+<li><b>Out-of-date</b> <i>Microsoft Office programs</i> are another category of applications which put their users at risk, especially given that <code>15% of all Office installations</code> are Enterprise 2007, an Office version <b>Microsoft</b> <i>has stopped supporting since 2017</i> which means that it <code>hasn't received</code> any <b>bug fixes</b> or <b>security patches</b> <i>for almost two years.</i>
+</li>
+<li><b>Threats</b> will often <b>exist in combination</b>. A <code>username</code> acquired via <code>phishing</code> could be used in <b>collaboration</b> with a <code>weak, easy-to-guess password</code> to introduce a <code>virus</code> that <b>specifically</b> seeks out <code>unpatched software</code>.
+</li>
+<li>Other cyber security threats including * social engineering* and <b>malicious code</b> and will be covered in detail with the next topic.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 learn">
+<h3 id="sec-1-7">Learn It: Social Engineering</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+<img src="img/Identity_Theft.png" alt="Identity_Theft.png" />
+<b>Social Engineering - Summary (<i>This is covered in detail in 3.6.2 - Social Engineering</i>)</b>
+</p>
+<ul class="org-ul">
+<li><code>People</code> are often the <code>weakest point</code> in <b>security systems</b>, <b>social engineering</b> focuses on <i>people</i> rather than on <b>technology</b>, as the weak point in any security system. There are many different ways to <code>manipulate</code> people to <code>surrender</code> their
+<b>confidential information</b> or <b>data.</b>
+</li>
+</ul>
+<p>
+<b>Social Engineering includes the following techniques:</b>
+</p>
+<ul class="org-ul">
+<li>Blagging.
+</li>
+<li>Phishing.
+</li>
+<li>Pharming.
+</li>
+<li>Shouldering (Shoulder Surfing).
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3 learn">
+<h3 id="sec-1-8">Learn It: Malicious Code</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+<img src="img/Malicious_Code.png" alt="Malicious_Code.png" />
+<b>Malicious Code - Summary (<i>This is covered in detail in 3.6.2 - Social Enginnering</i>)</b>
+</p>
+<ul class="org-ul">
+<li>Malicious code is the term used to describe any <code>code</code> in any part of a <code>software system</code> or <code>script</code> that is <code>intended</code> to <code>cause</code> <b>undesired effects</b>, <b>security breaches</b> or <b>damage</b> to a system.
+</li>
+<li><b>Malicious code</b> is an <code>application security threat</code> that <b>cannot</b> be efficiently <b>controlled</b> by <i>conventional antivirus software alone</i>.
+</li>
+</ul>
+<pre class="example">
+Malware - Is a term used to describe a variety of hostile or instrusive programs or
+software. Viruses, Spyware, Adware and Trojans are all types of malware, although
+there are others.
+</pre>
+<p>
+<b>Malware includes the following:</b>
+</p>
+<ul class="org-ul">
+<li>Viruses.
+</li>
+<li>Spyware.
+</li>
+<li>Adware.
+</li>
+<li>Trojans.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3 try">
+<h3 id="sec-1-9">Try It: Malware</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>Q2: Can a CD or DVD containing games software, bought new from a reputable retailer, contain a virus? Why is this unlikely?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3 learn">
+<h3 id="sec-1-10">Learn It: Penetration Testing</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+<img src="img/Penetration_Testing.png" alt="Penetration_Testing.png" />
+<b>What is penetration testing?</b>
+</p>
+<ul class="org-ul">
+<li><b>Penetration Testing</b> is used to find any <code>security weaknesses</code> in a system. It is the <b>process</b> of <code>attempting</code> to <b>gain access</b> to <i>resources</i> <b>without</b> knowledge of <i>usernames, passwords</i> and <i>other normal means of access.</i>
+</li>
+<li>Penetration testing is also called <code>pen testing</code> or <code>ethical hacking</code>, is the practice of <b>testing a computer system, network</b> or <b>web application</b> to find <code>security vulnerabilities</code> that a <code>hacker</code> could <code>exploit</code>.
+</li>
+<li><b>Penetration testing</b> can be <code>automated</code> with software applications or <code>performed manually</code>.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li>The strategy is to:
+<ul class="org-ul">
+<li>Gather information about the target of possible attacks.
+</li>
+<li>Identify possible entry points.
+</li>
+<li>Attempt to break in.
+</li>
+<li>Report back the findings.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<p>
+<b>Black-box Penetration Test</b>
+</p>
+<ul class="org-ul">
+<li>The <code>aim</code> of <code>black-box pentration testing</code> is to <code>simulate</code> an <b>external hacking</b> or <b>cyber warfare attack.</b>
+</li>
+<li><b>Testers</b> are <code>given very little</code> or <code>no information</code> about the <b>network</b> prior to the test. The <b>test</b> could target <i>email servers, web servers</i> or <i>firewalls.</i>
+</li>
+<li><b>The objective is to find out:</b>
+<ul class="org-ul">
+<li>Whether a hacker can get in.
+</li>
+<li>How far they can get.
+</li>
+<li>What they can do on the system.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<p>
+<b>White-box Penetration Test</b>
+</p>
+<ul class="org-ul">
+<li>The <code>aim of white-box penetration testing</code> is to <code>simulate</code> a <code>malicious insider</code> who has <b>knowledge of</b> and possibly <b>basic credentials</b> for the <code>target system</code>.
+</li>
+<li><b>Testers</b> are given <code>basic information</code> about the network in advance of the testing. This could include <i>IP addresses, network protocols</i> and <i>even passwords.</i>
+</li>
+<li>It puts the tester in the <code>position</code> of <code>an insider</code>, to <b>determine</b> how <b>much damage</b> a <i>disgruntled</i> or <i>dishonest employee could cause.</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3 try">
+<h3 id="sec-1-11">Try It: Penetration Testing</h3>
+<div class="outline-text-3" id="text-1-11">
+<ul class="org-ul">
+<li>Q3: Name some possible weaknesses or vulnerablities that (a) a black-box penetration test and (b) a white-box penetration test might identify?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12" class="outline-3 badge">
+<h3 id="sec-1-12">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-12">
+</div>
+<div id="outline-container-sec-1-12-1" class="outline-4">
+<h4 id="sec-1-12-1">Silver - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-12-1">
+<ol class="org-ol">
+<li>Define the term Cyber Security? (2 Marks)
+</li>
+<li>Explain why removable media can be a threat to the security of a network? (2 Marks)
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Cyber Security - Cyber Security Threats: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13" class="outline-3 badge">
+<h3 id="sec-1-13">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-13">
+</div>
+<div id="outline-container-sec-1-13-1" class="outline-4">
+<h4 id="sec-1-13-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-13-1">
+<ol class="org-ol">
+<li>The school network adminstrator notices that a lot of network user's haven't changed their default password or have chosen a weak password.
+<ul class="org-ul">
+<li>a) Explain why this is a problem? (2 Marks)
+</li>
+<li>b) Suggest <b>two</b> requirements that could be imposed on passwords to ensure that they are strong? (2 Marks)
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Cyber Security - Cyber Security Threats: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3 badge">
+<h3 id="sec-1-14">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-14">
+</div>
+<div id="outline-container-sec-1-14-1" class="outline-4">
+<h4 id="sec-1-14-1">Platinum - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-14-1">
+<ol class="org-ol">
+<li>A mail-order company stores thousands of customers' details, including debit and credit card details, on its computer network. The company is concerned about the security of this information.
+<ul class="org-ul">
+<li>a) Explain <b>three</b> measures that the company could take to prevent unauthorised access to their computer system? (3 Marks)
+</li>
+<li>b) <b>Describe</b> a measure that the company could take to prevent employees from accessing information that they are not permitted to view? (2 Marks)
+</li>
+<li>c) Explain how penetration testing can assist the company in improving its security? (3 Marks)
+</li>
+</ul>
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of Cyber Security - Cyber Security Threats: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
