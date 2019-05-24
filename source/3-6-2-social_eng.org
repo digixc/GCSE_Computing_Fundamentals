@@ -1,0 +1,400 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.6.2 Social Engineering & Malicious Code
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Social Engineering
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Social_Engineering.png]]
+** Learn It: What is Social Engineering?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We have briefly covered what social engineering is in the previous topic, but we will look at this in more detail. Essentially it is the *art* of =manipulating people= so that they *give up* =confidential information=.
+- =People= are often the =weakest point= in *security systems*, *social engineering* focuses on /people/ rather than on *technology*, as the *weak point* in any security system. There are many different ways to =manipulate= people to =surrender= their *confidential information* or *data.*
+- There are =many threats= to =network security=. *Most target* the /computers/ and /communications software/, but *many target* far *weaker links*: the =people= who use them.
+- A *study* in *2015* found that =human error= was the *main root cause* of =over 52%= of all *security breaches* to networks.
+- The =biggest problems= were *failure* to =follow general= /policies/ and /procedures/, /general carelessness/ and a /lack of knowledge of threats/.
+- *Some of the methods used* to =breach= network security =need no= *knowledge of programming* or *computers*.
+- These are =low-tech= *con-tricks*, referred to as =social engineering=, aimed at =manipulating= *vulnerable people* into =disclosing= their *personal information*.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Social Engineering includes the following techniques:*
+ - Blagging (Pretexting).
+ - Phishing.
+ - Pharming.
+ - Shouldering (Shoulder Surfing).
+** Learn It: Blagging
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Blagging.png]]
+*Blagging or Pretexting*
+#+BEGIN_SRC
+Blagging - Is the act of creating and using an invented scenario to engage a targeted
+victim in a manner that increases the chance that the victim will divulge information
+or perform actions that would be unlikely in ordinary circumstances.
+#+END_SRC
+- *Blagging:* This is sometimes called =pretexting= and *can be* done =face-to-face=, by =telephone= or by =computer=.
+- The *criminal* =invents a scenario= to try to get the *victim* to *divulge* =sensitive data= or =information=, for example *pretending* to be a /charity/ or an /official/ such as a /police officer/, /bank employee/ or an /insurance claims investigator/.
+- To help =prevent blagging=, the company or organisation *should make sure* that they =provide= *security training* to their staff, so that they *don't fall for these tricks*.
+
+** Try It: Blagging
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q1: Explain with an example what is meant by *Blagging*?
+
+** Learn It: Phishing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Phishing.png]]
+*Phishing*
+#+BEGIN_SRC
+Phishing - Is a technique of fraudulently obtaining private information, often
+using email or SMS.
+#+END_SRC
+- The term *Phishing* comes from *fishing* - =Bait= is *spread across* the =Internet= in the hope that *people* will take a =bite=.
+- *Phishing:* Is when *criminals* /send/ =emails= or =texts= to *people claiming* to be from a =well-known business=, /(e.g. a bank or online retailer)/.
+- The *emails* often contain *links* to =spoof versions= of the *company’s website*. They *request* that the *user update* their =personal information= /(e.g. password or bank account details)/. *When* the *user inputs* this *data* into the *website* they =hand it= all over to the =criminals=, /who can then access their genuine account./
+- You *should* always *beware* of =links= in *emails* or *texts*. The *email* is *not* usually addressed to you =personally= and *often* contains =spelling= and =grammar mistakes=.
+- *Sometimes* emails may *contain* a =threat= that *something bad* is going to happen /if you don't click on the link/, for example, *your account* will be *closed down* in two days' time.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Phishing emails can often be recognised by the following:*
+ - *Urgency* - They want you to *respond quickly*, without thinking, for example to supply your bank details before the account is suspended.
+ - *Careless use of language* - They often contain *spelling and grammatical errors* and *careless writing style*.
+ - *Impersonality* - You *may not* be =addressed personally=, but only as *Dear Customer*. However, as the =criminals= become more =sophisticated= they are able to *find your personal details* from =various sources= such as =social media=.
+ - *False Links* - You may be asked to =click= on a =link= which *leads* to a *website controlled* by the =criminals=.
+ - *Attachments* - Sometimes you may be *asked* to *open* =programs= or =documents= sent with the email; these =attachments= may *contain* =malware=.
+*Below is an example of a Phishing Email*
+[[file:img/Phishing_Email.png]]
+
+** Try It: Phishing Email
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q2: Suppose that you have just received the email shown above, state at least three signs that would alert you to the fact that this might be a phishing email?
+
+ 
+** Learn It: Pharming
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Pharming.png]]
+*Pharming*
+#+BEGIN_SRC
+Pharming - Is a cyber attack technique intended to redirect a website's traffic to an
+unsafe or fake website.
+#+END_SRC
+- Pharming =redirects= *web traffic* to =fake sites=. The =attacker= will *place code* on your =hard drive= or on the =network server= itself.
+- *When* you *type* in a =genuine website address=, *pharming redirects* you to a =fake/bogus website= and you may be =asked= to give =personal= or
+  =sensitive information=.
+- *Pharming works* by =changing= the =hosts file= on the *victim's computer* by *exploiting* a vulnerability in the =Domain Name Service (DNS)= /server software/.
+- The =DNS servers= are *responsible* for *translating* /Internet names/ into their /real IP addresses/.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*To prevent Pharming users should:*
+ - *Check* that the *HTTP address* of the site is the one you *intended* to visit.
+ - Check that there is a *secure connection (HTTPS)* if you have to enter *sensitive information*.
+ - Check the site's *security certificates*.
+ - Install the latest *security patches*.
+ - Install *Antivirus Software*.
+
+** Try It: Phishing Email
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q3: What is *Pharming*?
+
+** Learn It: Shouldering (Shoulder Surfing)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Shouldering.png]]
+*Shouldering*
+#+BEGIN_SRC
+Shouldering - Is observing a person's private information over the shoulder.
+e.g. Cashpoint machine PIN number.
+#+END_SRC
+- *Most security risks* are usually =remote theft=, but there are other ways to gain unauthorised access to passwords or sensitive information.
+- *Shouldering* or *Shoulder Surfing* refers to using =direct observation techniques= to *gain* information such as =passwords= or =security data=.
+- For example, *looking over someone's shoulder* while they are =typing= in their =ATM PIN= number or =computer password=.
+- *To prevent* =shoulder surfing= you should *shield* the *keypad* from view by using your body or /cupping your hand over the keypad/. When working on a =laptop= or =mobile tablet device=, keep your back to a wall with no open sides and =extra care= should be taken when =entering= a =password=. 
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Shouldering can occur in the following ways:*
+ - Someone in an office watching others entering passwords.
+ - Someone watching as they enter their PIN at a cashpoint machine (ATM).
+ - An employee at a shop or petrol station watching as a PIN is being entered.
+ - Criminals using binoculars or closed circuit television to watch from a distance or record users entering sensitive information.
+
+** Try It: Shouldering
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q4: Explain what is meant by *Shouldering*?
+
+* Malicious Code
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What is Malicious Code?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Malicious_Code.png]]
+- We have briefly covered what *malicious code* is in the *previous topic*, but we will look at this in more detail. Essentially *MALicious softWARE* (Mal WARE) is *installed* on =someone’s device= *without* their =knowledge= or =consent=.
+- *Security* is about =keeping= your =computer= and the =files=, =programs= and =data= *stored* on it =safe= from a =number of hazzards=.
+- These =hazzards= come in the form of /malware, hackers, blagging, phishing, pharming, hardware/ and /software faults/.
+- Other =people= using the network can also be *one* of the =greatest risks of all=.
+- Malicious code is the term used to describe any =code= in any part of a =software system= or =script= that is =intended= to =cause= *undesired effects*, *security breaches* or *damage* to a system.
+- *Malicious code* is an =application security threat= that *cannot* be efficiently *controlled* by conventional =antivirus software alone=.
+*Malware*
+#+BEGIN_SRC
+Malware - Is a term used to describe a variety of hostile or instrusive programs or
+software. Viruses, Worms, Trojans (Trojan Horse), Spyware and Adware and are all
+types of malware, although there are others.
+#+END_SRC
+*Malware Software is designed to:*
+ - Disrupt the functioning of a computer system.
+ - Gain unauthorised access to a computer system.
+ - Gather other information from the users without their knowledge.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Types of Malware include the following:*
+ - Computer Virus.
+ - Worms.
+ - Trojans (Trojan Horse).
+ - Spyware.
+ - Adware.
+
+** Learn It: Computer Virus
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Viruses.png]]
+*Viruses*
+#+BEGIN_SRC
+Computer Viruses - Are self-replicating pieces of code that can damage data or software.
+They are often spread via email attachments or removable media such as USB memory sticks.
+#+END_SRC
+- A *virus* is a *program* that is *installed* on a *computer* =without your knowledge= or =permission= with the =purpose= of *doing harm*.
+- They =attach= themselves *(by copying themselves)* to =certain files=, /e.g. .exe files and autorun scripts/.
+- Users =spread= them by =copying infected files= & =activate= them by *opening infected files*.
+- *Viruses* are often =spread= through =email attachments= or =instant messaging services=. you may be *invited* to *open* /a funny image, greeting card, audio or video files/.
+- They may also be =spread= through =files, programs= or =games= that you =download= from the =Internet= or by =loading= an =infected file= from a *memory stick or a CD/DVD*.
+- *Some virues* are just =annoying= and =don't do any damage=, but others will =delete= or =change system files= so that they become =corrupted= or the =computer becomes unusable=.
+- *Some viruses* =fill up the hard disk=, so that your *computer* =runs very slowly= or becomes =unresponsive=.
+
+
+** Try It: Viruses
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q5: Can a CD or DVD containing games software, bought new from a reputable retailer, contain a virus? Why is this unlikely?
+
+** Learn It: Worms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Worms.png]]
+*Worms*
+#+BEGIN_SRC
+Worms - A computer worm is a standalone malware computer program that replicates itself
+in order to spread to other computers.
+#+END_SRC
+- *Worms* are like viruses, but they =self-replicate= *without any user help*, meaning they can =spread very quickly=.
+- They =exploit weaknesses= in *network security*.
+- Often, it *uses* a =computer network= to =spread itself=, *relying* on *security failures* on the target computer to access it.
+- *Worms* almost always cause at least =some harm= to the =network=, even if only by =consuming bandwidth=, /whereas viruses almost always corrupt/ or /modify files on a targeted computer/.
+- *Many worms* are designed =only to spread=, and =do not= attempt to =change the systems= they pass through.
+- However, as the =Morris worm= and =Mydoom= showed, even these "payload-free" worms can =cause major disruption= by *increasing network traffic* and other unintended effects.
+- The *motives* for trojans may *vary*, for example, some may give =unauthorised access= to that computer, some may =crash the computer=, =spread malware= across the network, =corrupt data=, =reformat disks= or =access sensitive information=.
+
+** Learn It: Trojans (Trojan Horse)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Trojans.png]]
+*Trojans*
+#+BEGIN_SRC
+Trojans - Are legitimate programs developed with the intention of hiding malicious code
+within. Since they are largely legitimate, they are often not recognised as malware.
+#+END_SRC
+- *Trojan horse* is named after the famous Ancient Greek story of the
+  Trojan Horse, is a program that =disguised itself= as *legitimate
+  software*.
+- *Unlike viruses & worms*, trojans =don’t replicate themselves=,
+  *users* =install them= not realising they have a =hidden purpose=.
+- Trojans can be employed by =cyber-thieves= and =hackers= trying to
+  *gain access* to users' systems.
+- Users are typically =tricked= by some form of =social engineering=
+  into *loading* and *executing* trojans on their systems.
+
+** Learn It: Spyware
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Spyware.png]]
+*Spyware*
+#+BEGIN_SRC
+Spyware - Covertly obtains sensitive data, such as credit card numbers and passwords,
+transmitting the data to a hacker across the Internet.
+#+END_SRC
+- *Spyware* is software that =gathers information= about a =person= or =organisation= *without their knowledge*.
+- It is often =used= to =track= and =store= *users' movements* on the =Internet= through the use of =tracking cookies=.
+- *Some spyware* may =change= /computer settings, making unauthorised changes/ in /web browser settings/ or /changes to software settings/.
+- *Spyware* can also be used to =collect personal information= such as /logins/ or /bank account details/.
+- The use of the term *spyware* has declined more recently, as the practice of tracking users' visits to different websites is used by many major websites and data mining companies and is not illegal.
+
+** Learn It: Adware
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Adware.png]]
+*Adware*
+#+BEGIN_SRC
+Adware - Downloads unwanted Internet adverts, often observing your online behaviour
+in order to target specific adverts.
+#+END_SRC
+- *Adware* =analyses= which =Internet sites= a *user visits* and then =presents adverts= for *products* which the *user* is *likely* to be =interested in=.
+- *Adware, or advertising-supported software*, is software that =generates revenue= for its developer by *automatically* generating =online advertisements= in the user interface of the software or on a screen presented to the user during the installation process.
+- The software may *generate two types* of revenue: =one is for the display of the advertisement= and another on a =pay-per-click= basis, if the user clicks on the advertisement.
+- The *software* may *implement advertisements* in a =variety of ways=, including a *static box display*, a *banner display*, *full screen*, *a video*, *pop-up advert* in some other form.
+- *Adware* is also *sometimes* =described as malware= and *anti-adware software is available*.
+- Although *most adware* operates =legally= and some adware manufacturers have even sued antivirus companies for blocking adware.
+
+** Learn It: Other Forms of Malware
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Ransomware.png]]
+*Ransomware*
+- *Ransomware* is a type of =malware= from =cryptovirology= that *threatens* to *publish* the victim's *data* or *block* access to it *unless* a =ransom is paid=.
+- While some *simple ransomware* may =lock= the system in a way which is *not difficult* for a knowledgeable person to *reverse*, more =advanced malware= uses a =technique= called =cryptoviral extortion=, in which it =encrypts= the *victim's files*, making them =inaccessible=, and =demands a ransom payment= to *decrypt them*.
+- *Ransomware attacks* are *typically* carried out using a =Trojan= that is =disguised= as a =legitimate file= that the user is *tricked* into *downloading* or *opening* as an *email attachment*.
+[[file:img/Rootkit.png]]
+*Rootkits*
+- A rootkit is a *collection of computer software*, typically =malicious=, designed to =enable access= to a *computer* or an *area of its software* that is not otherwise allowed and =often masks= its *existence* or the *existence of other software*.
+- *The term rootkit* is a concatenation of =root= and the word =kit=.
+- *Rootkits* /allows/ an =unauthorised user= to gain *full control* over a *computer*, including the *host operating system*, to =avoid detection=.
+
+** Try It: Malware Table
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+*Copy and complete the following malware table giving an explanation of each and stating the precautions that should be taken to protect a computer system:*
+[[file:img/Malware_Table.png]]
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Answer the following questions:
+1. *Define* the term phishing? (1 Mark)
+2. *Describe* *two* ways that it is often possible to detect a phishing email? (2 Marks)
+
+/Upload to Fundamentals of Cyber Security - Social Engineering: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. *Describe* the term social engineering? (3 Marks)
+2. *Briefly* explain the *four* techniques that are used in social engineering? (4 Marks)
+
+/Upload to Fundamentals of Cyber Security - Social Engineering: Gold on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Answer the following questions:
+1. Describe *one* other way in which a criminal may obtain personal information about someone without their consent or knowledge? (4 Marks)
+2. In the context of cyber security, what is a *trojan horse*? (2 Marks)
+3. Describe the purpose and function of *spyware*? (2 Marks)
+4. What is *adware* and is it dangerous to your computer? (2 Marks)
+
+
+/Upload to Fundamentals of Cyber Security - Social Engineering: Platinum on BourneToLearn/
