@@ -88,25 +88,25 @@ Cyber Security – The use of technology, working practices, processes and preca
 designed to protect networks, computers, programs and data from attack, damage or
 unauthorised access.
 #+END_SRC
-- *Cyber Security* is defines as the =protection of computer systems=, =networks= and =data= from /criminal activity/.
-- *Cybercrime* can take =many forms=, including planting =viruses=, acquiring and using personal or =confidential data= and =disrupting= a *website or service*.
-- *Vulnerability* of a computer network is often due to a =flawed system= which is =open= to =attack=. An attacker or =hacker= can then =exploit= this =weakness=.
-- *Human error* is one of the =biggest issues= in =security breaches=. For example, in *2010 GCHQ* /lost 35 laptops/ with all the =security data= stored on these devices; there are numerous other cases of where government officials have left /USB Memory sticks/ and/or /other electronic devices/ on *public transport*.
+- *Cyber Security* is defined as the =protection of computer systems=, =networks= and =data= from /criminal activity/.
+- *Cybercrime* can take =many forms=, including *planting* =viruses=, *acquiring* and *using* =personal= or =confidential data= and =disrupting= a *website or service*.
+- *Vulnerability* of a computer network is often due to a =flawed system= which is =open= to =attack=. An =attacker= or =hacker= can then =exploit= this =weakness=.
+- *Human error* is one of the =biggest issues= in =security breaches=. For example, in *2010 GCHQ* lost *35* laptops with all the =security data= stored on these devices; there are numerous other cases of where =government officials= have left /USB Memory sticks/ and /other electronic devices/ on *public transport*.
 ** Learn It: Cyber Security Threats
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
 [[file:img/usb_stick.png]]
 *Removable Media*
-- Removable media such as /memory sticks, memory cards/ and /removable hard drives/, can present *two major threats*: =Data Theft= and =Virus Infection=.
+- *Removable media* such as /memory sticks, memory cards/ and /removable hard drives/, can present *two major threats*: =Data Theft= and =Virus Infection=.
 - Any storage device that is =highly portable= can easily be =used= to /steal, corrupt, destroy, delete, hack/ or /steal data/ or *introduce* *malware* onto a /computer/network system./
-- An example of an issue that could occur when using removable media, is when students has a =copy= of their =school work= on a memory stick which they =take home= to use in their own computer. If their =computer= *does not* have adequate =virus protection= then their memory stick coud become =infected=, and if =used at school= could =infect= the /whole school network./
+- An example of an issue that could occur when using removable media, is when students has a =copy= of their =school work= on a memory stick which they =take home= to use in their own computer. If their =computer= *does not* have adequate =virus protection= then their memory stick could become =infected=, and if =used at school= could =infect= the /whole school network./
 
 ** Try It: Removable Media
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- Q1: Suppose that you found an USB Memory stick, what are the risks of using this unidentified memory stick in your computer?
+- Q1: Suppose that you found an USB Memory stick, what would be the risks of using this unidentified memory stick in your computer?
 
 ** Learn It: Weak and Default Passwords
 :PROPERTIES:
@@ -114,13 +114,13 @@ unauthorised access.
 :END:
 [[file:img/Weak_Pass.png]]
 *Weak and Default Passwords*
-- *Password strength* is a measure of the =effectiveness= of a password *against guessing* or *brute-force attacks*.
-- In its usual form, it estimates =how many= tries an attacker who does not have direct access to the password would need, on average, to
-  *guess it correctly*. The =strength= of a password is a function of /length, complexity,/ and /unpredictability./
+- *Password strength* is a *measure* of the =effectiveness= of a password *against guessing* or *brute-force attacks*.
+- In its usual form, it *estimates* =how many= tries an attacker who does not have direct access to the password would need on average to
+  *guess it correctly*. The =strength= of a password is a function of *length*, *complexity*, and *unpredictability*.
 - *Using* /strong passwords/ =lowers= overall =risk= of a =security breach=, but strong passwords =do not replace= the *need* for other /effective security controls./
 - *Passwords* =should contain= a combination of *upper* and *lower-case* /letters/ as well as /numbers/ and /symbols/. *(E.G. $tROng p@s$worDs).*
-- Simarly, *default passwords* can be a problem. For example, a router's new owner might =not change= the *default password* from *'admin'*
-  or *'password'* when they buy it.The =default password= is usually found in the =instruction manual= or /on the device itself./
+- Simarly, *default passwords* can be a problem. For example, a router's new owner might =not change= the *default password* from *admin*
+  or *password* when they buy it. The =default password= is usually found in the =instruction manual= or /on the device itself./
 - Leaving a =default password= is one of the =major factors= in *compromising* the /security of a system./
  
 ** Learn It: Misconfigured Access Rights
@@ -133,7 +133,7 @@ unauthorised access.
 - In a school or business, =usernames= are =used= to *identify the access rights* of /each user./
 - *Each user* is =assigned= individual =access rights=, *according* to *their role*, and it is important that these should be correctly set.
 - For example, most =network users= *should not* have *access* to the =setup= and =configuration=, /as a hacker who gains access to the user's computer could then cause damage./
-- *Access rights* can also be =applied= to =indiviual files=. This means that *specific files* stored in an area to which full access is normally allowed, can still be given =restrictions= such as being made =read-only=.
+- *Access rights* can also be =applied= to =indiviual files=. This means that *specific files* /stored/ in an area to which *full access* is normally allowed, can still be given =restrictions= such as being made =read-only=.
 
 ** Learn It: Unpatched or Outdated Software
 :PROPERTIES:
@@ -141,20 +141,20 @@ unauthorised access.
 :END:
 *Unpatched or Outdated Software*
 [[file:img/Unpatched.png]]
-- *Unpatched Software* - When a *security risk* is *identified* in a program, the =developer= will *release* a =patch=, which is an add-on program that =fixes= the =security risk=. If a *user* =does not= *install* the patch, their computer is /not secure./
-- Based on a sample size of *163 million computers*, =55%= of =all= /programs installed on personal computers running Windows/ are =outdated= according to a recent report, exposing their users to security risks because of =unpatched vulnerabilities=.
+- *Unpatched Software* - When a *security risk* is *identified* in a program, the =developer= will *release* a =patch=, which is an add-on program that =fixes= the =security risk=. If a *user* =does not= *install* the patch, *their computer* is /not secure./
+- Based on a sample size of *163 million computers*, =55%= of =all= /programs installed on personal computers running Windows/ are =outdated= according to a recent report, *exposing* their users to *security risks* because of =unpatched vulnerabilities=.
 - The top most out-of-date Windows programs installed on PCs around the world shows that in more than =94% of cases=, users who have /installed Adobe Shockwave, VLC Media Player/, and /Skype/ on their computers =haven't updated= them to the *latest versions*.
-- *Out-of-date* /Microsoft Office programs/ are another category of applications which put their users at risk, especially given that =15% of all Office installations= are Enterprise 2007, an Office version *Microsoft* /has stopped supporting since 2017/ which means that it =hasn't received= any *bug fixes* or *security patches* /for almost two years./
+- *Out-of-date* /Microsoft Office programs/ are another category of applications which put their users at risk, especially given that =15% of all Office installations= are Enterprise 2007, an Office version *Microsoft* has *stopped supporting* since *2017* which means that it =hasn't received= any *bug fixes* or *security patches* for almost =two years=.
 - *Threats* will often *exist in combination*. A =username= acquired via =phishing= could be used in *collaboration* with a =weak, easy-to-guess password= to introduce a =virus= that *specifically* seeks out =unpatched software=.
-- Other cyber security threats including * social engineering* and *malicious code* and will be covered in detail with the next topic.
+- Other cyber security threats including *Social Engineering* and *Malicious Code* and will be covered in detail with the next topic.
 
 ** Learn It: Social Engineering
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
 [[file:img/Identity_Theft.png]]
-*Social Engineering - Summary (/This is covered in detail in 3.6.2 - Social Engineering/)*
-- =People= are often the =weakest point= in *security systems*, *social engineering* focuses on /people/ rather than on *technology*, as the weak point in any security system. There are many different ways to =manipulate= people to =surrender= their
+*Social Engineering - Summary (/This is covered in detail in 3.6.2 - Social Engineering & Malicious Code/)*
+- =People= are often the =weakest point= in *security systems*, *social engineering* focuses on /people/ rather than on *technology*, as the *weak point* in any security system. There are many different ways to =manipulate= people to =surrender= their
   *confidential information* or *data.*
 *Social Engineering includes the following techniques:*
  - Blagging.
@@ -167,9 +167,9 @@ unauthorised access.
 :HTML_CONTAINER_CLASS: learn
 :END:
 [[file:img/Malicious_Code.png]]
-*Malicious Code - Summary (/This is covered in detail in 3.6.2 - Social Enginnering/)*
+*Malicious Code - Summary (/This is covered in detail in 3.6.2 - Social Enginnering & Malicious Code/)*
 - Malicious code is the term used to describe any =code= in any part of a =software system= or =script= that is =intended= to =cause= *undesired effects*, *security breaches* or *damage* to a system.
-- *Malicious code* is an =application security threat= that *cannot* be efficiently *controlled* by /conventional antivirus software alone/.
+- *Malicious code* is an =application security threat= that *cannot* be efficiently *controlled* by conventional =antivirus software alone=.
 #+BEGIN_SRC
 Malware - Is a term used to describe a variety of hostile or instrusive programs or
 software. Viruses, Spyware, Adware and Trojans are all types of malware, although
@@ -194,12 +194,12 @@ there are others.
 [[file:img/Penetration_Testing.png]]
 *What is penetration testing?*
 - *Penetration Testing* is used to find any =security weaknesses= in a system. It is the *process* of =attempting= to *gain access* to /resources/ *without* knowledge of /usernames, passwords/ and /other normal means of access./
-- Penetration testing is also called =pen testing= or =ethical hacking=, is the practice of *testing a computer system, network* or *web application* to find =security vulnerabilities= that a =hacker= could =exploit=.
+- *Penetration testing* is also called =pen testing= or =ethical hacking=, is the practice of *testing a computer system, network* or *web application* to find =security vulnerabilities= that a =hacker= could =exploit=.
 - *Penetration testing* can be =automated= with software applications or =performed manually=.
 #+BEGIN_HTML
 <br>
 #+END_HTML
-- The strategy is to:
+- *The strategy is to:*
   - Gather information about the target of possible attacks.
   - Identify possible entry points.
   - Attempt to break in.
@@ -226,15 +226,15 @@ there are others.
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- Q3: Name some possible weaknesses or vulnerablities that (a) a black-box penetration test and (b) a white-box penetration test might identify?
+- Q3: *Name* some possible *weaknesses* or *vulnerablities* that *(A)* a *black-box* penetration test and *(B)* a *white-box* penetration test might identify?
 
 ** Badge It: Exam Questions
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
 *** Silver - Answer the following questions:
-1. Define the term Cyber Security? (2 Marks)
-2. Explain why removable media can be a threat to the security of a network? (2 Marks)
+1. *Define* the term Cyber Security? (2 Marks)
+2. *Explain* why removable media can be a threat to the security of a network? (2 Marks)
 
 /Upload to Fundamentals of Cyber Security - Cyber Security Threats: Silver on BourneToLearn/
 
@@ -257,7 +257,7 @@ there are others.
 1. A mail-order company stores thousands of customers' details, including debit and credit card details, on its computer network. The company is concerned about the security of this information.
   - a) Explain *three* measures that the company could take to prevent unauthorised access to their computer system? (3 Marks)
   - b) *Describe* a measure that the company could take to prevent employees from accessing information that they are not permitted to view? (2 Marks)
-  - c) Explain how penetration testing can assist the company in improving its security? (3 Marks)
+  - c) *Explain* how penetration testing can assist the company in improving its security? (3 Marks)
 
 
 /Upload to Fundamentals of Cyber Security - Cyber Security Threats: Platinum on BourneToLearn/
