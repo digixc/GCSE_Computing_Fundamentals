@@ -1,0 +1,327 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.6.3 Methods to detect and prevent Cyber Security Threats
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Identifying Vulnerabilities
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Cyber_Sec_Threats.png]]
+** Learn It: How can we Identify Vulnerabilities?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are many methods that a company can use to identify security
+  vulnerabilities.
+- *These can include:*
+  - Network Forensics.
+  - Penetration Testing (Covered in 3.6.1 Cyber Security Threats)
+
+** Learn It: Network Forensics
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*What is network forensics?*
+[[file:img/Net_Forensics.png]]
+- *Police forensic work* involves the use of =scientific methods= and =techniques= to *investigate a crime*.
+- This *term can be applied* in much the same way but in the =context of network forensics=.
+- This involves *capturing, storing* and *analysing network events* using =special software=.
+- *Network managers* can =monitor= business =transactions= to =verify= that they are =not fraudulent=, or they can *stop* =security attacks= before they can cause =damage= a *network system*.
+- =Network forensic software= can also *detect* =data leaks=, where confidential data is being transferred to an external source.
+- The software can additionally =reveal= *who* communicated with /whom, when, how/ and /how often./
+- *After* a =network attack=, *data packets* can be =analysed= to =discover= how the network was attacked and =decisions= can be =made= on how to =prevent= *future attacks*.
+
+** Learn It: Penetration Testing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*What is penetration testing?*
+[[file:img/Penetration_Testing.png]]
+- *Penetration Testing* is used to find any =security weaknesses= in a system. It is the *process* of =attempting= to *gain access* to /resources/ *without* knowledge of /usernames, passwords/ and /other normal means of access./
+- *Penetration testing* is also called =pen testing= or =ethical hacking=, is the practice of *testing a computer system, network* or *web application* to find =security vulnerabilities= that a =hacker= could =exploit=.
+- *Penetration testing* can be =automated= with software applications or =performed manually=.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *The strategy is to:*
+  - Gather information about the target of possible attacks.
+  - Identify possible entry points.
+  - Attempt to break in.
+  - Report back the findings.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Black-box Penetration Test*
+- The =aim= of =black-box pentration testing= is to =simulate= an *external hacking* or *cyber warfare attack.*
+- *Testers* are =given very little= or =no information= about the *network* prior to the test. The *test* could target /email servers, web servers/ or /firewalls./
+- *The objective is to find out:*
+  - Whether a hacker can get in.
+  - How far they can get.
+  - What they can do on the system.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*White-box Penetration Test*
+- The =aim of white-box penetration testing= is to =simulate= a =malicious insider= who has *knowledge of* and possibly *basic credentials* for the =target system=.
+- *Testers* are given =basic information= about the network in advance of the testing. This could include /IP addresses, network protocols/ and /even passwords./
+- It puts the tester in the =position= of =an insider=, to *determine* how *much damage* a /disgruntled/ or /dishonest employee could cause./
+
+* Preventing Vulnerabilities
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Prevent_Vulner.png]]
+** Learn It: How can we prevent network vulnerabilities?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are many methods that an organisation can use to prevent and deal with threats to network security.
+- *We will cover the following methods:*
+  - Biometric Measures.
+  - Passwords and Usernames.
+  - CAPTCHA.
+  - Email Confirmations.
+  - Anti-Malware Software and Automatic Software Updates.
+
+
+** Learn It: Biometric Measures
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Biometrics.png]]
+*Biometric Measures*
+#+BEGIN_SRC
+Biometrics - Biometrics measures physical traits. Biometrics are measures of biological
+quantities or patterns but also means measurements of an individual's features, such as
+fingerprints, that can identify or authenticate a person. Used this way, a biometric is
+a password that cannot be forgotten, lost or stolen.
+#+END_SRC
+- *Biometrics* covers a =variety of technologies= in which =unique identifiable= attributes of people are used for =identification= and =authentication=.
+- These include, a =person’s= /fingerprint scan, retinal (iris) scan, face scan/ and /voice pattern sample/ which can be used to =validate= the =identity= of *individua seeking* to control =access= to /computers, airlines, databases/ and /other areas/ which may need to be =restricted=.
+- The =probability= of =two people= having =identical biological= characteristics is =extremely rare=, and so these methods can be used to positively identify a person.
+- *Biometric systems* are often used on =mobile devices= and the =advantages= of these methods over *password entry* are that it is =not possible= to =steal= or =forget= a *biometric characteristic*.
+- *Biometric Measures* - Using some =part= of a =person's biology= to *access* a =computer/device system=, /instead of using a password./
+- *For example:*
+  - Mobile phones and tablets that unlock on scanning a fingerprint.
+  - Doorbells that unlock when a person's iris or retina is scanned.
+  - Voice recognition.
+  - Face recognition.
+
+** Try It: Biometric Research
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q1: Research *two* biometric methods and their uses?
+
+** Learn It: Passwords and Usernames
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Passwords_UserNames.png]]
+*Passwords and Usernames*
+#+BEGIN_SRC
+Passwords and Usernames - Is a technique of fraudulently obtaining private information,
+often using email or SMS.
+#+END_SRC
+- *Automated procedures* that ensure that =secure password policies= are followed to =ensure= that users who do not follow these procedures are =not allowed= into a system.
+- *Password strength* is a *measure* of the =effectiveness= of a password *against guessing* or *brute-force attacks*.
+- In its usual form, it *estimates* =how many= tries an attacker who does not have direct access to the password would need on average to
+  *guess it correctly*. The =strength= of a password is a function of *length*, *complexity*, and *unpredictability*.
+- *Using* /strong passwords/ =lowers= overall =risk= of a =security breach=, but strong passwords =do not replace= the *need* for other /effective security controls./
+- *Passwords* =should contain= a combination of *upper* and *lower-case* /letters/ as well as /numbers/ and /symbols/. *(E.G. $tROng p@s$worDs).*
+- Simarly, *default passwords* can be a problem. For example, a router's new owner might =not change= the *default password* from *admin*
+  or *password* when they buy it. The =default password= is usually found in the =instruction manual= or /on the device itself./
+- Leaving a =default password= is one of the =major factors= in *compromising* the /security of a system./
+
+ 
+** Learn It: CAPTCHA
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/CAPTCHA.png]]
+*CAPTCHA*
+#+BEGIN_SRC
+CAPTCHA - Is an acronym for Completely Automated Public Turing test to tell Computers
+and Humans Apart. is a type of challenge–response test used in computing to determine
+whether or not the user is human.
+#+END_SRC
+- *A CAPTCHA* is a =program= that =protects websites= against =bots= by *generating and grading tests* that =humans= *can pass*, but current =computer programs cannot=. For example, /humans can read distorted text as the one shown above/, *but current computer programs cannot*.
+- The *most common* type of CAPTCHA was first invented in =1997= by two groups working in parallel. This form of CAPTCHA requires that the
+  *user type* the *letters* of a =distorted image=, sometimes with the addition of an obscured sequence of letters or digits that appears on the screen.
+- Because the test is =administered by a computer=, in =contrast= to the *standard Turing test* that is *administered* by a =human=, a CAPTCHA is sometimes described as a =reverse Turing test=.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *CAPTCHAs have several applications for practical security, including (but not limited to):*
+  - Preventing Comment Spam in Blogs.
+  - Protecting Website Registration.
+  - Protecting Email Addresses From Scrapers.
+  - Online Polls.
+  - Preventing Dictionary Attacks.
+  - Search Engine Bots.
+  - Worms and Spam.
+
+
+** Try It: CAPTCHA
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q2: Even perfectly sighted individuals sometimes find CAPTCHA text very difficult or impossible to read. (a) Does the use of CAPTCHA images descriminate against any computer users? (b) And what other newer versions of CAPTCHA are available to address this issue?
+
+** Learn It: Email Confirmations
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Password_Confirmation.png]]
+*Password Confirmations*
+#+BEGIN_SRC
+Email Confirmations - Often, when a password is changed, a user must verify this change
+by clicking on a link sent to a registered email address. This can prevent hackers from
+changing passwords un-noticed.
+#+END_SRC
+- When you =sign up= for a *new web service*, you will sometimes be *asked* to =verify= your details through an =email verification process=.
+- You will =not be able= to *complete* the web /service application process/ and =activate= your /new account/ until you have /verified/ and /confirmed/ your *email address*.
+- *This method is considered a best practice*, to confirm the email of a new user registration, so that it can be confirmed that the individual is =not impersonating= someone =else=.
+- Suppose you had a discussion forum, and you wanted to prevent =yli@example.com= from registering as =nolivetto@contoso.com=. *Without* email confirmation, =nolivetto@contoso.com= *could* /receive unwanted email/ from your app.
+- Suppose the user =accidentally= registered as =ylo@example.com= and had not noticed the *misspelling* of =yli=.
+- *They would not* be able to =use password= recovery because the app =does not= have their =correct email address=.
+- *Email confirmation* provides =limited protection= from =bots=. Email confirmation =doesn't= provide =protection= from *malicious users* with =many email accounts=.
+
+** Try It: Email Confirmations
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q3: Have you ever been required to wait for email confirmation and click on a link to complete a registration process? Do you always complete the registration?
+
+** Learn It: Anti-Malware Software and Automatic Software Updates
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Anti_Malware.png]]
+*Anti-Malware Software*
+- *Anti-malware* is a type of =software= developed to =scan, identify= and =eliminate malware=, also known as malicious software, from an infected system or network.
+- It =secures= an *individual system* or an *entire business network* from =malicious infections= that can be caused by a *variety of malware* that includes /viruses, worms, trojans, rootkits, spyware/ and /adware./
+- *Anti-malware* can be *deployed* on =individual computers=, a =gateway server= or even on a =dedicated network appliance=.
+- An =effective= anti-malware tool *includes multiple features* like =anti-spyware= and =phishing tools= to *ensure complete protection*.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *Anti-Malware Software will protect a computer in three ways:*
+  1. It prevents harmful programs from being installed on a computer.
+  2. It prevents important files, such as the operating system (OS), from being changed or deleted.
+  3. If a virus does manage to install itself, the software will detect it when it performs regular virus system scans. Any viruses detected will be removed.
+- New viruses are created regularly, so it's important that any anti-virus software is regularly updated.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Automatic Software Updates*
+- *Popular software* is a =common target= for *hackers* and *malware*. For example, /browsers, pdf readers, application software/ and /even operating systems/.
+- These can =all= be =automatically updated= by selecting options to /automatically update and install/ either from the *operating system* or from the *software*.
+- The top most out-of-date Windows programs installed on PCs around the world shows that in more than =94% of cases=, users who have /installed Adobe Shockwave, VLC Media Player/, and /Skype/ on their computers =haven't updated= them to the *latest versions*.
+- *Out-of-date* /Microsoft Office programs/ are another category of applications which put their users at risk, especially given that =15% of all Office installations= are Enterprise 2007, an Office version *Microsoft* has *stopped supporting* since *2017* which means that it =hasn't received= any *bug fixes* or *security patches* for almost =two years=.
+- *Threats* will often *exist in combination*. A =username= acquired via =phishing= could be used in *collaboration* with a =weak, easy-to-guess password= to introduce a =virus= that *specifically* seeks out =unpatched software=.
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Answer the following questions:
+1. *Define* two biometric methods of identification, and for each one,
+   give an example of where it might be used? (4 Marks)
+
+
+/Upload to Fundamentals of Cyber Security - Cyber security Threats: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. *Define* the term network forensics? (2 Marks)
+2. *Briefly* explain what network forensics can prevent and how they are used? (4 Marks)
+
+/Upload to Fundamentals of Cyber Security - Cyber security Threats: Gold on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Answer the following questions:
+1. *Define* what anti-malware is and how this can be used to protect the security of a computer system? (4 Marks)
+2. State the *three* ways that anti-malware software can protect a computer system? (3 Marks)
+3. *Why* is it *dangerous* to not keep your application software and operating system up-to-date? (6 Marks)
+
+
+/Upload to Fundamentals of Cyber Security - Cyber security Threats: Platinum on BourneToLearn/

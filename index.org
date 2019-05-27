@@ -197,7 +197,7 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.6.3 Methods to Detect & Prevent Cyber Security Threats]]
+[[file:pages/3-6-3-methods_prevention.html][3.6.3 Methods to Detect & Prevent Cyber Security Threats]]
 #+BEGIN_HTML
 </details>
 #+END_HTML
