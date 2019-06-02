@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.6.2 Social Engineering &amp; Malicious Code</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.6.2 Social Engineering &amp; Malicious Code</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Social Engineering</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What is Social Engineering?</a></li>
+<li><a href="#sec-1-2">Learn It: Blagging</a></li>
+<li><a href="#sec-1-3">Try It: Blagging</a></li>
+<li><a href="#sec-1-4">Learn It: Phishing</a></li>
+<li><a href="#sec-1-5">Try It: Phishing Email</a></li>
+<li><a href="#sec-1-6">Learn It: Pharming</a></li>
+<li><a href="#sec-1-7">Try It: Phishing Email</a></li>
+<li><a href="#sec-1-8">Learn It: Shouldering (Shoulder Surfing)</a></li>
+<li><a href="#sec-1-9">Try It: Shouldering</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Malicious Code</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What is Malicious Code?</a></li>
+<li><a href="#sec-2-2">Learn It: Computer Virus</a></li>
+<li><a href="#sec-2-3">Try It: Viruses</a></li>
+<li><a href="#sec-2-4">Learn It: Worms</a></li>
+<li><a href="#sec-2-5">Learn It: Trojans (Trojan Horse)</a></li>
+<li><a href="#sec-2-6">Learn It: Spyware</a></li>
+<li><a href="#sec-2-7">Learn It: Adware</a></li>
+<li><a href="#sec-2-8">Learn It: Other Forms of Malware</a></li>
+<li><a href="#sec-2-9">Try It: Malware Table</a></li>
+<li><a href="#sec-2-10">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-2-10-1">Silver - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-11">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-2-11-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-12">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-2-12-1">Platinum - Answer the following questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Social Engineering</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Social_Engineering.png" alt="Social_Engineering.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What is Social Engineering?</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>We have briefly covered what social engineering is in the previous topic, but we will look at this in more detail. Essentially it is the <b>art</b> of <code>manipulating people</code> so that they <b>give up</b> <code>confidential information</code>.
+</li>
+<li><code>People</code> are often the <code>weakest point</code> in <b>security systems</b>, <b>social engineering</b> focuses on <i>people</i> rather than on <b>technology</b>, as the <b>weak point</b> in any security system. There are many different ways to <code>manipulate</code> people to <code>surrender</code> their <b>confidential information</b> or <b>data.</b>
+</li>
+<li>There are <code>many threats</code> to <code>network security</code>. <b>Most target</b> the <i>computers</i> and <i>communications software</i>, but <b>many target</b> far <b>weaker links</b>: the <code>people</code> who use them.
+</li>
+<li>A <b>study</b> in <b>2015</b> found that <code>human error</code> was the <b>main root cause</b> of <code>over 52%</code> of all <b>security breaches</b> to networks.
+</li>
+<li>The <code>biggest problems</code> were <b>failure</b> to <code>follow general</code> <i>policies</i> and <i>procedures</i>, <i>general carelessness</i> and a <i>lack of knowledge of threats</i>.
+</li>
+<li><b>Some of the methods used</b> to <code>breach</code> network security <code>need no</code> <b>knowledge of programming</b> or <b>computers</b>.
+</li>
+<li>These are <code>low-tech</code> <b>con-tricks</b>, referred to as <code>social engineering</code>, aimed at <code>manipulating</code> <b>vulnerable people</b> into <code>disclosing</code> their <b>personal information</b>.
+</li>
+</ul>
+<br>
+<p>
+<b>Social Engineering includes the following techniques:</b>
+</p>
+<ul class="org-ul">
+<li>Blagging (Pretexting).
+</li>
+<li>Phishing.
+</li>
+<li>Pharming.
+</li>
+<li>Shouldering (Shoulder Surfing).
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Blagging</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<img src="img/Blagging.png" alt="Blagging.png" />
+<b>Blagging or Pretexting</b>
+</p>
+<pre class="example">
+Blagging - Is the act of creating and using an invented scenario to engage a targeted
+victim in a manner that increases the chance that the victim will divulge information
+or perform actions that would be unlikely in ordinary circumstances.
+</pre>
+<ul class="org-ul">
+<li><b>Blagging:</b> This is sometimes called <code>pretexting</code> and <b>can be</b> done <code>face-to-face</code>, by <code>telephone</code> or by <code>computer</code>.
+</li>
+<li>The <b>criminal</b> <code>invents a scenario</code> to try to get the <b>victim</b> to <b>divulge</b> <code>sensitive data</code> or <code>information</code>, for example <b>pretending</b> to be a <i>charity</i> or an <i>official</i> such as a <i>police officer</i>, <i>bank employee</i> or an <i>insurance claims investigator</i>.
+</li>
+<li>To help <code>prevent blagging</code>, the company or organisation <b>should make sure</b> that they <code>provide</code> <b>security training</b> to their staff, so that they <b>don't fall for these tricks</b>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 try">
+<h3 id="sec-1-3">Try It: Blagging</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Q1: Explain with an example what is meant by <b>Blagging</b>?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It: Phishing</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<img src="img/Phishing.png" alt="Phishing.png" />
+<b>Phishing</b>
+</p>
+<pre class="example">
+Phishing - Is a technique of fraudulently obtaining private information, often
+using email or SMS.
+</pre>
+<ul class="org-ul">
+<li>The term <b>Phishing</b> comes from <b>fishing</b> - <code>Bait</code> is <b>spread across</b> the <code>Internet</code> in the hope that <b>people</b> will take a <code>bite</code>.
+</li>
+<li><b>Phishing:</b> Is when <b>criminals</b> <i>send</i> <code>emails</code> or <code>texts</code> to <b>people claiming</b> to be from a <code>well-known business</code>, <i>(e.g. a bank or online retailer)</i>.
+</li>
+<li>The <b>emails</b> often contain <b>links</b> to <code>spoof versions</code> of the <b>company’s website</b>. They <b>request</b> that the <b>user update</b> their <code>personal information</code> <i>(e.g. password or bank account details)</i>. <b>When</b> the <b>user inputs</b> this <b>data</b> into the <b>website</b> they <code>hand it</code> all over to the <code>criminals</code>, <i>who can then access their genuine account.</i>
+</li>
+<li>You <b>should</b> always <b>beware</b> of <code>links</code> in <b>emails</b> or <b>texts</b>. The <b>email</b> is <b>not</b> usually addressed to you <code>personally</code> and <b>often</b> contains <code>spelling</code> and <code>grammar mistakes</code>.
+</li>
+<li><b>Sometimes</b> emails may <b>contain</b> a <code>threat</code> that <b>something bad</b> is going to happen <i>if you don't click on the link</i>, for example, <b>your account</b> will be <b>closed down</b> in two days' time.
+</li>
+</ul>
+<br>
+<p>
+<b>Phishing emails can often be recognised by the following:</b>
+</p>
+<ul class="org-ul">
+<li><b>Urgency</b> - They want you to <b>respond quickly</b>, without thinking, for example to supply your bank details before the account is suspended.
+</li>
+<li><b>Careless use of language</b> - They often contain <b>spelling and grammatical errors</b> and <b>careless writing style</b>.
+</li>
+<li><b>Impersonality</b> - You <b>may not</b> be <code>addressed personally</code>, but only as <b>Dear Customer</b>. However, as the <code>criminals</code> become more <code>sophisticated</code> they are able to <b>find your personal details</b> from <code>various sources</code> such as <code>social media</code>.
+</li>
+<li><b>False Links</b> - You may be asked to <code>click</code> on a <code>link</code> which <b>leads</b> to a <b>website controlled</b> by the <code>criminals</code>.
+</li>
+<li><b>Attachments</b> - Sometimes you may be <b>asked</b> to <b>open</b> <code>programs</code> or <code>documents</code> sent with the email; these <code>attachments</code> may <b>contain</b> <code>malware</code>.
+</li>
+</ul>
+<p>
+<b>Below is an example of a Phishing Email</b>
+<img src="img/Phishing_Email.png" alt="Phishing_Email.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3 try">
+<h3 id="sec-1-5">Try It: Phishing Email</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Q2: Suppose that you have just received the email shown above, state at least three signs that would alert you to the fact that this might be a phishing email?
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It: Pharming</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+<img src="img/Pharming.png" alt="Pharming.png" />
+<b>Pharming</b>
+</p>
+<pre class="example">
+Pharming - Is a cyber attack technique intended to redirect a website's traffic to an
+unsafe or fake website.
+</pre>
+<ul class="org-ul">
+<li>Pharming <code>redirects</code> <b>web traffic</b> to <code>fake sites</code>. The <code>attacker</code> will <b>place code</b> on your <code>hard drive</code> or on the <code>network server</code> itself.
+</li>
+<li><b>When</b> you <b>type</b> in a <code>genuine website address</code>, <b>pharming redirects</b> you to a <code>fake/bogus website</code> and you may be <code>asked</code> to give <code>personal</code> or
+<code>sensitive information</code>.
+</li>
+<li><b>Pharming works</b> by <code>changing</code> the <code>hosts file</code> on the <b>victim's computer</b> by <b>exploiting</b> a vulnerability in the <code>Domain Name Service (DNS)</code> <i>server software</i>.
+</li>
+<li>The <code>DNS servers</code> are <b>responsible</b> for <b>translating</b> <i>Internet names</i> into their <i>real IP addresses</i>.
+</li>
+</ul>
+<br>
+<p>
+<b>To prevent Pharming users should:</b>
+</p>
+<ul class="org-ul">
+<li><b>Check</b> that the <b>HTTP address</b> of the site is the one you <b>intended</b> to visit.
+</li>
+<li>Check that there is a <b>secure connection (HTTPS)</b> if you have to enter <b>sensitive information</b>.
+</li>
+<li>Check the site's <b>security certificates</b>.
+</li>
+<li>Install the latest <b>security patches</b>.
+</li>
+<li>Install <b>Antivirus Software</b>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 try">
+<h3 id="sec-1-7">Try It: Phishing Email</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Q3: What is <b>Pharming</b>?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3 learn">
+<h3 id="sec-1-8">Learn It: Shouldering (Shoulder Surfing)</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+<img src="img/Shouldering.png" alt="Shouldering.png" />
+<b>Shouldering</b>
+</p>
+<pre class="example">
+Shouldering - Is observing a person's private information over the shoulder.
+e.g. Cashpoint machine PIN number.
+</pre>
+<ul class="org-ul">
+<li><b>Most security risks</b> are usually <code>remote theft</code>, but there are other ways to gain unauthorised access to passwords or sensitive information.
+</li>
+<li><b>Shouldering</b> or <b>Shoulder Surfing</b> refers to using <code>direct observation techniques</code> to <b>gain</b> information such as <code>passwords</code> or <code>security data</code>.
+</li>
+<li>For example, <b>looking over someone's shoulder</b> while they are <code>typing</code> in their <code>ATM PIN</code> number or <code>computer password</code>.
+</li>
+<li><b>To prevent</b> <code>shoulder surfing</code> you should <b>shield</b> the <b>keypad</b> from view by using your body or <i>cupping your hand over the keypad</i>. When working on a <code>laptop</code> or <code>mobile tablet device</code>, keep your back to a wall with no open sides and <code>extra care</code> should be taken when <code>entering</code> a <code>password</code>. 
+</li>
+</ul>
+<br>
+<p>
+<b>Shouldering can occur in the following ways:</b>
+</p>
+<ul class="org-ul">
+<li>Someone in an office watching others entering passwords.
+</li>
+<li>Someone watching as they enter their PIN at a cashpoint machine (ATM).
+</li>
+<li>An employee at a shop or petrol station watching as a PIN is being entered.
+</li>
+<li>Criminals using binoculars or closed circuit television to watch from a distance or record users entering sensitive information.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3 try">
+<h3 id="sec-1-9">Try It: Shouldering</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>Q4: Explain what is meant by <b>Shouldering</b>?
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Malicious Code</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What is Malicious Code?</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<div class="figure">
+<p><img src="img/Malicious_Code.png" alt="Malicious_Code.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We have briefly covered what <b>malicious code</b> is in the <b>previous topic</b>, but we will look at this in more detail. Essentially <b>MALicious softWARE</b> (Mal WARE) is <b>installed</b> on <code>someone’s device</code> <b>without</b> their <code>knowledge</code> or <code>consent</code>.
+</li>
+<li><b>Security</b> is about <code>keeping</code> your <code>computer</code> and the <code>files</code>, <code>programs</code> and <code>data</code> <b>stored</b> on it <code>safe</code> from a <code>number of hazzards</code>.
+</li>
+<li>These <code>hazzards</code> come in the form of <i>malware, hackers, blagging, phishing, pharming, hardware</i> and <i>software faults</i>.
+</li>
+<li>Other <code>people</code> using the network can also be <b>one</b> of the <code>greatest risks of all</code>.
+</li>
+<li>Malicious code is the term used to describe any <code>code</code> in any part of a <code>software system</code> or <code>script</code> that is <code>intended</code> to <code>cause</code> <b>undesired effects</b>, <b>security breaches</b> or <b>damage</b> to a system.
+</li>
+<li><b>Malicious code</b> is an <code>application security threat</code> that <b>cannot</b> be efficiently <b>controlled</b> by conventional <code>antivirus software alone</code>.
+</li>
+</ul>
+<p>
+<b>Malware</b>
+</p>
+<pre class="example">
+Malware - Is a term used to describe a variety of hostile or instrusive programs or
+software. Viruses, Worms, Trojans (Trojan Horse), Spyware and Adware and are all
+types of malware, although there are others.
+</pre>
+<p>
+<b>Malware Software is designed to:</b>
+</p>
+<ul class="org-ul">
+<li>Disrupt the functioning of a computer system.
+</li>
+<li>Gain unauthorised access to a computer system.
+</li>
+<li>Gather other information from the users without their knowledge.
+</li>
+</ul>
+<br>
+<p>
+<b>Types of Malware include the following:</b>
+</p>
+<ul class="org-ul">
+<li>Computer Virus.
+</li>
+<li>Worms.
+</li>
+<li>Trojans (Trojan Horse).
+</li>
+<li>Spyware.
+</li>
+<li>Adware.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 learn">
+<h3 id="sec-2-2">Learn It: Computer Virus</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<img src="img/Viruses.png" alt="Viruses.png" />
+<b>Viruses</b>
+</p>
+<pre class="example">
+Computer Viruses - Are self-replicating pieces of code that can damage data or software.
+They are often spread via email attachments or removable media such as USB memory sticks.
+</pre>
+<ul class="org-ul">
+<li>A <b>virus</b> is a <b>program</b> that is <b>installed</b> on a <b>computer</b> <code>without your knowledge</code> or <code>permission</code> with the <code>purpose</code> of <b>doing harm</b>.
+</li>
+<li>They <code>attach</code> themselves <b>(by copying themselves)</b> to <code>certain files</code>, <i>e.g. .exe files and autorun scripts</i>.
+</li>
+<li>Users <code>spread</code> them by <code>copying infected files</code> &amp; <code>activate</code> them by <b>opening infected files</b>.
+</li>
+<li><b>Viruses</b> are often <code>spread</code> through <code>email attachments</code> or <code>instant messaging services</code>. you may be <b>invited</b> to <b>open</b> <i>a funny image, greeting card, audio or video files</i>.
+</li>
+<li>They may also be <code>spread</code> through <code>files, programs</code> or <code>games</code> that you <code>download</code> from the <code>Internet</code> or by <code>loading</code> an <code>infected file</code> from a <b>memory stick or a CD/DVD</b>.
+</li>
+<li><b>Some virues</b> are just <code>annoying</code> and <code>don't do any damage</code>, but others will <code>delete</code> or <code>change system files</code> so that they become <code>corrupted</code> or the <code>computer becomes unusable</code>.
+</li>
+<li><b>Some viruses</b> <code>fill up the hard disk</code>, so that your <b>computer</b> <code>runs very slowly</code> or becomes <code>unresponsive</code>.
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2-3" class="outline-3 try">
+<h3 id="sec-2-3">Try It: Viruses</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Q5: Can a CD or DVD containing games software, bought new from a reputable retailer, contain a virus? Why is this unlikely?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3 learn">
+<h3 id="sec-2-4">Learn It: Worms</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<img src="img/Worms.png" alt="Worms.png" />
+<b>Worms</b>
+</p>
+<pre class="example">
+Worms - A computer worm is a standalone malware computer program that replicates itself
+in order to spread to other computers.
+</pre>
+<ul class="org-ul">
+<li><b>Worms</b> are like viruses, but they <code>self-replicate</code> <b>without any user help</b>, meaning they can <code>spread very quickly</code>.
+</li>
+<li>They <code>exploit weaknesses</code> in <b>network security</b>.
+</li>
+<li>Often, it <b>uses</b> a <code>computer network</code> to <code>spread itself</code>, <b>relying</b> on <b>security failures</b> on the target computer to access it.
+</li>
+<li><b>Worms</b> almost always cause at least <code>some harm</code> to the <code>network</code>, even if only by <code>consuming bandwidth</code>, <i>whereas viruses almost always corrupt</i> or <i>modify files on a targeted computer</i>.
+</li>
+<li><b>Many worms</b> are designed <code>only to spread</code>, and <code>do not</code> attempt to <code>change the systems</code> they pass through.
+</li>
+<li>However, as the <code>Morris worm</code> and <code>Mydoom</code> showed, even these "payload-free" worms can <code>cause major disruption</code> by <b>increasing network traffic</b> and other unintended effects.
+</li>
+<li>The <b>motives</b> for trojans may <b>vary</b>, for example, some may give <code>unauthorised access</code> to that computer, some may <code>crash the computer</code>, <code>spread malware</code> across the network, <code>corrupt data</code>, <code>reformat disks</code> or <code>access sensitive information</code>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5" class="outline-3 learn">
+<h3 id="sec-2-5">Learn It: Trojans (Trojan Horse)</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+<img src="img/Trojans.png" alt="Trojans.png" />
+<b>Trojans</b>
+</p>
+<pre class="example">
+Trojans - Are legitimate programs developed with the intention of hiding malicious code
+within. Since they are largely legitimate, they are often not recognised as malware.
+</pre>
+<ul class="org-ul">
+<li><b>Trojan horse</b> is named after the famous Ancient Greek story of the
+Trojan Horse, is a program that <code>disguised itself</code> as <b>legitimate
+software</b>.
+</li>
+<li><b>Unlike viruses &amp; worms</b>, trojans <code>don’t replicate themselves</code>,
+<b>users</b> <code>install them</code> not realising they have a <code>hidden purpose</code>.
+</li>
+<li>Trojans can be employed by <code>cyber-thieves</code> and <code>hackers</code> trying to
+<b>gain access</b> to users' systems.
+</li>
+<li>Users are typically <code>tricked</code> by some form of <code>social engineering</code>
+  into <b>loading</b> and <b>executing</b> trojans on their systems.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-6" class="outline-3 learn">
+<h3 id="sec-2-6">Learn It: Spyware</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+<img src="img/Spyware.png" alt="Spyware.png" />
+<b>Spyware</b>
+</p>
+<pre class="example">
+Spyware - Covertly obtains sensitive data, such as credit card numbers and passwords,
+transmitting the data to a hacker across the Internet.
+</pre>
+<ul class="org-ul">
+<li><b>Spyware</b> is software that <code>gathers information</code> about a <code>person</code> or <code>organisation</code> <b>without their knowledge</b>.
+</li>
+<li>It is often <code>used</code> to <code>track</code> and <code>store</code> <b>users' movements</b> on the <code>Internet</code> through the use of <code>tracking cookies</code>.
+</li>
+<li><b>Some spyware</b> may <code>change</code> <i>computer settings, making unauthorised changes</i> in <i>web browser settings</i> or <i>changes to software settings</i>.
+</li>
+<li><b>Spyware</b> can also be used to <code>collect personal information</code> such as <i>logins</i> or <i>bank account details</i>.
+</li>
+<li>The use of the term <b>spyware</b> has declined more recently, as the practice of tracking users' visits to different websites is used by many major websites and data mining companies and is not illegal.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-7" class="outline-3 learn">
+<h3 id="sec-2-7">Learn It: Adware</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+<img src="img/Adware.png" alt="Adware.png" />
+<b>Adware</b>
+</p>
+<pre class="example">
+Adware - Downloads unwanted Internet adverts, often observing your online behaviour
+in order to target specific adverts.
+</pre>
+<ul class="org-ul">
+<li><b>Adware</b> <code>analyses</code> which <code>Internet sites</code> a <b>user visits</b> and then <code>presents adverts</code> for <b>products</b> which the <b>user</b> is <b>likely</b> to be <code>interested in</code>.
+</li>
+<li><b>Adware, or advertising-supported software</b>, is software that <code>generates revenue</code> for its developer by <b>automatically</b> generating <code>online advertisements</code> in the user interface of the software or on a screen presented to the user during the installation process.
+</li>
+<li>The software may <b>generate two types</b> of revenue: <code>one is for the display of the advertisement</code> and another on a <code>pay-per-click</code> basis, if the user clicks on the advertisement.
+</li>
+<li>The <b>software</b> may <b>implement advertisements</b> in a <code>variety of ways</code>, including a <b>static box display</b>, a <b>banner display</b>, <b>full screen</b>, <b>a video</b>, <b>pop-up advert</b> in some other form.
+</li>
+<li><b>Adware</b> is also <b>sometimes</b> <code>described as malware</code> and <b>anti-adware software is available</b>.
+</li>
+<li>Although <b>most adware</b> operates <code>legally</code> and some adware manufacturers have even sued antivirus companies for blocking adware.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-8" class="outline-3 learn">
+<h3 id="sec-2-8">Learn It: Other Forms of Malware</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+<img src="img/Ransomware.png" alt="Ransomware.png" />
+<b>Ransomware</b>
+</p>
+<ul class="org-ul">
+<li><b>Ransomware</b> is a type of <code>malware</code> from <code>cryptovirology</code> that <b>threatens</b> to <b>publish</b> the victim's <b>data</b> or <b>block</b> access to it <b>unless</b> a <code>ransom is paid</code>.
+</li>
+<li>While some <b>simple ransomware</b> may <code>lock</code> the system in a way which is <b>not difficult</b> for a knowledgeable person to <b>reverse</b>, more <code>advanced malware</code> uses a <code>technique</code> called <code>cryptoviral extortion</code>, in which it <code>encrypts</code> the <b>victim's files</b>, making them <code>inaccessible</code>, and <code>demands a ransom payment</code> to <b>decrypt them</b>.
+</li>
+<li><b>Ransomware attacks</b> are <b>typically</b> carried out using a <code>Trojan</code> that is <code>disguised</code> as a <code>legitimate file</code> that the user is <b>tricked</b> into <b>downloading</b> or <b>opening</b> as an <b>email attachment</b>.
+</li>
+</ul>
+<p>
+<img src="img/Rootkit.png" alt="Rootkit.png" />
+<b>Rootkits</b>
+</p>
+<ul class="org-ul">
+<li>A rootkit is a <b>collection of computer software</b>, typically <code>malicious</code>, designed to <code>enable access</code> to a <b>computer</b> or an <b>area of its software</b> that is not otherwise allowed and <code>often masks</code> its <b>existence</b> or the <b>existence of other software</b>.
+</li>
+<li><b>The term rootkit</b> is a concatenation of <code>root</code> and the word <code>kit</code>.
+</li>
+<li><b>Rootkits</b> <i>allows</i> an <code>unauthorised user</code> to gain <b>full control</b> over a <b>computer</b>, including the <b>host operating system</b>, to <code>avoid detection</code>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-9" class="outline-3 try">
+<h3 id="sec-2-9">Try It: Malware Table</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+<b>Copy and complete the following malware table giving an explanation of each and stating the precautions that should be taken to protect a computer system:</b>
+<img src="img/Malware_Table.png" alt="Malware_Table.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-10" class="outline-3 badge">
+<h3 id="sec-2-10">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-2-10">
+</div>
+<div id="outline-container-sec-2-10-1" class="outline-4">
+<h4 id="sec-2-10-1">Silver - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-2-10-1">
+<ol class="org-ol">
+<li><b>Define</b> the term phishing? (1 Mark)
+</li>
+<li><b>Describe</b> <b>two</b> ways that it is often possible to detect a phishing email? (2 Marks)
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Cyber Security - Social Engineering: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-11" class="outline-3 badge">
+<h3 id="sec-2-11">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-2-11">
+</div>
+<div id="outline-container-sec-2-11-1" class="outline-4">
+<h4 id="sec-2-11-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-2-11-1">
+<ol class="org-ol">
+<li><b>Describe</b> the term social engineering? (3 Marks)
+</li>
+<li><b>Briefly</b> explain the <b>four</b> techniques that are used in social engineering? (4 Marks)
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of Cyber Security - Social Engineering: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-12" class="outline-3 badge">
+<h3 id="sec-2-12">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-2-12">
+</div>
+<div id="outline-container-sec-2-12-1" class="outline-4">
+<h4 id="sec-2-12-1">Platinum - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-2-12-1">
+<ol class="org-ol">
+<li>Describe <b>one</b> other way in which a criminal may obtain personal information about someone without their consent or knowledge? (4 Marks)
+</li>
+<li>In the context of cyber security, what is a <b>trojan horse</b>? (2 Marks)
+</li>
+<li>Describe the purpose and function of <b>spyware</b>? (2 Marks)
+</li>
+<li>What is <b>adware</b> and is it dangerous to your computer? (2 Marks)
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of Cyber Security - Social Engineering: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
