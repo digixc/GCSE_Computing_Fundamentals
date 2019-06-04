@@ -1,0 +1,205 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.2.1 Data Types
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* What are Data Types?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Data can consist of numbers, characters, symbols, logical data or images. Data can be
+stored in many different forms called 'Data Types'. These forms determine what actions
+can be performed on the data when it is assigned to a variable in programming, or a
+field in a Database or Spreadsheet.
+#+END_SRC
+- *All data*, whether they be /numbers, text, symbols, logical, images or video/ are *stored* as a series of *binary digits*, =1s= and =0s= which the computer needs to know how to =interpret=.
+- In a computer program, a variable is used to hold data that can be used or manipulated in certain ways depending on the type of data it is assigned.
+- Computers *need* to be *told* /what type of data it is/, so they know how it can be =manipulated= and =represented=.
+- *For Example:*
+  - A student creates a variable called =FirstName= to hold the letters of a person's first name and they declare this variable's data type as =String=. The *computer* will *interpret* the 1's and 0's as =letters=. It will not try to use this variable in a mathematical equation because you =cannot multiply text=.
+  - Similarly, a variable called =length= is declared as =Integer= data type, and can be multiplied by another variable like =width= to give the area of a shape.
+[[file:img/Data_Type_Code.png]]
+- In some programming languages, like =Python=, *variable data types* =do not need declaring= at all. The *program* will *assume* the =data type= of a
+  variable *based* on what is =put in it=. For example; if you write *a = 21, b = "George"* - *a* will be stored as an =integer= /(whole number)/ and
+  *b* will be stored as a =string= /(text)/.
+- Although you *do not* have to *declare* =variable data types=, you still need to *understand* the /different data types/ and how to work with them in the programs your write.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+
+* Data Types In Programming
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- *The table below details some of the main data types you will use:*
+[[file:img/Data_Type_Table.png]] 
+*The five main data types you will need to understand and use are:*
+  - Integer.
+  - Real (Float).
+  - Character.
+  - String.
+  - Boolean.
+#+BEGIN_SRC
+Integer - Is a whole number which can be either positive (0 or above) or negative
+(under 0). Lets look at how this can be used in pseudocode and Python.
+#+END_SRC
+[[file:img/Integer_Table.png]]
+
+#+BEGIN_SRC
+Real - Is any number (positive or negative) including decimal places.
+In Python areal number is called a floating-point number or float for short.
+#+END_SRC
+[[file:img/Real_Table.png]]
+
+#+BEGIN_SRC
+Character - Is a single symbol such as a letter. Take the word “hello” this
+could be defined as 5 single characters “h”, ”e”, “l”, “l”, and “o”.
+#+END_SRC
+[[file:img/Char_Table.png]]
+
+#+BEGIN_SRC
+String - Is a series of characters that are combined to make a single piece of data.
+They are defined by adding speech marks around the value. However, in Python anything
+that the user inputs is treated as a string text unless otherwise specified.
+#+END_SRC
+[[file:img/String_Table.png]]
+
+** Try It: String Question
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q1: In the example code above why is the data type not defined? Will this code work and why?
+
+#+BEGIN_SRC
+Boolean - Boolean values can have one of two values, usually True or False and cannot be left empty.
+#+END_SRC
+[[file:img/Boolean_Table2.png]]
+
+#+BEGIN_SRC
+Casting - Casting is when you convert a variable value from one type to another. This is,
+in Python, done with functions such as int() or float() or str().
+#+END_SRC
+[[file:img/Casting_Table.png]]
+  
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Answer the following questions:
+1. *What* is the most *appropriate data type* for each of these items? (4 Marks)
+  - a) The nickname of your best friend.
+  - b) The number on a rolled dice.
+  - c) The exact length of a car in metres.
+  - d) The answer to a yes/no question.
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.1 Data Types: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. A pedestrian crossing uses a button to request the traffic to stop. *State* the *data type* that you would use to record each of these
+   variables and give reasons for your answer. (4 Marks)
+  - a) A variable to record whether the button has been pressed or not?
+    - Data Type:
+    - Reason:
+  - b) A variable to record how many whole seconds it's been since the button was pressed?
+    - Data Type:
+    - Reason:
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.1 Data Types: Gold on BourneToLearn/
+
+** Badge It: Coding Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Using the pseudocode below, choose suitable variables and data types to create a working program to enrol new members to the club:
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/c966449930" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.1 Data Types: Platinum on BourneToLearn/

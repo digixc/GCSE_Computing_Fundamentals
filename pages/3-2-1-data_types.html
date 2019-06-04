@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.2.1 Data Types</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.2.1 Data Types</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. What are Data Types?</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Data Types In Programming</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Try It: String Question</a></li>
+<li><a href="#sec-2-3">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-2-3-1">Silver - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-4">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-2-4-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-5">Badge It: Coding Challenge</a>
+<ul>
+<li><a href="#sec-2-5-1">Platinum - Using the pseudocode below, choose suitable variables and data types to create a working program to enrol new members to the club:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> What are Data Types?</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Data can consist of numbers, characters, symbols, logical data or images. Data can be
+stored in many different forms called 'Data Types'. These forms determine what actions
+can be performed on the data when it is assigned to a variable in programming, or a
+field in a Database or Spreadsheet.
+</pre>
+<ul class="org-ul">
+<li><b>All data</b>, whether they be <i>numbers, text, symbols, logical, images or video</i> are <b>stored</b> as a series of <b>binary digits</b>, <code>1s</code> and <code>0s</code> which the computer needs to know how to <code>interpret</code>.
+</li>
+<li>In a computer program, a variable is used to hold data that can be used or manipulated in certain ways depending on the type of data it is assigned.
+</li>
+<li>Computers <b>need</b> to be <b>told</b> <i>what type of data it is</i>, so they know how it can be <code>manipulated</code> and <code>represented</code>.
+</li>
+<li><b>For Example:</b>
+<ul class="org-ul">
+<li>A student creates a variable called <code>FirstName</code> to hold the letters of a person's first name and they declare this variable's data type as <code>String</code>. The <b>computer</b> will <b>interpret</b> the 1's and 0's as <code>letters</code>. It will not try to use this variable in a mathematical equation because you <code>cannot multiply text</code>.
+</li>
+<li>Similarly, a variable called <code>length</code> is declared as <code>Integer</code> data type, and can be multiplied by another variable like <code>width</code> to give the area of a shape.
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Data_Type_Code.png" alt="Data_Type_Code.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>In some programming languages, like <code>Python</code>, <b>variable data types</b> <code>do not need declaring</code> at all. The <b>program</b> will <b>assume</b> the <code>data type</code> of a
+variable <b>based</b> on what is <code>put in it</code>. For example; if you write <b>a = 21, b = "George"* - *a</b> will be stored as an <code>integer</code> <i>(whole number)</i> and
+<b>b</b> will be stored as a <code>string</code> <i>(text)</i>.
+</li>
+<li>Although you <b>do not</b> have to <b>declare</b> <code>variable data types</code>, you still need to <b>understand</b> the <i>different data types</i> and how to work with them in the programs your write.
+</li>
+</ul>
+<br>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Data Types In Programming</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><b>The table below details some of the main data types you will use:</b>
+</li>
+</ul>
+<p>
+<img src="img/Data_Type_Table.png" alt="Data_Type_Table.png" /> 
+<b>The five main data types you will need to understand and use are:</b>
+</p>
+<ul class="org-ul">
+<li>Integer.
+</li>
+<li>Real (Float).
+</li>
+<li>Character.
+</li>
+<li>String.
+</li>
+<li>Boolean.
+</li>
+</ul>
+<pre class="example">
+Integer - Is a whole number which can be either positive (0 or above) or negative
+(under 0). Lets look at how this can be used in pseudocode and Python.
+</pre>
+
+<div class="figure">
+<p><img src="img/Integer_Table.png" alt="Integer_Table.png" />
+</p>
+</div>
+
+<pre class="example">
+Real - Is any number (positive or negative) including decimal places.
+In Python areal number is called a floating-point number or float for short.
+</pre>
+
+<div class="figure">
+<p><img src="img/Real_Table.png" alt="Real_Table.png" />
+</p>
+</div>
+
+<pre class="example">
+Character - Is a single symbol such as a letter. Take the word “hello” this
+could be defined as 5 single characters “h”, ”e”, “l”, “l”, and “o”.
+</pre>
+
+<div class="figure">
+<p><img src="img/Char_Table.png" alt="Char_Table.png" />
+</p>
+</div>
+
+<pre class="example">
+String - Is a series of characters that are combined to make a single piece of data.
+They are defined by adding speech marks around the value. However, in Python anything
+that the user inputs is treated as a string text unless otherwise specified.
+</pre>
+
+<div class="figure">
+<p><img src="img/String_Table.png" alt="String_Table.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 try">
+<h3 id="sec-2-2">Try It: String Question</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Q1: In the example code above why is the data type not defined? Will this code work and why?
+</li>
+</ul>
+
+<pre class="example">
+Boolean - Boolean values can have one of two values, usually True or False and cannot be left empty.
+</pre>
+
+<div class="figure">
+<p><img src="img/Boolean_Table2.png" alt="Boolean_Table2.png" />
+</p>
+</div>
+
+<pre class="example">
+Casting - Casting is when you convert a variable value from one type to another. This is,
+in Python, done with functions such as int() or float() or str().
+</pre>
+
+<div class="figure">
+<p><img src="img/Casting_Table.png" alt="Casting_Table.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3 badge">
+<h3 id="sec-2-3">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1">Silver - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ol class="org-ol">
+<li><b>What</b> is the most <b>appropriate data type</b> for each of these items? (4 Marks)
+<ul class="org-ul">
+<li>a) The nickname of your best friend.
+</li>
+<li>b) The number on a rolled dice.
+</li>
+<li>c) The exact length of a car in metres.
+</li>
+<li>d) The answer to a yes/no question.
+</li>
+</ul>
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.1 Data Types: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3 badge">
+<h3 id="sec-2-4">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-sec-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ol class="org-ol">
+<li>A pedestrian crossing uses a button to request the traffic to stop. <b>State</b> the <b>data type</b> that you would use to record each of these
+variables and give reasons for your answer. (4 Marks)
+<ul class="org-ul">
+<li>a) A variable to record whether the button has been pressed or not?
+<ul class="org-ul">
+<li>Data Type:
+</li>
+<li>Reason:
+</li>
+</ul>
+</li>
+<li>b) A variable to record how many whole seconds it's been since the button was pressed?
+<ul class="org-ul">
+<li>Data Type:
+</li>
+<li>Reason:
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.1 Data Types: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5" class="outline-3 badge">
+<h3 id="sec-2-5">Badge It: Coding Challenge</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-sec-2-5-1" class="outline-4">
+<h4 id="sec-2-5-1">Platinum - Using the pseudocode below, choose suitable variables and data types to create a working program to enrol new members to the club:</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<iframe src="https://trinket.io/embed/python/c966449930" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.1 Data Types: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

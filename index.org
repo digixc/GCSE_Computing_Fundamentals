@@ -62,7 +62,7 @@
 <p></p>
 #+END_HTML
 
-[[file:UnderConstruction2.html][3.2.1 Data Types]]
+[[file:pages/3-2-1-data_types.html][3.2.1 Data Types]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
