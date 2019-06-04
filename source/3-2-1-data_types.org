@@ -93,12 +93,13 @@ field in a Database or Spreadsheet.
 - In a computer program, a variable is used to hold data that can be used or manipulated in certain ways depending on the type of data it is assigned.
 - Computers *need* to be *told* /what type of data it is/, so they know how it can be =manipulated= and =represented=.
 - *For Example:*
-  - A student creates a variable called =FirstName= to hold the letters of a person's first name and they declare this variable's data type as =String=. The *computer* will *interpret* the 1's and 0's as =letters=. It will not try to use this variable in a mathematical equation because you =cannot multiply text=.
+  - A student creates a variable called =FirstName= to hold the letters of a person's first name and they declare this variable's data type as =String=. The *computer* will *interpret* the 1's and 0's as =letters=. Even if it is a =number=, it will not work in a =mathematical equation= because the =data type= is =String=.
+  - The =Integer= 5 * 5 = 25 but the =String= '5' * 5 = '55555'
   - Similarly, a variable called =length= is declared as =Integer= data type, and can be multiplied by another variable like =width= to give the area of a shape.
 [[file:img/Data_Type_Code.png]]
 - In some programming languages, like =Python=, *variable data types* =do not need declaring= at all. The *program* will *assume* the =data type= of a
-  variable *based* on what is =put in it=. For example; if you write *a = 21, b = "George"* - *a* will be stored as an =integer= /(whole number)/ and
-  *b* will be stored as a =string= /(text)/.
+  variable *based* on what is =put in it=.
+- *For example*, if you write *(a = 21)* and *(b = "George")* - *a* will be stored as an =integer= /(whole number)/ and *b* will be stored as a =string= /(text)/.
 - Although you *do not* have to *declare* =variable data types=, you still need to *understand* the /different data types/ and how to work with them in the programs your write.
 #+BEGIN_HTML
 <br>
@@ -144,11 +145,6 @@ They are defined by adding speech marks around the value. However, in Python any
 that the user inputs is treated as a string text unless otherwise specified.
 #+END_SRC
 [[file:img/String_Table.png]]
-
-** Try It: String Question
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: try
-:END:
 - Q1: In the example code above why is the data type not defined? Will this code work and why?
 
 #+BEGIN_SRC
