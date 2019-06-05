@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.2.2 Programming Concepts</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.2.2 Programming Concepts</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Variable and Constant Declaration</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are variables, declarations and assignments?</a></li>
+<li><a href="#sec-1-2">Try It: Variables</a></li>
+<li><a href="#sec-1-3">Learn It: What are constants?</a></li>
+<li><a href="#sec-1-4">Try It: Constants</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Programming Concepts - Sequence, selection and Iteration</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What does sequence mean?</a></li>
+<li><a href="#sec-2-2">Learn It: Nested Iterations</a></li>
+<li><a href="#sec-2-3">Try It: Nested Iteration</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Programming Concepts - Subroutines - Procedures and Functions</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: What are subroutines?</a></li>
+<li><a href="#sec-3-2">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-3-2-1">Silver - Look at the following code and answer the questions below:</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-3">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-3-3-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-4">Badge It: Coding Challenge and exam question</a>
+<ul>
+<li><a href="#sec-3-4-1">Platinum - Code Challenge/Exam question</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Variable and Constant Declaration</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Programming_Main.png" alt="Programming_Main.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are variables, declarations and assignments?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Variable - A named space in memory, large enough to store a single piece of data.
+Each variable is a value that can change during the running of a program, depending
+on conditions or on information passed to it. Typically, a program consists of
+instructions that tell the computer what to do and data that the program uses
+when it is running.
+</pre>
+<pre class="example">
+Declaration - Code that causes a variable or constant to exist. Once a variable or
+constant has been declared, it can be used. Trying to use a variable or constant
+before it has been declared will cause an error.
+</pre>
+<pre class="example">
+Assignment - The process of putting a value into a variable or constant. Most
+languages use a single equals = to do this. In the instruction i = 5, the value
+5 has been assigned to the variable i. If this is the first time that i has
+been mentioned, this is also where it is being declared.
+</pre>
+<ul class="org-ul">
+<li><b>Any data</b> that a program uses must be <code>stored in memory locations</code>, each given its own <code>identifier</code> (<i>unique name</i>) while the program is running.
+</li>
+<li>As the program runs, the values in these locations might change, which is why they are called <code>variables</code>.
+</li>
+<li>For example, a variable called <i>total</i> might change several times as numbers are added to it.
+</li>
+<li>A variable called <code>surname</code> might change as a program processes a list of customer orders.
+</li>
+<li>Each variable has an <code>identifier</code> (<i>unique name</i>) that refers to a <code>location in memory</code> where the <code>data</code> will be <code>stored</code>.
+</li>
+<li><b>Each variable</b> also has a <code>data type</code> that <code>defines</code> the <b>type of data</b> that will be <b>stored</b> at the <b>memory location</b> so that <code>operations</code> that can be <code>performed</code> on it.
+</li>
+<li><b>For example</b>, you can <code>multiply two numbers</code> together, but you <code>cannot</code> <b>multiply two words</b>.
+</li>
+<li><b>Each variable</b> is given an identifier which is <b>unique</b> and <b>meaningful</b> to that variable, for example, <code>total</code> rather than <code>t</code>,
+<code>surname</code> rather than <code>s</code>.
+</li>
+<li>Additionally, variables <code>must not</code> include any <b>keywords</b> that will interfere with the programming language for instance <b>and</b>, <b>input</b>
+  and <b>print</b>.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>Variables can be declared in one of two ways:</b>
+<ul class="org-ul">
+<li><b>Local:</b> Declared inside a function (<i>subprogram</i>), and can only be accessed inside that function.
+</li>
+<li><b>Global:</b> Declared outside any function (<i>subprogram</i>), usually at the start of the main program. They can be assessed throughout the whole program.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>Variable identifiers should also not:</b>
+<ul class="org-ul">
+<li>Begin with a number.
+</li>
+<li>Contain spaces.
+</li>
+<li>Contain special characters or symbols. 
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It: Variables</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Q1: Can you <b>identify</b> the <code>variable names</code> in the following <b>Pseudocode</b> and <b>Python code</b> wherever they are used?
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Variable_Example.png" alt="Variable_Example.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It: What are constants?</h3>
+<div class="outline-text-3" id="text-1-3">
+<pre class="example">
+Constant - A named space in memory with a value that can never change during the running
+of a program. Useful for PI (3.142) which never changes, or VAT (20%) which seldom
+changes. The Python language does not allow for constants, but some other languages do.
+</pre>
+<ul class="org-ul">
+<li>In some programs, there are <code>certain values</code> that <code>remain</code> the same (<i>constant</i>) while the program runs.
+</li>
+<li>The programmer could use the actual value in the code each time, but it is good practice to give the value a unique name (<i>identifier</i>) and
+then use that name throughout the program.
+</li>
+<li><b>Constants</b> are <code>declared</code> at the <code>start</code> of a <b>program</b> and can then be referred to as needed in the code.
+</li>
+<li>The <code>same naming rules</code> apply to naming constants, although a very common approach is to use <code>CAPITAL LETTERS</code>. This <b>makes it easy</b> to see where a <code>constant</code> is <code>used</code> in the code rather than a variable.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Constant_Example.png" alt="Constant_Example.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Identifiers</b> are <code>defined</code> at the <b>start of the code</b>, and can then be <b>used</b> <code>throughout the program</code> by the programmer to make coding easier.
+</li>
+<li>If the <code>value</code> of a constant needs to be <code>changed</code>, it <b>must be done</b> at the <code>beginning of the code</code>, where the constant is defined.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>The two main benefits of declaring a constant are:</b>
+<ol class="org-ol">
+<li>When its value changes, you only have to edit it in one place rather than looking for every place in the program where you used that value.
+</li>
+<li>The code is easier to read and understand because the constant's identifier will be used instead of a number. This makes your code easier to debug and maintain.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 try">
+<h3 id="sec-1-4">Try It: Constants</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Q2: Which of the following could declared as a constant:
+<ul class="org-ul">
+<li>a) score
+</li>
+<li>b) PI
+</li>
+<li>c) firstName
+</li>
+<li>d) Address
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Programming Concepts - Sequence, selection and Iteration</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What does sequence mean?</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+Sequence - In a sequence structure, an action, or event, leads to the next ordered
+action in a predetermined order. The sequence can contain any number of actions, but
+no actions can be skipped in the sequence.
+</pre>
+
+<div class="figure">
+<p><img src="img/Sequence_Table.png" alt="Sequence_Table.png" />
+</p>
+</div>
+
+<pre class="example">
+Selection - Is when you only want some lines of code to be run when a condition
+is met, otherwise you want the computer to ignore these lines and jump over them.
+This is achieved using IF and ELSE statements. e.g. If a condition is met then lines
+4, 5, 6 are executed otherwise the computer jumps to line 7 without even looking at
+line 4,5 and 6.
+</pre>
+
+<div class="figure">
+<p><img src="img/Selection_Table.png" alt="Selection_Table.png" />
+</p>
+</div>
+
+<pre class="example">
+Iteration - Is when you want the computer to execute the same lines of code several times.
+This is done using a loop. There are three types of loops: FOR loops, WHILE loops and REPEAT
+loops. Iteration is handy as it enables you not to have to copy the same lines of code many times.
+</pre>
+
+
+<div class="figure">
+<p><img src="img/Iteration_Table.png" alt="Iteration_Table.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 learn">
+<h3 id="sec-2-2">Learn It: Nested Iterations</h3>
+<div class="outline-text-3" id="text-2-2">
+<pre class="example">
+Nesting - This involves placing one programming structure inside another one. The code
+below contains an IF statement on line 8 that is NESTED within the WHILE loop. There is
+no limit to the number of levels of nesting that you could use with IF statements within
+either itself or another WHILE loop.
+</pre>
+
+<div class="figure">
+<p><img src="img/Nested_IF.png" alt="Nested_IF.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Below is another example of having <b>one loop nested</b> <code>inside another</code>, this algorithm displays all the multiplication tables between 2 and 12:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Nested_FOR.png" alt="Nested_FOR.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 try">
+<h3 id="sec-2-3">Try It: Nested Iteration</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Q3: What would be the output on line three in the algorithm above?
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Programming Concepts - Subroutines - Procedures and Functions</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: What are subroutines?</h3>
+<div class="outline-text-3" id="text-3-1">
+<pre class="example">
+Subroutines - In computer programming, a subroutine is a sequence of program instructions
+that performs a specific task, packaged as a unit. In different programming languages, a
+subroutine may be called a procedure, a function, a routine, a method, or a subprogram.
+The generic term callable unit is sometimes used. (Source Wikipedia.org)
+</pre>
+
+<div class="figure">
+<p><img src="img/Subroutines_Table.png" alt="Subroutines_Table.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The following code demonstrates how a <code>function</code> is <code>created</code> and <code>called</code> in the main program:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Example_Function.png" alt="Example_Function.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Note:</b> This topic will be covered in greater details in the <i>3.2.10-Subroutines (Procedures and Functions)</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3 badge">
+<h3 id="sec-3-2">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-sec-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">Silver - Look at the following code and answer the questions below:</h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+<div class="figure">
+<p><img src="img/Silver_Pizza_Code.png" alt="Silver_Pizza_Code.png" />
+</p>
+</div>
+<ol class="org-ol">
+<li>The program above calculates the cost of a burger in pounds at a
+fast food restaurant. A standard burger costs £6.50 with additional
+toppings and eating in the restaurant. (5 Marks)
+<ul class="org-ul">
+<li>a) List all the variables in this program?
+</li>
+<li>b) How much extra does it cost to eat your burger inside the restaurant?
+</li>
+<li>c) The restaurant manager says that 0.5 should have been declared
+as a constant. Give two reasons for declaring this value as a constant:
+<ol class="org-ol">
+<li>Reason 1
+</li>
+<li>Reason 2
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.2 Programming Concepts: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3 badge">
+<h3 id="sec-3-3">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-sec-3-3-1" class="outline-4">
+<h4 id="sec-3-3-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ol class="org-ol">
+<li>What is the <b>difference</b> between a <b>variable</b> and a <b>constant?</b> (1 Mark)
+</li>
+<li>The program below calculates the value of an investment at the end
+of one year.
+</li>
+</ol>
+<p>
+<img src="img/Gold_Investment.png" alt="Gold_Investment.png" />
+  a) Identify <b>two</b> problems with the constants or variables in the program. (2 Marks)
+</p>
+<ol class="org-ol">
+<li>Problem 1.
+</li>
+<li>Problem 2.
+</li>
+<li>Jamie wants to create a program that tells you whether you can go outside if it is raining or not.
+<ul class="org-ul">
+<li>a) Which would be the best type of iteration to use to solve this problem, indefinite or definite iteration? Explain your answer? (3 Marks) 
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.2 Programming Concepts: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-4" class="outline-3 badge">
+<h3 id="sec-3-4">Badge It: Coding Challenge and exam question</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+<div id="outline-container-sec-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1">Platinum - Code Challenge/Exam question</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<ol class="org-ol">
+<li>Explain the differences between a procedure and a function? (2 Marks)
+</li>
+<li>Using the Trinket below, rewrite the algorithm using a WHILE loop to produce a working Python program. (6 Marks)
+</li>
+</ol>
+<iframe src="https://trinket.io/embed/python/d79b70fd70" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.2 Programming Concepts: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
