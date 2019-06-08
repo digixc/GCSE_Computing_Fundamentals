@@ -1,0 +1,341 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Arithmetic Operations
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Arithmetic_Operators2.png]]
+** Learn It: What are Arithmetic Operations?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Operations – In the context of Computer Science, an operation is an action that
+is performed on one or more pieces of data in order to produce additional data.
+There are Arithmetic, Relational and Boolean Operations.
+#+END_SRC
+#+BEGIN_SRC
+Arithmetic Operations - A process performed on one or more integer and real data
+values. Examples of arithmetic operators are: + - * ^ / // %.
+#+END_SRC
+- *Operations* are things that *you can do* to *specific types* of *data*.
+- *For example*, you can =perform mathematical operations= on /numbers, string/ handling operations on /text/ and /logical comparisons/ on /Boolean/ expressions.
+- The acronym *BIDMAS* is used to remember the =correct order= of operations (/Brackets, Indices, Division or Multiplication, Addition or Subtraction/).
+- You should be familiar with some of *Pythons basic operators* from the previous topics and the *table below* details all of the *arithmetic operators* we will use in Python:
+[[file:img/Arithmetic_Operators_Table.png]]
+- Notice how the =first four symbols= are the same for *pseudocode* and *Python*.
+- It is only the =last two options= which change from the words (/“DIV” and “MOD”/) using in *pseudocode* to the *symbols* (/“//” and “%”/) used in *Python*. 
+#+BEGIN_HTML
+<br>
+#+END_HTML
+** Learn It: Assignment Statements
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- *Assignment Operations* – In most programming languages, *values are assigned* to =variables= and =functions= using an *=* sign.
+- In programming, a *common mistake* is to get the *assignment operator =* and *the comparison operator ==* =mixed up=.
+- The following *examples* show the =correct use= of the *assignment operator:*
+#+BEGIN_SRC
+x = 1
+PI = 3.142
+alpha = "a"
+street = "Elm Street"
+over18 = True
+#+END_SRC
+- In pseudocode, we use the =AQA pseudocode standard guide= which can be found on the =link= *above the main topics*.
+- In pseudocode we will use the ← symbol to mean assignment, e.g. x ← 1
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- When performing *operations* on data items, you need to *consider* the =data types used=.
+- *For example*, in a *simple calculation* where =two whole numbers= are *added together*, variables could be defined as follows:
+  - =Num1 = 7=
+  - =Num2 = 10=
+  - =total = 0= 
+- But *if* the *calculation* involves *division*, then the /answer variable/ should be *declared* as a =real (float) number= because the *result* is *unlikely* to be a =whole number=:
+  - =Num1 = 7=
+  - =Num2 = 10=
+  - =answer = 0.0=
+** Try It: Aritmetic Operators
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- For each of the following pseudocode algorithms below, in a few sentences, explain their function.
+#+begin_src
+foo ← 100
+WHILE foo > 0
+   IF foo % 2 = 0 THEN
+      OUTPUT foo
+      foo = foo - 1
+   END IF
+ENDWHILE
+#+end_src
+
+
+#+begin_src
+bar ← 1
+baz ← 0
+
+WHILE bar < 100
+   bar ← bar + baz
+   baz ← bar - baz
+   OUTPUT bar
+ENDWHILE
+#+end_src
+
+#+begin_src
+X ← 1
+Y ← 2
+WHILE X < 20
+    OUTPUT X
+    X ← X + Y
+    Y ← Y + 1
+ENDWHILE
+#+end_src
+
+#+begin_src
+Y ← 3
+FOR X ← 1 TO 5
+   Y ← Y + X
+ENDFOR
+
+OUTPUT Y
+#+end_src
+
+#+begin_src
+num ← 78
+answer ← ''
+
+WHILE num > 0
+   r ← num MOD 2
+   num ← num / 2
+   answer ← STR(r) + answer 
+ENDWHILE
+
+OUTPUT answer
+#+end_src
+
+** Try It: Arithmetic Operations
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Q1: Work out the answers to the following calculations:
+[[file:img/Arithmetic_Operations_Calculations.png]]
+
+** Badge It: Coding Challenge 1
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Code Challenge
+1. Using the Trinket below, create a working program that calculates the values of w, x, y and z. (4 Marks)
+2. Add comments to each line of code explaining what it does. (2 Marks)
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/c0d30ec5cd" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language: Silver on BourneToLearn/
+
+* Relational Operations
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Relational Operations?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Relational Operations - A comparison between two values to check whether they are; equal to,
+less than or greater than the other value. Relational operations are found in IF statements
+and as part of loops.
+#+END_SRC
+- *Relational operators* can be used to *compare* =numbers= as well as =strings=.
+- Relational operators are also known as =comparison operators= as they *compare expressions* on the =left-hand side= to *expressions* on the =right-hand side= and *produce* a =Boolean value= of either *True* or *False*.
+- *Relation* and *Logic* are the =fundamental bricks= of a program that *defines* its =functionality=.
+- With these fundamentals, you decide what should be the =flow of execution= and what =conditions= should be kept to make sure the flow stays that way.
+- In *every programming language* including python, to *manage* the *flow* of any program, =conditions are required=, and to *define* those conditions, =relational= and =logical= operators *are required*.
+- Relational operators are =symbols= that *perform operations* on *data* and =return a result= as *True* or *False* =depending= on the =comparison conditions=.
+- Let's take a look at the different types of relational operators in python. The following table gives you a list of all the relational operators:
+[[file:img/Relational_Operators_Table.png]]
+- One of the =main differences= is with the =first symbol= and this is *one* that *people often get wrong*.
+- In programming, a *common mistake* is to get the *assignment operator =* and *the comparison operator ==* =mixed up=.
+- You will know when you have =used them incorrectly= because *your code* won’t *behave* =as intended=.
+- *Have a look at the examples below* to see the =impact= of *using* the =wrong operator= in an *IF statement*:
+[[file:img/Relational_Assign_Compare.png]]
+- *Examples of using relational operators, input/output, conditional selection, nested IF statements:*
+[[file:img/Relational_Code_Example1.png]]
+[[file:img/Relational_Code_Example2.png]]
+** Try It: Relational Operators
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+*Pseudocode for Password Challenge*
+- The following Pseudocode asks the user exactly *three times* for the user to enter the correct password.
+- Q1: Using the Pseudocode and the Trinket window below, create a working program in Python.
+[[file:img/Relational_Password_Task1.png]]
+*Password Challenge 1*
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/864d3fd4e7" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+- Q2: How many times will the loop be performed if the user enters the correct password on the first attempt? 
+- Q3: Work out if the following statements are true or false:
+[[file:img/Relational_Operators_Try_It.png]]
+
+** Badge It: Coding Challenge 2
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Password Code Challenge
+1. Using the Trinket below, rewrite the algorithm given in Password Challenge 1 using a WHILE loop to allow the user up to three attempts to correctly guess the password. (4 Marks)
+[[file:img/Relational_Password_Task2.png]]
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/c6bad4795f" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language: Gold on BourneToLearn/
+
+* Boolean Operations
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Boolean Operations?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Boolean Operations - A logic operation can only have one of two possible
+outcomes - True or False. A logic operator connects together other logic
+operators to produce more complexed logic expressions. NOT, AND, OR are the
+most commonly used logic operators.
+#+END_SRC
+- In computer science, a *Boolean data type* is *any data type* that has either a =True= or =False value=, =Yes= or =No=, or =On= or =Off= (/1 or 0/) value.
+- In programming, a Boolean can be =used= with =conditional statements= (/i.e. IF statements/)
+- *Boolean operators* can be either =True= or =False=. It makes no sense to =perform mathematical operations= on them or =to compare them= to see
+  which is =greater=.
+- With =Boolean(logical)operators= we can =create Boolean expressions= by *combining* together *multiple logic gates*.
+- Let's take a look at the *different types of boolean operators* in python. The following table gives you a list of the =three main logic operators= we will be using:
+[[file:img/Boolean_Operators_Table.png]]
+- *AND* will only *return* =True= if =both operands= (/the two Boolean objects you are comparing/) are =True=. *For example:*
+[[file:img/AND_Statement.png]]
+[[file:img/AND_Result.png]]
+- To *understand* the *behaviour* of the =AND logical operator=, you can make use of a =truth table=:
+[[file:img/AND_Truth_Table.png]]
+- *OR* is =True=, whenever any (/one or more/) =operand is True=. *For example:*
+[[file:img/OR_Statement.png]]
+[[file:img/OR_Result.png]]
+- The =OR logical operator= uses the following =truth table=:
+[[file:img/OR_Truth_Table.png]]
+- *Notice* that these =also work= with =more than two operands=. *For example:*
+[[file:img/AND_OR_Statement.png]]
+[[file:img/AND_OR_Result.png]]
+- *NOT* will =return= the =opposite= of its =operand=, so if *False* is
+  *given* then *True will be returned* and *vice-versa*. *For
+  example:*
+[[file:img/NOT_Statement.png]]
+[[file:img/NOT_Result.png]]
+- The =NOT logical operator= uses the following =truth table=:
+[[file:img/NOT_Truth_Table.png]]
+- The following Python code *combines* =all three types of operators=.
+- It *calculates* the *cost* of a *group of adults* and *children* entering a *zoo*.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/da93f68381" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+- *Q1:* How much would it cost for two adults and one child?
+** Badge It: Coding Challenge 3
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Zoo Code Challenge
+1. Using the Trinket below, add additional lines of code that would allow a concessionary rate. (4 Marks)
+2. And add comments to each line of code to explain what function it performs?  (2 Marks)
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/da93f68381" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language: Platinum on BourneToLearn/
+
+** Try It: Coding Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+1. Using the Trinket below, write a program which tests someone on the powers of 2 up to 2^12. (6 Marks)
+2. And add comments to each line of code to explain what function it performs?  (2 Marks)
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/2c94559ada" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
