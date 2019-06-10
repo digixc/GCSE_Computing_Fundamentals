@@ -70,15 +70,15 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.2.3 Arithmetic Operations in a Programming Language]]
+[[file:pages/3-2-3-operators.html][3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.2.4 Relational Operations in a Programming Language]]
+[[file:UnderConstruction2.html][3.2.4 Data Structures]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.2.5 Data Structures]]
+[[file:UnderConstruction2.html][3.2.5 Input, Output and File Handling]]
 #+BEGIN_HTML
 </details>
 #+END_HTML

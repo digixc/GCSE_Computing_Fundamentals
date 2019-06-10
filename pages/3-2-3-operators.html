@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Arithmetic Operations</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are Arithmetic Operations?</a></li>
+<li><a href="#sec-1-2">Learn It: Assignment Statements</a></li>
+<li><a href="#sec-1-3">Try It: Aritmetic Operators</a></li>
+<li><a href="#sec-1-4">Try It: Arithmetic Operations</a></li>
+<li><a href="#sec-1-5">Badge It: Coding Challenge 1</a>
+<ul>
+<li><a href="#sec-1-5-1">Silver - Code Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Relational Operations</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What are Relational Operations?</a></li>
+<li><a href="#sec-2-2">Try It: Relational Operators</a></li>
+<li><a href="#sec-2-3">Badge It: Coding Challenge 2</a>
+<ul>
+<li><a href="#sec-2-3-1">Gold - Password Code Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Boolean Operations</a>
+<ul>
+<li><a href="#sec-3-1">Learn It: What are Boolean Operations?</a></li>
+<li><a href="#sec-3-2">Badge It: Coding Challenge 3</a>
+<ul>
+<li><a href="#sec-3-2-1">Platinum - Zoo Code Challenge</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-3">Try It: Coding Challenge</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Arithmetic Operations</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Arithmetic_Operators2.png" alt="Arithmetic_Operators2.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are Arithmetic Operations?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Operations – In the context of Computer Science, an operation is an action that
+is performed on one or more pieces of data in order to produce additional data.
+There are Arithmetic, Relational and Boolean Operations.
+</pre>
+<pre class="example">
+Arithmetic Operations - A process performed on one or more integer and real data
+values. Examples of arithmetic operators are: + - * ^ / // %.
+</pre>
+<ul class="org-ul">
+<li><b>Operations</b> are things that <b>you can do</b> to <b>specific types</b> of <b>data</b>.
+</li>
+<li><b>For example</b>, you can <code>perform mathematical operations</code> on <i>numbers, string</i> handling operations on <i>text</i> and <i>logical comparisons</i> on <i>Boolean</i> expressions.
+</li>
+<li>The acronym <b>BIDMAS</b> is used to remember the <code>correct order</code> of operations (<i>Brackets, Indices, Division or Multiplication, Addition or Subtraction</i>).
+</li>
+<li>You should be familiar with some of <b>Pythons basic operators</b> from the previous topics and the <b>table below</b> details all of the <b>arithmetic operators</b> we will use in Python:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Arithmetic_Operators_Table.png" alt="Arithmetic_Operators_Table.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Notice how the <code>first four symbols</code> are the same for <b>pseudocode</b> and <b>Python</b>.
+</li>
+<li>It is only the <code>last two options</code> which change from the words (<i>“DIV” and “MOD”</i>) using in <b>pseudocode</b> to the <b>symbols</b> (<i>“//” and “%”</i>) used in <b>Python</b>. 
+</li>
+</ul>
+<br>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Assignment Statements</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li><b>Assignment Operations</b> – In most programming languages, <b>values are assigned</b> to <code>variables</code> and <code>functions</code> using an <b>=</b> sign.
+</li>
+<li>In programming, a <b>common mistake</b> is to get the <b>assignment operator =</b> and <b>the comparison operator ==</b> <code>mixed up</code>.
+</li>
+<li>The following <b>examples</b> show the <code>correct use</code> of the <b>assignment operator:</b>
+</li>
+</ul>
+<pre class="example">
+x = 1
+PI = 3.142
+alpha = "a"
+street = "Elm Street"
+over18 = True
+</pre>
+<ul class="org-ul">
+<li>In pseudocode, we use the <code>AQA pseudocode standard guide</code> which can be found on the <code>link</code> <b>above the main topics</b>.
+</li>
+<li>In pseudocode we will use the ← symbol to mean assignment, e.g. x ← 1
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li>When performing <b>operations</b> on data items, you need to <b>consider</b> the <code>data types used</code>.
+</li>
+<li><b>For example</b>, in a <b>simple calculation</b> where <code>two whole numbers</code> are <b>added together</b>, variables could be defined as follows:
+<ul class="org-ul">
+<li><code>Num1 = 7</code>
+</li>
+<li><code>Num2 = 10</code>
+</li>
+<li><code>total = 0</code> 
+</li>
+</ul>
+</li>
+<li>But <b>if</b> the <b>calculation</b> involves <b>division</b>, then the <i>answer variable</i> should be <b>declared</b> as a <code>real (float) number</code> because the <b>result</b> is <b>unlikely</b> to be a <code>whole number</code>:
+<ul class="org-ul">
+<li><code>Num1 = 7</code>
+</li>
+<li><code>Num2 = 10</code>
+</li>
+<li><code>answer = 0.0</code>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 try">
+<h3 id="sec-1-3">Try It: Aritmetic Operators</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>For each of the following pseudocode algorithms below, in a few sentences, explain their function.
+</li>
+</ul>
+<pre class="example">
+foo ← 100
+WHILE foo &gt; 0
+   IF foo % 2 = 0 THEN
+      OUTPUT foo
+      foo = foo - 1
+   END IF
+ENDWHILE
+</pre>
+
+
+<pre class="example">
+bar ← 1
+baz ← 0
+
+WHILE bar &lt; 100
+   bar ← bar + baz
+   baz ← bar - baz
+   OUTPUT bar
+ENDWHILE
+</pre>
+
+<pre class="example">
+X ← 1
+Y ← 2
+WHILE X &lt; 20
+    OUTPUT X
+    X ← X + Y
+    Y ← Y + 1
+ENDWHILE
+</pre>
+
+<pre class="example">
+Y ← 3
+FOR X ← 1 TO 5
+   Y ← Y + X
+ENDFOR
+
+OUTPUT Y
+</pre>
+
+<pre class="example">
+num ← 78
+answer ← ''
+
+WHILE num &gt; 0
+   r ← num MOD 2
+   num ← num / 2
+   answer ← STR(r) + answer 
+ENDWHILE
+
+OUTPUT answer
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 try">
+<h3 id="sec-1-4">Try It: Arithmetic Operations</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Q1: Work out the answers to the following calculations:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Arithmetic_Operations_Calculations.png" alt="Arithmetic_Operations_Calculations.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It: Coding Challenge 1</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-sec-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1">Silver - Code Challenge</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ol class="org-ol">
+<li>Using the Trinket below, create a working program that calculates the values of w, x, y and z. (4 Marks)
+</li>
+<li>Add comments to each line of code explaining what it does. (2 Marks)
+</li>
+</ol>
+<iframe src="https://trinket.io/embed/python/c0d30ec5cd" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Relational Operations</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What are Relational Operations?</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+Relational Operations - A comparison between two values to check whether they are; equal to,
+less than or greater than the other value. Relational operations are found in IF statements
+and as part of loops.
+</pre>
+<ul class="org-ul">
+<li><b>Relational operators</b> can be used to <b>compare</b> <code>numbers</code> as well as <code>strings</code>.
+</li>
+<li>Relational operators are also known as <code>comparison operators</code> as they <b>compare expressions</b> on the <code>left-hand side</code> to <b>expressions</b> on the <code>right-hand side</code> and <b>produce</b> a <code>Boolean value</code> of either <b>True</b> or <b>False</b>.
+</li>
+<li><b>Relation</b> and <b>Logic</b> are the <code>fundamental bricks</code> of a program that <b>defines</b> its <code>functionality</code>.
+</li>
+<li>With these fundamentals, you decide what should be the <code>flow of execution</code> and what <code>conditions</code> should be kept to make sure the flow stays that way.
+</li>
+<li>In <b>every programming language</b> including python, to <b>manage</b> the <b>flow</b> of any program, <code>conditions are required</code>, and to <b>define</b> those conditions, <code>relational</code> and <code>logical</code> operators <b>are required</b>.
+</li>
+<li>Relational operators are <code>symbols</code> that <b>perform operations</b> on <b>data</b> and <code>return a result</code> as <b>True</b> or <b>False</b> <code>depending</code> on the <code>comparison conditions</code>.
+</li>
+<li>Let's take a look at the different types of relational operators in python. The following table gives you a list of all the relational operators:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Relational_Operators_Table.png" alt="Relational_Operators_Table.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>One of the <code>main differences</code> is with the <code>first symbol</code> and this is <b>one</b> that <b>people often get wrong</b>.
+</li>
+<li>In programming, a <b>common mistake</b> is to get the <b>assignment operator =</b> and <b>the comparison operator ==</b> <code>mixed up</code>.
+</li>
+<li>You will know when you have <code>used them incorrectly</code> because <b>your code</b> won’t <b>behave</b> <code>as intended</code>.
+</li>
+<li><b>Have a look at the examples below</b> to see the <code>impact</code> of <b>using</b> the <code>wrong operator</code> in an <b>IF statement</b>:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Relational_Assign_Compare.png" alt="Relational_Assign_Compare.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Examples of using relational operators, input/output, conditional selection, nested IF statements:</b>
+</li>
+</ul>
+<p>
+<img src="img/Relational_Code_Example1.png" alt="Relational_Code_Example1.png" />
+<img src="img/Relational_Code_Example2.png" alt="Relational_Code_Example2.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 try">
+<h3 id="sec-2-2">Try It: Relational Operators</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<b>Pseudocode for Password Challenge</b>
+</p>
+<ul class="org-ul">
+<li>The following Pseudocode asks the user exactly <b>three times</b> for the user to enter the correct password.
+</li>
+<li>Q1: Using the Pseudocode and the Trinket window below, create a working program in Python.
+</li>
+</ul>
+<p>
+<img src="img/Relational_Password_Task1.png" alt="Relational_Password_Task1.png" />
+<b>Password Challenge 1</b>
+</p>
+<iframe src="https://trinket.io/embed/python/864d3fd4e7" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<ul class="org-ul">
+<li>Q2: How many times will the loop be performed if the user enters the correct password on the first attempt? 
+</li>
+<li>Q3: Work out if the following statements are true or false:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Relational_Operators_Try_It.png" alt="Relational_Operators_Try_It.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3 badge">
+<h3 id="sec-2-3">Badge It: Coding Challenge 2</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1">Gold - Password Code Challenge</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ol class="org-ol">
+<li>Using the Trinket below, rewrite the algorithm given in Password Challenge 1 using a WHILE loop to allow the user up to three attempts to correctly guess the password. (4 Marks)
+</li>
+</ol>
+
+<div class="figure">
+<p><img src="img/Relational_Password_Task2.png" alt="Relational_Password_Task2.png" />
+</p>
+</div>
+<iframe src="https://trinket.io/embed/python/c6bad4795f" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Boolean Operations</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It: What are Boolean Operations?</h3>
+<div class="outline-text-3" id="text-3-1">
+<pre class="example">
+Boolean Operations - A logic operation can only have one of two possible
+outcomes - True or False. A logic operator connects together other logic
+operators to produce more complexed logic expressions. NOT, AND, OR are the
+most commonly used logic operators.
+</pre>
+<ul class="org-ul">
+<li>In computer science, a <b>Boolean data type</b> is <b>any data type</b> that has either a <code>True</code> or <code>False value</code>, <code>Yes</code> or <code>No</code>, or <code>On</code> or <code>Off</code> (<i>1 or 0</i>) value.
+</li>
+<li>In programming, a Boolean can be <code>used</code> with <code>conditional statements</code> (<i>i.e. IF statements</i>)
+</li>
+<li><b>Boolean operators</b> can be either <code>True</code> or <code>False</code>. It makes no sense to <code>perform mathematical operations</code> on them or <code>to compare them</code> to see
+which is <code>greater</code>.
+</li>
+<li>With <code>Boolean(logical)operators</code> we can <code>create Boolean expressions</code> by <b>combining</b> together <b>multiple logic gates</b>.
+</li>
+<li>Let's take a look at the <b>different types of boolean operators</b> in python. The following table gives you a list of the <code>three main logic operators</code> we will be using:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Boolean_Operators_Table.png" alt="Boolean_Operators_Table.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>AND</b> will only <b>return</b> <code>True</code> if <code>both operands</code> (<i>the two Boolean objects you are comparing</i>) are <code>True</code>. <b>For example:</b>
+</li>
+</ul>
+<p>
+<img src="img/AND_Statement.png" alt="AND_Statement.png" />
+<img src="img/AND_Result.png" alt="AND_Result.png" />
+</p>
+<ul class="org-ul">
+<li>To <b>understand</b> the <b>behaviour</b> of the <code>AND logical operator</code>, you can make use of a <code>truth table</code>:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/AND_Truth_Table.png" alt="AND_Truth_Table.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>OR</b> is <code>True</code>, whenever any (<i>one or more</i>) <code>operand is True</code>. <b>For example:</b>
+</li>
+</ul>
+<p>
+<img src="img/OR_Statement.png" alt="OR_Statement.png" />
+<img src="img/OR_Result.png" alt="OR_Result.png" />
+</p>
+<ul class="org-ul">
+<li>The <code>OR logical operator</code> uses the following <code>truth table</code>:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/OR_Truth_Table.png" alt="OR_Truth_Table.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Notice</b> that these <code>also work</code> with <code>more than two operands</code>. <b>For example:</b>
+</li>
+</ul>
+<p>
+<img src="img/AND_OR_Statement.png" alt="AND_OR_Statement.png" />
+<img src="img/AND_OR_Result.png" alt="AND_OR_Result.png" />
+</p>
+<ul class="org-ul">
+<li><b>NOT</b> will <code>return</code> the <code>opposite</code> of its <code>operand</code>, so if <b>False</b> is
+<b>given</b> then <b>True will be returned</b> and <b>vice-versa</b>. <b>For
+example:</b>
+</li>
+</ul>
+<p>
+<img src="img/NOT_Statement.png" alt="NOT_Statement.png" />
+<img src="img/NOT_Result.png" alt="NOT_Result.png" />
+</p>
+<ul class="org-ul">
+<li>The <code>NOT logical operator</code> uses the following <code>truth table</code>:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/NOT_Truth_Table.png" alt="NOT_Truth_Table.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The following Python code <b>combines</b> <code>all three types of operators</code>.
+</li>
+<li>It <b>calculates</b> the <b>cost</b> of a <b>group of adults</b> and <b>children</b> entering a <b>zoo</b>.
+</li>
+</ul>
+<iframe src="https://trinket.io/embed/python/da93f68381" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<ul class="org-ul">
+<li><b>Q1:</b> How much would it cost for two adults and one child?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 badge">
+<h3 id="sec-3-2">Badge It: Coding Challenge 3</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-sec-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">Platinum - Zoo Code Challenge</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ol class="org-ol">
+<li>Using the Trinket below, add additional lines of code that would allow a concessionary rate. (4 Marks)
+</li>
+<li>And add comments to each line of code to explain what function it performs?  (2 Marks)
+</li>
+</ol>
+<iframe src="https://trinket.io/embed/python/da93f68381" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.3 Arithmetic, Relational and Boolean Operations in a Programming Language: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3 try">
+<h3 id="sec-3-3">Try It: Coding Challenge</h3>
+<div class="outline-text-3" id="text-3-3">
+<ol class="org-ol">
+<li>Using the Trinket below, write a program which tests someone on the powers of 2 up to 2<sup>12</sup>. (6 Marks)
+</li>
+<li>And add comments to each line of code to explain what function it performs?  (2 Marks)
+</li>
+</ol>
+<iframe src="https://trinket.io/embed/python/2c94559ada" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
