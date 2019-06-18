@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.2.5 Input, Output and File Handling</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.2.5 Input, Output and File Handling</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Input and Output</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What is input and output?</a></li>
+<li><a href="#sec-1-2">Try It: Format Operators</a></li>
+<li><a href="#sec-1-3">Badge It: Pseudocode Challenge</a>
+<ul>
+<li><a href="#sec-1-3-1">Silver - Guessing Game</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">2. File Handling</a>
+<ul>
+<li><a href="#sec-2-1">Learn It: What is File Handling?</a></li>
+<li><a href="#sec-2-2">Badge It: File Handling Challenge 1</a>
+<ul>
+<li><a href="#sec-2-2-1">Gold - Tom's Adventure Story</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-3">Badge It: File Handling Challenge 2</a>
+<ul>
+<li><a href="#sec-2-3-1">Platinum - Even and Odd Numbers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Input and Output</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Input_Output_Main.png" alt="Input_Output_Main.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What is input and output?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Input and Output – An input device sends information to a computer system for processing,
+and an output device reproduces or displays the results of that processing. Most devices
+are only input devices or output devices, as they can only accept data input from a user
+or output data generated by a computer. However, some devices can accept input and display
+output, and they are referred to as I/O devices (input/output devices).
+</pre>
+<ul class="org-ul">
+<li><b>Computer programs</b> take <i>inputs, process data</i> and <i>produce outputs</i>.
+</li>
+<li>The <b>inputs</b> to a program can originate from many locations:
+<ul class="org-ul">
+<li>Keyboard,
+</li>
+<li>Microphone,
+</li>
+<li>Mouse,
+</li>
+<li>Motion sensor,
+</li>
+<li>Heat sensor,
+</li>
+<li>An input stream over a network,
+</li>
+<li>Digital camera,
+</li>
+<li>Another file,
+</li>
+<li>Touch/Graphics Pad,
+</li>
+<li>Bar code reader.
+</li>
+</ul>
+</li>
+<li>However, the <code>standard</code> form of <b>input</b> is from a <code>keyboard</code>.
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li>Likewise, data can be <b>output</b> to many devices:
+<ul class="org-ul">
+<li>VDU/Display,
+</li>
+<li>Speakers,
+</li>
+<li>Printers,
+</li>
+<li>Another file,
+</li>
+<li>Actuators,
+</li>
+<li>Projectors.
+</li>
+</ul>
+</li>
+<li>But the <code>standard</code> form of <b>output</b> is the <code>monitor (or screen)</code>.
+</li>
+<li>We have used <code>two commands</code> that <b>enable data</b> to <i>come in</i> or <i>go out</i> of a program:
+<ul class="org-ul">
+<li><b>USERINPUT</b>
+</li>
+<li><b>OUTPUT</b>
+</li>
+</ul>
+</li>
+<li>Because the <b>monitor</b> and <b>keyboard</b> are considered <b>standard</b> <i>input</i> and <i>output</i> respectively, it is assumed that the data for <code>USERINPUT</code> comes from the <code>keyboard</code> and the data for <code>OUTPUT</code> is displayed on a <code>monitor</code>.
+</li>
+</ul>
+<br>
+<p>
+<b>User input from the keyboard</b>
+</p>
+<ul class="org-ul">
+<li>Throughout previous topics including this one, we have used an <code>INPUT</code> command in <b>pseudocode</b> and have expanded this slightly in <b>Python</b> to show the actual input message.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/User_Input1.png" alt="User_Input1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We can use <code>data type</code> to make the <b>input</b> command <i>more specific</i>.
+</li>
+</ul>
+<p>
+<img src="img/User_Input2.png" alt="User_Input2.png" />
+<b>Displaying Output</b>
+</p>
+<ul class="org-ul">
+<li>Throughout this topic we have only used <b>fairly simple</b> <code>OUTPUT</code> commands (<i>known as a print command in Python</i>).
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/User_Output1.png" alt="User_Output1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>However, this is not very <b>user friendly</b> and it is necessary to sometimes <b>combine the output</b> in <code>a suitable message</code>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/User_Output2.png" alt="User_Output2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Notice that the <code>+ symbol</code> is used in the <b>pseudocode</b>. When part of a statement is a string (<i>in this case “Hello”</i>) the + symbol is known as <code>concatenation</code> (<i>or joining</i>) which <code>allows values</code> to be <code>joined together</code> <b>rather</b> than <b>added together</b>.
+</li>
+<li>By using a <code>comma separator</code>, <b>Python</b> will <b>automatically add a space</b> <code>after</code> <i>the string</i>.
+</li>
+<li>If the data type of the variable is also a string, then we can use the + symbol concatenation.
+</li>
+<li><b>If the variable</b> <code>is not a string</code>, then we would need to <code>cast</code> the <b>data type</b> <i>into a string</i> using: <code>print(“Hello “ +str(name))</code>
+</li>
+<li>Just remember the strings appear with speech marks.
+</li>
+</ul>
+<p>
+<img src="img/User_Output3.png" alt="User_Output3.png" />
+<img src="img/User_Output4.png" alt="User_Output4.png" />
+<b>Formatting Output</b>
+</p>
+<ul class="org-ul">
+<li><b>Python</b> provides <code>format operators</code> to allow us to <b>output data</b> and <b>information</b> to a display in a <code>clearer</code> and more <code>organised format</code>.
+</li>
+</ul>
+<p>
+<b>The table below shows the most common formatting conversion character:</b>
+<img src="img/Format_Conversion_Table.png" alt="Format_Conversion_Table.png" />
+<b>The table below shows the most common format modifiers:</b>
+<img src="img/Format_Modifier_Table.png" alt="Format_Modifier_Table.png" />
+</p>
+<ul class="org-ul">
+<li><b>Format modifiers can be used to:</b>
+<ul class="org-ul">
+<li>Specify a field width.
+</li>
+<li>Specify the number of digits after the decimal point.
+</li>
+<li>Left or right-justify a value with a specified field width.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li>The <code>% operator</code> is a <b>string operator</b> called the <b>format operator</b>.
+</li>
+<li>Using the format operator, instead of writing something like:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/London_Temp1.png" alt="London_Temp1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We can re-write the statement using format operators as:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/London_Temp2.png" alt="London_Temp2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We can now incorporate the format operators with a user-friendly message as:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/London_Temp3.png" alt="London_Temp3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The <b>formatting above</b> can be <b>divided</b> into <code>two parts:</code>
+<ul class="org-ul">
+<li><b>The first part</b>, “%s, %d, %s”, contains <b>one</b> or <b>more format specifications</b>. A <code>conversion character %</code> tells the <b>format operator</b> <i>what type of value</i> is to be inserted into that position in the string; <code>%s</code> indicates <code>a string</code>, <code>%d</code> indicates <code>an integer</code>.
+</li>
+<li><b>The second part</b>, <i>%(city, temperatureC, localTime)</i>, <code>specifies</code> the <b>values</b> that are to be <b>printed</b>.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It: Format Operators</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>Write statements to do the following:
+<ul class="org-ul">
+<li>a) Set a=3, b=4, c= a + b, d = a*b.
+</li>
+</ul>
+</li>
+<li>Use format operators to print the statements:
+<ul class="org-ul">
+<li>a) 3 + 4 = 7
+</li>
+<li>b) The product of 3 and 4 is 12
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 badge">
+<h3 id="sec-1-3">Badge It: Pseudocode Challenge</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">Silver - Guessing Game</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ol class="org-ol">
+<li>Write a program for a guessing game (using pseudocode or flowchart) that does the following: (6 Marks)
+<ul class="org-ul">
+<li>a) Assigns the word "cat" to a variable called <i>answer</i>.
+</li>
+<li>b) Assigns the user's input to a variable called <i>guess</i>.
+</li>
+<li>c) If the user correctly guesses "cat" then the program outputs "Correct", otherwise the program lets the user guess again.
+</li>
+<li>d) The program continues until the user guesses correctly.
+</li>
+</ul>
+</li>
+<li>The programmer wants to improve the game. State <b>two</b> simple changes tha they could make to improve the it? (2 Marks)
+</li>
+</ol>
+
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.5 Input, Output and File Handling: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> File Handling</h2>
+<div class="outline-text-2" id="text-2">
+
+<div class="figure">
+<p><img src="img/File_Handling_Main.png" alt="File_Handling_Main.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It: What is File Handling?</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+File – A store of data, used by a program, that continues to exist when the program or
+computer is switched off. Many file formats exist, and the practical aspects of this
+section will deal with text (.txt) files, typically associated with a program
+called 'Notpad'.
+</pre>
+<ul class="org-ul">
+<li>Often, this <b>data</b> will <b>need</b> to be <code>stored</code> in a <code>file</code> which can be
+held <code>permanently</code> <b>on storage media</b>, from where it can be <b>read</b> the
+next time it is <b>needed</b>.
+</li>
+<li>We will need to <b>write a program</b> that will <b>save</b> the <b>data</b>
+between the running of the program and this is known as a
+<code>persistent data storage</code> system.
+</li>
+<li>We will look at how this data can be <code>stored outside of the program</code> in a <b>text file</b> (<i>.txt</i>) which can be read by many different applications.
+</li>
+<li>Text files contains text that is in lines. There is no other
+structure, unlike files of records.
+</li>
+</ul>
+<pre class="example">
+In many programming languages, you will have to follow a set of steps to access the data
+in a text file as follows:
+1. Tell the program where the file is.
+2. Open the file to read in from it.
+3. Read a line/lines of text from the file.
+4. Close the file.
+</pre>
+<pre class="example">
+Writing to a file has similar steps:
+1. Open the file to write to.
+2. Write each line of text to the file one at a time, until there is no more text to write.
+3. Remember to close the file at the end.
+</pre>
+<p>
+<b>File Locations</b>
+</p>
+<ul class="org-ul">
+<li><b>Text files</b> are referred to by their name <b>countries.txt</b>. If the file is <b>stored</b> in the <i>same location as the program</i>, then just the <b>name of the file</b> will be <b>sufficient</b>, but if the file is <i>stored in another folder on your computer/network</i> you will <b>need</b> to use the <b>full file name</b> <i>including the root address</i> of <code>where</code> the <code>file is stored</code> as shown below:
+</li>
+</ul>
+<pre class="example">
+/students/user/astudent/compsci/countries.txt
+</pre>
+<p>
+<b>Writing to a Text File</b>
+</p>
+<ul class="org-ul">
+<li>In order to <b>write to a text file</b>, <code>all</code> the <b>data needs to be converted to a string</b>. We will be looking at how to do this with other data types later but for now you just need the following: 
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Write_Test_File1.png" alt="Write_Test_File1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Note</b> that the code is the same in both examples in Python, as it <b>does not matter</b> if the original <b>number</b> is an <code>integer</code> or a <code>float number</code>.
+</li>
+<li><b>Look at some file handling pseudocode:</b>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Write_Test_File2.png" alt="Write_Test_File2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>This code will set a <b>variable</b> called <code>country</code> to <b>England</b> and another called <code>population</code> to <b>53 million</b>.
+</li>
+<li>It will then <code>open</code> a <b>file called countries</b>; if there is <b>not one already in existence</b> the <code>file will be created</code>.
+</li>
+<li>Then a new <b>variable</b> is created called <code>newData</code> which will <code>join</code> the <b>country (England)</b> to the <b>population (53 million)</b> which is <code>converted</code> to a <b>string</b>.
+</li>
+<li>This <b>data</b> is then <code>written</code> to the <b>countries text file</b> and the <b>file is closed</b>.
+</li>
+</ul>
+<p>
+<b>It works in a similar way in Python:</b>
+<img src="img/Write_Test_File3.png" alt="Write_Test_File3.png" />
+</p>
+<ul class="org-ul">
+<li>The <b>country</b> is <b>assigned</b> the value <code>England</code> and the <b>population</b>
+is <code>53 million</code>. The <code>next line is different</code>. Not only do you need
+to <b>tell Python</b> <i>which file to open</i>, you also need to <code>specify how
+  that file will be used</code>.
+</li>
+</ul>
+<p>
+<b>File Handling Table</b>
+<img src="img/File_Handling_Table.png" alt="File_Handling_Table.png" />
+</p>
+<ul class="org-ul">
+<li><b>In the example previously shown</b>, we have specifyied <code>w</code> <b>after the file name</b> so the <code>file will be created</code>.
+</li>
+<li>The <code>data</code> is <code>joined together</code> and the <code>population</code> <b>converted to a string</b> and <code>assigned</code> to the <b>variable</b> <code>newData</code> and there is an <b>additional element</b> <code>(+”/n)</code>. This is a <code>line break</code>, so that if we were to <b>add an additional line</b> it would <b>appear on the next line</b> in the text file.
+</li>
+<li>This <code>makes it easier</code> later if we want to <code>display the data on separate lines</code> in Python.
+</li>
+<li><b>The data is written</b> to the <code>text file</code> and the <code>file is closed</code>.
+</li>
+<li>It is very <b>important</b> the <b>file is closed,* as this is when <code>Python</code> *saves the changes to the file</b> and <i>if the file is not closed the new data will not be written to the file</i>.
+</li>
+<li>If you wanted to <code>add additional rows of data</code> to Python you <b>would not use</b> the <code>w</code> character at the <b>end of the open line,* as this <code>will overwrite</code> the *original data</b>. <b>Instead</b> you would <code>use</code> the <code>a character</code> to <b>add additional lines</b> as shown below:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Write_Test_File4.png" alt="Write_Test_File4.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>*This is the same program but adapted slightly so that the user can
+enter the country and population and the data will be added to the
+existing file rather than overwriting the existing file.*
+</li>
+</ul>
+<br>
+<p>
+<b>Reading from a Text File</b>
+</p>
+<ul class="org-ul">
+<li>Using the <code>write method</code> we looked at previously, we added a comma between each bit of data and put each record on a separate line.
+</li>
+<li><b>To read</b> the file we can use the following pseudocode:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Read_Text_File1.png" alt="Read_Text_File1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>This will <code>display the data stored</code> in the <code>countries.txt file</code>. If
+you wanted each <code>row</code> to <code>appear</code> on *a separate line,* you could
+use the line <i>dataToRead</i> ← READLINE(file) instead of <i>dataToRead</i> ←
+READ(file).
+</li>
+<li><b>We can do a similar thing in Python:</b>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Read_Text_File2.png" alt="Read_Text_File2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Note</b>, Python does not need to use the <code>while loop</code>. Python will
+<code>stop automatically</code> when it <b>gets to the end of the file</b>.
+</li>
+<li>The other <code>difference</code> is Python will <code>automatically</code> <b>display each record</b> on a <i>separate row</i> as the <code>/n</code> <b>line break</b> was used when the data was originally written.
+</li>
+</ul>
+<p>
+<b>More examples of File Handling</b>
+<img src="img/More_File_Handling.png" alt="More_File_Handling.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 badge">
+<h3 id="sec-2-2">Badge It: File Handling Challenge 1</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">Gold - Tom's Adventure Story</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ol class="org-ol">
+<li>Tom has written an adventure story in the file adventure.txt.
+</li>
+<li>Using the Trinket below, write a program that will allow a user to output Tom's adventure story one line a time.
+</li>
+<li>Each time the user presses the "y" key, the next line of the story should be outputted.
+</li>
+<li>The algorithm should end and close the file when it outputs the string "THE END".
+</li>
+</ol>
+<iframe src="https://trinket.io/embed/python/1c45228da5" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.5 Input, Output and File Handling: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3 badge">
+<h3 id="sec-2-3">Badge It: File Handling Challenge 2</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1">Platinum - Even and Odd Numbers</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ol class="org-ol">
+<li>Create a Python program which will ask the user to enter 10 numbers. If the number is an even number (<i>i.e. when it is divided by 2 there is no remainder</i>) add it to a text file called even.txt. If it is an odd number add it to the file called odd.txt.
+</li>
+<li>Once they have entered all 10 numbers it should ask them if they want to see the odd or the even numbers and display the numbers from the correct file.
+</li>
+<li>Use subroutines to split the code into manageable chunks. Use this page to make notes and scribbles that you think may help you with creating the program.
+</li>
+</ol>
+
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.5 Input, Output and File Handling: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

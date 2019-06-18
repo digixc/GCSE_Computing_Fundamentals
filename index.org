@@ -74,11 +74,11 @@
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.2.4 Data Structures]]
+[[file:pages/3-2-4-data_stru.html][3.2.4 Data Structures]]
 #+BEGIN_HTML
 <p></p>
 #+END_HTML
-[[file:UnderConstruction2.html][3.2.5 Input, Output and File Handling]]
+[[file:pages/3-2-5-input_output_file_handling.html][3.2.5 Input, Output and File Handling]]
 #+BEGIN_HTML
 </details>
 #+END_HTML

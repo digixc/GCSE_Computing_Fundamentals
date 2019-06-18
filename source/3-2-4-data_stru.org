@@ -1,0 +1,443 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.2.4 Data Structures
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Data Structures
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Data_Structures_Main.png]]
+** Learn It: What are Data Structures?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Data structures – In the context of Computer Science, an array is a collection of data
+items that are stored together in a clear, structured form. A data structure provides an
+efficient method for managing large amounts of data and organising it data to make it
+suitable for computer processing. There are different types of data structures, including
+arrays (lists), records (tuples, dictionaries) and files, which are used in different
+situations.
+#+END_SRC
+#+BEGIN_SRC
+Arrays - A collection of data items of the same data type that are stored under a single
+identifier (name). The items within the array are called elements, they can be accessed
+by referencing their position within the array. The exact number of elements needs to be
+known at the start, as the number of elements cannot be increased dynamically within the
+program once it has been compiled or intepreted unlike a list.
+#+END_SRC
+- *Array* is a =common term in programming=, but in Python *arrays* are =called= *lists*.
+- This slightly complicates things as in programming *arrays* =can only store= *data items of the same data type*, but in =Python arrays (lists)= can *store any type of data*.
+- When you hear the term *array* think of it as a *list* in =Python=.
+- Lists can be expanded upon dynamically by simply appending new
+  elements to the end of the list.
+- Many data structures exist, and it is even possible to invent your own. In GCSE Computer Science, you need to be familiar with:
+  - *One-Dimensional Arrays.*
+  - *Two-Dimensional Arrays.*
+  - *Records.*
+#+BEGIN_SRC
+Records - A data structure that can accept multiple data items that do not need to be of
+the same data type. The values are stored sequentially like records within a database. As
+far as Python is concerned, there is no difference between an array and a record, so they
+are managed in the same way. One record might store a student's name, year group and
+average test score.
+#+END_SRC
+#+BEGIN_SRC
+Please Note - Python does not use arrays or records, it uses lists and dictionaries instead.
+Lists allow combinations of data types, so they behave more like records than arrays. When
+it comes to your exams, you wll be expected to be able to describe arrays, both
+one-dimensional and two-dimensional, as well as records.
+#+END_SRC
+* One-Dimensional Arrays
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are One-Dimensional Arrays?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- *One-dimensional arrays* are the =simplest= *array structures to
+  use*. Think back to the variables we have been using, they all
+  =allow a single value= to be *stored* in a =single name=. That is
+  great for small single items of data but *arrays (lists)* =allow=
+  you to =store= *lots of data* under a =single name=.
+- Think of a one-dimensional array as a =row of variables=, *instead* of
+  /each one having a name/, the *whole array* has =a single name=.
+- While =each element= in the array has an =index number=, indicated
+  in the *table below*.
+- A one-dimensional array might store a student's most recent spelling test scores:
+[[file:img/Score_Array.png]]
+- This program processes 10 numbers using a simple array of integers called =score=. *Imagine* a /table/ with *one row of 10 boxes*.
+- *Each box* in the *table* can *contain* an =integer=.
+- *Each box* has a =numerical reference= called an =index= that is used to =reference= an *individual data item*.
+- *Note* that the =first element= an the array is =always zero=. The =third element= of this array is referred to as =score[ 2 ]=.
+- At the *start of a program* we have to =define the array=, just like we do with a variable, so we would do the following:
+#+BEGIN_SRC
+score = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#+END_SRC
+*Some basic operations on arrays (lists):*
+[[file:img/score_basic_operations.png]]
+- The individual boxes in the array can be used just like variables:
+  - *Assign* values to them:
+#+BEGIN_SRC
+score = [4] ← 27
+#+END_SRC
+  - *Input* values into them from the keyboard or a file:
+#+BEGIN_SRC
+score = [4] ← USERINPUT
+#+END_SRC
+- *Output* the value stored at index position 3 to the screen or a
+  file:
+#+BEGIN_SRC
+OUTPUT "The fourth value is ", score [3]
+#+END_SRC
+
+- *Benefits of using Arrays are:*
+  - Code is much easier to follow and therefore easier to debug and maintain.
+  - A group of data items can be easily processed using a FOR loop.
+  - When you process data held in an array, you typically do the same thing to each data item, so having them stored in numbered locations makes this much easier and quicker to code.
+
+*Operations on Arrays (Lists):*
+- Some =array (list)= *methods* are shown in the table below. *Assume a = [45, 13, 19, 13, 8]*
+[[file:img/Array_Operations_Table.png]]
+- *Note* that len () is a =function= and not a =method=, and is written in a different way.
+
+ - *One-Dimensional Array Example:*
+#+BEGIN_SRC
+total ← 0
+FOR game ← 0 TO 11
+    score [game] ← USERINPUT
+    total ← total + score [game]
+ENDFOR
+OUTPUT "Total is ", total
+#+END_SRC
+
+*Creating and using a One-Dimensional Array*
+- *Step 1:* To set up an array you can define it with or without the contents straight away.
+[[file:img/Creating_Array_1.png]]
+- *Step 2:* Once the array has been created you can print out the whole list or you can choose to print a specific item from that array. Don’t forget that it always starts counting from 0.
+[[file:img/Creating_Array_2.png]]
+- *Step 3:* If you wanted to =overwrite an existing item= (/change one item to another/) you can easily do that. In this example we are =changing= *George* to *Seb*, so that *George* will =no longer= *be in the list* and *Seb* will have *replaced* him.
+[[file:img/Creating_Array_3.png]]
+- *Step 4:* You may want to see the =length of the array/list= (/how many items are in the array/) and this is easy to do so too.
+[[file:img/Creating_Array_4.png]]
+- *Step 5:* You may want to =add a new item= to the =end= of the *array/list*.
+[[file:img/Creating_Array_5.png]]
+- *Step 6:* You may also want to =delete specific items= from the array/list.
+[[file:img/Creating_Array_6.png]]
+- *Note:* You may notice that when the whole array/list is being referred to it appears in round brackets. However, when a single item in the array/list is being referred to this is done using square brackets. Square brackets are always used to refer to an individual item in the array/list.
+** Learn It: Random Number Generation
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Random - A random number can be selected from a range of numbers, if every number in that
+range had an equal chance of being selected.
+#+END_SRC
+- It is often =useful=, especially in =games programming=, to *generate* a
+  =random number=.
+- *For example*, suppose you want to =simulate= throwing a =six-sided die=:
+#+BEGIN_SRC
+number ← RANDOM_INT (1,6)
+#+END_SRC
+
+*Random Integers In Python:*
+[[file:img/Random_Integers.png]]
+
+- This code will generate a random number between 1 and 6.
+*Random numbers have many uses in computer science, for example:*
+  - *Encrypting data*, making it difficult for unauthorised people to understand.
+  - *Creating simulations*, such as flight simulators, to run differently everytime.
+  - *Adding variability* to computer games, i.e. Enemy units might have behaviour that varies.
+  - *Random sampling* of survey participants, i.e. Randomly selecting names from a list.
+
+** Badge It: Coding Challenge 1
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Throwing a Die Code Challenge
+1. Using the Trinket below, write a program that simulates throwing a six-sided die 1000 times.
+2. An array called face[1..6] is to hold the number of times each number (between 1 and 6) is thrown. Print out the number of times each number is thrown. (4 Marks)
+3. Amend the program so that the array *face* starts at index 0, i.e. the array is *face [0..5]*. (2 Marks)
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/bfed916b48" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.4 Data Structures in a Programming Language: Silver on BourneToLearn/
+
+* Two-Dimensional Arrays
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Two-Dimensional Arrays?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Two-Dimensional Arrays – So far we can see that a one-dimensional array can be seen as a
+linear structure. Therefore if we have an array of arrays then they can be expressed as
+a two-dimensional array. Treat a one-dimensional array as a single line within a
+textbook, where each word can be referenced by it's position within the line. Therefore
+a two-dimensional array as multiple lines within a text book, where you not only have to
+say 3rd word within a line, but also have to specify which line you are referring two.
+A two-dimensional array is declared using two values - the number of rows and the number
+of columns.
+#+END_SRC
+[[file:img/Two-Dimensional_Arrays1.png]]
+[[file:img/Two-Dimensional_Arrays2.png]]
+*Creating a Two-dimensional array:*
+- So far, we have looked at a *simple one-dimensional array*. We will now look at the slightly more *complicated two-dimensional array*.
+- In a *one-dimensional array* the =structure is flat= and *only allows* /one row of data/.
+- As a teacher is likely to have =lots= of =different pieces of data= for *each student*, for example they may need to =store= their *maths* and *English* grades.
+*The table of data is more likely to look like this:*
+[[file:img/Student_Grades_Table.png]]
+
+- *Arrays* =do not= need to know about the *titles of the columns*, so these are =ignored= and instead you need to *concentrate* on the =white section= of the *table*, where you will see that =for each row= there are =several columns=.
+- *The rows* are for each =individual student= and the *columns* are for the =score= they have got in each subject.
+- When *referring* to a =cell= (/individual piece of data/) you need to =identify= the *row* and then the *column*.
+- *For example*, to get *Sofia’s English score* it would be =students[ 3 ][ 2 ]=, don't forget that everything =starts counting= from *0*.
+*Creating and using a Two-Dimensional Array:*
+- *Step 1:* Using a two-dimensional array is very similar to using a one-dimensional array, you just need to remember to include the =[row]= and =[column]=.
+- *To create* a two-dimensional array in =pseudocode= you need to write:
+#+BEGIN_SRC
+students ← [["John",53,69],["Lara",78,80],["George",72,53],["Sofia",80,76],["Oliver",43,27],["Thomas",56,28]]
+#+END_SRC
+- Notice *each separate row* has =its own set= of *square brackets*.
+- *Also note* that *data* that needs to be treated as a *string* has =speech marks=, *but data* that needs to be *treated* as a =number= (/as an integer or floating point/) does not have speech marks.
+- *Step 2:* To create a two-dimensional array/list in Python, type the following:
+[[file:img/Student_Grades_2D_Create.png]]
+*Use the table of instructions to perform various operations on the students two-dimensional array/list:*
+[[file:img/Student_Grades_2D_Array_Task_Table.png]]
+- Use the Trinket window below to perform the operations as shown in the table above.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/9d824c377f" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+** Try It: Coding Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+1. *Write an algoirthm* to *allow* a user to *enter* the =10 test scores= for *each student*, and *calculate* and *output* the *average mark* by each student.
+2. The *student names* are held in an =array studentName [0..29]=, so for example, =student [ 0 ]= contains the *name George C*.
+3. An array =total [0..29]= will hold the* mark* for *each student*.
+4. Am array =average [0..29]= will hold the *average mark* for *each student*.
+5. The *program* should =prompt= the user: "Enter 10 marks for George C" and then =store= the *marks* /inputted by the user/.
+#+BEGIN_SRC
+#Initialise array to hold total marks
+FOR n ← 0 TO 29
+    total[n] ← 0
+ENDFOR
+#Input names and marks
+FOR n ← 0 TO 29
+    OUTPUT "Enter marks for ", studentName[n]
+    FOR mark ← 0 TO 9
+        classScores[n][mark] ← USERINPUT
+        total[n] ← total[n] + classScore[n][mark]
+    ENDFOR
+ENDFOR
+FOR n ← 0 TO 29
+    average[n] ← total[n], average[n]
+ENDFOR
+#+END_SRC
+- Q1: *Write an algorithm* that *allows* a user to =enter a student number=, which then =outputs= their =name=, each of =their 10 scores= and their =average score=. (/Remember that array indices start at 0, but the students will be numbered 1 to 30/)
+
+** Badge It: Coding Challenge 3
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Battleships Code Challenge
+1. Using the Trinket below to look at a simple working battleships game using lists.
+2. Make the following changes to the game:
+    - a) Edit the code to enable a user to place the battleship on the grid.
+    - b)  Change the code so that the user can add an additional ship.
+    - c) Make this a two player game.
+    - d) Add a scoring system to keep a tally of the scores.
+2. And add comments to each line of code to explain what function it performs?  (12 Marks)
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/13aadf8fa5" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.4 Data Structures in a Programming Language: Gold on BourneToLearn/
+
+* Records (Dictionaries)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Records?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Records – Is a data structure that groups together related data items.
+These are more complex than arrays, as you can store more than one type
+of data together under one identifier. For example, with a game, it would
+be useful to set up a data structure which collects a player's login and
+their score in one structure. Creating records will vary in different
+languages. Python uses a data structure called 'dictionary' that has
+some features of the record structure.
+#+END_SRC
+- Earlier in this topic we looked at arrays. An =array= is a =collection of data items= *stored* under =one identifier=, so that data items can be processed easily.
+- When we =group data items together= so they can be *treated* as a =set of data=, we *refer* to this as a =data structure=.
+- A *dictionary* =stores= *data items in pairs*, with each pair consisting of a =key= and a =value=.
+- It =functions= just *like* a =printed dictionary=, where you can *look up* a *word* (/the key/) and *find* its *definition* (/the value/).
+- *Like an array/list*, a dictionary is =mutable=, meaning that its =value can be changed=.
+- A dictionary is written using the =curly brackets{ }=, with *each key value pair* being *separated* by *commas*.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Example 1*, in the code written below, the dictionary is called =studentMarks= and *contains* a number of *student names* and the *mark* they obtained in a test:
+#+BEGIN_SRC
+#Student Marks Dictionary
+#The first line defines a new dictionary:
+studentMarks = {"Owen":7, "William":9, "Libby":5, "Keira":8}
+
+#The following code will return all three records in the dictionary:
+print(studentMarks)
+>>> {"Owen":7, "William":9, "Libby":5, "Keira":8}
+
+#The following code will return Libbys mark in the dictionary:
+print(studentMarks["Libby"])
+>>> 5
+#+END_SRC
+- *To look up* the =mark= obtained by a student (/the key/), write the *name* of the *dictionary* followed by the *key* in /square brackets [ ]/.
+- *You cannot index* a dictionary in the same way *as a list* by using an *index number*. An item *can only* be =accessed= through =its key=.
+- *Q1:* Write a statement to print the mark obtained by Keira?
+#+BEGIN_HTML
+<br>
+#+END_HTML
+*Example 2*, in the code written below, the dictionary is called =players=, that defines a *player's name*, their *login* and their *score* as one record:
+- We have *two players*, =Katie= and =Patrick=. We will use a dictionary to record the player names; Katie and Patrick with their logins and scores.
+- *Katie's login* is =kat10= and her *score* is =124=.
+- *Patrick's login* is =pat00= and his *score* is =99=.
+- The *first line defines* the =dictionary data structure= with *two records* of a player's *name, login* and *score*.
+- Be careful with the precise use of the syntax such as =:= and ={} curly brackets= with *each key value pair* being *separated* by =commas=:
+#+BEGIN_SRC
+#Players Dictionary
+#The first line defines a new dictionary:
+players = {"Katie": {"login":"kat10", "score":124 },"Patrick": {"login":"pat00", "score":99 }}
+
+#The next line adds a new record to the dictionary:
+players["Tom"] = {"login":"tom13", "score":121}
+
+#The following code will return all three records in the dictionary:
+print(players)
+>>> {'Katie': {'login': 'kat10', 'score': 124}, 'Patrick': {'login': 'pat00', 'score': 99}, 'Tom': {'login': 'tom13', 'score': 121}}
+
+#And this line of code would remove Katie's score:
+del players["Katie"]
+print(players)
+>>> {'Patrick': {'login': 'pat00', 'score': 99}, 'Tom': {'login': 'tom13', 'score': 121}}
+#+END_SRC
+*Dictionary Methods Table*
+- The table below shows some of the most useful built-in dictionary
+  methods:
+[[file:img/Dictionary_Methods_Table.png]]
+*Basic Dictionary Methods*
+- In the Trinket windows below are examples of several dictionary methods, try them to see the results.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/afb68ecbba" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/ee61fabd8c" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/bdf2373f67" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/3a7014f687" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> 
+#+END_HTML
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/3a8b10efd5" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> 
+#+END_HTML
+
+** Badge It: Coding Challenge 4
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Phone Extensions Code Challenge
+1. Using the Trinket below, write a program which stores a dictionary of names and 2-digit telephone extensions.
+2. Display a menu of options from which the user can choose:
+  - A. Loop up a telephone number.
+  - B. Add a new name and telephone number.
+  - C. Edit a telephone number.
+  - D. Delete an entry.
+  - E. Print phone directory in name sequence.
+  - F. Quit.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/98f0e2ba9d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.4 Data Structures in a Programming Language: Platinum on BourneToLearn/
