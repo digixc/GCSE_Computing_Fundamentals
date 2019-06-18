@@ -80,6 +80,10 @@
 #+END_HTML
 [[file:pages/3-2-5-input_output_file_handling.html][3.2.5 Input, Output and File Handling]]
 #+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-2-6-string_handling.html][3.2.6 String Handling Operations in a Programming Language]]
+#+BEGIN_HTML
 </details>
 #+END_HTML
 
