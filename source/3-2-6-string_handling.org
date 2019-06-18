@@ -1,0 +1,228 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.2.6 String Handling Operations in a Programming Language
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* String Handling
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/String_Handling_Main.png]]
+** Learn It: What does string handling mean?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Strings – A string is any sequence of characters from the keyboard, including digits,
+letters, punctuation and any other characters you can see when you look at your keyboard.
+It is a very important data structure in programming because it is used to achieve many things.
+#+END_SRC
+#+BEGIN_SRC
+Casting – Converting a piece of data to a specific data type. For example, a user might enter
+a string and the program might convert it to an integer in order to perform certain calculations.
+#+END_SRC
+*Typical operations on strings*
+- Because strings are so important, programmers need to know how to carry out a number of frequently used operations on them. *These include:*
+  -	Finding the *length* of a string.
+  - Finding the *position* of a character.
+  - Getting a *substring* (also called a slice) from a string.
+  - *Concatenation* of strings.
+  - Converting a character into its ASCII character code.
+  - Converting an ASCII character code into a character.
+  - Converting digits between string digits and numerical digits.
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *Strings* are a *useful* way of *storing* any *data* that you =do not need= to *perform calculations* on.
+- However, there are times when you need to be able to select a part of a string, =manipulate= a *string* or *convert it* to /another data type/.
+** Learn It: Length
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Length:*
+- *Using the Python code*, we can ask the user for a name and then using the =LEN function= find out the *length of the name* as follows:
+[[file:img/String_LEN.png]]
+- Entering the name *“George”* then the =LEN function= would return *“6”*.
+** Learn It: Position
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Position*
+- *Position* will *find out where* in the =string a character appears=. *Don’t forget* it will start =counting from 0=.
+- *In this example*, it will find the letter *“o”* in the =name= and *display* the =number= of the =position=.
+[[file:img/String_Pos.png]]
+- With the name *“George”* the find function will return *“2”*.
+- *In Python*, if the *letter cannot be found* it will *return* the value of =-1=.
+** Learn It: Substring
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Substring*
+- A substring is a *group* of *two or more characters* that *appears* =inside another string=.
+- *For instance*, *“the best of”* is a =substring of= *“It was the best of times”*.
+- *The substring* can be found as long as you know the =start position= and the =end position= of the *string* you are =looking for=.
+[[file:img/String_Substring.png]]
+- *Don’t forget* Python needs an =extra position counted= at the *end*, =otherwise it will stop= when it *reaches the last letter* and /not show it/.
+- This substring will return *“ngo”*.
+- It is assumed that the =start position= is =0= and =not 1=, so =message[ 0 ]= contains the =first character= of the string *“M”*.
+
+** Try It: Substrings
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+1. Write some pseudocode so that the user types in a message and then they are asked for a letter in that sentence.
+2. It should then display from that letter to the end of the message.
+3. Once you have written it in pseudocode create it in Python, save it with a sensible name and test it out.
+** Learn It: Concatenation
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Concatenation*
+- Concatenation means =joining two strings together= and this is done using the =+ symbol= in both *pseudocode* and *Python*.
+[[file:img/Strings_Concatenation.png]]
+- *Please note*, the “ “ has been =added= in the =middle= to =join the names= with a *space between them*.
+[[file:img/Strings_Concatenation_Table.png]]
+
+
+** Badge It: Pseudocode Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Data Type Conversions
+1. Write pseudocode to assign a 7-digit number to an integer variable.
+2. Convert this to a string, and output the middle three digits.
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.6 String Handling Operations in a Programming Language: Silver on BourneToLearn/
+
+** Learn It: ASCII Character codes
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*ASCII Character codes*
+- ASCII stands for *“American Standard Code for Information Interchange”*. Using this code, *every character* can be *represented* as a =7-bit binary pattern=, allowing =128 different characters= to be *represented*.
+- *The table below* shows how each upper and lower-case letter is represented along with numbers and some symbols:
+[[file:img/ascii_table_lge.png]]
+- If you want to convert an =ASCII code= *into* =a character=, you can convert that character to the corresponding ASCII code as shown below:
+[[file:img/Strings_ASCII.png]]
+- If you want to convert a =character= *into* an =ASCII code=, you can convert this as follows:
+[[file:img/Strings_CharTo_ASCII.png]]
+
+** Learn It: String Conversions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*String Conversions*
+- *Sometimes* we need to =change= the =data type= of a *variable* from a =string= *to an* =integer= *or a* =real (float)= number or vice versa.
+[[file:img/Strings_Conversions.png]]
+- *Python is quite simple* and *does not* really *care* about the
+  =current data type=, it *only needs to know* =what= you =are
+  converting it to= (/int, float or str/).
+- *Whereas the pseudocode* is much =more specific= and =needs you to know= the *current data type* and the *required data type* you are converting it to.
+
+** Badge It: Concatenation Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Concatenation
+1. Create a Python program which will ask the user to enter their date
+   of birth in the format dd/mm/yyyy.
+2. It should also ask them to enter their first name and then enter
+   their surname.
+3. The program should take the digits for the date of birth and add
+   them together (for instance if the date was 13/02/2002 it should
+   add together 1 + 3 + 0 + 2 + 2 + 0 + 0 + 2 = 10).
+4. It should join the first 3 digits of their surname to the last
+   letter of their first name and join this to the number that was
+   created. So, if their name is Jemima Puddle-Duck and their date of
+   birth was the 13/02/2002 the program should display Puda10.
+5. Make sure you save the program with a sensible name and test it out.
+
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.6 String Handling Operations in a Programming Language: Gold on BourneToLearn/
+
+** Badge It: ASCII Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - ASCII Challenge
+1. Write pseudocode statements to accept an uppercase character from the user, and output the next character in the alphabet.
+2. If the user inputs Z, the letter A should be outputted.
+3. Now create a Python program for this task.
+
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.6 String Handling Operations in a Programming Language: Platinum on BourneToLearn/

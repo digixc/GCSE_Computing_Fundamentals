@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.2.6 String Handling Operations in a Programming Language</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.2.6 String Handling Operations in a Programming Language</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. String Handling</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What does string handling mean?</a></li>
+<li><a href="#sec-1-2">Learn It: Length</a></li>
+<li><a href="#sec-1-3">Learn It: Position</a></li>
+<li><a href="#sec-1-4">Learn It: Substring</a></li>
+<li><a href="#sec-1-5">Try It: Substrings</a></li>
+<li><a href="#sec-1-6">Learn It: Concatenation</a></li>
+<li><a href="#sec-1-7">Badge It: Pseudocode Challenge</a>
+<ul>
+<li><a href="#sec-1-7-1">Silver - Data Type Conversions</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-8">Learn It: ASCII Character codes</a></li>
+<li><a href="#sec-1-9">Learn It: String Conversions</a></li>
+<li><a href="#sec-1-10">Badge It: Concatenation Challenge</a>
+<ul>
+<li><a href="#sec-1-10-1">Gold - Concatenation</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-11">Badge It: ASCII Challenge</a>
+<ul>
+<li><a href="#sec-1-11-1">Platinum - ASCII Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> String Handling</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/String_Handling_Main.png" alt="String_Handling_Main.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What does string handling mean?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Strings – A string is any sequence of characters from the keyboard, including digits,
+letters, punctuation and any other characters you can see when you look at your keyboard.
+It is a very important data structure in programming because it is used to achieve many things.
+</pre>
+<pre class="example">
+Casting – Converting a piece of data to a specific data type. For example, a user might enter
+a string and the program might convert it to an integer in order to perform certain calculations.
+</pre>
+<p>
+<b>Typical operations on strings</b>
+</p>
+<ul class="org-ul">
+<li>Because strings are so important, programmers need to know how to carry out a number of frequently used operations on them. <b>These include:</b>
+<ul class="org-ul">
+<li>Finding the <b>length</b> of a string.
+</li>
+<li>Finding the <b>position</b> of a character.
+</li>
+<li>Getting a <b>substring</b> (also called a slice) from a string.
+</li>
+<li><b>Concatenation</b> of strings.
+</li>
+<li>Converting a character into its ASCII character code.
+</li>
+<li>Converting an ASCII character code into a character.
+</li>
+<li>Converting digits between string digits and numerical digits.
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="org-ul">
+<li><b>Strings</b> are a <b>useful</b> way of <b>storing</b> any <b>data</b> that you <code>do not need</code> to <b>perform calculations</b> on.
+</li>
+<li>However, there are times when you need to be able to select a part of a string, <code>manipulate</code> a <b>string</b> or <b>convert it</b> to <i>another data type</i>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Length</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Length:</b>
+</p>
+<ul class="org-ul">
+<li><b>Using the Python code</b>, we can ask the user for a name and then using the <code>LEN function</code> find out the <b>length of the name</b> as follows:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/String_LEN.png" alt="String_LEN.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Entering the name <b>“George”</b> then the <code>LEN function</code> would return <b>“6”</b>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It: Position</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+<b>Position</b>
+</p>
+<ul class="org-ul">
+<li><b>Position</b> will <b>find out where</b> in the <code>string a character appears</code>. <b>Don’t forget</b> it will start <code>counting from 0</code>.
+</li>
+<li><b>In this example</b>, it will find the letter <b>“o”</b> in the <code>name</code> and <b>display</b> the <code>number</code> of the <code>position</code>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/String_Pos.png" alt="String_Pos.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>With the name <b>“George”</b> the find function will return <b>“2”</b>.
+</li>
+<li><b>In Python</b>, if the <b>letter cannot be found</b> it will <b>return</b> the value of <code>-1</code>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It: Substring</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<b>Substring</b>
+</p>
+<ul class="org-ul">
+<li>A substring is a <b>group</b> of <b>two or more characters</b> that <b>appears</b> <code>inside another string</code>.
+</li>
+<li><b>For instance</b>, <b>“the best of”</b> is a <code>substring of</code> <b>“It was the best of times”</b>.
+</li>
+<li><b>The substring</b> can be found as long as you know the <code>start position</code> and the <code>end position</code> of the <b>string</b> you are <code>looking for</code>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/String_Substring.png" alt="String_Substring.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Don’t forget</b> Python needs an <code>extra position counted</code> at the <b>end</b>, <code>otherwise it will stop</code> when it <b>reaches the last letter</b> and <i>not show it</i>.
+</li>
+<li>This substring will return <b>“ngo”</b>.
+</li>
+<li>It is assumed that the <code>start position</code> is <code>0</code> and <code>not 1</code>, so <code>message[ 0 ]</code> contains the <code>first character</code> of the string <b>“M”</b>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3 try">
+<h3 id="sec-1-5">Try It: Substrings</h3>
+<div class="outline-text-3" id="text-1-5">
+<ol class="org-ol">
+<li>Write some pseudocode so that the user types in a message and then they are asked for a letter in that sentence.
+</li>
+<li>It should then display from that letter to the end of the message.
+</li>
+<li>Once you have written it in pseudocode create it in Python, save it with a sensible name and test it out.
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It: Concatenation</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+<b>Concatenation</b>
+</p>
+<ul class="org-ul">
+<li>Concatenation means <code>joining two strings together</code> and this is done using the <code>+ symbol</code> in both <b>pseudocode</b> and <b>Python</b>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Strings_Concatenation.png" alt="Strings_Concatenation.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Please note</b>, the “ “ has been <code>added</code> in the <code>middle</code> to <code>join the names</code> with a <b>space between them</b>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Strings_Concatenation_Table.png" alt="Strings_Concatenation_Table.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-7" class="outline-3 badge">
+<h3 id="sec-1-7">Badge It: Pseudocode Challenge</h3>
+<div class="outline-text-3" id="text-1-7">
+</div>
+<div id="outline-container-sec-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1">Silver - Data Type Conversions</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<ol class="org-ol">
+<li>Write pseudocode to assign a 7-digit number to an integer variable.
+</li>
+<li>Convert this to a string, and output the middle three digits.
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.6 String Handling Operations in a Programming Language: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3 learn">
+<h3 id="sec-1-8">Learn It: ASCII Character codes</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+<b>ASCII Character codes</b>
+</p>
+<ul class="org-ul">
+<li>ASCII stands for <b>“American Standard Code for Information Interchange”</b>. Using this code, <b>every character</b> can be <b>represented</b> as a <code>7-bit binary pattern</code>, allowing <code>128 different characters</code> to be <b>represented</b>.
+</li>
+<li><b>The table below</b> shows how each upper and lower-case letter is represented along with numbers and some symbols:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/ascii_table_lge.png" alt="ascii_table_lge.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If you want to convert an <code>ASCII code</code> <b>into</b> <code>a character</code>, you can convert that character to the corresponding ASCII code as shown below:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Strings_ASCII.png" alt="Strings_ASCII.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If you want to convert a <code>character</code> <b>into</b> an <code>ASCII code</code>, you can convert this as follows:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Strings_CharTo_ASCII.png" alt="Strings_CharTo_ASCII.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3 learn">
+<h3 id="sec-1-9">Learn It: String Conversions</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+<b>String Conversions</b>
+</p>
+<ul class="org-ul">
+<li><b>Sometimes</b> we need to <code>change</code> the <code>data type</code> of a <b>variable</b> from a <code>string</code> <b>to an</b> <code>integer</code> <b>or a</b> <code>real (float)</code> number or vice versa.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Strings_Conversions.png" alt="Strings_Conversions.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Python is quite simple</b> and <b>does not</b> really <b>care</b> about the
+<code>current data type</code>, it <b>only needs to know</b> <code>what</code> you <code>are
+  converting it to</code> (<i>int, float or str</i>).
+</li>
+<li><b>Whereas the pseudocode</b> is much <code>more specific</code> and <code>needs you to know</code> the <b>current data type</b> and the <b>required data type</b> you are converting it to.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3 badge">
+<h3 id="sec-1-10">Badge It: Concatenation Challenge</h3>
+<div class="outline-text-3" id="text-1-10">
+</div>
+<div id="outline-container-sec-1-10-1" class="outline-4">
+<h4 id="sec-1-10-1">Gold - Concatenation</h4>
+<div class="outline-text-4" id="text-1-10-1">
+<ol class="org-ol">
+<li>Create a Python program which will ask the user to enter their date
+of birth in the format dd/mm/yyyy.
+</li>
+<li>It should also ask them to enter their first name and then enter
+their surname.
+</li>
+<li>The program should take the digits for the date of birth and add
+them together (for instance if the date was 13/02/2002 it should
+add together 1 + 3 + 0 + 2 + 2 + 0 + 0 + 2 = 10).
+</li>
+<li>It should join the first 3 digits of their surname to the last
+letter of their first name and join this to the number that was
+created. So, if their name is Jemima Puddle-Duck and their date of
+birth was the 13/02/2002 the program should display Puda10.
+</li>
+<li>Make sure you save the program with a sensible name and test it out.
+</li>
+</ol>
+
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.6 String Handling Operations in a Programming Language: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3 badge">
+<h3 id="sec-1-11">Badge It: ASCII Challenge</h3>
+<div class="outline-text-3" id="text-1-11">
+</div>
+<div id="outline-container-sec-1-11-1" class="outline-4">
+<h4 id="sec-1-11-1">Platinum - ASCII Challenge</h4>
+<div class="outline-text-4" id="text-1-11-1">
+<ol class="org-ol">
+<li>Write pseudocode statements to accept an uppercase character from the user, and output the next character in the alphabet.
+</li>
+<li>If the user inputs Z, the letter A should be outputted.
+</li>
+<li>Now create a Python program for this task.
+</li>
+</ol>
+
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.6 String Handling Operations in a Programming Language: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
