@@ -175,9 +175,9 @@ a string and the program might convert it to an integer in order to perform cert
 - ASCII stands for *“American Standard Code for Information Interchange”*. Using this code, *every character* can be *represented* as a =7-bit binary pattern=, allowing =128 different characters= to be *represented*.
 - *The table below* shows how each upper and lower-case letter is represented along with numbers and some symbols:
 [[file:img/ascii_table_lge.png]]
-- If you want to convert an =ASCII code= *into* =a character=, you can convert that character to the corresponding ASCII code as shown below:
+- If you want to convert a =character= *into* an =ASCII code=, you can convert that character to the corresponding ASCII code as shown below:
 [[file:img/Strings_ASCII.png]]
-- If you want to convert a =character= *into* an =ASCII code=, you can convert this as follows:
+- If you want to convert an =ASCII code= *into* a =character=, you can convert this as shown below:
 [[file:img/Strings_CharTo_ASCII.png]]
 
 ** Learn It: String Conversions
