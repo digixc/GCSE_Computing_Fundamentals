@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.2.7 Subroutines (Procedures and Functions)</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.2.7 Subroutines (Procedures and Functions)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Subroutines - Procedures and Functions</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are subroutines?</a></li>
+<li><a href="#sec-1-2">Learn It: Advantages of using Subroutines in programs</a></li>
+<li><a href="#sec-1-3">Learn It: Passing Data within Programs</a></li>
+<li><a href="#sec-1-4">Learn It: Returning values from a Subroutine</a></li>
+<li><a href="#sec-1-5">Badge It: Coding Challenge</a>
+<ul>
+<li><a href="#sec-1-5-1">Silver - Return values from a subroutine</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">Learn It: Local and Global Variables</a></li>
+<li><a href="#sec-1-7">Learn It: Functions and Procedures</a></li>
+<li><a href="#sec-1-8">Try It: Functions</a></li>
+<li><a href="#sec-1-9">Try It: Procedures</a></li>
+<li><a href="#sec-1-10">Learn It: Structured Programming</a></li>
+<li><a href="#sec-1-11">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-11-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-12">Badge It: Exam Question and Coding Challenge</a>
+<ul>
+<li><a href="#sec-1-12-1">Platinum - Exam question/Code Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Subroutines - Procedures and Functions</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Subroutines_Main.png" alt="Subroutines_Main.png" /> 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are subroutines?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Subroutines - In computer programming, a subroutine is a sequence of program instructions
+that performs a specific task, packaged as a unit. In different programming languages, a
+subroutine may be called a procedure, a function, a routine, a method, or a subprogram.
+The generic term 'callable unit' is sometimes used. (Source Wikipedia.org)
+</pre>
+<pre class="example">
+Parameters - Parameters or arguments are pieces of data that are passed into a subroutine
+in order for that subroutine to correctly function.
+In this example: def displayTotal(total): 'total' is a parameter that will be passed to
+the 'displayTotal' subroutine. Multiple parameters can be managed using commas,
+for example: def displayTotals(total1, total2, total3, etc)
+</pre>
+<ul class="org-ul">
+<li><b>Subroutines</b> are <code>sequences of instructions</code> that <b>perform a specific task</b>. It <b>may return</b> <code>one</code> or <code>more values</code>, <i>but does not have to</i>.
+</li>
+<li>It may be easier to think of them as <code>mini-programs</code> <b>within</b> <code>a large program</code>.
+</li>
+<li>Subroutines <b>consist</b> of <code>modules of code</code> that <b>perform different tasks</b>.
+</li>
+<li>If these <b>tasks</b> are <b>repeated</b> throughout the program, they can be <code>written as subroutines</code>.
+</li>
+<li><b>Each subroutine</b> is given a <code>unique name</code> so that it can be <code>called</code> and <code>executed quickly</code> <i>throughout the program</i>, <b>without</b> having to <b>write the code again</b>.
+</li>
+<li>This <code>reduces</code> the <code>size of the code</code>, making the <code>program</code> more <code>logical</code> and <code>easier</code> to <code>read</code> and <code>maintain</code>.
+</li>
+<li><b>Let's look at an example of using subroutines:</b>
+</li>
+</ul>
+<p>
+<img src="img/Subroutines_Flowchart_Example.png" alt="Subroutines_Flowchart_Example.png" />
+<b>Step 1</b> 
+</p>
+<ul class="org-ul">
+<li>Here the main program (<i>shown in the flowchart on the left, beginning with the word “Start”</i>) asks the <code>user</code> to <code>input two numbers</code>.
+</li>
+<li>It then asks them to <b>select an option</b> from a <code>menu</code>.
+</li>
+<li>If they enter the word <b>“add”</b>, it will run a subroutine called <code>addNum</code> (<i>The smaller flowchart on the top right</i>), if they enter anything else it will run the <code>subtractNum</code> subroutine (<i>bottom right</i>).
+</li>
+<li><b>Let's look at the <code>subroutine box</code> in the main flowchart first:</b>
+</li>
+</ul>
+<p>
+<img src="img/Subroutine_Box.png" alt="Subroutine_Box.png" />
+<b>Step 2</b>
+</p>
+<ul class="org-ul">
+<li>We can see the <b>name</b> of the subroutine has been <b>defined</b> along with
+the <b>variables</b>; <code>num1</code> and <code>num2</code>.
+</li>
+<li>This means that the <b>addNum subroutine</b> is going to <code>use the values</code>
+  of <code>num1</code> and <code>num2</code> and so has been <code>passed</code> these <b>values</b>.
+</li>
+<li><b>Sending variables</b> to a <b>subroutine</b> is <b>known</b> as =passing <i>the variables</i>.
+</li>
+</ul>
+<p>
+<b>Step 3</b>
+</p>
+<ul class="org-ul">
+<li>We can now look at the <code>addNum subroutine</code> flowchart.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/addNum_Subroutine.png" alt="addNum_Subroutine.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>This subroutine will <code>add together</code> the <code>num1</code> and <code>num2</code> variables and <code>store</code> these in a <b>new variable</b> called <code>answer</code>.
+</li>
+<li>It will then <code>return</code> the <b>variable answer back</b> to the <code>main menu</code>.
+</li>
+<li>It will then <b>go back</b> to the <code>main menu</code>, <i>once the addNum subroutine</i> has been <b>completed</b>, where it will be able to <code>display the answer variable</code>.
+</li>
+<li>If we had <code>not returned</code> the <code>answer</code> variable back to the main menu, it would <code>not be able to display</code> the <code>answer</code> in the output as the main program on its own has not defined the answer variable and it does not know what it is.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Advantages of using Subroutines in programs</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Advantages of using Subroutines</b>
+</p>
+<ul class="org-ul">
+<li><b>Breaking down</b> or <b>decomposing</b> a <code>complex programming task</code> into <b>smaller sub-tasks</b> and <b>writing</b> each of these as <code>subroutines</code>, makes the <b>problem</b> <code>easier to solve</code>.
+</li>
+<li><b>Subroutines</b> can be used <code>several times</code> within a program.
+</li>
+<li>It <code>saves</code> the programmer <code>time</code> as it <b>reduces the amount of code</b> that needs to be written or amended by allowing you to <code>reuse code</code> <b>without</b> having to <code>write it again</code>.
+</li>
+<li>If you are working as part of a team you can divide a large program into smaller sections and allow individuals to simultaneously work on those sections.
+</li>
+<li>It makes the code easier to read if you use sensible subroutine labels as the headings tell the reader what that section of code is doing.
+</li>
+<li>By <b>reducing</b> the amount of <b>repeating tasks</b> you also <b>reduce the risk</b> of <code>introducing errors</code> in a program.
+</li>
+<li><b>Easy to maintain</b> as each <code>sunroutine</code> can be <code>tested separately</code>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It: Passing Data within Programs</h3>
+<div class="outline-text-3" id="text-1-3">
+<pre class="example">
+A parameter is a variable that is “passed” to a subroutine.
+</pre>
+<p>
+<b>Using Parameters to pass data within Programs</b>
+</p>
+<ul class="org-ul">
+<li>A <code>parameter</code> is a <code>variable</code> used in a <b>subroutine</b> to <code>refer to data</code> that is <b>inputted</b> <i>into the subroutine</i>.
+</li>
+<li>If a subroutine <code>requires a value</code> that has been <code>used</code> in <b>another part of the program</b>, then this <code>variable</code> <b>has</b> to be <b>“passed”</b> to the <code>subroutine</code>.
+</li>
+<li><b>You can</b> have <code>more than one</code> <b>parameter</b> <code>passing</code> into a <b>subroutine at a time</b>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/addNum_Code.png" alt="addNum_Code.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>This example demonstrates how to use <b>more than one parameter</b> to be <code>passed</code> into our <b>subroutine</b>.
+</li>
+<li>In this case <code>num1</code> and <code>num2</code> are <b>variables</b> inputted by the user in the main program.
+</li>
+<li>Once the variables have been inputted, the <code>addNum subroutine</code> is <b>called</b> and the <code>two parameters</code> (<i>num1 and num2</i>) are <code>passed</code> to that subroutine so they can be used.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It: Returning values from a Subroutine</h3>
+<div class="outline-text-3" id="text-1-4">
+<pre class="example">
+A parameter is a variable that is “passed” to a subroutine.
+</pre>
+<p>
+<b>Returning Single Values</b>
+</p>
+<ul class="org-ul">
+<li>We can <b>alter the previous code example</b> and <b>instead</b> of <code>outputting</code> the <code>total</code> as part of the subroutine, we can <code>use the variable</code> in the main program or even in another subroutine to <code>pass</code> that <code>value back</code> into the <b>main (calling) program</b> as shown below:
+</li>
+</ul>
+<p>
+<img src="img/addNum_Code_Value.png" alt="addNum_Code_Value.png" />
+<b>Returning Multiple Values</b>
+</p>
+<ul class="org-ul">
+<li>We can <b>return</b> <code>more than one value</code> <b>back</b> to the <code>main (calling) program</code>, however you need to <code>create</code> something called a <code>tuple</code>.
+</li>
+<li><b>A tuple</b> is a <code>short list</code> that <code>holds</code> <b>values temporarily</b>.
+</li>
+<li>The following pseudocode example, returns the numbers and the total back to the main program.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Subroutine_Return_Values.png" alt="Subroutine_Return_Values.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Here <code>num1</code>, <code>num2</code> and <code>total</code> have been <code>combined</code> in the <b>subroutine</b> into a <code>tuple</code> called <code>returningValue</code> and this is retuned to the program using the line <code>num1</code>, <code>num2</code>, <code>total ← addition()</code>.
+</li>
+<li>This will only work as long as the <code>data is presented</code> in the <code>same order</code> as it <code>appears</code> in the <code>tuple</code>.
+</li>
+<li>The <b>values</b> that are being <code>returned</code> are <code>grouped in a tuple</code> and then <code>used</code> in the <code>main program</code>, once they have been returned in the same order as the tuple.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It: Coding Challenge</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-sec-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1">Silver - Return values from a subroutine</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ol class="org-ol">
+<li>Using the Trinket below and the pseudocode above, create a a working Python program. (4 Marks)
+</li>
+</ol>
+<iframe src="https://trinket.io/embed/python/0310eaccbb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.7 Subroutines (Procedures and Functions): Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It: Local and Global Variables</h3>
+<div class="outline-text-3" id="text-1-6">
+<pre class="example">
+Global Variables - A variable that is declared in the main program.
+</pre>
+<pre class="example">
+Local Variable - A variable that is declared and only used in one subroutine.
+</pre>
+<p>
+<b>Using Local and Global Variables within Programs</b>
+</p>
+<ul class="org-ul">
+<li><b>Subroutines</b> may declare their own variables, called <code>local variables</code>, and that <b>local variables</b> <code>only exist</code> while in the <code>subroutine executing</code> and are <code>only accessible</code> <b>within the subroutine</b>.
+</li>
+<li><b>Global variables</b> are <code>declared outside</code> any <b>function</b> and they <b>can be accessed</b> on any function in the program.
+</li>
+<li><b>Local variables</b> are <code>declared inside</code> a <b>function</b> and <b>can only be used</b> <i>inside that function</i>.
+</li>
+<li>It is therefore <code>possible</code> to have <code>local variables</code> with the <code>same name</code> in <code>different functions</code>.
+</li>
+</ul>
+<p>
+<b>Why use local variables?</b>
+<img src="img/Global_Local_Variable.png" alt="Global_Local_Variable.png" />
+</p>
+<ul class="org-ul">
+<li>The example shown above, <code>num1</code> and <code>num2</code> are <code>global variables</code>, as they <code>can be used anywhere</code> in the <code>program</code> or <code>subroutines</code> as long as they have been passed to the subroutines as parameters.
+</li>
+<li>However, <code>userNum</code> is <code>only used within</code> the <code>changeNumbers subroutines</code>, so is a <code>local variable</code> as it is <code>not used anywhere else</code>.
+</li>
+<li><b>As soon as</b> the <code>changeNumbers subroutine</code> has <code>finished running</code> the <b>data stored</b> in <code>userNum</code> <i>will be deleted</i>.
+</li>
+</ul>
+
+<p>
+<b>Advantages of using Local Variables</b>
+</p>
+<ul class="org-ul">
+<li>Using local variables in a subroutine is good practice because it keeps the subroutine self-contained.
+</li>
+<li>This subroutine can then be used in any program and there is little chance of confusion over which variable names in the main program might conflict with similar names used in the subroutine.
+</li>
+<li>Another advantage is that the program would be easier to debug and maintain.
+</li>
+<li>Local variables save memory as the space used by local variables is freed up when the subroutines have finished.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 learn">
+<h3 id="sec-1-7">Learn It: Functions and Procedures</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+<b>Functions and Procedures</b>
+</p>
+<ul class="org-ul">
+<li>There are <b>two different types</b> of <code>subroutines</code> that we mainly use:
+<ul class="org-ul">
+<li><code>Functions</code>.
+</li>
+<li><code>Procedures</code> 
+</li>
+</ul>
+</li>
+<li><b>Functions</b> <code>return values back</code> to the <b>main program</b> and <b>procedures</b> <code>do not return a value</code> back to the <b>main program</b>.
+</li>
+<li>From the previous example program, <code>addNum</code> and <code>subtractNum</code> are <code>both functions</code> and <code>not procedures</code> as <b>they both</b> <code>return values</code> <i>back to the main menu</i>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 try">
+<h3 id="sec-1-8">Try It: Functions</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>Look at the following trinket windows, which <code>demonstrate</code> the use of <code>functions</code> to <code>return values</code> that are then <code>used</code> in the main program.
+</li>
+<li>In Python code the subroutines are defined <code>BEFORE</code> the main program.
+</li>
+<li>Follow through the main program and following the subroutine this is known as <code>“calling”</code> a subroutine.
+</li>
+</ul>
+<iframe src="https://trinket.io/embed/python/cdf214794c" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/7d02f08fdb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<ul class="org-ul">
+<li>The following code demonstrates another example of how a <code>function</code> is <code>created</code> and <code>called</code> in the main program:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Example_Function.png" alt="Example_Function.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3 try">
+<h3 id="sec-1-9">Try It: Procedures</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>Look at the following trinket windows, which <code>demonstrate</code> the use of <code>procedures</code> being <code>passed</code> <b>parameters (values)</b> that are then used in the main program.
+</li>
+<li>In Python the <b>subroutines</b> are <i>defined</i> <code>BEFORE</code> the main program.
+</li>
+</ul>
+<iframe src="https://trinket.io/embed/python/1c2007d759" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/82b7d68a7d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3 learn">
+<h3 id="sec-1-10">Learn It: Structured Programming</h3>
+<div class="outline-text-3" id="text-1-10">
+<pre class="example">
+Structured Programming - Structured programming (sometimes known as modular programming)
+is a subset of procedural programming that enforces a logical structure on the program
+being written to make it more efficient and easier to understand and modify.
+Structured programming frequently employs a top-down design model, in which developers map
+out the overall program structure into separate subsections. A defined function or set of
+similar functions is coded in a separate module or submodule, which means that code can be
+loaded into memory more efficiently and that modules can be reused in other programs.
+</pre>
+
+<div class="figure">
+<p><img src="img/Structure_Prog_Info.png" alt="Structure_Prog_Info.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>A structured programming approach</b> is one which has the following
+characteristics:
+<ul class="org-ul">
+<li>It uses a <b>modularised</b> approach. This means that it uses
+<b>subroutines</b> to <i>break down</i> the program into <b>manageable chunks</b> of
+code.
+</li>
+<li><b>Each subroutine</b> should have a <b>clear, well documented interface</b>
+    (<i>parameters and return value</i>).
+</li>
+<li>It just <b>uses the constructs</b> of; <i>sequence, selection</i> and <i>iteration</i>.
+</li>
+<li><b>Note</b>, that the term <b>subroutine interface</b> refers to the <i>number,
+type</i> and <i>order of the parameters</i> that appear in the subroutine
+header, and the <i>type of the return value</i>.
+</li>
+</ul>
+</li>
+</ul>
+<p>
+<b>Advantages of Structured Programming:</b>
+</p>
+<ul class="org-ul">
+<li>The structured approach has the advantages of using subroutines
+listed above.
+</li>
+<li>By following a <b>four-step approach</b>, you will have planned your solution and there should be no surprises when you start to develop the solution. 
+</li>
+<li>You know the variables you are using and you know about the
+processes that each subroutine needs to perform and how they link
+together.
+</li>
+<li>It also uses just <b>three or four</b> programming structures making the
+program quite easy to:
+<ul class="org-ul">
+<li><b>Understand.</b>
+</li>
+<li><b>Debug.</b>
+</li>
+<li><b>Maintain.</b>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-11" class="outline-3 badge">
+<h3 id="sec-1-11">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-11">
+</div>
+<div id="outline-container-sec-1-11-1" class="outline-4">
+<h4 id="sec-1-11-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-11-1">
+<ol class="org-ol">
+<li>What is a subroutine? (1 Mark)
+</li>
+<li>What is the difference between a procedure and a function? (2 Marks)
+</li>
+<li>When writing pseudocode or Python code, where should the subroutines be put, above or below the main program? (2 Marks)
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.7 Subroutines (Procedures and Functions): Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12" class="outline-3 badge">
+<h3 id="sec-1-12">Badge It: Exam Question and Coding Challenge</h3>
+<div class="outline-text-3" id="text-1-12">
+</div>
+<div id="outline-container-sec-1-12-1" class="outline-4">
+<h4 id="sec-1-12-1">Platinum - Exam question/Code Challenge</h4>
+<div class="outline-text-4" id="text-1-12-1">
+<ol class="org-ol">
+<li>The function <i>roll(n)</i> simulates the outcome of one random roll of
+an n-sided dice. E.g. <i>roll(6)</i> will randomly return either
+1,2,3,4,5 or 6.
+<ul class="org-ul">
+<li>a) Noel has declared a local variable inside the function. Explain <b>two</b> differences between local and global variables? (4 Marks)
+</li>
+<li>b) Noel wants to use his function in a dice game where two identical dice are rolled at the same time.
+<ul class="org-ul">
+<li>i) The player can choose the number of sides that the dice have.
+</li>
+<li>ii) The player's score is the number of rolls it takes until both dice have landed on the same number.
+</li>
+<li>iii) Write a sub-program that takes the number of sides of the dice as a parameter and returns a player's score. (5 Marks)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.7 Subroutines (Procedures and Functions): Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
