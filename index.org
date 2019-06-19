@@ -84,9 +84,12 @@
 #+END_HTML
 [[file:pages/3-2-6-string_handling.html][3.2.6 String Handling Operations in a Programming Language]]
 #+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-2-7-subroutines.html][3.2.7 Subroutines(Procedures and Functions)]]
+#+BEGIN_HTML
 </details>
 #+END_HTML
-
 * 3.3 Fundamentals of Data Representation
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading

@@ -1,0 +1,320 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.2.7 Subroutines (Procedures and Functions)
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Subroutines - Procedures and Functions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Subroutines_Main.png]] 
+** Learn It: What are subroutines?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Subroutines - In computer programming, a subroutine is a sequence of program instructions
+that performs a specific task, packaged as a unit. In different programming languages, a
+subroutine may be called a procedure, a function, a routine, a method, or a subprogram.
+The generic term 'callable unit' is sometimes used. (Source Wikipedia.org)
+#+END_SRC 
+#+BEGIN_SRC
+Parameters - Parameters or arguments are pieces of data that are passed into a subroutine
+in order for that subroutine to correctly function.
+In this example: def displayTotal(total): 'total' is a parameter that will be passed to
+the 'displayTotal' subroutine. Multiple parameters can be managed using commas,
+for example: def displayTotals(total1, total2, total3, etc)
+#+END_SRC 
+- *Subroutines* are =sequences of instructions= that *perform a specific task*. It *may return* =one= or =more values=, /but does not have to/.
+- It may be easier to think of them as =mini-programs= *within* =a large program=.
+- Subroutines *consist* of =modules of code= that *perform different tasks*.
+- If these *tasks* are *repeated* throughout the program, they can be =written as subroutines=.
+- *Each subroutine* is given a =unique name= so that it can be =called= and =executed quickly= /throughout the program/, *without* having to *write the code again*.
+- This =reduces= the =size of the code=, making the =program= more =logical= and =easier= to =read= and =maintain=.
+- *Let's look at an example of using subroutines:*
+[[file:img/Subroutines_Flowchart_Example.png]]
+*Step 1* 
+- Here the main program (/shown in the flowchart on the left, beginning with the word “Start”/) asks the =user= to =input two numbers=.
+- It then asks them to *select an option* from a =menu=.
+- If they enter the word *“add”*, it will run a subroutine called =addNum= (/The smaller flowchart on the top right/), if they enter anything else it will run the =subtractNum= subroutine (/bottom right/).
+- *Let's look at the =subroutine box= in the main flowchart first:*
+[[file:img/Subroutine_Box.png]]
+*Step 2*
+- We can see the *name* of the subroutine has been *defined* along with
+  the *variables*; =num1= and =num2=.
+- This means that the *addNum subroutine* is going to =use the values=
+  of =num1= and =num2= and so has been =passed= these *values*.
+- *Sending variables* to a *subroutine* is *known* as =passing /the variables/.
+*Step 3*
+- We can now look at the =addNum subroutine= flowchart.
+[[file:img/addNum_Subroutine.png]]
+- This subroutine will =add together= the =num1= and =num2= variables and =store= these in a *new variable* called =answer=.
+- It will then =return= the *variable answer back* to the =main menu=.
+- It will then *go back* to the =main menu=, /once the addNum subroutine/ has been *completed*, where it will be able to =display the answer variable=.
+- If we had =not returned= the =answer= variable back to the main menu, it would =not be able to display= the =answer= in the output as the main program on its own has not defined the answer variable and it does not know what it is.
+
+** Learn It: Advantages of using Subroutines in programs
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Advantages of using Subroutines*
+- *Breaking down* or *decomposing* a =complex programming task= into *smaller sub-tasks* and *writing* each of these as =subroutines=, makes the *problem* =easier to solve=.
+- *Subroutines* can be used =several times= within a program.
+- It =saves= the programmer =time= as it *reduces the amount of code* that needs to be written or amended by allowing you to =reuse code= *without* having to =write it again=.
+- If you are working as part of a team you can divide a large program into smaller sections and allow individuals to simultaneously work on those sections.
+- It makes the code easier to read if you use sensible subroutine labels as the headings tell the reader what that section of code is doing.
+- By *reducing* the amount of *repeating tasks* you also *reduce the risk* of =introducing errors= in a program.
+- *Easy to maintain* as each =sunroutine= can be =tested separately=.
+
+** Learn It: Passing Data within Programs
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+A parameter is a variable that is “passed” to a subroutine.
+#+END_SRC 
+*Using Parameters to pass data within Programs*
+- A =parameter= is a =variable= used in a *subroutine* to =refer to data= that is *inputted* /into the subroutine/.
+- If a subroutine =requires a value= that has been =used= in *another part of the program*, then this =variable= *has* to be *“passed”* to the =subroutine=.
+- *You can* have =more than one= *parameter* =passing= into a *subroutine at a time*.
+[[file:img/addNum_Code.png]]
+- This example demonstrates how to use *more than one parameter* to be =passed= into our *subroutine*.
+- In this case =num1= and =num2= are *variables* inputted by the user in the main program.
+- Once the variables have been inputted, the =addNum subroutine= is *called* and the =two parameters= (/num1 and num2/) are =passed= to that subroutine so they can be used.
+** Learn It: Returning values from a Subroutine
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+A parameter is a variable that is “passed” to a subroutine.
+#+END_SRC 
+*Returning Single Values*
+- We can *alter the previous code example* and *instead* of =outputting= the =total= as part of the subroutine, we can =use the variable= in the main program or even in another subroutine to =pass= that =value back= into the *main (calling) program* as shown below:
+[[file:img/addNum_Code_Value.png]]
+*Returning Multiple Values*
+- We can *return* =more than one value= *back* to the =main (calling) program=, however you need to =create= something called a =tuple=.
+- *A tuple* is a =short list= that =holds= *values temporarily*.
+- The following pseudocode example, returns the numbers and the total back to the main program.
+[[file:img/Subroutine_Return_Values.png]]
+- Here =num1=, =num2= and =total= have been =combined= in the *subroutine* into a =tuple= called =returningValue= and this is retuned to the program using the line =num1=, =num2=, =total ← addition()=.
+- This will only work as long as the =data is presented= in the =same order= as it =appears= in the =tuple=.
+- The *values* that are being =returned= are =grouped in a tuple= and then =used= in the =main program=, once they have been returned in the same order as the tuple.
+** Badge It: Coding Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Return values from a subroutine
+1. Using the Trinket below and the pseudocode above, create a a working Python program. (4 Marks)
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/0310eaccbb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.7 Subroutines (Procedures and Functions): Silver on BourneToLearn/
+
+** Learn It: Local and Global Variables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Global Variables - A variable that is declared in the main program.
+#+END_SRC 
+#+BEGIN_SRC
+Local Variable - A variable that is declared and only used in one subroutine.
+#+END_SRC 
+*Using Local and Global Variables within Programs*
+- *Subroutines* may declare their own variables, called =local variables=, and that *local variables* =only exist= while in the =subroutine executing= and are =only accessible= *within the subroutine*.
+- *Global variables* are =declared outside= any *function* and they *can be accessed* on any function in the program.
+- *Local variables* are =declared inside= a *function* and *can only be used* /inside that function/.
+- It is therefore =possible= to have =local variables= with the =same name= in =different functions=.
+*Why use local variables?*
+[[file:img/Global_Local_Variable.png]]
+- The example shown above, =num1= and =num2= are =global variables=, as they =can be used anywhere= in the =program= or =subroutines= as long as they have been passed to the subroutines as parameters.
+- However, =userNum= is =only used within= the =changeNumbers subroutines=, so is a =local variable= as it is =not used anywhere else=.
+- *As soon as* the =changeNumbers subroutine= has =finished running= the *data stored* in =userNum= /will be deleted/.
+
+*Advantages of using Local Variables*
+- Using local variables in a subroutine is good practice because it keeps the subroutine self-contained.
+- This subroutine can then be used in any program and there is little chance of confusion over which variable names in the main program might conflict with similar names used in the subroutine.
+- Another advantage is that the program would be easier to debug and maintain.
+- Local variables save memory as the space used by local variables is freed up when the subroutines have finished.
+
+** Learn It: Functions and Procedures
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Functions and Procedures*
+- There are *two different types* of =subroutines= that we mainly use:
+  - =Functions=.
+  - =Procedures= 
+- *Functions* =return values back= to the *main program* and *procedures* =do not return a value= back to the *main program*.
+- From the previous example program, =addNum= and =subtractNum= are =both functions= and =not procedures= as *they both* =return values= /back to the main menu/.
+** Try It: Functions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Look at the following trinket windows, which =demonstrate= the use of =functions= to =return values= that are then =used= in the main program.
+- In Python code the subroutines are defined =BEFORE= the main program.
+- Follow through the main program and following the subroutine this is known as =“calling”= a subroutine.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/cdf214794c" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/7d02f08fdb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+- The following code demonstrates another example of how a =function= is =created= and =called= in the main program:
+[[file:img/Example_Function.png]]
+
+** Try It: Procedures
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Look at the following trinket windows, which =demonstrate= the use of =procedures= being =passed= *parameters (values)* that are then used in the main program.
+- In Python the *subroutines* are /defined/ =BEFORE= the main program.
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/1c2007d759" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+#+BEGIN_HTML
+<iframe src="https://trinket.io/embed/python/82b7d68a7d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+#+END_HTML
+
+** Learn It: Structured Programming
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Structured Programming - Structured programming (sometimes known as modular programming)
+is a subset of procedural programming that enforces a logical structure on the program
+being written to make it more efficient and easier to understand and modify.
+Structured programming frequently employs a top-down design model, in which developers map
+out the overall program structure into separate subsections. A defined function or set of
+similar functions is coded in a separate module or submodule, which means that code can be
+loaded into memory more efficiently and that modules can be reused in other programs. 
+#+END_SRC
+[[file:img/Structure_Prog_Info.png]]
+- *A structured programming approach* is one which has the following
+  characteristics:
+  - It uses a *modularised* approach. This means that it uses
+    *subroutines* to /break down/ the program into *manageable chunks* of
+    code.
+  - *Each subroutine* should have a *clear, well documented interface*
+    (/parameters and return value/).
+  - It just *uses the constructs* of; /sequence, selection/ and /iteration/.
+  - *Note*, that the term *subroutine interface* refers to the /number,
+    type/ and /order of the parameters/ that appear in the subroutine
+    header, and the /type of the return value/.
+*Advantages of Structured Programming:*
+- The structured approach has the advantages of using subroutines
+  listed above.
+- By following a *four-step approach*, you will have planned your solution and there should be no surprises when you start to develop the solution. 
+- You know the variables you are using and you know about the
+  processes that each subroutine needs to perform and how they link
+  together.
+- It also uses just *three or four* programming structures making the
+  program quite easy to:
+  - *Understand.*
+  - *Debug.*
+  - *Maintain.*
+
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. What is a subroutine? (1 Mark)
+2. What is the difference between a procedure and a function? (2 Marks)
+3. When writing pseudocode or Python code, where should the subroutines be put, above or below the main program? (2 Marks)
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.7 Subroutines (Procedures and Functions): Gold on BourneToLearn/
+
+** Badge It: Exam Question and Coding Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Exam question/Code Challenge
+1. The function /roll(n)/ simulates the outcome of one random roll of
+   an n-sided dice. E.g. /roll(6)/ will randomly return either
+   1,2,3,4,5 or 6.
+    - a) Noel has declared a local variable inside the function. Explain *two* differences between local and global variables? (4 Marks)
+    - b) Noel wants to use his function in a dice game where two identical dice are rolled at the same time.
+      - i) The player can choose the number of sides that the dice have.
+      - ii) The player's score is the number of rolls it takes until both dice have landed on the same number.
+      - iii) Write a sub-program that takes the number of sides of the dice as a parameter and returns a player's score. (5 Marks)
+
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.7 Subroutines (Procedures and Functions): Platinum on BourneToLearn/
