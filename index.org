@@ -25,7 +25,7 @@
 :HTML_CONTAINER_CLASS: link-heading
 :END:
 
-* 3.1 Fundementals of Algorithms
+* 3.1 Fundamentals of Algorithms
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
