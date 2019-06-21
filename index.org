@@ -88,6 +88,10 @@
 #+END_HTML
 [[file:pages/3-2-7-subroutines.html][3.2.7 Subroutines(Procedures and Functions)]]
 #+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-2-8-rob_prog.html][3.2.8 Robust and Secure Programming]]
+#+BEGIN_HTML
 </details>
 #+END_HTML
 * 3.3 Fundamentals of Data Representation

@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.2.8 Robust and Secure Programming</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.2.8 Robust and Secure Programming</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Validation</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What is validation?</a></li>
+<li><a href="#sec-1-2">Learn It: Validation through Menus</a></li>
+<li><a href="#sec-1-3">Badge It: Coding Challenge</a>
+<ul>
+<li><a href="#sec-1-3-1">Silver - Validating Input (5 Marks)</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">Learn It: Try and Except</a></li>
+<li><a href="#sec-1-5">Learn It: Creating Simple Authentication Routines</a></li>
+<li><a href="#sec-1-6">Badge It: Coding Challenge</a>
+<ul>
+<li><a href="#sec-1-6-1">Gold - User Authentication (8 Marks)</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">Learn It: Testing your Programs</a></li>
+<li><a href="#sec-1-8">Learn It: Test Planning</a></li>
+<li><a href="#sec-1-9">Learn It</a></li>
+<li><a href="#sec-1-10">Try It</a></li>
+<li><a href="#sec-1-11">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-11-1">Platinum - Exam questions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Validation</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Robust_Prog_Main.png" alt="Robust_Prog_Main.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What is validation?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+Validation – Is when a program checks if the data being entered into the computer/device is
+reasonable, sensible and suitable. This a called data validation. For example, checking
+that a person’s DOB is not in the future or that the string is not empty. Validation does
+not ensure that data is correct.
+</pre>
+<ul class="org-ul">
+<li><b>Most commercial programs</b> or <b>web applications</b> require <code>some form</code> of <code>user input</code> to <code>ensure</code> that the <code>program</code> <b>will not crash</b> or do <b>something unexpectedly</b> if a user enters something incorrectly.
+</li>
+<li>Therefore, <code>all data</code> <b>must be checked</b> as soon as it is <code>inputted</code>.
+</li>
+<li><b>Validation</b> can <code>only check</code> <b>if a data input item</b> is <code>reasonable</code>, it <code>cannot</code> check if <code>it's correct</code>.
+</li>
+<li>If a web application <b>asks</b> the user for their <code>date of birth</code>, that <b>application</b> can <b>check</b> that the <b>data entered</b> would be <code>appropriate</code> for
+a particular age group. (<i>i.e. Over 18</i>), but it <code>cannot check</code> if you <b>entered</b> <code>December</code> instead of <code>January</code> by <code>mistake</code>.
+</li>
+<li>Although <b>validation can help ensure</b> that any <code>data entered</code> is <code>sensible</code>, <b>verification</b> <i>double checks</i> that the <b>data</b> has been <b>entered correctly</b>. <i>This is an important difference</i>.
+</li>
+<li><b>Data</b> is usually <code>entered twice</code> and the <code>two versions</code> are <code>compared</code>. If <b>they are different</b>, then the <code>user</code> is <code>prompted</code> to <code>try again</code>.
+</li>
+<li>This is <b>commonly</b> used with <code>username/email</code> and <code>passwords</code> that are entered on applications.
+</li>
+</ul>
+<p>
+<b>There are several different types of validation checks that can be used:</b>
+</p>
+<ol class="org-ol">
+<li><b>Range Check</b> – A number or date should be within a sensible or allowed or specific range.
+</li>
+<li><b>Type Check</b> – Ensures that the correct data type has been entered such as, an integer, float, string or Boolean.
+</li>
+<li><b>Length Check</b> – Ensures that a string contains a valid number of characters that is not too short or long, for example, a password is greater than 8 characters or a National Insurance Number is no longer than 9 characters.
+</li>
+<li><b>Presence Check</b> – This checks that the user input is not left blank/empty. This is essentially a length check that ensures that the length is greater than zero.
+</li>
+<li><b>Format Check</b> – Checks the format of the input, for example, a postcode or email address is appropriate.
+</li>
+</ol>
+<p>
+<b>Range Check Example:</b>
+</p>
+<ul class="org-ul">
+<li>The following algorithm asks the user to enter an integer between 5 and 10, which is validated by using a while loop that performs a range check. The number is then multiplied by 2 and outputted.
+</li>
+</ul>
+<p>
+<img src="img/Range_Check.png" alt="Range_Check.png" />
+<b>Type Check Example:</b>
+</p>
+<ul class="org-ul">
+<li>The following algorithm asks the user to something, and performs a type check to identify whether it is a string, integer or a float number.
+</li>
+</ul>
+<p>
+<img src="img/Type_Check.png" alt="Type_Check.png" />
+<b>Length Check Example:</b>
+</p>
+<ul class="org-ul">
+<li>The following algorithm asks the user to enter their name, and performs a length check. The name must be between 2 and 20 characters.
+</li>
+</ul>
+<p>
+<img src="img/Length_Check.png" alt="Length_Check.png" />
+<b>Presence Check Example:</b>
+</p>
+<ul class="org-ul">
+<li>The following algorithm asks the user to enter a sentence which uses the .lower() method to return the lowercased string from the given string and performs a presence check.
+</li>
+</ul>
+<p>
+<img src="img/Presence_Check.png" alt="Presence_Check.png" />
+<b>Format Check Example:</b>
+</p>
+<ul class="org-ul">
+<li>The following algorithm asks the user to enter their nine-digit National Insurance Number, and performs a format check using string formatting. The number must be 9 characters long and in the format of: LLNNNNNNL.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Format_Check.png" alt="Format_Check.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Validation through Menus</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Creating menus</b>
+</p>
+<ul class="org-ul">
+<li>One easy way to <code>control</code> what a <code>user enters</code> into a system is to use <code>menu commands</code> and <code>options</code> that you want to display for users.
+</li>
+<li>They can then <code>enter</code> a <code>letter</code> or a <code>number</code> to <b>select</b> the <b>option</b> they want.
+</li>
+<li>This is <code>another way</code> of <code>validating data</code> through a <code>menu</code> and set <code>options</code> to choose from, you can use <code>if statements</code> to give the <code>correct response</code>, <i>depending on how the user answers</i>.
+</li>
+<li><b>Below</b> is an <code>example menu algorithm</code> that <b>uses letters</b> for the <code>options</code> and whatever <b>letter is typed in</b> is <code>converted</code> to <code>lowercase</code> before the if statement starts.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Validation_Menu.png" alt="Validation_Menu.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 badge">
+<h3 id="sec-1-3">Badge It: Coding Challenge</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">Silver - Validating Input (5 Marks)</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ol class="org-ol">
+<li>Create a Python program that will ask the user to input two numbers between 1 and 100.
+</li>
+<li>Use a subroutine to find out if the data is valid or not. After valid numbers have been inputted the program should show them a menu giving them the option to either add or multiply the numbers together and keep asking for their menu selection until they enter a valid option.
+</li>
+<li>Use subroutines to perform the correct calculation and display the final answer in a user-friendly format (i.e. display a message such as “The answer is&#x2026;”)
+</li>
+</ol>
+
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.8 Robust and Secure Programming: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It: Try and Except</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<b>Try and Except</b>
+</p>
+<ul class="org-ul">
+<li><b>Sometimes</b> the <code>user</code> can make a <code>mistake</code> and <code>crash the program</code> which can be very frustrating.
+</li>
+<li><b>Instead</b> of <b>letting the program</b> <code>crash</code>, it is much more <code>user friendly</code> to <b>show them an error message</b> <i>so they can try again</i>.
+</li>
+<li>This is where the <code>“Try and Except”</code> can help. It <b>works in a similar way</b> to an <code>if statement</code>, but <b>instead</b> of <code>crashing the program</code> it will <code>run</code> the <code>catch</code> (<i>or except</i>) block.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Try_Except.png" alt="Try_Except.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3 learn">
+<h3 id="sec-1-5">Learn It: Creating Simple Authentication Routines</h3>
+<div class="outline-text-3" id="text-1-5">
+<pre class="example">
+Authentication – This is the process of recognising a user’s identity. It is the mechanism
+of associating an incoming request with a set of identifying credentials. The credentials
+provided are compared to those on a file in a database of the authorised user’s information
+on a local operating system or within an authentication server. The software process of
+ensuring that the person accessing a system is the person who is supposed to access that
+system.
+</pre>
+<ul class="org-ul">
+<li>Often a <b>computer system</b> will <code>require</code> a <code>user</code> to <code>login</code> to <b>ensure</b> that they are <code>authorised</code> to <b>use the system</b>.
+</li>
+</ul>
+<p>
+<b>The following authentication methods might be used:</b>
+</p>
+<ol class="org-ol">
+<li>User ID and passwords.
+</li>
+<li>Memorable Information – Prompting the user for something only the real user should know, such as a favourite place or the name of their first pet.
+</li>
+<li>Checking that the user is using their usual computer, by logging their IP address.
+</li>
+<li>Biometric Methods such as, optical, facial or fingerprint recognition.
+</li>
+<li><b>Authentication techniques</b> are used throughout the <b>Cyber Security world</b>.
+</li>
+<li>A <b>simple identification routine</b> is used when you <b>log into the school network</b>, or an <b>online shopping site</b>.
+</li>
+<li>Usually you’ll be <b>assigned</b> a <code>user ID</code> and you choose a <code>password</code> when you <b>first login</b>.
+</li>
+<li>The <b>password</b> is <code>encrypted</code> and <code>saved</code> in a <code>file</code>.
+</li>
+<li>When you enter your <code>user ID</code> and <code>encrypted password</code> it is <code>compared</code> to the <code>one stored</code> for <b>that</b> <i>user ID</i>.
+</li>
+</ol>
+<p>
+<b>Example Verification login:</b>
+<img src="img/Verification_ID.png" alt="Verification_ID.png" />
+</p>
+<ul class="org-ul">
+<li><b>User ID verification</b> is <code>used</code> when a <code>new user</code> is <b>logging</b> on to a <b>website</b> for the <code>first time</code>, they are <b>prompted</b> to <code>choose a password</code>, and then have to <code>re-enter</code> it to <code>verify</code> that they have <code>typed it</code> in <code>correctly</code>.
+</li>
+</ul>
+<p>
+<b>The following algorithm demonstrates a simple verification process:</b>
+<img src="img/Verification_Process.png" alt="Verification_Process.png" />
+<b>Example Password Authentication algorithm:</b>
+<img src="img/Password_Auth_Algor.png" alt="Password_Auth_Algor.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 badge">
+<h3 id="sec-1-6">Badge It: Coding Challenge</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-sec-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1">Gold - User Authentication (8 Marks)</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ol class="org-ol">
+<li>Create a simple authentication routine that uses a username and password.
+</li>
+<li>The username and password does not require encrypting and can be in plain text.
+</li>
+<li>The username must have at least 4 characters and the password must have at least 8 characters.
+</li>
+<li>Users should only be given 3 attempts to login, before being given a ‘locked out’ message and the program should terminate.
+</li>
+<li>A welcome message should be given for successful logins.
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.8 Robust and Secure Programming: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3 learn">
+<h3 id="sec-1-7">Learn It: Testing your Programs</h3>
+<div class="outline-text-3" id="text-1-7">
+<pre class="example">
+Testing – When developing a program, tests should be performed throughout the process
+to ensure that the program functions correctly, is error free and meets the
+specification requirements.
+</pre>
+<ul class="org-ul">
+<li>How do you know that your programs work correctly?
+</li>
+<li>They may run and produce some output, but you also need to test that it has worked as expected.
+</li>
+<li>We need to test our programs using sensible values to put into our programs to ensure that the outputs are what we expect.
+</li>
+</ul>
+<p>
+<b>Error Handling</b>
+<img src="img/Error_Handling_Info.png" alt="Error_Handling_Info.png" />
+<b>Types of Data to Test</b>
+</p>
+<ul class="org-ul">
+<li>There are <b>three</b> types of data that we should consider.:
+<ul class="org-ul">
+<li><b>Normal (Typical) Data.</b>
+</li>
+<li><b>Boundary (Extreme) Data.</b>
+</li>
+<li><b>Erroneous Data.</b>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="example">
+Normal(Typical) Data - Data that is valid and that represents how the program would
+be used. It is data you are expecting, for instance if you are asking for an integer
+between 3 and 20 you should test some data that is an integer between 3 and 20,
+for instance 7.
+</pre>
+<pre class="example">
+Boundary(Extreme) Data – Data that is just barely valid, to check that the extreme
+ranges of normal input work correctly. It is data that is on the boundaries. If you
+are asking for a number between 3 and 20 inclusive, then test 3 and 20 as well as 0
+and 21 to check that the boundaries of the range are working as you expect.
+</pre>
+<pre class="example">
+Erroneous Data – Data that should not be accepted by the system. It is data that is
+just wrong. If you are asking for an integer test what happens when you enter a number
+with a decimal point or a string?
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3 learn">
+<h3 id="sec-1-8">Learn It: Test Planning</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+<b>Test Plan</b>
+</p>
+<ul class="org-ul">
+<li>The <code>best way</code> to approach <code>testing</code> is to <code>devise a test plan</code>, where we can <code>write down</code> the <i>sample data</i> we will <b>use</b> to <code>ensure</code> that the <i>program works correctly</i>.
+</li>
+<li>The <code>main aim of testing</code> is to <b>identify errors</b> such as, <i>syntax, logical</i> and <i>run-time errors</i> as-well as <i>dealing</i> with <i>invalid user inputs</i> that <b>stops the program</b> from <code>working correctly</code>.
+</li>
+<li>The <code>first four columns</code> are <b>part of the design</b> and <b>planning stage</b> and the <code>final column</code> is <b>completed</b> when you <b>test the finished program</b>.
+</li>
+<li><b>If numbers or dates</b> are being <b>added by the user</b>, then you <code>should use</code> <b>test data</b> that <b>checks</b>; <i>Normal (typical), Boundary (extreme)</i> and <i>Erroneous data</i>.
+</li>
+<li><b>Boundary data</b> <code>includes both ends</code> of the <code>allowed range</code>, as well as <code>data</code> that <code>should not be allowed</code>, just <code>outside this range</code>. (<i>i.e. 2 or 21</i>).
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Test_Plan_Table.png" alt="Test_Plan_Table.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-9" class="outline-3 learn">
+<h3 id="sec-1-9">Learn It</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>We can perform some tests without the use of a computer or any of the real code.
+</li>
+<li>Often, when we write an algorithm, we'll want to test that it works correctly.
+</li>
+<li>We can use trace tables to achieve this.
+</li>
+</ul>
+<pre class="example">
+X &lt;-- 1
+Y &lt;-- 2
+WHILE X &lt; 20
+    OUTPUT X
+    X &lt;-- X + Y
+    Y &lt;-- Y + 1
+ENDWHILE
+</pre>
+<ul class="org-ul">
+<li>The variable in the above pseudocode algorithm can traced using a trace table.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">OUTPUT</th>
+<th scope="col" class="right">X</th>
+<th scope="col" class="right">Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">&#xa0;</td>
+<td class="right">1</td>
+<td class="right">2</td>
+</tr>
+
+<tr>
+<td class="right">1</td>
+<td class="right">3</td>
+<td class="right">3</td>
+</tr>
+
+<tr>
+<td class="right">3</td>
+<td class="right">6</td>
+<td class="right">4</td>
+</tr>
+
+<tr>
+<td class="right">6</td>
+<td class="right">10</td>
+<td class="right">5</td>
+</tr>
+
+<tr>
+<td class="right">10</td>
+<td class="right">15</td>
+<td class="right">6</td>
+</tr>
+
+<tr>
+<td class="right">15</td>
+<td class="right">21</td>
+<td class="right">7</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>The trace table allows us to understand what is happening to the values of variables within the algorithm.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-10" class="outline-3 try">
+<h3 id="sec-1-10">Try It</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li>Try drawing trace tables for the following algorithms.
+</li>
+</ul>
+<pre class="example">
+Y &lt;-- 3
+FOR X &lt;-- 1 TO 5
+    Y &lt;-- Y + X
+ENDFOR
+OUTPUT Y
+</pre>
+<pre class="example">
+List &lt;-- [10,8,3,5,6,1,2]
+Total &lt;-- 0
+FOR i &lt;-- 1 TO LEN(List)
+    TOTAL &lt;-- TOTAL + List[i]
+ENDFOR
+OUTPUT TOTAL
+</pre>
+<pre class="example">
+num &lt;-- 78
+answer &lt;-- ''
+WHILE num &gt; 0
+    r &lt;-- num MOD 2
+    num &lt;-- num / 2
+    answer &lt;-- STR(r) + answer 
+ENDWHILE
+OUTPUT answer
+</pre>
+<pre class="example">
+nums = [6,2,8,1,9,2]
+n = 0
+FOR i &lt;-- 1 TO LEN(nums)
+    IF nums[i] &gt; n
+        n = nums[i]
+    ENDIF
+ENDFOR
+OUTPUT n
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-11" class="outline-3 badge">
+<h3 id="sec-1-11">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-11">
+</div>
+<div id="outline-container-sec-1-11-1" class="outline-4">
+<h4 id="sec-1-11-1">Platinum - Exam questions</h4>
+<div class="outline-text-4" id="text-1-11-1">
+<ol class="org-ol">
+<li>A program is only as good as its data. Explain how validation and verification can help ensure that the data is as 'good' as possible? (6 Marks)
+</li>
+<li>Describe <b>one</b> method of validation used by online surveys to help them manage the quality of their data? (2 Marks)
+</li>
+<li>Validation is required for the data in the parameters for the function below. Set a test, and show an example of invalid data (2 Marks)
+</li>
+</ol>
+<pre class="example">
+Function WorkingTime (TimeIn,TimeOut)
+</pre>
+<ol class="org-ol">
+<li>Give <b>two</b> reasons why programmers test their code? (2 Marks)
+</li>
+<li>A program requires a date of birth from the 20th century to be entered. Provide normal, extreme and erroneous test data examples in the format DD/MM/YYYY. (3 Marks)
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.8 Robust and Secure Programming: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
