@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.2.9 Classification of Programming Languages</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.2.9 Classification of Programming Languages</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Classification of Programming Languages</a>
+<ul>
+<li><a href="#sec-1-1">Learn It: What are the different levels of Programming Languages?</a></li>
+<li><a href="#sec-1-2">Learn It: Program Translators</a></li>
+<li><a href="#sec-1-3">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-3-1">Silver - Exam Style Questions</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">Badge It: Exam Questions</a>
+<ul>
+<li><a href="#sec-1-4-1">Gold - Answer the following questions:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">Badge It: Exam Question and Coding Challenge</a>
+<ul>
+<li><a href="#sec-1-5-1">Platinum - Exam question/Code Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Classification of Programming Languages</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/Programming_Languages_Main.png" alt="Programming_Languages_Main.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It: What are the different levels of Programming Languages?</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+A programming language - Is a formal language, which comprises a set of instructions
+that produce various kinds of output. Programming languages are used in computer
+programming to implement specific algorithms. Most programming languages consist
+of instructions for computers.
+</pre>
+<pre class="example">
+A computer program - Is a collection of instructions that performs a specific task
+when executed by a computer. Most computer devices require programs to function
+properly. A computer program is usually written by a computer programmer and can be
+can be written in either high or low-level languages, depending on the task and the
+hardware being used.
+</pre>
+<ul class="org-ul">
+<li>When we think about computer programmers, we probably think about people who write in <code>high-level language</code>.
+</li>
+<li><b>Most computer programming languages</b> are <code>written</code> in a <code>high-level programming language</code>. They <code>use</code> the <b>common English language</b> to help make the code more <code>understandable</code> and to <code>speed up</code> the <b>process</b> of <i>writing</i> and <i>debugging programs</i>.
+</li>
+<li><b>Computers</b>, however, <code>use</code> their <code>own language</code> written using <code>binary</code> called <code>Machine code</code>. This is <code>known</code> as a <code>low-level language</code>.
+</li>
+</ul>
+
+<p>
+<b>Programming languages can be divided into two different levels:</b>
+</p>
+<ul class="org-ul">
+<li><b>Low-level Languages</b> – Hardware/Processor-specific assembly languages and machine code.
+</li>
+<li><b>High-level Languages</b> – Python, Visual Basic, Java, C, C++, SQL and many more.
+</li>
+</ul>
+
+<p>
+<b>Differences between Low-level and High-level Languages:</b>
+<img src="img/Diff_High_Low_Prog_Table.png" alt="Diff_High_Low_Prog_Table.png" />
+</p>
+
+
+<div class="figure">
+<p><img src="img/High_Level_Lang_Info.png" alt="High_Level_Lang_Info.png" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/Low_Level_Lang_Info.png" alt="Low_Level_Lang_Info.png" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/Diff_Assem_Mach_Info.png" alt="Diff_Assem_Mach_Info.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It: Program Translators</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Program Translators:</b>
+</p>
+<ul class="org-ul">
+<li><b>High-level languages</b> and <b>assembler languages</b> <code>need</code> to be <code>translated</code> into <code>machine code</code> for a <code>computer</code> system to <code>understand it</code>.
+</li>
+</ul>
+<p>
+<b>There are three types of translator programs that will do this:</b>
+</p>
+<ul class="org-ul">
+<li><b>Interpreters</b>
+<ul class="org-ul">
+<li>Once the program has been created, it needs to be saved before it can be run.
+</li>
+<li><b>At this point</b> the <b>programming language</b> <code>translates</code> the <code>source code</code> into <code>machine code</code> <i>one command/line at a time</i> and <code>immediately</code> <i>executes them</i>.
+</li>
+<li><b>You must have</b> the <code>interpreter installed</code> on your computer <code>in order</code> to <code>run</code> the <code>software</code>.
+</li>
+<li><b>Every time the program runs</b>, it <code>has</code> to be <code>translated again</code> as there is no secondary file that is created to store the machine code and therefore must be translated each time the program is run.
+</li>
+<li><b>A long, complex program</b> will take a considerably <code>more time</code> to <code>execute</code> <i>if it is being interpreted</i>.
+</li>
+<li><b>This makes interpreted code</b> <code>slower</code> to run <b>than</b> <code>compiled code</code>, but it <code>shows any errors</code> <i>as soon as it finds them</i>, so it is <code>easier to debug</code> <b>than</b> <code>compiled code</code>. <i>Python, Basic, JavaScript</i> and <i>Pascal</i> are <b>all</b> <code>interpreter-based programming languages</code>.
+</li>
+</ul>
+</li>
+<li><b>Compilers:</b>
+<ul class="org-ul">
+<li><b>A compiler</b> <code>translates</code> <b>all</b> the <code>source code</code> <b>at the same time</b> to <b>create</b> the <code>compiled code</code>, or <code>machine code</code>, <b>also known as</b> the <code>object code</code>.
+</li>
+<li><b>The machine code</b> is <b>saved</b> and <b>stored</b> in a <code>separate file</code> to the <b>high-level programming language</b>.
+</li>
+<li>Once the programmer has <code>created the program</code>, they need to <b>request it</b> to be <code>compiled</code> <b>before</b> they can <code>run</code> and <code>test</code> the file which can <code>take a while</code>.
+</li>
+<li>This can <code>make testing</code> <b>small sections</b> of the program <code>slower</code> as the <b>whole program</b> <code>needs</code> to be <code>compiled</code> <b>before</b> any of <i>it can be run</i>.
+</li>
+<li><b>Compiling can take a long time</b>, but <code>once complete</code> the compiled <code>code runs quickly</code> and <code>reports</code> a list of <code>errors</code>, if any have occurred.
+</li>
+<li><b>Overall</b>, once the program has <code>finished compiling</code>, <code>compiled programs</code> are <code>faster to run</code>. <b>Java</b> and <b>C++</b> are <i>compiler programming languages</i>.
+</li>
+<li><b>For the developer</b>, <code>compiled code</code> has the <code>advantage</code> that the <b>user of the software</b> <code>cannot see</code> the <code>source code</code> or <code>copy it</code>.
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Compiler_Image.png" alt="Compiler_Image.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><b>Assemblers:</b>
+<ul class="org-ul">
+<li><b>An assembler</b> <code>translates</code> <b>assembly language</b> into <code>machine code</code> and is <b>effectively a compiler</b> for the <code>assembly language</code>, but can also be <b>used</b> <i>interactively</i> like an <code>interpreter</code>.
+</li>
+<li><b>Assembly language</b> uses words called <code>‘mnemonics’</code>, such as <code>LOAD, STORE</code> and <code>ADD</code>. The <b>instructions</b> are <code>specific</code> to the <code>hardware</code> being <code>programmed</code> because <code>different CPUs</code> <b>use</b> <i>different programming languages</i>.
+</li>
+<li><b>Finally</b>, every <code>assembly language instruction</code> is <code>translated</code> into <b>a single</b> <code>machine code</code> <b>instruction</b>.
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Assembler_Image.png" alt="Assembler_Image.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><b>Compilers versus Interpreters Table:</b>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Compiler_Vs_Interpreter_Table.png" alt="Compiler_Vs_Interpreter_Table.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 badge">
+<h3 id="sec-1-3">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">Silver - Exam Style Questions</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ol class="org-ol">
+<li><b>Explain</b> why a developer, who is good at both low-level and high-level programming languages, would normally use a high-level language when writing programs? (4 Marks)
+</li>
+<li>What is machine code? (1 Mark)
+</li>
+<li>Give an example of a high-level language? (1 Mark)
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.9 Classification of Programming Languages: Silver on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 badge">
+<h3 id="sec-1-4">Badge It: Exam Questions</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1">Gold - Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ol class="org-ol">
+<li><b>Describe</b> <b>three differences</b> between low-level language and high-level languages? (6 Marks)
+</li>
+<li>What does a translator do? (2 Marks)
+</li>
+<li>Identify <b>two</b> types of translators that can turn high-level languages into machine code? (4 Marks)
+</li>
+</ol>
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.9 Classification of Programming Languages: Gold on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It: Exam Question and Coding Challenge</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-sec-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1">Platinum - Exam question/Code Challenge</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ol class="org-ol">
+<li>What is the difference between an interpreter and a compiler? (4 Marks)
+</li>
+<li>What is assembly language? (2 Marks)
+</li>
+<li>A developer is writing a program.
+<ul class="org-ul">
+<li>a) The program is written in a high-level language and it is then translated into machine code. Describe two differences between high-level language and machine code? (2 Marks)
+</li>
+<li>b) One type of translator is an interpreter.
+<ul class="org-ul">
+<li>i) <b>Describe</b> how an interpreter translates high-level language programs into machine code? (1 Mark)
+</li>
+<li>ii) <b>State</b> the name of a different type of translator that can be used to translate high-level code into machine code? (1 Mark)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+
+<p>
+<i>Upload to Fundamentals of 3.2 Programming - 3.2.9 Classification of Programming Languages: Platinum on BourneToLearn</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

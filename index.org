@@ -92,6 +92,10 @@
 #+END_HTML
 [[file:pages/3-2-8-rob_prog.html][3.2.8 Robust and Secure Programming]]
 #+BEGIN_HTML
+<p></p>
+#+END_HTML
+[[file:pages/3-2-9-class_prog_langs.html][3.2.9 Classification of Programming Languages]]
+#+BEGIN_HTML
 </details>
 #+END_HTML
 * 3.3 Fundamentals of Data Representation
@@ -273,22 +277,6 @@
 </details>
 #+END_HTML
 * Older AQA Materials
-* [[file:pages/3-1-5-Scope.html][3.1.5 Scope]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3-1-8-3.html][3.1.8.3 The CPU]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3-1-8-4.html][3.1.8.4 Memory]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3-1-8-SecondaryStorage.html][3.1.8.4 Secondary Storage]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
 * [[file:pages/3-1-9-Algorithms.html][3.1.9 Algorithms]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
@@ -301,35 +289,11 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:pages/3.1.10-Hex.html][3.1.10 Hexadecimal]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3-1-10-RepresentingImages.html][3-1-10 Images]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3.1.10-Sound.html][3.1.10 Sound]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
 * [[file:pages/3-1-10-Questions.html][3.1.10 Questions]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
 * [[file:pages/3-1-11-Software-development-life-cycle.html][3.1.11 The Software Development Life Cycle]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3-1-11-1-Prototyping.html][3.1.11.1 Prototyping]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3-1-12-Testing.html][3.1.12 Testing]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: link-heading
-:END:
-* [[file:pages/3-1-13-Networking.html][3.1.13 Networking]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:

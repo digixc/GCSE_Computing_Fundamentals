@@ -104,6 +104,7 @@ not ensure that data is correct.
   3. *Length Check* – Ensures that a string contains a valid number of characters that is not too short or long, for example, a password is greater than 8 characters or a National Insurance Number is no longer than 9 characters.
   4. *Presence Check* – This checks that the user input is not left blank/empty. This is essentially a length check that ensures that the length is greater than zero.
   5. *Format Check* – Checks the format of the input, for example, a postcode or email address is appropriate.
+
 *Range Check Example:*
 - The following algorithm asks the user to enter an integer between 5 and 10, which is validated by using a while loop that performs a range check. The number is then multiplied by 2 and outputted.
 [[file:img/Range_Check.png]]
@@ -127,7 +128,7 @@ not ensure that data is correct.
 *Creating menus*
 - One easy way to =control= what a =user enters= into a system is to use =menu commands= and =options= that you want to display for users.
 - They can then =enter= a =letter= or a =number= to *select* the *option* they want.
-- This is =another way= of =validating data= through a =menu= and set =options= to choose from, you can use =if statements= to give the =correct response=, /depending on how the user answers/.
+- This is =another way= of =validating data= through the use of =menus= with set =options= to choose from, you can use =if statements= to give the =correct response=, /depending on how the user answers/.
 - *Below* is an =example menu algorithm= that *uses letters* for the =options= and whatever *letter is typed in* is =converted= to =lowercase= before the if statement starts.
 [[file:img/Validation_Menu.png]]
 
@@ -172,7 +173,8 @@ system.
   2. Memorable Information – Prompting the user for something only the real user should know, such as a favourite place or the name of their first pet.
   3. Checking that the user is using their usual computer, by logging their IP address.
   4. Biometric Methods such as, optical, facial or fingerprint recognition.
-- *Authentication techniques* are used throughout the *Cyber Security world*.
+
+*Authentication techniques* are used throughout the *Cyber Security world*.
 - A *simple identification routine* is used when you *log into the school network*, or an *online shopping site*.
 - Usually you’ll be *assigned* a =user ID= and you choose a =password= when you *first login*.
 - The *password* is =encrypted= and =saved= in a =file=.
@@ -251,7 +253,7 @@ with a decimal point or a string?
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- We can perform some tests without the use of a computer or any of the real code.
+- We can also perform some tests without the use of a computer or any of the real code.
 - Often, when we write an algorithm, we'll want to test that it works correctly.
 - We can use trace tables to achieve this.
 #+begin_src
@@ -322,14 +324,14 @@ OUTPUT n
 *** Platinum - Exam questions
 1. A program is only as good as its data. Explain how validation and verification can help ensure that the data is as 'good' as possible? (6 Marks)
 2. Describe *one* method of validation used by online surveys to help them manage the quality of their data? (2 Marks)
-3. Validation is required for the data in the parameters for the function below. Set a test, and show an example of invalid data (2 Marks)
+3. Validation is required for the data in the parameters for the *function below*. Set a test, and show an example of invalid data (2 Marks)
+4. Give *two* reasons why programmers test their code? (2 Marks)
+5. A program requires a date of birth from the 20th century to be entered. Provide normal, extreme and erroneous test data examples in the format DD/MM/YYYY. (3 Marks)
 #+BEGIN_SRC
 Function WorkingTime (TimeIn,TimeOut)
 #+END_SRC 
-4. Give *two* reasons why programmers test their code? (2 Marks)
-5. A program requires a date of birth from the 20th century to be entered. Provide normal, extreme and erroneous test data examples in the format DD/MM/YYYY. (3 Marks)
-
 
 /Upload to Fundamentals of 3.2 Programming - 3.2.8 Robust and Secure Programming: Platinum on BourneToLearn/
+
 
 
