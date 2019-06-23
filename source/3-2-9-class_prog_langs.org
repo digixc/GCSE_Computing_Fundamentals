@@ -102,8 +102,8 @@ hardware being used.
 - *Computers*, however, =use= their =own language= written using =binary= called =Machine code=. This is =known= as a =low-level language=.
 
 *Programming languages can be divided into two different levels:*
-  - *Low-level Languages* – Hardware/Processor-specific assembly languages and machine code.
   - *High-level Languages* – Python, Visual Basic, Java, C, C++, SQL and many more.
+  - *Low-level Languages* – Hardware/Processor-specific assembly languages and machine code.
 
 *Differences between Low-level and High-level Languages:*
 [[file:img/Diff_High_Low_Prog_Table.png]]
