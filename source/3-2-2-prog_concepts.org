@@ -239,7 +239,7 @@ The generic term callable unit is sometimes used. (Source Wikipedia.org)
 [[file:img/Subroutines_Table.png]]
 - The following code demonstrates how a =function= is =created= and =called= in the main program:
 [[file:img/Example_Function.png]]
-- *Note:* This topic will be covered in greater details in the /3.2.10-Subroutines (Procedures and Functions)/
+- *Note:* This topic will be covered in greater details in the /3.2.7-Subroutines (Procedures and Functions)/
 
 ** Badge It: Exam Questions
 :PROPERTIES:

@@ -1,0 +1,337 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.2.8 Robust and Secure Programming
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Validation
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Robust_Prog_Main.png]]
+** Learn It: What is validation?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Validation – Is when a program checks if the data being entered into the computer/device is
+reasonable, sensible and suitable. This a called data validation. For example, checking
+that a person’s DOB is not in the future or that the string is not empty. Validation does
+not ensure that data is correct.
+#+END_SRC 
+- *Most commercial programs* or *web applications* require =some form= of =user input= to =ensure= that the =program= *will not crash* or do *something unexpectedly* if a user enters something incorrectly.
+- Therefore, =all data= *must be checked* as soon as it is =inputted=.
+- *Validation* can =only check= *if a data input item* is =reasonable=, it =cannot= check if =it's correct=.
+- If a web application *asks* the user for their =date of birth=, that *application* can *check* that the *data entered* would be =appropriate= for
+  a particular age group. (/i.e. Over 18/), but it =cannot check= if you *entered* =December= instead of =January= by =mistake=.
+- Although *validation can help ensure* that any =data entered= is =sensible=, *verification* /double checks/ that the *data* has been *entered correctly*. /This is an important difference/.
+- *Data* is usually =entered twice= and the =two versions= are =compared=. If *they are different*, then the =user= is =prompted= to =try again=.
+- This is *commonly* used with =username/email= and =passwords= that are entered on applications.
+*There are several different types of validation checks that can be used:*
+  1. *Range Check* – A number or date should be within a sensible or allowed or specific range.
+  2. *Type Check* – Ensures that the correct data type has been entered such as, an integer, float, string or Boolean.
+  3. *Length Check* – Ensures that a string contains a valid number of characters that is not too short or long, for example, a password is greater than 8 characters or a National Insurance Number is no longer than 9 characters.
+  4. *Presence Check* – This checks that the user input is not left blank/empty. This is essentially a length check that ensures that the length is greater than zero.
+  5. *Format Check* – Checks the format of the input, for example, a postcode or email address is appropriate.
+
+*Range Check Example:*
+- The following algorithm asks the user to enter an integer between 5 and 10, which is validated by using a while loop that performs a range check. The number is then multiplied by 2 and outputted.
+[[file:img/Range_Check.png]]
+*Type Check Example:*
+- The following algorithm asks the user to something, and performs a type check to identify whether it is a string, integer or a float number.
+[[file:img/Type_Check.png]]
+*Length Check Example:*
+- The following algorithm asks the user to enter their name, and performs a length check. The name must be between 2 and 20 characters.
+[[file:img/Length_Check.png]]
+*Presence Check Example:*
+- The following algorithm asks the user to enter a sentence which uses the .lower() method to return the lowercased string from the given string and performs a presence check.
+[[file:img/Presence_Check.png]]
+*Format Check Example:*
+- The following algorithm asks the user to enter their nine-digit National Insurance Number, and performs a format check using string formatting. The number must be 9 characters long and in the format of: LLNNNNNNL.
+[[file:img/Format_Check.png]]
+
+** Learn It: Validation through Menus
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Creating menus*
+- One easy way to =control= what a =user enters= into a system is to use =menu commands= and =options= that you want to display for users.
+- They can then =enter= a =letter= or a =number= to *select* the *option* they want.
+- This is =another way= of =validating data= through the use of =menus= with set =options= to choose from, you can use =if statements= to give the =correct response=, /depending on how the user answers/.
+- *Below* is an =example menu algorithm= that *uses letters* for the =options= and whatever *letter is typed in* is =converted= to =lowercase= before the if statement starts.
+[[file:img/Validation_Menu.png]]
+
+** Badge It: Coding Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Validating Input (5 Marks)
+1. Create a Python program that will ask the user to input two numbers between 1 and 100.
+2. Use a subroutine to find out if the data is valid or not. After valid numbers have been inputted the program should show them a menu giving them the option to either add or multiply the numbers together and keep asking for their menu selection until they enter a valid option.
+3. Use subroutines to perform the correct calculation and display the final answer in a user-friendly format (i.e. display a message such as “The answer is...”)
+
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.8 Robust and Secure Programming: Silver on BourneToLearn/
+
+** Learn It: Try and Except
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Try and Except*
+- *Sometimes* the =user= can make a =mistake= and =crash the program= which can be very frustrating.
+- *Instead* of *letting the program* =crash=, it is much more =user friendly= to *show them an error message* /so they can try again/.
+- This is where the =“Try and Except”= can help. It *works in a similar way* to an =if statement=, but *instead* of =crashing the program= it will =run= the =catch= (/or except/) block.
+[[file:img/Try_Except.png]]
+
+** Learn It: Creating Simple Authentication Routines
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Authentication – This is the process of recognising a user’s identity. It is the mechanism
+of associating an incoming request with a set of identifying credentials. The credentials
+provided are compared to those on a file in a database of the authorised user’s information
+on a local operating system or within an authentication server. The software process of
+ensuring that the person accessing a system is the person who is supposed to access that
+system. 
+#+END_SRC 
+- Often a *computer system* will =require= a =user= to =login= to *ensure* that they are =authorised= to *use the system*.
+*The following authentication methods might be used:*
+  1. User ID and passwords.
+  2. Memorable Information – Prompting the user for something only the real user should know, such as a favourite place or the name of their first pet.
+  3. Checking that the user is using their usual computer, by logging their IP address.
+  4. Biometric Methods such as, optical, facial or fingerprint recognition.
+
+*Authentication techniques* are used throughout the *Cyber Security world*.
+- A *simple identification routine* is used when you *log into the school network*, or an *online shopping site*.
+- Usually you’ll be *assigned* a =user ID= and you choose a =password= when you *first login*.
+- The *password* is =encrypted= and =saved= in a =file=.
+- When you enter your =user ID= and =encrypted password= it is =compared= to the =one stored= for *that* /user ID/.
+*Example Verification login:*
+[[file:img/Verification_ID.png]]
+- *User ID verification* is =used= when a =new user= is *logging* on to a *website* for the =first time=, they are *prompted* to =choose a password=, and then have to =re-enter= it to =verify= that they have =typed it= in =correctly=.
+*The following algorithm demonstrates a simple verification process:*
+[[file:img/Verification_Process.png]]
+*Example Password Authentication algorithm:*
+[[file:img/Password_Auth_Algor.png]]
+
+** Badge It: Coding Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - User Authentication (8 Marks)
+1. Create a simple authentication routine that uses a username and password.
+2. The username and password does not require encrypting and can be in plain text.
+3. The username must have at least 4 characters and the password must have at least 8 characters.
+4. Users should only be given 3 attempts to login, before being given a ‘locked out’ message and the program should terminate.
+5. A welcome message should be given for successful logins.
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.8 Robust and Secure Programming: Gold on BourneToLearn/
+
+** Learn It: Testing your Programs
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Testing – When developing a program, tests should be performed throughout the process
+to ensure that the program functions correctly, is error free and meets the
+specification requirements.
+#+END_SRC 
+- How do you know that your programs work correctly?
+- They may run and produce some output, but you also need to test that it has worked as expected.
+- We need to test our programs using sensible values to put into our programs to ensure that the outputs are what we expect.
+*Error Handling*
+[[file:img/Error_Handling_Info.png]]
+*Types of Data to Test*
+- There are *three* types of data that we should consider.:
+  - *Normal (Typical) Data.*
+  - *Boundary (Extreme) Data.*
+  - *Erroneous Data.*
+#+BEGIN_SRC
+Normal(Typical) Data - Data that is valid and that represents how the program would
+be used. It is data you are expecting, for instance if you are asking for an integer
+between 3 and 20 you should test some data that is an integer between 3 and 20,
+for instance 7.
+#+END_SRC 
+#+BEGIN_SRC
+Boundary(Extreme) Data – Data that is just barely valid, to check that the extreme
+ranges of normal input work correctly. It is data that is on the boundaries. If you
+are asking for a number between 3 and 20 inclusive, then test 3 and 20 as well as 0
+and 21 to check that the boundaries of the range are working as you expect.
+#+END_SRC
+#+BEGIN_SRC
+Erroneous Data – Data that should not be accepted by the system. It is data that is
+just wrong. If you are asking for an integer test what happens when you enter a number
+with a decimal point or a string?
+#+END_SRC  
+
+** Learn It: Test Planning
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Test Plan*
+- The =best way= to approach =testing= is to =devise a test plan=, where we can =write down= the /sample data/ we will *use* to =ensure= that the /program works correctly/.
+- The =main aim of testing= is to *identify errors* such as, /syntax, logical/ and /run-time errors/ as-well as /dealing/ with /invalid user inputs/ that *stops the program* from =working correctly=.
+- The =first four columns= are *part of the design* and *planning stage* and the =final column= is *completed* when you *test the finished program*.
+- *If numbers or dates* are being *added by the user*, then you =should use= *test data* that *checks*; /Normal (typical), Boundary (extreme)/ and /Erroneous data/.
+- *Boundary data* =includes both ends= of the =allowed range=, as well as =data= that =should not be allowed=, just =outside this range=. (/i.e. 2 or 21/).
+[[file:img/Test_Plan_Table.png]]
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can also perform some tests without the use of a computer or any of the real code.
+- Often, when we write an algorithm, we'll want to test that it works correctly.
+- We can use trace tables to achieve this.
+#+begin_src
+X <-- 1
+Y <-- 2
+WHILE X < 20
+    OUTPUT X
+    X <-- X + Y
+    Y <-- Y + 1
+ENDWHILE
+#+end_src
+- The variable in the above pseudocode algorithm can traced using a trace table.
+| OUTPUT |  X | Y |
+|--------+----+---|
+|        |  1 | 2 |
+|      1 |  3 | 3 |
+|      3 |  6 | 4 |
+|      6 | 10 | 5 |
+|     10 | 15 | 6 |
+|     15 | 21 | 7 |
+- The trace table allows us to understand what is happening to the values of variables within the algorithm.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Try drawing trace tables for the following algorithms.
+#+begin_src
+Y <-- 3
+FOR X <-- 1 TO 5
+    Y <-- Y + X
+ENDFOR
+OUTPUT Y
+#+end_src
+#+begin_src
+List <-- [10,8,3,5,6,1,2]
+Total <-- 0
+FOR i <-- 1 TO LEN(List)
+    TOTAL <-- TOTAL + List[i]
+ENDFOR
+OUTPUT TOTAL
+#+end_src
+#+begin_src
+num <-- 78
+answer <-- ''
+WHILE num > 0
+    r <-- num MOD 2
+    num <-- num / 2
+    answer <-- STR(r) + answer 
+ENDWHILE
+OUTPUT answer
+#+end_src
+#+begin_src
+nums = [6,2,8,1,9,2]
+n = 0
+FOR i <-- 1 TO LEN(nums)
+    IF nums[i] > n
+        n = nums[i]
+    ENDIF
+ENDFOR
+OUTPUT n
+#+end_src
+
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Exam questions
+1. A program is only as good as its data. Explain how validation and verification can help ensure that the data is as 'good' as possible? (6 Marks)
+2. Describe *one* method of validation used by online surveys to help them manage the quality of their data? (2 Marks)
+3. Validation is required for the data in the parameters for the *function below*. Set a test, and show an example of invalid data (2 Marks)
+4. Give *two* reasons why programmers test their code? (2 Marks)
+5. A program requires a date of birth from the 20th century to be entered. Provide normal, extreme and erroneous test data examples in the format DD/MM/YYYY. (3 Marks)
+#+BEGIN_SRC
+Function WorkingTime (TimeIn,TimeOut)
+#+END_SRC 
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.8 Robust and Secure Programming: Platinum on BourneToLearn/
+
+
+

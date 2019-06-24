@@ -1,0 +1,188 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.2.9 Classification of Programming Languages
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Classification of Programming Languages
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Programming_Languages_Main.png]]
+** Learn It: What are the different levels of Programming Languages?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+A programming language - Is a formal language, which comprises a set of instructions
+that produce various kinds of output. Programming languages are used in computer
+programming to implement specific algorithms. Most programming languages consist
+of instructions for computers.
+#+END_SRC 
+#+BEGIN_SRC
+A computer program - Is a collection of instructions that performs a specific task
+when executed by a computer. Most computer devices require programs to function
+properly. A computer program is usually written by a computer programmer and can be
+can be written in either high or low-level languages, depending on the task and the
+hardware being used.
+#+END_SRC 
+- When we think about computer programmers, we probably think about people who write in =high-level language=.
+- *Most computer programming languages* are =written= in a =high-level programming language=. They =use= the *common English language* to help make the code more =understandable= and to =speed up= the *process* of /writing/ and /debugging programs/.
+- *Computers*, however, =use= their =own language= written using =binary= called =Machine code=. This is =known= as a =low-level language=.
+
+*Programming languages can be divided into two different levels:*
+  - *High-level Languages* – Python, Visual Basic, Java, C, C++, SQL and many more.
+  - *Low-level Languages* – Hardware/Processor-specific assembly languages and machine code.
+
+*Differences between Low-level and High-level Languages:*
+[[file:img/Diff_High_Low_Prog_Table.png]]
+
+[[file:img/High_Level_Lang_Info.png]]
+
+[[file:img/Low_Level_Lang_Info.png]]
+
+[[file:img/Diff_Assem_Mach_Info.png]]
+
+** Learn It: Program Translators
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*Program Translators:*
+- *High-level languages* and *assembler languages* =need= to be =translated= into =machine code= for a =computer= system to =understand it=.
+*There are three types of translator programs that will do this:*
+- *Interpreters*
+  - Once the program has been created, it needs to be saved before it can be run.
+  - *At this point* the *programming language* =translates= the =source code= into =machine code= /one command/line at a time/ and =immediately= /executes them/.
+  - *You must have* the =interpreter installed= on your computer =in order= to =run= the =software=.
+  - *Every time the program runs*, it =has= to be =translated again= as there is no secondary file that is created to store the machine code and therefore must be translated each time the program is run.
+  - *A long, complex program* will take a considerably =more time= to =execute= /if it is being interpreted/.
+  - *This makes interpreted code* =slower= to run *than* =compiled code=, but it =shows any errors= /as soon as it finds them/, so it is =easier to debug= *than* =compiled code=. /Python, Basic, JavaScript/ and /Pascal/ are *all* =interpreter-based programming languages=.
+- *Compilers:*
+  - *A compiler* =translates= *all* the =source code= *at the same time* to *create* the =compiled code=, or =machine code=, *also known as* the =object code=.
+  - *The machine code* is *saved* and *stored* in a =separate file= to the *high-level programming language*.
+  - Once the programmer has =created the program=, they need to *request it* to be =compiled= *before* they can =run= and =test= the file which can =take a while=.
+  - This can =make testing= *small sections* of the program =slower= as the *whole program* =needs= to be =compiled= *before* any of /it can be run/.
+  - *Compiling can take a long time*, but =once complete= the compiled =code runs quickly= and =reports= a list of =errors=, if any have occurred.
+  - *Overall*, once the program has =finished compiling=, =compiled programs= are =faster to run=. *Java* and *C++* are /compiler programming languages/.
+  - *For the developer*, =compiled code= has the =advantage= that the *user of the software* =cannot see= the =source code= or =copy it=.
+[[file:img/Compiler_Image.png]]
+- *Assemblers:*
+  - *An assembler* =translates= *assembly language* into =machine code= and is *effectively a compiler* for the =assembly language=, but can also be *used* /interactively/ like an =interpreter=.
+  - *Assembly language* uses words called =‘mnemonics’=, such as =LOAD, STORE= and =ADD=. The *instructions* are =specific= to the =hardware= being =programmed= because =different CPUs= *use* /different programming languages/.
+  - *Finally*, every =assembly language instruction= is =translated= into *a single* =machine code= *instruction*.
+[[file:img/Assembler_Image.png]]
+
+- *Compilers versus Interpreters Table:*
+[[file:img/Compiler_Vs_Interpreter_Table.png]]
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Exam Style Questions
+1. *Explain* why a developer, who is good at both low-level and high-level programming languages, would normally use a high-level language when writing programs? (4 Marks)
+2. What is machine code? (1 Mark)
+3. Give an example of a high-level language? (1 Mark)
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.9 Classification of Programming Languages: Silver on BourneToLearn/
+
+** Badge It: Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Answer the following questions:
+1. *Describe* *three differences* between low-level language and high-level languages? (6 Marks)
+2. What does a translator do? (2 Marks)
+3. Identify *two* types of translators that can turn high-level languages into machine code? (4 Marks)
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.9 Classification of Programming Languages: Gold on BourneToLearn/
+
+** Badge It: Exam Question and Coding Challenge
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Exam question/Code Challenge
+1. What is the difference between an interpreter and a compiler? (4 Marks)
+2. What is assembly language? (2 Marks)
+3. A developer is writing a program.
+    - a) The program is written in a high-level language and it is then translated into machine code. Describe two differences between high-level language and machine code? (2 Marks)
+    - b) One type of translator is an interpreter.
+      - i) *Describe* how an interpreter translates high-level language programs into machine code? (1 Mark)
+      - ii) *State* the name of a different type of translator that can be used to translate high-level code into machine code? (1 Mark)
+
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.2.9 Classification of Programming Languages: Platinum on BourneToLearn/
