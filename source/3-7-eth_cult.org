@@ -1,0 +1,671 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society, including issues of Privacy
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Ethical Issues
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Ethical Issues?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Ethical_Issues_Main.png]]
+#+BEGIN_SRC
+Ethical Issues - There are several laws that govern the use of computer systems and data.
+However, ethics is about good practice and behaving in a morally correct way.
+Ethical actions are different from lawful actions. Sometimes actions can be legal, but
+are they ethical?
+#+END_SRC 
+*Ethical Issues*
+- Computers have become so widespread that it is difficult to imagine a world without them.
+- How much of an impact have they had on our culture and society?
+*For Example:*
+    - Ethical issues are ignored with our ever increasing use of technology.
+    - It is becoming more socially accpetable to use technology online to be rude or bully strangers that we haven't even met.
+    - Has technology made us a more or less caring society?
+*Q1. Think of some other ways in which computer technology has changed the way in which we live and work?*
+- *There are some benefits:*
+    - Many more people are now able to communicate with a much larger world through the use of social media, communication is possible
+    between countires and people have access to a ealth of information through the Internet.
+    - There is also benefits to safety as it is easier than it used to be for a person who is in danger to seek help.
+- *Here are some drawbacks:*
+    - Mobile phones make it much easier for people to put their own privacy at risk, since photos and personal information can be
+    shared on social media platforms.
+    - There are ethical issues relating to equality of access to technology, where more advanced technology is not available to
+    less affluent people which creates what is known as the digital divide.
+*In this topic we will cover the following aspects:*
+- Recent Technological Developments.
+- Internet Privacy.
+- Censorship and Surveillance.
+- Social Consequences.
+- Cyber Security.
+- Wireless Networking.
+- Mobile Technologies.
+- Cloud Storage.
+- Wearable Technologies.
+- Computer Based Implants.
+- Health Impacts.
+- The Digital Divide.
+- Environmental Issues.
+- Legal Issues.
+** Learn It: Recent Technological Developments
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Tech_Dev_Main.png]]
+#+BEGIN_SRC
+Technological Developments - Computer technology is vital in today's society. Technology
+has given us many benefits such as 5G, Virtual Reality, Mixed Reality, Artificial
+Intelligence, Regenerative medicine, Driverless vehicles, Cryptocurrency, Quantum
+computing, Digital Assistants, Robots, Smart Devices and automation are a few of the many
+technologies available. However, technology also has a wide variety of negative impacts,
+such as health issues, less social interactions, over reliance on technology, environmental
+pollution and increased use of energy to power the huge number of electronic devices. 
+#+END_SRC 
+*Recent Technological Developments*
+- *The Mixed Reality(MR):*
+  - *Mixed Reality* is the =combination= of *twin technologies* of =Virtual Reality (VR)= and =Augmented Reality (AR)=.
+  - Mixed reality (MR), *sometimes referred* to as =polyplexity (PP)=, is the *merging* of =real= and =virtual worlds= to *produce* /new environments/ and /visualisations/ where =physical= and =digital= *objects co-exist* and *interact* in =real-time=.
+  - *Mixed reality* not only *takes place* in the =physical world= or the =virtual world=, but is a =hybrid of reality= and =virtual reality=, *encompassing both* =Augmented Reality= and =Augmented Virtuality= via =immersive technology=.
+  - The *first immersive mixed reality system*, providing enveloping /sight, sound/, and /touch/ was the =Virtual Fixtures platform= developed at the =U.S. Air Force's Armstrong Laboratories= in the /early 1990s/.
+  - *In a study published in 1992*, the =Virtual Fixtures project= at the U.S. Air Force =demonstrated= for the first time that =human performance= could be =significantly amplified= by the *introduction* of *spatially* /registered virtual objects overlaid on top of a person's direct view of a real physical environment/.
+[[file:img/Mixed_Reality.png]]
+- *Artificial Intelligence(AI):*
+  - With the onset of Artificial Intelligence, the machines are programmed to conduct the tasks that were restricted to the human mind. The artificial intelligence-based software can think intelligently like humans.
+  - The subsets of artificial intelligence like machine learning and
+    deep learning are gaining constant popularity among
+    businesses. Now, more and more companies are taking machine
+    learning development services as a necessity.
+  - Artificial intelligence improvises business tasks and makes them simple. It has provided the web app developers a brilliant support to experiment. This has made AI to reach healthcare, banking, education, mathematics, etc.
+[[file:img/AI_Image.png]]
+*What is AI?*
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kWmX3pd1f10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+- *IBM Deep Blue:*
+  - *Deep Blue* was a =chess-playing computer= developed by *IBM*. It is known for being the =first computer chess-playing system= to *win both a chess game* and a *chess match* against a =reigning world champion=.
+  - *Deep Blue* =won= its =first game= against a *world champion* on the =10th February 1996=, when it =defeated= /Garry Kasparov/ in game one of a =six-game match=. *However*, =Kasparov= *won three* and *drew two* of the following five games, =defeating Deep Blue= by a *score of 4–2*.
+  - *Deep Blue* was then =heavily upgraded=, and *played Kasparov again* in =May 1997=.
+  - Deep Blue *won game six*, therefore =winning= the *six-game rematch 3½–2½* and becoming the =first computer system= to *defeat* a =reigning world champion=.
+  - *Kasparov* =accused IBM of cheating= and *demanded a rematch*. /IBM refused and dismantled Deep Blue/.
+[[file:img/DeepBlue.png]]
+- *Google DeepMind AlphaGo:*
+  - *AlphaGo* is a =computer program= that *plays* the *board game* =Go=.
+  - It was developed by Alphabet Inc.'s =Google DeepMind= in London.
+  - AlphaGo had =three far more powerful successors=, called /AlphaGo Master, AlphaGo Zero/ and /AlphaZero/.
+  - *In October 2015*, the original =AlphaGo= became the =first computer Go program= to =beat= a =human professional Go player= without handicaps on a full-sized 19×19 board.
+  - *In March 2016*, it =beat= *Lee Sedol* in a /five-game match/, the =first time a computer Go program= has *beaten* a =9-dan professional=.
+  - *Although,* it =lost= to *Lee Sedol* in the =fourth game=, Lee resigned in the final game, giving a /final score of 4 games to 1 in favour of AlphaGo/.
+  - In *recognition* of the *victory*, =AlphaGo= was /awarded an honorary 9-dan by the Korea Baduk Association/.
+  - *At the 2017 Future of Go Summit*, its *successor* =AlphaGo Master,* =beat Ke Jie=, the =world No.1 ranked player= at the time, in a three-game match (/the even more powerful AlphaGo Zero already existed but was not yet announced/).
+  - After this, =AlphaGo= was /awarded professional 9-dan by the Chinese Weiqi Association/.
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SUbqykXVx0A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+- *The Internet of Things (IoT):*
+  - *Internet of things* /covers the broad categories of devices/ that are =connected to the Internet=.
+  - These *applications* have *spread* to both the =customer= and =industrial domains=. In the area of safety and customer experience, IoT is witnessing exponential demands.
+  - *Every second* =over 127= /new devices/ will be =connected= to the =Internet=, according to David Evan’s calculations (/former researcher of CISCO/). This gives an idea about the constantly increasing reach of *IoT*.
+  - It is =estimated= that =over 90% automobiles= by *2020* /will be IoT enabled/. Moreover, according to the data found by Statista, there were around =23.14 billion devices= in *2018* and the =number= /will reach/ =26.66 billion by 2019=.
+[[file:img/IoT_Graph.png]]
+- *Regenerative Medicine:*
+  - Though it may sound like *science fiction*, doctors are already =producing made-to-order body parts=. *To get started*, doctors *scrape cells* /off the body part in question/ and =grow them in a petri dish=. *In time*, the =body part grows= strong enough that it can be =implanted inside the patient.=
+  - One company, *Organovo*, has =developed= a * 3D printer* capable of =printing body parts=. *Over time*, this *new technology* will become =increasingly mainstream=, /providing patients with lifesaving organ replacements/.
+[[file:img/Regenative_Medicine.png]]
+- *Driverless vehicles:*
+  - Automakers like Tesla, General Motors and Volvo have already
+    developed semi-autonomous vehicles. But self-driving technology is
+    rapidly evolving. General Motors announced that it will launch a
+    car that has no steering wheel or pedals by 2019.
+  - Uber, meanwhile, is leading the push for pilotless flying vehicles, and has teamed up with NASA to develop an air-traffic-control system. Uber is also working with aircraft manufacturers to develop prototypes, with the intention of launching a beta program in 2020.
+  - These cars will be controlled by AI programs.
+[[file:img/Autonomous_Cars.png]]
+- *The trolley problem:*
+- *Watch the following videos and then consider the questions below:*
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vfIdNV22LQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ixIoDYVfKA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_HTML
+
+- *Now imagine this situation:*
+#+BEGIN_SRC
+Your car is driving at a moderate speed down a road. It turns a corner and there are five
+pedestrians standing in the road. Even if the car were to apply its brakes, it would still
+hit them, so the only way to avoid killing the pedestrians is to mount the pavement.
+Unfortunately, there is a single pedestrian standing on the pavement, who will be killed
+if the car chooses to swerve.
+#+END_SRC 
+1. Should the car continue in a straight line and kill 5 people, or should it make a decision to intentionally kill a single individual?
+2. Write down what you think the car should do and why?
+3. If it was later discovered that the car should have been driving more slowly, who is to blame? Is it the fault of the owner of the car, the manufacturer of the car, the programmer of the car, or the program?
+4. Should computers be programmed to always serve humanity and therefore choose options that lead to the greatest good?
+#+BEGIN_HTML
+<br>
+#+END_HTML
+- *Cryptocurrency:*
+  - At one point this year, =Bitcoin= was *worth* more than =$19,000 per
+    coin=, and while the =value= of the =cryptocurrency= has =since=
+    *declined*, a =single coin= is /still worth thousands of dollars/.
+  - *Cryptocurrency* may be =controversial= today, but it has
+    =steadily become increasingly mainstream=.
+  - Some of the =largest hedge funds= are /betting on Bitcoin/ - *Which could just the beginning of a cryptocurrency revolution.*
+[[file:img/Bitcoin.png]]
+- *Quantum Computing:*
+  - The =typical computer= uses a =series= of =binary digits= (/zeros and ones/) to /communicate information/.
+  - *Although today's computers* are =quite powerful=, they still have =considerable limitations= that make it *difficult* to =process challenging= *machine-learning problems*.
+  - *Quantum computers* rely on =quantum bits= to *carry information*. These =bits can exist= in a =state= which *allow quantum computers* to =process challenging datasets= *much better* than /traditional computers do/.
+  - As a result, =quantum computing= can =help= to *produce serious* =machine-learning breakthroughs= that might /otherwise be impossible solve/.
+  - While this technology is still in its early stages, companies like /Microsoft/ and /Google/ are =investing billions= in *developing* =supercomputers= capable of developing highly accurate predictive models. *These models* can be *used* in everything from =self-driving cars= to =marketing campaigns.=
+[[file:img/Quantum_Comp.png]]
+** Try It: Technology Issues Research
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- *Research the following technologies and complete the table below:*
+[[file:img/Try_It_Tech_Issues_Table.png]]
+** Learn It: Internet Privacy
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Internet Privacy Issues - It is difficult to keep information private whilst using
+technology. When registering for a new website and services, you are expected to
+accept a privacy agreement and provide personal information that can often be used
+and shared by the provider.
+#+END_SRC 
+*Internet Privacy*
+[[file:img/Internet_Privacy_Info.png]]
+- *Computer technology* is also *used* to =monitor behaviour=. *Companies* can *monitor* your =behaviour= *over* the =Internet= and *use* of =mobile phones=.
+- *New surveillance legislation* /forces/ =ISPs= and =mobile operators= to *keep* a =record= of =every citizen's browsing history= for up to =a year=.
+- *Whistle-blowers* are *people* who =expose any information= that is *deemed* /illegal, unethical, or not correct/ within an =organisation's policies=.
+- *WikiLeaks* is =a website= that =publishes information= from *anonymous whistle-blowers*.
+
+** Learn It: Censorship and Surveillance
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Censorship and Surveillance Issues - Censorship and surveillance are controversial topics.
+Some people support them in some form, e.g. to protect children or to stop terrorism.
+Others are completely against them, including several non-profit organisations which
+campaign against what they call cyber censirship and mass surveillance.
+#+END_SRC 
+*Censorship and Surveillance*
+[[file:img/Censorship_Surveillance_Info.png]]
+- *Should we try to regulate the Internet?*
+- *Read* the following BBC [[http://www.bbc.co.uk/guides/z3mnmnb][report]].
+  1. Write a brief report about whether we should regulate the Internet.
+  2. Make a list of the pros and cons of the regulation of online content. 
+  
+** Learn It: Social Consequences
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Social Consequence Issues - Social Consequences – These cover ethical, cultural, legal
+and environmental issues that technology can have both negative and positive impacts
+on society.
+#+END_SRC 
+*Social Consequences*
+[[file:img/Social Consequences_Info.png]]
+*Technology Issues*
+[[file:img/Technology_Issues_Info.png]]
+
+** Learn It: Cyber Security Issues
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Cyber Security Issues - A series of processes, practices and technologies that protect
+networks, computers, software and personal data from damage, loss and unauthorised
+access.
+#+END_SRC 
+*Cyber Security*
+[[file:img/Cyber_Security_Info.png]]
+- A *government cyber security policy* may actually =weaken= your own =privacy= if it grants the =government access= to =personal data=.
+- A *company* may be held =liable= if it =does not protect data= from =unauthorised access=, it can be sued for a data breach.
+- *Cyber security* overlaps with many other aspects including, /Mobile Technologies, Wireless Networking/ and /Cloud Storage/.
+
+** Learn It: Wireless Networking
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Wireless (Wi-Fi) Wireless Fidelity – Like mobile phones and TVs, wireless networks
+use radio waves to transmit data. Microwaves are a type of radiowave that consist
+of electromagnetic radiation travelling in waves with a frequency higher that
+1 gigahertz (1GHz to 300GHz per second). Data is transmitted across the network in
+frequency bands of between 2.4 and 5GHz.
+The bands are split into numbered channels that each cover a small frequency range.
+They also use different Wi-Fi spectrums for example; 802.11b, 802.11g and 802.11n.
+#+END_SRC 
+*Wireless Networking*
+[[file:img/Wireless.png]]
+- *Easier* =access= for =unauthorised users= than in a wired network.
+- Wireless networks are *better* in terms of the =environment= as far as the *production of cables* and *network hardware* are concerned.
+- *Privacy* can be =breached= as *other users* may be =able to access= *personal data*.
+- *Wireless networking* is being used in the *development* of ='smart cities'=, with technology being used to improve the running of urban areas.
+- This *includes everything* from =identifying= which roads need gritting when it snows, to =controlling smart streetlights=.
+- There are many =risks associated= with a =highly connected system=, which include =technical failures= which could =disrupt= an *entire network of streetlights*.
+- *Cyber security threats* are always an issue, for example, if a =hacker= with =malicious intent= gained =access= to the =system=, they could potentially disrupt the lighting in a particular area.
+
+** Learn It: Mobile Technologies
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Mobile Technologies - Are indispensable in the modern workplace. Due to their versatility,
+they offers a range of benefits, but also come with considerable risks to a business.
+There are both advantages and disadvantages of using mobile technology for both personal
+and business use.
+#+END_SRC 
+*What is mobile technology?*
+- *Mobile technology* is exactly what the name implies - *technology* that is =portable=. Examples of mobile IT devices include:
+  - Laptop, Tablets and Netbook Computers.
+  - Smartphones.
+  - Smart Watches.
+  - Global Positioning System (GPS) devices.
+  - Wireless debit/credit card payment terminals.
+  - Smart Devices/Appliances.
+  - Digital Assistants. etc..
+*Portable devices utilise many different communications technologies, including:*
+- *Wireless Fidelity (Wi-Fi)* - A type of wireless local area network technology.
+- *Bluetooth* - Connects mobile devices wirelessly.
+- *Third Generation* =(3G)= and *Fourth Generation* =(4G)= - Global System for Mobile Communications =(GSM).=
+- *General Packet Radio Service* =(GPRS)= data services - Data networking services for mobile phones.
+- *Dial-up Services* - Data networking services using modems and telephone lines.
+- *Virtual Private Networks* - Secure access to a private network.
+*These technologies enable us to network mobile devices, such as phones and laptops, to our offices or the internet while travelling.*
+
+*Advantages of mobile technology:*
+  - Ability to make and accept payments wirelessly.
+  - Increased ability to communicate with friends and family.
+  - Greater access to modern apps and services.
+  - Improved networking capabilities
+
+*Disdvantages of mobile technology:*
+  - *Costs* - New technologies and devices are often costly to purchase and require ongoing maintenance and upkeep.
+  - *Workplace Distractions* - As the range of technologies and devices increases, so does the potential for them to disrupt productivity and workflow in the business.
+  - *Increased IT Security Needs* - Portable devices are vulnerable to security risks, especially if they contain sensitive personal data.
+  - *Personal Data* - Your phone knows a lot about you in terms of, location, friends, online activity, buying trends, social media info and posts etc..
+  - *Environmental Issues* - Constant replacement of mobile phones and their batteries have a negative impact on the environment.
+  - *Legal Issues* - Illegal copies of MP3s are commonly found on mobile devices.
+[[file:img/Mobile_tech_Image.png]]
+
+** Learn It: Cloud Storage
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Cloud Storage - Is a cstorage method in which data is stored on remote servers and accessed
+from the internet, or "cloud." It is maintained, operated and managed by a cloud storage
+service provider.
+#+END_SRC 
+*What is Cloud Storage?*
+- Cloud storage involves uploading data to a remote server or computer via an Internet connection.
+- This data storage system is maintained by a third party, for example: Dropbox, Google Drive, Microsoft OneDrive and Apple iCloud.
+- Instead of saving data on your computer's hard drive or other local storage device, you save it in a remote storage facility, and access it via the Internet.
+- Clients pay for online storage space to which they can upload data such as photos, videos, music and documents.
+
+*There are several advantages of cloud storage:*
+  - There is a reduced risk of physical damage.
+  - You can access the data anytime and from anywhere in the World.
+  - You can share the data with other people in different locations.
+  - Backups are no longer an issue, as it is the responsibility of the provider to keep the data safe.
+  - It is a secure form of storage - As long as the password is kept private.
+  - Storage capacity on your local machine is freed up, giving you more storage space.
+
+*There are also some disadvantages of cloud storage:*
+  - You must have an Internet connection to access your data.
+  - Data is at risk of hacking.
+  - Basic storage plans are usually free, but larger storage capacities often require payment.
+  - The speed at which you can access your data is limited by your Internet connection, therefore it might take a long time to upload and download large files.
+[[file:img/Cloud_Storage_Image.png]]
+
+** Learn It: Wearable Technologies
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Wearable Technology - Are devices that can be worn and often include tracking information
+related to health and fitness behaviour.
+#+END_SRC 
+*What are Wearable Technologies?*
+- *Wearable Technology* is technology you can =wear=, such as =smart
+  watches=, =activity trackers= and =smart textiles= (/for example,
+  those used during a yoga class to track your positions and monitor
+  how long you hold the pose for/).
+- Wearable technologies can include items that can:
+  - Be worn to monitor your movement, number of
+    steps, time spent sleeping, sitting or standing and also tell you
+    how to live a healthier life.
+  - Be worn by a swimmer to measure the number of kick-turns, breath
+    counts and stroke effecicency. Or for a runner to track their
+    distance, speed and heart rate during a run.
+  - Tighten your trainers automatically at the touch of a button, like
+    Nike's replica Marty McFly's Mag Trainers.
+- *Some of these devices*, as well as your =smartphone= enable your =movements= to be =tracked= by your /friends/ and /family/, or by /complete strangers/ *without your knowledge*. Check out the [[https://www.strava.com/heatmap#7.00/-120.90000/38.36000/hot/all][Strava]] Global Heatmap website which =keeps tracking information= about =people= who wear a =Fitbit smartwatch=. 
+*The data that is gathered from these wearable technologies could be used by organisations such as insurance companies and the government.*
+[[file:img/Smart_Tech.png]]
+
+** Learn It: Computer Based Implants
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Computer Based Implants - Implants are typically an integrated circuit device or RFID
+transponder encased in silicate glass and implanted in the body under the skin.
+#+END_SRC 
+*What are Computer Based Implants?*
+- *Computer Based Implants have been used in many different fields of medicine:
+  - *Cochlear Implants* - These have been successfully used in restoring partial hearing to profoundly deaf people.
+  - *Pace Makers* - Heart implants may also include electrodes for regulating heartbeats, and warn of possible heart attacks and monitor the effects of medical treatments.
+  - *RFID Chips* - Can be inserted under the skin enable users to authorise actions such as, door access, security, contactless payments, access Bluetooth devices or send biometric information via Bluetooth.
+*Risks of Computer Based Implants:*
+- Risks of implants inducing malignant tumors.
+- Implants may be a potential major breach of privacy, as it could contain biometric data, information about illnessess and hacking such a device could be dangerous.
+- Many implanted devices need to be capable of being reprogrammed and they have to collect monitoring data from the patients which can be read by medical staff or by a malicious person trying to hack the implanted device.
+[[file:img/RFID.png]]
+
+** Try It: Computer Based Implants
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- *Q1: Write some ethical questions about implanted technology?*
+
+** Learn It: Health Impacts
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Health Impacts - Overuse of technology isn’t just dangerous to mental health – It can
+also cause physical conditions. But as it becomes more and more central to our lives,
+these problems can be harder to avoid.
+#+END_SRC 
+*What are Health Impacts?*
+- *The Health and Safety at Work Act 1974* lays out rules of how to keep employees safe at work.
+- When an employee is at work it is the =responsibility= of =their employer= to take =reasonable measures= to *make sure* that the =employees= are =not put in danger=.
+- There are lots of =Health and Safety rules= some of them are only relevant to specific types of work, /for example, employees who drive vehicles/, /work in dangerous surroundings or with machinery/.
+- There are also *rules for office workers*, including =how to safely= /use computer equipment/.
+- *The law states that an employer must:*
+  - Provide screens that can be tilted.
+  - Provide anti-glare screen filters.
+  - Provide adjustable chairs.
+  - Provide foot supports.
+  - Make sure lighting is suitable.
+  - Make sure workstations are not cramped.
+  - Allow frequent breaks away from the computer.
+  - Pay for appropriate eye and eyesight tests by an optician.
+*These rules are only for employers and employees and do not cover students in schools, colleges or university.* 
+[[file:img/Health_Impacts.png]]
+** Try It: Health Impacts
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- *Research health issues with technology and complete the following table:*
+[[file:img/Health_Impacts_Table.png]]
+
+** Learn It: The Digital Divide
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+The Digital Divide - A digital divide is any uneven distribution in the access to, use of,
+or impact of information and communication technologies between any number of distinct
+groups; these groups may be defined based on social, geographical, or geopolitical criteria,
+or otherwise.
+#+END_SRC 
+*What is The Digital Divide?*
+- *People* =without access to technology=, or =who do not know how to use technology=, are at a *disadvantage* to those who do. /This is known as the digital divide/.
+- *There is* a =digital divide= *between* =countries= and *also between* =individuals= /within the same country/.
+- *For example*, in =England=, there are =areas without= *high speed Internet access*.
+- The digital divide can have a =huge impact= on *people* who have =little= or =limited access= to *digital technologies*.
+- Having =low IT literacy= can =lead= to =low-paid employment= or even =being unemployed=.
+- The =Office for National Statistics= has =calculated= that in *2015* =over 3.5 million households= in the =UK= *had no Internet access*.
+- *In 2013*, it was =estimated= by the =charity Age UK= that it =costs households= *without Internet access* an =extra £276 per year=, /because they cannot shop or pay bills online/.
+- *38%* of those =who are not online= are also *unemployed* but:
+  - /From 2013 they have had to prove that they are actively searching for jobs online using the government’s Universal Jobmatch website./
+  - /If they do not do this, their benefits can be stopped. Therefore they have to travel to libraries for access./
+- *Some of the main causes of the digital divide in the UK are:*
+  - *Money* - People need money to access the internet and buy the latest devices, such as computers, smartphones and tablets.
+  - *Location* - Access to network coverage and high-speed broadband can vary greatly depending on where you live. Most large towns and cities have good network coverage and access, but rural areas can have limited or no coverage. Without these connections, the internet can be slow or non-existent.
+  - *IT Literacy* - Knowing how to use technology empowers people to make the most of it. People who don't know how to use computers and the internet do not have the opportunities that IT-literate people do.
+  - *Internet Access* - The Internet provides many opportunities for people who want to access online shopping, banking and job adverts. Students with internet access at home can research or revise with online help. Many universities and schools offer courses online. Social networking helps people make connections and stay in touch.
+[[file:img/Digital_Divide.png]]
+** Try It: The digital Divide
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+*Read the following articles:*
+ - Spread of internet has not conquered 'digital divide' between rich and poor – [[https://www.theguardian.com/technology/2016/jan/13/internet-not-conquered-digital-divide-rich-poor-world-bank-report][report]].
+ - BBC [[http://www.bbc.co.uk/education/guides/zkhykqt/revision/5][Bitesize]]
+
+- Discuss and make notes on the affect the digital divide has on people around the world?
+
+** Learn It: Environmental Issues
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+#+BEGIN_SRC
+Environmental Issues - A broad term with several meanings relating to the physical world
+in which we live. Global air pollution is an environmental issue, but so is the distance
+between where you live and where your work or study.
+#+END_SRC 
+*What ar Environmental Issues?*
+- *Devices* =all= have an =environmental impact=. Take your =smartphone= – It’s *made* of /materials/ that are =mined= *from the Earth*, it =consumes energy= when used, and when it’s =thrown away= it could end up on a =landfill site=.
+- The =impact of digital technology= on the =environment= has been both =positive= and =negative=.
+- *Environmental issues* include the =carbon footprint= and =waste products= that *result* from =manufacturing computer systems.=
+- But these are =often outweighed= by the =positive effects= on the environment of *using* =computerised systems= to /manage processes that might otherwise of generated more pollution./
+[[file:img/Environmental_Issues_Info.png]]
+** Try It: Environmental Issues
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+*Research the following issues:*
+[[file:img/Environmental_Issues_Table.png]]
+- *Discuss and explain your views in a short report on the following statement:*
+#+BEGIN_SRC
+‘Computer Scientists have a role to play in combating global climate change.’
+#+END_SRC 
+
+** Learn It: Shopping
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- *Read this short article from [[http://mashable.com/2012/07/17/supermarket-technology-marketing/#oC45nsE75kqD][Mashable]]*
+
+  - Discuss and make notes on some of the technology used at a supermarket checkout?
+
+- *Read this short [[https://blog.buymeapie.com/online-shopping-traditional-shopping-pros-cons/][article]]*
+
+  - List the benefits and drawbacks of online shopping compared to high street shopping?
+
+* Legal Issues
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: What are Legal Issues?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Legal_Issues_Main.png]]
+#+BEGIN_SRC
+Legal Issues - The law can affect the way that computer systems are developed, how they
+are used and how they are disposed of.
+#+END_SRC 
+*Legal Issues*
+- *There are several laws that you should be aware of in the UK:*
+  - The Data Protection Act 1998.
+  - The Data Protection Act 2018.
+  - The Computer Misuse Act 1990.
+  - The Copyright, Designs and Patents Act 1988.
+  - The Freedom of Information Act 2000.
+  - Creative Commons Licencing.
+
+*The Data Protection Act 1998*
+[[file:img/DPA_8_Principles.png]]
+- *The Data Protection Act 1998* has =eight principles= that *apply* to =personal data= of any =individual=. 
+- *In May 2018*, the =General Data Protection Regulation (GDPR)= was introduced and *replaced* the *Data Protection Act*.
+- The eight principles of data protection laid out in the 1998 Data Protection Act will remain relevant, with changes to some of the key principles. 
+- If an organisation stores personal data of living individuals, that data must comply with the following eight principles:
+ 1. Data must be processed fairly and lawfully.
+ 2. Data must be adequate, relevant and not excessive.
+ 3. Data must be accurate and up to date.
+ 4. Data must not be retained for longer than necessary.
+ 5. Data can only be used for the purpose for which it was collected.
+ 6. Data must be kept secure.
+ 7. Data must be handled in accordance with people's rights.
+ 8. Data must not ne transferred outside of the EU without adequate
+    protection.
+
+*The Data Protection Act 2018 is the UK’s implementation of the General Data Protection Regulation (GDPR) Click [[https://www.gov.uk/data-protection][here]] for details*
+- The six principles of GDPR (General Data Protection Regulations) are similar in many ways to the eight principles of the Data Protection Act. While the six principles of GDPR do not include individuals’ rights or overseas transfers, these are included elsewhere in GDPR.
+- *The six principles of The Data Protection Act 2018 are that data must be treated in a way that is:*
+ 1. *Lawful, fair and transparent* - /There has to be legitimate grounds for collecting the data and it must not have a negative effect on the person or be used in a way they wouldn’t expect./
+ 2. *Limited for its purpose* - /Data should be collected for specified and explicit purposes and not used in a way someone wouldn’t expect./
+ 3. *Adequate and necessary* - /It must be clear why the data is being collected and what will be done with it. Unnecessary data or information without any purpose should not be collected./
+ 4. *Accurate* - /Reasonable steps must be taken to keep the information up to date and to change it if it is inaccurate./
+ 5. *Not kept longer than needed* - /Data should not be kept for longer than is needed, and it must be properly destroyed or deleted when it is no longer used or goes out of date./
+ 6. *Integrity and confidentiality* - /Data should be processed in a way that ensures appropriate security, including protection against unauthorised or unlawful processing, loss, damage or destruction, and kept safe and secure./
+
+*The Computer Misuse Act 1990*
+- *The Computer Misuse Act 1990* was *introduced* to =stop hacking= and =cyber crime=. It introduced *three new offences:*
+[[file:img/Computer_Misuse_Act_1990.png]]
+- *This act* also *applies* to /making, supplying/ or /obtaining anything/ which can be =used= in a =computer misuse offence=.
+
+*The Copyright, Designs and Patents Act 1988*
+- This act was =originally designed= to *protect* the =creators= of /books, music, videos/ and /software/ from having their work =illegally copied=.
+[[file:img/Copyright_Design_1988.png]]
+- *However*, although a piece of software such as an /applications package, game/ or /operating system/ =is protected=, =algorithms= are not eligble for protection. So if you come up with a new improved searching algorithm, you cannot stop others from using it.
+
+*The Freedom of Information Act 2000*
+- The *increased use* of =computerised systems= and =digital communications= has led to the =enactment of new laws= to *control* that usage.
+- *Personal data* about everyone, including *financial information*, /is held online/.
+[[file:img/Freedom_2000_Info.png]]
+
+*Creative Commons Licencing*
+- *Creative commons* is an =organisation= that =provides licences= allowing the *creators of copyright works* to =give= the =public permission= to /share/ and /use this work/ *under certain conditions.*
+[[file:img/Creative_Commons_Info.png]]
+
+** Badge It: Exam Style Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Silver - Technology and Ethics (18 Marks)
+1. Many people use smartphones. Smartphones often include a range of
+   sensors and have the ability to run software known as
+   apps.Smartphones are an example of a mobile technology.
+  - a) Discuss some of the ethical, legal and environmental issues
+    that surround the use of smartphones and apps on them.
+2. Cloud storage is being increasingly used by individuals and
+   businesses to store their data.
+  - a) Discuss some of the ethical, legal and environmental issues that surround the use of cloud storage.
+
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Silver on BourneToLearn/
+
+** Badge It: Exam Style Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Gold - Ethical and Legal (12 Marks)
+1. In recent years, there has been a large growth in the use of cloud storage.
+  - a) Discuss the advantages and disadvantages of using cloud storage.
+  - b) In your answer you should include an explanation of the reasons for the large growth in recent years and consider any legal, ethical and environmental issues related to the use of cloud storage.
+
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Gold on BourneToLearn/
+
+** Badge It: Exam Style Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*** Platinum - Ethical and Legal (8 Marks)
+1. Chess is a two-player board game. Every year there is a competition to find the best chess-playing computer program. In 2011 the chess program Rybka was accused of having copied program code from other chess-playing computer programs and was disqualified from the World Computer Chess Championship. Prize money won in previous years had
+   to be returned.
+  - a) To date, it has never been proven or disproven that Rybka contained copied program code. State two reasons why it could be difficult to prove if program code in Rybka had been copied from another program.
+  - b) The program code that Rybka was accused of copying was open-source, this means that it was publically available so that anyone could look at it. The programmers of Rybka could have tried to prove they were innocent by publishing all their program code. This would allow people to compare it to the code they were accused of copying and see that it was different. Assuming that there was not any copied program code in Rybka, state one reason why the programmers might not want to do this.
+2. Some people believe that copying program code without permission should not be a crime. State one reason why they might believe this and state one reason why some people would disagree with them.
+3. Many organisations provide free public access to a wireless network.
+  - a) Explain three ethical, legal or data privacy issues that an organisation should be aware of when allowing this access.
+
+
+/Upload to Fundamentals of 3.2 Programming - 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Platinum on BourneToLearn/
