@@ -216,12 +216,13 @@
 #+BEGIN_HTML
 </details>
 #+END_HTML
-
-* [[file:pages/3-7-ethical.html][3.7 Ethical, Legal and Environmental Impacts of Digital Technology on Wider Society, including Issues of Privacy]]
+* [[file:pages/3-7-eth_cult.html][3.7 Ethical, Legal and Environmental Impacts of Digital Technology on Wider Society, including Issues of Privacy]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-
+#+BEGIN_HTML
+</details>
+#+END_HTML
 * [[file:docs/AQA_GCSE _CS_Revision_Guide.pdf][Exam Revision Guide]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
