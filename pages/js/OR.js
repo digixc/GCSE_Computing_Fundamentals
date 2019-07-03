@@ -1,13 +1,13 @@
 var A = false;
 var B = false;
-var Q = false;
+var Q;
     
 function setup(){
     createCanvas(200,100);  
     frameRate(12);
     live = color(255,0,0)
     neutral = color(100,100,100)
-    img = loadImage("OR.png");
+    //img = loadImage("OR.png");
     btnA = createButton('A')
     btnA.position(25,27)
     btnB = createButton('B')
@@ -33,16 +33,22 @@ OR.prototype.display = function(){
     translate(this.x-100,this.y-100)
     stroke(neutral)
     //Draw OR gate using a tinted image
-    tint(255,150)
-    image(img,30,40)
+    //tint(255,150)
+    //image(img,30,40)
+    line(10,50,100,50)
+    line(10,150,100,150)
+    arc(10,100,90,100, PI+HALF_PI,HALF_PI);
+    //line(50,50,50,150)
     //ellipse(160,100,20,20);
+    noFill()
+    arc(100,100,100,100, PI+HALF_PI,HALF_PI);
     // Inputs and Outputs colors set depending on A or B
     stroke(this.A ? live : neutral)
     line(0,75,50,75)
     stroke(this.B ? live : neutral)
     line(0,125,50,125)
     stroke(this.A||this.B ? live : neutral)
-    line(165,100,200,100)
+    line(150,100,200,100)
     pop()
     return this.B||this.A
 }
