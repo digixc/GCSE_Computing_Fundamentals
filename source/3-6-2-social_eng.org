@@ -178,7 +178,7 @@ unsafe or fake website.
  - Install the latest *security patches*.
  - Install *Antivirus Software*.
 
-** Try It: Phishing Email
+** Try It: Pharming
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
