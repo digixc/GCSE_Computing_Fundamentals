@@ -193,6 +193,11 @@ pollution and increased use of energy to power the huge number of electronic dev
   - Uber, meanwhile, is leading the push for pilotless flying vehicles, and has teamed up with NASA to develop an air-traffic-control system. Uber is also working with aircraft manufacturers to develop prototypes, with the intention of launching a beta program in 2020.
   - These cars will be controlled by AI programs.
 [[file:img/Autonomous_Cars.png]]
+
+** Try It: The Trolley Problem
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
 - *The trolley problem:*
 - *Watch the following videos and then consider the questions below:*
 #+BEGIN_HTML

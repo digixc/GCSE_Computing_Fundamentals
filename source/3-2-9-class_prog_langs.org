@@ -170,11 +170,11 @@ hardware being used.
 
 /Upload to Fundamentals of 3.2 Programming - 3.2.9 Classification of Programming Languages: Gold on BourneToLearn/
 
-** Badge It: Exam Question and Coding Challenge
+** Badge It: Exam Questions
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-*** Platinum - Exam question/Code Challenge
+*** Platinum - Exam questions
 1. What is the difference between an interpreter and a compiler? (4 Marks)
 2. What is assembly language? (2 Marks)
 3. A developer is writing a program.
