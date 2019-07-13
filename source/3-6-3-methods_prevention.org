@@ -302,7 +302,7 @@ changing passwords un-noticed.
    give an example of where it might be used? (4 Marks)
 
 
-/Upload to Fundamentals of Cyber Security - Cyber security Threats: Silver on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.3 Cyber security Threats: Silver on BourneToLearn/
 
 ** Badge It: Exam Questions
 :PROPERTIES:
@@ -312,7 +312,7 @@ changing passwords un-noticed.
 1. *Define* the term network forensics? (2 Marks)
 2. *Briefly* explain what network forensics can prevent and how they are used? (4 Marks)
 
-/Upload to Fundamentals of Cyber Security - Cyber security Threats: Gold on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.3 Cyber security Threats: Gold on BourneToLearn/
 
 ** Badge It: Exam Questions
 :PROPERTIES:
@@ -324,4 +324,4 @@ changing passwords un-noticed.
 3. *Why* is it *dangerous* to not keep your application software and operating system up-to-date? (6 Marks)
 
 
-/Upload to Fundamentals of Cyber Security - Cyber security Threats: Platinum on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.3 Cyber security Threats: Platinum on BourneToLearn/
