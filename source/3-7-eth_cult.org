@@ -644,7 +644,7 @@ are used and how they are disposed of.
 
 
 
-/Upload to Fundamentals of 3.2 Programming - 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Silver on BourneToLearn/
+/Upload to 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Silver on BourneToLearn/
 
 ** Badge It: Exam Style Questions
 :PROPERTIES:
@@ -657,7 +657,7 @@ are used and how they are disposed of.
 
 
 
-/Upload to Fundamentals of 3.2 Programming - 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Gold on BourneToLearn/
+/Upload to 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Gold on BourneToLearn/
 
 ** Badge It: Exam Style Questions
 :PROPERTIES:
@@ -673,4 +673,4 @@ are used and how they are disposed of.
   - a) Explain three ethical, legal or data privacy issues that an organisation should be aware of when allowing this access.
 
 
-/Upload to Fundamentals of 3.2 Programming - 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Platinum on BourneToLearn/
+/Upload to 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Platinum on BourneToLearn/

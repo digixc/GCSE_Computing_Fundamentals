@@ -374,7 +374,7 @@ in order to target specific adverts.
 1. *Define* the term phishing? (1 Mark)
 2. *Describe* *two* ways that it is often possible to detect a phishing email? (2 Marks)
 
-/Upload to Fundamentals of Cyber Security - Social Engineering: Silver on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.2 Social Engineering: Silver on BourneToLearn/
 
 ** Badge It: Exam Questions
 :PROPERTIES:
@@ -384,7 +384,7 @@ in order to target specific adverts.
 1. *Describe* the term social engineering? (3 Marks)
 2. *Briefly* explain the *four* techniques that are used in social engineering? (4 Marks)
 
-/Upload to Fundamentals of Cyber Security - Social Engineering: Gold on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.2 Social Engineering: Gold on BourneToLearn/
 
 ** Badge It: Exam Questions
 :PROPERTIES:
@@ -397,4 +397,4 @@ in order to target specific adverts.
 4. What is *adware* and is it dangerous to your computer? (2 Marks)
 
 
-/Upload to Fundamentals of Cyber Security - Social Engineering: Platinum on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.2 Social Engineering: Platinum on BourneToLearn/

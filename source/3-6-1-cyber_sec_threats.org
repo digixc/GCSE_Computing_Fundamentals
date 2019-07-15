@@ -236,7 +236,7 @@ there are others.
 1. *Define* the term Cyber Security? (2 Marks)
 2. *Explain* why removable media can be a threat to the security of a network? (2 Marks)
 
-/Upload to Fundamentals of Cyber Security - Cyber Security Threats: Silver on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.1 Cyber Security Threats: Silver on BourneToLearn/
 
 ** Badge It: Exam Questions
 :PROPERTIES:
@@ -247,7 +247,7 @@ there are others.
   - a) Explain why this is a problem? (2 Marks)
   - b) Suggest *two* requirements that could be imposed on passwords to ensure that they are strong? (2 Marks)
 
-/Upload to Fundamentals of Cyber Security - Cyber Security Threats: Gold on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.1 Cyber Security Threats: Gold on BourneToLearn/
 
 ** Badge It: Exam Questions
 :PROPERTIES:
@@ -260,4 +260,4 @@ there are others.
   - c) *Explain* how penetration testing can assist the company in improving its security? (3 Marks)
 
 
-/Upload to Fundamentals of Cyber Security - Cyber Security Threats: Platinum on BourneToLearn/
+/Upload to 3.6 Fundamentals of Cyber Security - 3.6.1 Cyber Security Threats: Platinum on BourneToLearn/
