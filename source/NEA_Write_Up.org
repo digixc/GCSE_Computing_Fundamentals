@@ -1,0 +1,177 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Controlled Assessment Write-Up (NEA)
+#+AUTHOR: Stephen Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Controlled Assessment Write up
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** The Report
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- You must *produce* a =report detailing all of the stages= you have gone through to =solve the problem= and to *create* and *refine* your solution.
+- This *report is important* because it =provides evidence= of the *methods* you have *used* to =solve the problem= you have been set.
+- *You will be awarded marks for:*
+- 1. Designing of the Solution – 9 marks.
+- 2. Creating the Solution – 30 marks.
+- 3. Testing the Solution – 21 marks.
+- 4. Potential Enhancements and Refinements – 10 marks.
+- 5. Overall Quality of the Report – 10 marks.
+*Total maximum marks – 80 marks*		
+
+** Part 1 - Designing of the Solution (9 Marks)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- This section of the report =could explain= the =designs= for the =sub-tasks= and =requirements= you have *identified*.
+- In the design section there could be =full algorithms= for *solving all* of the =sub-tasks displayed= as *flowcharts* and/or *pseuodocode*. Use the [[file:../docs/AQA_Pseudo_Code.pdf][AQA Pseudocode Guide]]
+- The =algorithms= could *contain all* of the =variables= and =validation techniques= identified in the analysis.
+- You may also want to condiser the =data structures= and =text file/database structures=.
+- The =pseudocode= should be =fully commented= to describe how the subsroutines (/functions and prodecures/) are called by the main program and why they are included.
+- The design should clearly show that the solution is =modular= and makes use of =functions and/or procedures=.
+- *The design could contain features to ensure that you have taken account of:*
+    - Possible areas for misuse (/e.g. entering erroneous data or selecting inappropriate options./)
+    - Validation and Authentication.
+- There could be a consideration of a =suitable user interface= explaining how the user will interact with the system.
+- Consider whether your =design is complete enough= for *another competent person* to use it *to code* a successful solution.
+
+** Part 2 - Creating the Solution (30 Marks)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- *The report* could =include a full description= and =explanation= of the *coding of the solution*.
+- *Consider including the following:*
+    - Explanation of how you have made your code robust by including routines to counteract user misuse and to validate all of the data that is entered.
+    - Explanations of testing that you have carried out on the subroutines as you have developed them.
+    - Changes you have made in light of your testing.
+    - Lists of the resources you have used (/e.g. function libraries
+      or program add-ins for developing a graphical user interface)./
+- *As a reminder, your code could:*
+    - Be modular, using fiunctions and procedures so that it is well organised.
+    - Use meaningful variable names, all written in the same way (/e.g. as camal case/).
+    - Be fully commented, so that each section is fully explained.
+- You =solution= will also be =assessed= for =your coding skills= and use of =appropriate programming techniques=.
+- Solving the problem with 20 lines of clear, concise code is more elegant that solving it with 100 lines of code containing unnecessary variables and constructs.
+- *Elegant code* is the =result= of a =careful anaysis= and =thoughtful algorithms=.
+- An elegant solution will make someone say; ‘Wow! Why didn’t I think of that?’
+- As you are *developing your code*, you might want to =consider= issues such as =modularity=, =commenting=, =appropriate use of techniques=, =validation= and =error handling=.
+
+** Part 3 - Testing the Solution (21 Marks)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Your report could show how you have =throughly tested= all aspects of your solution.
+- You could include a =test plan= listing all of the tests that will be carried out, these should be =numbered=, include a =purpose= of the test, =test data=, =expected results=, =actual results= and a =screenshot= of the =outcome=, the =outcome=.
+- *The following table shows an example of a test plan:*
+[[file:img/Test_Table.png]]
+- The tests should show that you are aware of all the problems that could arise when the program is used by another user.
+- For example, it could check that data has actually been entered and that they are within the expected range.
+- *You could do the following:*
+    - Ensure that it lists the test data to be used, plus the expected and the actual outcomes (/You  can show the actual examples and screenshots/).
+    - Explain how you took remedial action to solve any errors you found that were highlighted by your tests.
+    - Explain how any unresolved issues could be solved given more time.
+    - Present evidence of careful selected samples to show that thorough testing has been carried out.
+    - Explain how the evidence demonstrayes the robustness of your solution and shows that the requirements of the problem have been achieved.	
+** Part 4 - Potential Enhancements and Refinements (10 Marks)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- You may want to =discuss= the =efficiency= and =robustness of the solution=, and =suggest ways= in which it =could be improved=.
+- Think about =critically evaluating= your solution.
+- *No solution is perfect* and you can demonstrate your ability by thinking of ways in which it could be improved.
+
+** Part 5 - Overall Quality of the Report (10 Marks)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Finally you should =thoroughly check your report= to ensure that it is =presented to a high standard= in a *structured way* with all of the sections clearly labelled.
+- It is worth checking the assessment scheme in the specification to identify what is required for the report.
+- *However, in general it is good practice, when writing any report, to ensure the following:*
+    - It is complete.
+    - The grammar and spellings are correct.
+    - All of the content is revelevant to the task.
+    - A range of technical terms have been used accurately.
+    - All sections are structured consistenly.
+- Ways that you could make the structure of your report clear including using:
+    - A table of contents.
+    - Numbered sections and subsections.
+    - Numbered captions for diagrams and screenshots.
+    - References to any sources used.
+- A good way to ensure that your report covers all of the required items is to create a check list and tick off each item when you are sure it is covered adequately.
