@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Controlled Assessment Write-Up (NEA)</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Controlled Assessment Write-Up (NEA)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Controlled Assessment Write up</a>
+<ul>
+<li><a href="#sec-1-1">The Report</a></li>
+<li><a href="#sec-1-2">Part 1 - Designing of the Solution (9 Marks)</a></li>
+<li><a href="#sec-1-3">Part 2 - Creating the Solution (30 Marks)</a></li>
+<li><a href="#sec-1-4">Part 3 - Testing the Solution (21 Marks)</a></li>
+<li><a href="#sec-1-5">Part 4 - Potential Enhancements and Refinements (10 Marks)</a></li>
+<li><a href="#sec-1-6">Part 5 - Overall Quality of the Report (10 Marks)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Controlled Assessment Write up</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">The Report</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>You must <b>produce</b> a <code>report detailing all of the stages</code> you have gone through to <code>solve the problem</code> and to <b>create</b> and <b>refine</b> your solution.
+</li>
+<li>This <b>report is important</b> because it <code>provides evidence</code> of the <b>methods</b> you have <b>used</b> to <code>solve the problem</code> you have been set.
+</li>
+<li><b>You will be awarded marks for:</b>
+</li>
+<li>1. Designing of the Solution – 9 marks.
+</li>
+<li>2. Creating the Solution – 30 marks.
+</li>
+<li>3. Testing the Solution – 21 marks.
+</li>
+<li>4. Potential Enhancements and Refinements – 10 marks.
+</li>
+<li>5. Overall Quality of the Report – 10 marks.
+</li>
+</ul>
+<p>
+<b>Total maximum marks – 80 marks</b>  
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Part 1 - Designing of the Solution (9 Marks)</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>This section of the report <code>could explain</code> the <code>designs</code> for the <code>sub-tasks</code> and <code>requirements</code> you have <b>identified</b>.
+</li>
+<li>In the design section there could be <code>full algorithms</code> for <b>solving all</b> of the <code>sub-tasks displayed</code> as <b>flowcharts</b> and/or <b>pseuodocode</b>. Use the <a href="../docs/AQA_Pseudo_Code.pdf">AQA Pseudocode Guide</a>
+</li>
+<li>The <code>algorithms</code> could <b>contain all</b> of the <code>variables</code> and <code>validation techniques</code> identified in the analysis.
+</li>
+<li>You may also want to condiser the <code>data structures</code> and <code>text file/database structures</code>.
+</li>
+<li>The <code>pseudocode</code> should be <code>fully commented</code> to describe how the subsroutines (<i>functions and prodecures</i>) are called by the main program and why they are included.
+</li>
+<li>The design should clearly show that the solution is <code>modular</code> and makes use of <code>functions and/or procedures</code>.
+</li>
+<li><b>The design could contain features to ensure that you have taken account of:</b>
+<ul class="org-ul">
+<li>Possible areas for misuse (<i>e.g. entering erroneous data or selecting inappropriate options.</i>)
+</li>
+<li>Validation and Authentication.
+</li>
+</ul>
+</li>
+<li>There could be a consideration of a <code>suitable user interface</code> explaining how the user will interact with the system.
+</li>
+<li>Consider whether your <code>design is complete enough</code> for <b>another competent person</b> to use it <b>to code</b> a successful solution.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Part 2 - Creating the Solution (30 Marks)</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<ul class="org-ul">
+<li><b>The report</b> could <code>include a full description</code> and <code>explanation</code> of the <b>coding of the solution</b>.
+</li>
+<li><b>Consider including the following:</b>
+<ul class="org-ul">
+<li>Explanation of how you have made your code robust by including routines to counteract user misuse and to validate all of the data that is entered.
+</li>
+<li>Explanations of testing that you have carried out on the subroutines as you have developed them.
+</li>
+<li>Changes you have made in light of your testing.
+</li>
+<li>Lists of the resources you have used (<i>e.g. function libraries
+or program add-ins for developing a graphical user interface).</i>
+</li>
+</ul>
+</li>
+<li><b>As a reminder, your code could:</b>
+<ul class="org-ul">
+<li>Be modular, using fiunctions and procedures so that it is well organised.
+</li>
+<li>Use meaningful variable names, all written in the same way (<i>e.g. as camal case</i>).
+</li>
+<li>Be fully commented, so that each section is fully explained.
+</li>
+</ul>
+</li>
+<li>You <code>solution</code> will also be <code>assessed</code> for <code>your coding skills</code> and use of <code>appropriate programming techniques</code>.
+</li>
+<li>Solving the problem with 20 lines of clear, concise code is more elegant that solving it with 100 lines of code containing unnecessary variables and constructs.
+</li>
+<li><b>Elegant code</b> is the <code>result</code> of a <code>careful anaysis</code> and <code>thoughtful algorithms</code>.
+</li>
+<li>An elegant solution will make someone say; ‘Wow! Why didn’t I think of that?’
+</li>
+<li>As you are <b>developing your code</b>, you might want to <code>consider</code> issues such as <code>modularity</code>, <code>commenting</code>, <code>appropriate use of techniques</code>, <code>validation</code> and <code>error handling</code>.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Part 3 - Testing the Solution (21 Marks)</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<ul class="org-ul">
+<li>Your report could show how you have <code>throughly tested</code> all aspects of your solution.
+</li>
+<li>You could include a <code>test plan</code> listing all of the tests that will be carried out, these should be <code>numbered</code>, include a <code>purpose</code> of the test, <code>test data</code>, <code>expected results</code>, <code>actual results</code> and a <code>screenshot</code> of the <code>outcome</code>, the <code>outcome</code>.
+</li>
+<li><b>The following table shows an example of a test plan:</b>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Test_Table.png" alt="Test_Table.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The tests should show that you are aware of all the problems that could arise when the program is used by another user.
+</li>
+<li>For example, it could check that data has actually been entered and that they are within the expected range.
+</li>
+<li><b>You could do the following:</b>
+<ul class="org-ul">
+<li>Ensure that it lists the test data to be used, plus the expected and the actual outcomes (<i>You  can show the actual examples and screenshots</i>).
+</li>
+<li>Explain how you took remedial action to solve any errors you found that were highlighted by your tests.
+</li>
+<li>Explain how any unresolved issues could be solved given more time.
+</li>
+<li>Present evidence of careful selected samples to show that thorough testing has been carried out.
+</li>
+<li>Explain how the evidence demonstrayes the robustness of your solution and shows that the requirements of the problem have been achieved.        
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 learn">
+<h3 id="sec-1-5">Part 4 - Potential Enhancements and Refinements (10 Marks)</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<ul class="org-ul">
+<li>You may want to <code>discuss</code> the <code>efficiency</code> and <code>robustness of the solution</code>, and <code>suggest ways</code> in which it <code>could be improved</code>.
+</li>
+<li>Think about <code>critically evaluating</code> your solution.
+</li>
+<li><b>No solution is perfect</b> and you can demonstrate your ability by thinking of ways in which it could be improved.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Part 5 - Overall Quality of the Report (10 Marks)</h3>
+<div class="outline-text-3" id="text-1-6">
+
+<ul class="org-ul">
+<li>Finally you should <code>thoroughly check your report</code> to ensure that it is <code>presented to a high standard</code> in a <b>structured way</b> with all of the sections clearly labelled.
+</li>
+<li>It is worth checking the assessment scheme in the specification to identify what is required for the report.
+</li>
+<li><b>However, in general it is good practice, when writing any report, to ensure the following:</b>
+<ul class="org-ul">
+<li>It is complete.
+</li>
+<li>The grammar and spellings are correct.
+</li>
+<li>All of the content is revelevant to the task.
+</li>
+<li>A range of technical terms have been used accurately.
+</li>
+<li>All sections are structured consistenly.
+</li>
+</ul>
+</li>
+<li>Ways that you could make the structure of your report clear including using:
+<ul class="org-ul">
+<li>A table of contents.
+</li>
+<li>Numbered sections and subsections.
+</li>
+<li>Numbered captions for diagrams and screenshots.
+</li>
+<li>References to any sources used.
+</li>
+</ul>
+</li>
+<li>A good way to ensure that your report covers all of the required items is to create a check list and tick off each item when you are sure it is covered adequately.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
