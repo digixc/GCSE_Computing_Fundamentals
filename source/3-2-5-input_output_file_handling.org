@@ -283,7 +283,7 @@ Writing to a file has similar steps:
 :HTML_CONTAINER_CLASS: badge
 :END:
 *** Gold - Tom's Adventure Story
-1. Tom has written an adventure story in the file adventure.txt.
+1. Tom has written an adventure story in the file adventure.txt. - Right-click [[file:doc/adventure.txt][here]] to download the text file.
 2. Using the Trinket below, write a program that will allow a user to output Tom's adventure story one line a time.
 3. Each time the user presses the "y" key, the next line of the story should be outputted.
 4. The algorithm should end and close the file when it outputs the string "THE END".

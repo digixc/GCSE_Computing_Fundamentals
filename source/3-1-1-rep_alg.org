@@ -181,7 +181,7 @@ toothpaste to the brush, checking if all teeth are clean and rinsing out your mo
 - Writing in pseudocode helps you concentrate on the =logic (Process)=
   and =efficiency= of your algorithm before you have to start thinking
   about the actual code you will be using.
-- [[file:docs/AQA_Pseudo_Code.pdf][AQA Pseudocode Guide]]
+- [[file:doc/AQA_Pseudo_Code.pdf][AQA Pseudocode Guide]]
 #+BEGIN_HTML
 <br>
 #+END_HTML
