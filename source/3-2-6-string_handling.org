@@ -186,7 +186,7 @@ a string and the program might convert it to an integer in order to perform cert
 :END:
 *String Conversions*
 - *Sometimes* we need to =change= the =data type= of a *variable* from a =string= *to an* =integer= *or a* =real (float)= number or vice versa.
-[[file:img/Strings_Conversions.png]]
+[[file:img/String_Conversions.png]]
 - *Python is quite simple* and *does not* really *care* about the
   =current data type=, it *only needs to know* =what= you =are
   converting it to= (/int, float or str/).

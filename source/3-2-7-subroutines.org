@@ -136,7 +136,7 @@ for example: def displayTotals(total1, total2, total3, etc)
 - If you are working as part of a team you can divide a large program into smaller sections and allow individuals to simultaneously work on those sections.
 - It makes the code easier to read if you use sensible subroutine labels as the headings tell the reader what that section of code is doing.
 - By *reducing* the amount of *repeating tasks* you also *reduce the risk* of =introducing errors= in a program.
-- *Easy to maintain* as each =sunroutine= can be =tested separately=.
+- *Easy to maintain* as each =subroutine= can be =tested separately=.
 
 ** Learn It: Passing Data within Programs
 :PROPERTIES:
