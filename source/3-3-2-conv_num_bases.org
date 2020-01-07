@@ -124,7 +124,7 @@
 *Binary Game*
 - Try playing the binary game using the link below:
 #+BEGIN_html
-<iframe width="700" height="600" src="https://games.penjee.com/binary-numbers-game/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="700" height="600" src="https://www.mathwarehouse.com/programming/binary-numbers-game/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 #+END_html
 
 ** Badge It
