@@ -390,9 +390,9 @@ small, decomposed problems that can help us solve more complex problems more eff
 
 - /Ping!/
 
-- That's right! *124*!
+- That's right! *128*!
 
-- We can assume that the next number will be *124* because we *recognise* the *pattern* of /squaring 2/.
+- We can assume that the next number will be *128* because we *recognise* the *pattern* of /squaring 2/.
 
 - /This pattern also relates to/ *Binary*
 
