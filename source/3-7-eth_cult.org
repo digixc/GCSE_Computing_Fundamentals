@@ -632,15 +632,12 @@ are used and how they are disposed of.
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-*** Silver - Technology and Ethics (18 Marks)
+*** Silver - Technology and Ethics (8 Marks)
 1. Many people use smartphones. Smartphones often include a range of
    sensors and have the ability to run software known as
    apps.Smartphones are an example of a mobile technology.
   - a) Discuss some of the ethical, legal and environmental issues
     that surround the use of smartphones and apps on them.
-2. Cloud storage is being increasingly used by individuals and
-   businesses to store their data.
-  - a) Discuss some of the ethical, legal and environmental issues that surround the use of cloud storage.
 
 
 
