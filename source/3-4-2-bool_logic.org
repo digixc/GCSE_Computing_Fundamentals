@@ -112,7 +112,7 @@ they work together to examine if several conditions are true or false.
 #+END_SRC
 
 *NOT Gate*
-[[file:img/NOT_Gate.png]]
+[[file:img/NOT_Gate2.png]]
 
 *AND Gate*
 [[file:img/AND_Gate.png]]
