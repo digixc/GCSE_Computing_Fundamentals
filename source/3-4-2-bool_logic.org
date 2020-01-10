@@ -2,7 +2,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
-#+TITLE: 3.4.2 Computer Systems - Boolean Logic
+#+TITLE: 3.4.2 Computer Systems - Boolean Logic 
 #+AUTHOR: Stephen Fone
 
 #+BEGIN_HTML
