@@ -115,7 +115,7 @@ they work together to examine if several conditions are true or false.
 [[file:img/NOT_Gate2.png]]
 
 *AND Gate*
-[[file:img/AND_Gate.png]]
+[[file:img/AND_GateV2.png]]
 
 *OR Gate*
 [[file:img/OR_Gate.png]]
