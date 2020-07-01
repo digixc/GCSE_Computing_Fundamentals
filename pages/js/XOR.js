@@ -7,7 +7,7 @@ function setup(){
     frameRate(4);
     live = color(255,0,0)
     neutral = color(100,100,100)
-    img = loadImage("XOR.jpg");
+    //img = loadImage("XOR.jpg");
     btnA = createButton('A')
     btnA.position(25,27)
     btnB = createButton('B')
@@ -32,17 +32,29 @@ XOR.prototype.display = function(){
     scale(0.5,0.5)
     translate(this.x-100,this.y-100)
     stroke(neutral)
-    //Draw OR gate using a tinted image
-    tint(255,150)
-    image(img,26,39,150,120)
-    //ellipse(165,100,20,20);
+    
+    //Top Line
+    line(50,50,115,50)
+    //Botton Line
+    line(50,150,115,150)
+    //Rear Arc1
+    arc(10,100,90,100, PI+HALF_PI,HALF_PI);
+    noFill()
+    //Rear Arc2
+    arc(50,100,90,100, PI+HALF_PI,HALF_PI);
+    noFill()
+    //Front Arc
+    arc(130,100,100,100, PI+HALF_PI,HALF_PI);
     // Inputs and Outputs colors set depending on A or B
     stroke(this.A ? live : neutral)
-    line(0,75,62,75)
+    //A Line
+    line(0,75,90,75)
     stroke(this.B ? live : neutral)
-    line(0,125,62,125)
+    //B Line
+    line(0,125,90,125)
     stroke((this.B||this.A)&&!(this.B&&this.A) ? live : neutral)
-    line(175,100,200,100)
+    //Q Line
+    line(180,100,230,100)
     pop()
     return (this.B||this.A)&&!(this.B&&this.A)
 }

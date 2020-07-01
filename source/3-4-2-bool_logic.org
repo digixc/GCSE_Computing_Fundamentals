@@ -3,7 +3,7 @@
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
 #+TITLE: 3.4.2 Computer Systems - Boolean Logic 
-#+AUTHOR: Stephen Fone Updated AND Gate 04/02/2020
+#+AUTHOR: Stephen Fone Updated XOR Gate 01/07/2020
 
 #+BEGIN_HTML
 <div class=ribbon>
@@ -94,10 +94,49 @@
 - These two states of =on= or =off= can be used to represent the =two
   conditions= of =True= (on) or =False= (off).
 - These =two states= are also =represented= by the =binary= digits =1= and =0=.
-- The three logic gates you need to know and understand, =NOT=, =AND=
-  and =OR= logic gates.
+- The four logic gates you need to know and understand, =NOT=, =AND=, =OR=
+  and =XOR= logic gates.
+** Boolean Logic in Programming
+- Understanding how binary logic works will help you develop your
+  programming skills.
+- In programming code, you will most often use quite =complexed
+  Boolean expressions= to control conditions within loops and
+  selection statements.
+- *For example:*
+  - /WHILE NOT EndOfFile AND NOT FileFound..../
+  - /IF (Y <= 20) OR (CharNum > LenOfString) THEN..../
+- You will have already used a repeat loop (WHILE) to continue to run
+  a program until the user types either "Yes" or "No".
+- The WHILE loop would look like the following example, with the
+  condition at the end:
 #+BEGIN_SRC
-Truth Tables - Each of the NOT, AND and OR gates can represented by a truth table
+REPEAT
+   | 
+   |
+   |
+UNTIL     (response = "No")     OR     (response = "Yes")
+          Boolean Expression           Boolean Expression
+#+END_SRC
+
+- Each *Boolean expression* can be replaced with a letter which is
+  called a *Boolean variable*.
+#+BEGIN_SRC
+REPEAT
+           (response = "No")     OR     (response = "Yes")
+            Replace with the             Replace with the
+           Boolean variable, X          Boolean variable, Y
+
+UNTIL              X             OR             Y
+#+END_SRC
+- Boolean Data Types are just the same in programming, they are either
+  *True* or *False*. So with the example above, X and Y will either be
+  True or False.
+- This can be represented as True=1 and False=0 in electronic circuits as open and closed.
+[[file:img/Bool_Circuit.png]]
+
+** Logic Gates and Truth Tables
+#+BEGIN_SRC
+Truth Tables - Each of the NOT, AND, OR and XOR gates can represented by a truth table
 showing the output given for each possible input or combination of inputs.
 Inputs are usually given algebraic letters such as A, B and C and output is usually
 represented by P or Q.
@@ -120,6 +159,9 @@ they work together to examine if several conditions are true or false.
 *OR Gate*
 [[file:img/OR_Gate.png]]
 
+*XOR Gate*
+[[file:img/XOR_Gate.png]]
+
 *Real World Example*
 [[file:img/Logic_Alarm.png]]
 
@@ -135,9 +177,13 @@ they work together to examine if several conditions are true or false.
 #+BEGIN_HTML
 <object data="js/AND.html" width='200px' height='100px'></object>
 #+END_HTML
-- And finally this is an OR gate
+- Then there is the OR gate
 #+BEGIN_HTML
 <object data="js/OR.html" width='200px' height='100px'></object>
+#+END_HTML
+- This last one is called an XOR gate
+#+BEGIN_HTML
+<object data="js/XOR.html" width='200px' height='100px'></object>
 #+END_HTML
 
 * Logic Circuits
@@ -158,10 +204,18 @@ They are the basic building blocks of many electronic circuits found in computer
 household devices, games consoles, and sensors in a cars or plane, or at different
 points in a production line in a factory.
 #+END_SRC
-*Example Logic Circuits*
+** Boolean Expression Operators
+- You will be expected to understand and use the following Boolean expression operators:
+ - =Overbar= to represent the =NOT= gate.
+ - =.= to represent the =AND= gate.
+ - =+= to represent the =OR= gate.
+ - =⊕= to represent the =XOR= gate.
+- For example the expression =(A AND B) OR (NOT C)= would be represented as: =A . B + C̅=
+** Example Logic Circuits
 [[file:img/Example1_Logic.png]]
 [[file:img/Example2_Logic.png]]
 [[file:img/Example3_Logic.png]]
+[[file:img/Example4_Logic.png]]
 
 *Logic Puzzler Game*
 - Test your knowledge with the following Boolean Logic Game:
@@ -210,11 +264,13 @@ points in a production line in a factory.
 :HTML_CONTAINER_CLASS: badge
 :END:
 *Gold*: Answer the following questions:
-1. Look at the three logic expressions in the box below:
+- 1. Look at the three logic expressions in the box below:
 [[file:img/Gold_Q1.png]]
- - a) Draw a logic circuit for each expression.
- - b) Construct a truth table for each expression.
+  - a) Draw a logic circuit for each expression.
+  - b) Construct a truth table for each expression.
 
+- 2. Using the truth table below, create a logic diagram to represent these values:
+[[file:img/Gold_Q2.png]]
 - /Upload to Computer Systems - Boolean Logic: Gold on BourneToLearn/
 
 ** Badge It: Logic Circuitss
@@ -253,5 +309,7 @@ points in a production line in a factory.
   - c) State all possible values of the inputs and outputs if:
     - i) Button *D* is on but the car doesn't start.
     - ii) Button *I* and *S* are both on. 
-
+3. Using the following logic diagram, complete the Truth Table below:
+[[file:img/Plat_Q2_Diagram.png]]
+[[file:img/Plat_Q2_TTable.png]]
 - /Upload to Computer Systems - Boolean Logic: Platinum on BourneToLearn/
