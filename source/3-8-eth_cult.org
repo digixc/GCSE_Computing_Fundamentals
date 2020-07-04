@@ -2,7 +2,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
-#+TITLE: 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society, including issues of Privacy
+#+TITLE: 3.8 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society, including issues of Privacy
 #+AUTHOR: Stephen Fone
 
 #+BEGIN_HTML
@@ -641,7 +641,7 @@ are used and how they are disposed of.
 
 
 
-/Upload to 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Silver on BourneToLearn/
+/Upload to 3.8 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Silver on BourneToLearn/
 
 ** Badge It: Exam Style Questions
 :PROPERTIES:
@@ -654,7 +654,7 @@ are used and how they are disposed of.
 
 
 
-/Upload to 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Gold on BourneToLearn/
+/Upload to 3.8 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Gold on BourneToLearn/
 
 ** Badge It: Exam Style Questions
 :PROPERTIES:
@@ -670,4 +670,4 @@ are used and how they are disposed of.
   - a) Explain three ethical, legal or data privacy issues that an organisation should be aware of when allowing this access.
 
 
-/Upload to 3.7 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Platinum on BourneToLearn/
+/Upload to 3.8 Ethical, Legal and Environmental impacts of Digital Technology on Wider Society: Platinum on BourneToLearn/
