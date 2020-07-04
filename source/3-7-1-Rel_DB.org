@@ -1,0 +1,292 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.7.1 Relational Databases
+#+AUTHOR: Steve Fone
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+[[file:img/Relational-Database_Img.png]]
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* The Concept of a Database
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- A =database= is a method of storing (holding) data in an organised and structured way so the information can be easily accessed, processed
+  and managed.
+- Databases allow for quick and easy methods for finding a particular item, or all of the items meeting certain criteria.
+- A database contains one or more =tables=. A simple database can be implemented in a Spreadsheet.
+- Each table holds one type of =entity=.
+- =An entity= is one type of object, such as person, book, DVDs etc.
+- Each entity has =attributes= to describe the entity, such as person will have /firstName/, /lastname/, /DoB/, etc and a book will have a /title/, /author/, /publishDate/ etc.
+- These attributes in a database table are also called =fields= or =columns=.
+- A database table organises data into =records=. Records are also called =rows=.
+- One record/row contains attributes/fields/columns related to one
+  type of entity.
+[[file:img/Rel_DB_Img.png]]
+- This can be written in the standard =relational notation= as following:
+#+BEGIN_SRC
+entityName(attrubute1, attribute2, attribute3,…)
+
+Examples: Customer(Title, Initial, Surname, Address, City, Phone, DoB)
+
+Book(Title, Author, Genre, PublishDate)
+#+END_SRC
+- Each entity has a unique entity identifier. This ideniofier is called a =primary key= in a database. In the relational notation, the primary key is noted using underlining:
+#+BEGIN_SRC
+Customer(CustID, Title, Initial, Surname, Address, City, Phone, DoB)
+
+Book(BookID, Title, Author, Genre, PublishDate)
+#+END_SRC
+** Tables, Records, Fields, Primary Keys and Foreign Keys
+- A =Table= in a database has =Rows=, with each row containing one =Record=.
+- Each record has several =Fields= held in separate a =Column=.
+- Each row in a table has a unique idenfifier, known as the =Primary Key=.
+- In the example table below =CustID= is the primary key and no two people in the table can have the same =CustID=.
+* The Concept of a Relational Database
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- A =relational database= is a database that has been designed and structured so that the relationships among different person or thing
+  (entity) has its own table, and the tables are linked by a common field.
+
+- =Relationships= are normally defined by using =Primary= and =Foreign Keys=.
+
+  - A =Primary key= is a unique identifier for a record.
+  - A =Foreign key= is a primary key from a different table used to define the relationship.
+
+- Let's take some simple data and see how it would be organised in a database table.
+  - Mrs, C, Flowers, 23 Rose Ave, Bourne, 01778 123456
+  - Mr, J, Eames, 100 Dowe Rd, Bourne, 01778 654321
+  - Mr, H, Gull, 34 High St, Bourne, 01778 657231
+  - Ms, P, Jones, 89 Knight St, 01778 856021
+- First we'll put it in a =Table= - /A two dimensional structure used to store data/
+- Each 'cell' in the database table is called a =Field=
+| <c> | <c> | <c>     | <c>         | <c>    | <c>          |
+| Mrs | C   | Flowers | 23 Rose Ave | Bourne | 01778 123456 |
+| Mr  | J   | Eames   | 100 Dowe Rd | Bourne | 01778 654321 |
+| Mr  | H   | Gull    | 34 High St  | Bourne | 01778 657231 |
+| Ms  | P   | Jones   | 89 Knight St| Bourne | 01778 856021 |
+
+- Remember that each row of the table is called a =Record=.
+- The table needs a =name=, so we'll call this one =Customer=.
+- Each =Column= of the table needs also needs a =title=.
+
+| <c>   | <c>     | <c>     | <c>         | <c>   | <c>          | <c>      |
+| Title | Initial | Surname | Address     | City  | Phone        | DoB      | 
+|-------+---------+---------+-------------+-------+--------------+----------| 
+| Mrs   | C       | Flowers | 23 Rose Ave | Bourne| 01778 123456 | 01/11/69 |
+| Mr    | J       | Eames   | 100 Dowe Rd | Bourne| 01778 654321 | 23/09/87 |
+| Mr    | H       | Gull    | 34 High St  | Bourne| 01778 657231 | 30/07/99 |
+| Ms    | P       | Jones   | 89 Knight St| Bourne| 01778 856021 | 10/10/56 |
+
+- To prevent replication of data, make searching (Querying) easier and to build relationships between tables, each =record= in our table needs a unique identifier. As mentioned before this is called a =Primary Key=.
+| <c>      | <c>  | <c>     | <c>     | <c>         | <c>   | <c>          | <c>        | 
+| *CustID  |Title | Initial | Surname | Address     | City  | Phone        | DoB        |
+|----------+------+---------+---------+-------------+-------+--------------+------------| 
+|  C001    |  Mrs | C       | Flowers | 23 Rose Ave | Bourne| 01778 123456 | 01/11/69   |
+|  C002    |  Mr  | J       | Eames   | 100 Dowe Rd | Bourne| 01778 654321 | 23/09/87   |
+|  C003    |  Mr  | H       | Gull    | 34 High St  | Bourne| 01778 657231 | 30/07/99   |
+|  C004    |  Ms  | P       | Jones   | 89 Knight St| Bourne| 01778 856021 | 10/10/56   |
+- A =Primary Key= _must_ be unique for each =record=. No two records can share a =Primary Key=.
+-  Normally the software generates the =primary key= for us. We could have used the /Surname/ as the =primary key= but it is possible for two different people to have the same surname.
+- So the =Primary Key= is a best assigned by the database software to ensure that it is =unique= in this case we have called it =CustID=.
+** Eliminating Data Inconsistency and Data redundancy
+- In the Customer table, each item of data is held only once. There is no longer any possibility of inconsistency in the spelling of a name, or a difference between two phone numbers recorded for the same person. We have eliminated =Data Inconsistency= and =Data Redundancy=.
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- For your notes - write down definitions for the following terms:
+  1. Table.
+  2. Field.
+  3. Record.
+  4. Primary Key.
+  5. Foreign Key.
+
+* Querying the Database
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Query_DB_Img.png]]
+- A =query= is a question, often expressed in a formal way.
+- A database query can be either a =select query= or an =action query=.
+- A =select query= is a data retrieval query.
+- An =action query= asks for additional operations on the data, such
+  as insertion, updating or deletion.
+- Next we need to create a new table to store details of books that
+  can be bought by a customer.
+- We will call this table =Book= and its structure is shown below:
+| <c>      | <c>                               | <c>             | <c>      | <c>         | <c>   | 
+| *BookID  |Title                              | Author          | Genre    | PublishDate | Rating|
+|----------+-----------------------------------+-----------------+----------+-------------+-------| 
+|  B123    |  Charlotte's Web                  |  E. B. White    | Fiction  | 01/01/1952  | 5     |
+|  B456    |  David Copperfield                | Charles Dickens | Fiction  | 10/12/1850  | 5     |
+|  B789    |  How To:                          | Randall Munroe  | Fiction  | 20/08/2019  | 4     |
+|  C123    |  The Way of the Peaceful Warrior  | Dan Millman     | Spiritual| 01/09/2000  | 5     |
+- We could query (search) this table to find, for example, /all books with a rating of 5 or above/ or /all books published between 1970 and 2019/ or /all the books published before 01/01/1960/.
+
+- Suppose we want to store data about orders for books a particular person wants to own, we would need to =create a new table=, giving it the name =Orders=.
+- In the =Orders table=, the =primary key= would be =OrderID=, =CustID= the =foreign key= and =BookID= also a =foreign key=.
+- A =Foreign Key= is a field which is a =Primary Key= in a =Linked Table=.
+| <c>      | <c>       | <c>        | <c>        | 
+| *OrderID |CustID     | BookID     | OrderDate  |
+|----------+-------------------------------------| 
+|  O1      |  C003     |  B123      | 15/04/2020 |
+|  O2      |  C002     |  B456      | 07/02/2019 |
+|  O3      |  C001     |  B789      | 26/03/2020 |
+|  O4      |  C004     |  C123      | 01/07/2020 |
+** Relationships Between Tables in a Database
+*Understanding types of relationships:*
+- We now have three tables that are separate tables on their own, each
+  having a primary key as its first field in each table.
+- You may recall that this field is usually automatically generated by
+  default, so every record in the table has its own unique number to
+  identify it.
+- Databases use this number to quickly pull information together when you run queries or reports.
+- =Relational Databases= allow for three different types of relationships. These include:
+  - *One-to-One.*
+  - *One-to-Many.*
+  - *Many-to-Many.*
+- =One-to-One:= One entity can relate to the other entity exactly once. For example, the Capital City entity can only be related in the Country entity once. In other words, only one unique City can be located in one Country, that is, exactly one unique CapitalID exists in the Country table. This relationshio is describe using entity relationship diagram by a sinlge line between the entities:
+[[file:img/DB_One_To_One.png]]
+- =One-to-Many:= One entity can relate to the other entity more than once. For example, one Book can have multiple copies in the Copy entity. In other words, one BookID can appear multiple times in the Orders table. This relationship in entity relationship diagram:
+[[file:img/DB_One_To_Many.png]]
+- =Many-to-Many:= One entity can appear multiple times in the other entity and vice versa. For example, a Customer can have multiple Orders and one Order can be purchased by multiple Customers. This relationshion in entity relationship diagram:
+[[file:img/DB_Many_To_Many.png]]
+- We now have a =Relational Database= with all =three tables linked= as shown below:
+[[file:img/DB_Relationship_Dia.png]]
+
+** Badge It: Database Concepts - Exam Style Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Silver*: Answer the following exam questions:
+1. How many records are there in the following table?
+2. How many fields are there in each record?
+| <c>      | <c>  | <c>     | <c>     | <c>         | <c>   | <c>          | <c>        | 
+| *CustID  |Title | Initial | Surname | Address     | City  | Phone        | DoB        |
+|----------+------+---------+---------+-------------+-------+--------------+------------| 
+|  C001    |  Mrs | C       | Flowers | 23 Rose Ave | Bourne| 01778 123456 | 01/11/69   |
+|  C002    |  Mr  | J       | Eames   | 100 Dowe Rd | Bourne| 01778 654321 | 23/09/87   |
+|  C003    |  Mr  | H       | Gull    | 34 High St  | Bourne| 01778 657231 | 30/07/99   |
+|  C004    |  Ms  | P       | Jones   | 89 Knight St| Bourne| 01778 856021 | 10/10/56   |
+
+- /Upload to 3.7.1 Relational Databases - Database Concepts: Silver on BourneToLearn/ 
+
+** Badge It: Relational Databases - Exam Style Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Gold*: Answer the following questions:
+1. Explain what is meant by a relational database?
+2. Explain what is meant by a primary key?
+3. Identifty the primary key in the customer table?
+4. Explain what is meant by a foreign key?
+5. Identify the foreign keys in the following Orders table:
+| <c>      | <c>       | <c>        | <c>        | 
+| *OrderID |CustID     | BookID     | OrderDate  |
+|----------+-------------------------------------| 
+|  O1      |  C003     |  B123      | 15/04/2020 |
+|  O2      |  C002     |  B456      | 07/02/2019 |
+|  O3      |  C001     |  B789      | 26/03/2020 |
+|  O4      |  C004     |  C123      | 01/07/2020 |
+
+
+- /Upload to 3.7.1 Relational Databases - Concepts of a Relational Database: Gold on BourneToLearn/ 
+
+** Badge It: Relational Databases - Exam Style Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Platinum*: Carry out the following instructions:
+1. In a certain college, students are able to attend evening courses which are taught by tutors. A student can attend any number of courses, and each course is taught by a single tutor, although a tutor may teach more than one course.
+  - Design a data model using the standard notation.
+  - Using an example, explain what is meant by a primary key in a database.
+  - Using an example, explain what is meant by a foreign key in a database.
+  - Construct an entity relationship diagram to illustrate this situation.
+
+
+- /Upload to 3.7.1 Relational Databases - Construct a Relational Database: Platinum on BourneToLearn/ 
