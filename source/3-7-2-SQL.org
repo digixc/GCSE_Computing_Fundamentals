@@ -2,15 +2,15 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
-#+TITLE: 3.1.15.1 SQL
-#+AUTHOR: Marc Scott
+#+TITLE: 3.7.2 Structured Query Langauage (SQL)
+#+AUTHOR: Steve Fone
 
 #+BEGIN_HTML
 <div class=ribbon>
 <a href="GITHUB URL HERE">Fork me on GitHub</a>
 </div>
 #+END_HTML
-[[file:img/Chuck.jpg]]
+[[file:img/3.7.2_SQL_Main.png]]
 * COMMENT Use as a template
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
@@ -76,7 +76,7 @@
 :END:
 
 
-* Querying a database
+* Using SQL to Query a Relational Database
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -84,177 +84,291 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- SQL (Structured Query Language) is a language for exploring databases.
+- *Structured Query Language (SQL)* is a language that was developed as a method for creating, /selecting/, /inserting/, /editing(updating)/ and /deleting/ tables, records and fields within a relational database.
 - Using SQL we can perform various operations on data in out database tables.
-- We can, for instance, DELETE, CREATE, SELECT and UPDATE tables, records and fields.
-* SQL syntax - =SELECT=
+- We can, for instance, =SELECT=, =INSERT=, =DELETE= and =UPDATE= /tables/, /records/ and /fields/.
+- SQL is a standardized query language for requesting information from a database.
+- *Query* is another word for *questioning* the Database using criteria.
+- The *Customer*, *Orders* and *Books* tables in the *Book_Store* database will be used to demonstrate the main SQL statements.
+- *The most commonly used SQL statements include:*
+  - SELECT
+    - FROM
+    - WHERE
+    - ORDER BY
+  - INSERT
+  - UPDATE
+  - DELETE
+
+* SQL Syntax - SELECT
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-** Learn It
+** Learn It: SELECT .. FROM .. WHERE
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
 
-
-- Querying a database using SQL is the most common operation that is performed.
-- This uses the =SELECT= statement.
-- =SELECT= will retrieve data from one or more tables
-- =SELECT= has optional key words such as:
-  - =FROM= to indicate which table(s) data is to be retrieved from
-  - =WHERE= to allow selection of data using comparisons.
-  - =ORDER BY= to identify a column in the table by which to order the data, either ascending or descending.
-- The asterisk (=*=) is also important in writing SQL statements, indicating that all columns should be selected.
-** Learn It
+- The *SELECT* statement is used to retrieve(Extract) a collection of fields from one or more tables in a database.
+- *The syntax is:*
+- =SELECT= will retrieve data(List of Fields) from one or more tables.
+- =SELECT= has optional keywords such as:
+  - =FROM= to list the table(s) where the data is to be retrieved from.
+  - =WHERE= to allow selection of data using search criteria.
+  - =ORDER BY= lists the column(fields) that the results are to be sorted on, either Ascending or Descending(default is Ascending).
+- The asterisk (=*=) is also important in writing SQL statements, indicating that all columns(Fields) should be selected.
+** Learn It: Retrieving Data from a Relational Database
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Let's look at out Films example again.
-| <c>                   | <c>           | <c>  | <c>                   | <c>    |
-| Film                  | Director      | Year | RTScore               | Key    |
-|-----------------------+---------------+------+-----------------------+--------|
-| The Way of the Dragon | Bruce Lee     | 1972 | 100                   | FM-001 |
-| Lone Wolf McQuade     | Steve Carver  | 1983 | 67                    | FM-002 |
-| The Delta Force       | Menahem Golan | 1986 | 20                    | FM-003 |
-| The Expendables 2     | Simon West    | 2012 | 65                    | FM-004 |
-- A valid SQL statement to return every film with a score of more than 50 would be:
+- *EXAMPLE 1:* Let's look at our Customer table example.
+| <c>      | <c>  | <c>     | <c>     | <c>         | <c>   | <c>          | <c>        | 
+| *CustID  |Title | Initial | Surname | Address     | City  | Phone        | DoB        |
+|----------+------+---------+---------+-------------+-------+--------------+------------| 
+|  C001    |  Mrs | C       | Flowers | 23 Rose Ave | Bourne| 01778 123456 | 01/11/69   |
+|  C002    |  Mr  | J       | Eames   | 100 Dowe Rd | Bourne| 01778 654321 | 23/09/87   |
+|  C003    |  Mr  | H       | Gull    | 34 High St  | Bourne| 01778 657231 | 30/07/99   |
+|  C004    |  Ms  | P       | Jones   | 89 Knight St| Bourne| 01778 856021 | 10/10/56   |
+- A valid SQL statement to select *All People* in the *Customer table* who was *born between* =01/01/1960= and =01/01/2000= and displaying the *results* in *descending order* of *Surname* would be:
 #+BEGIN_SRC sql
   SELECT *
-         FROM Films
-         WHERE RTScore > 50
-         ORDER BY Film DESC;
+         FROM Customer
+         WHERE DoB BETWEEN #01/01/1960# AND #01/01/2000#
+         ORDER BY Surname DESC;
 #+END_SRC
-- Another example below just returns the director and year of the film, for every film made after befor 2000:
-#+BEGIN_SRC sql
-  SELECT Director, Year
-         FROM Films
-         WHERE Year < 2000
-         ORDER BY Year ASC;
-#+END_SRC
-** Try It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: try
-:END:
+- This SQL query will return the following records:
+[[file:img/3.7.2_DB_SQL1.png]]
 
+- *EXAMPLE 2:* In this example we will use the =Books table= to select *BookID*, *Title*, *Genre*, *Rating* and *PublishDate* with a *rating* of *5 or above* or with a *publish date* after =1970= and displaying the *results* in *ascending order* of *Title* would be:
+| <c>      | <c>                               | <c>             | <c>      | <c>         | <c>   | 
+| *BookID  |Title                              | Author          | Genre    | PublishDate | Rating|
+|----------+-----------------------------------+-----------------+----------+-------------+-------| 
+|  B123    |  Charlotte's Web                  |  E. B. White    | Fiction  | 01/01/1952  | 5     |
+|  B456    |  David Copperfield                | Charles Dickens | Fiction  | 10/12/1850  | 5     |
+|  B789    |  How To:                          | Randall Munroe  | Fiction  | 20/08/2019  | 4     |
+|  C123    |  The Way of the Peaceful Warrior  | Dan Millman     | Spiritual| 01/09/2000  | 5     |
+#+BEGIN_SRC sql
+  SELECT BookID, Title, Genre, Rating, PublishDate
+         FROM Books
+         WHERE Rating > 5 OR PublishDate >= #01/01/1970#
+         ORDER BY Title ASC;
+#+END_SRC
+- This SQL query will return the following records:
+[[file:img/3.7.2_DB_SQL2.png]]
+** Standard SQL Operators
 - The standard operators used in SQL are shown below.
-| Operator    | Function                                  |
-|-------------+-------------------------------------------|
-| =           | Equal to                                  |
-| <>          | Not equal to                              |
-| <           | Less than                                 |
-| >           | Greater than                              |
-| <=          | Less than or equal to                     |
-| >=          | Greater than or equal to                  |
-| IS NULL     | No data (not the same as a value of zero) |
-| IS NOT NULL | Has data                                  |
-| AND         | Logical AND                               |
-| OR          | Logical OR                                |
-- Try and write SQL =SELECT= statements for the following.
-  1. List Film and Key of Films with a RTScore that are not empty
-  2. List Film and Year of Films Directed by Simon West
-  3. List Directors with an RTScore greater than 50 made before 1980
-** Learn It
+| <c>            | <c>                                                                 | <c>                                               |
+| Operator       | Function                                                            | Example                                           |
+|----------------+---------------------------------------------------------------------+---------------------------------------------------|
+| =              | Equal to                                                            | Title = "Mr"                                      |
+| <>             | Not equal to                                                        | Title <> "Ms"                                     |
+| <              | Less than                                                           | Rating < 5                                        |
+| >              | Greater than                                                        | Rating > 2                                        |
+| <=             | Less than or equal to                                               | DoB <= #01/01/1970#                               |
+| >=             | Greater than or equal to                                            | DoB >= #01/01/2000#                               |
+| IN             | Equal to a value within a set of values                             | Genre IN ("Fiction", "Non-Fiction" , "Spiritual") |
+| BETWEEN ...AND | Within a range, including the two values which define the limits    | DoB BETWEEN #01/01/2018# AND #31/12/2019#         |
+| IS NULL        | Field does not contain a value                                      | DoB IS NULL                                       |
+| NOT            | Inverts truth                                                       | Genre NOT IN ("Fiction", "Spiritual")             |
+| AND            | Both expressions must be true for the expression to be true         | Title = "Mr" AND DoB > #01/01/2000#               |
+| OR             | If either or both expressions ate true, then the expression is true | Title = "Mrs" OR City = "Bourne"                  |
+
+** Try It: SQL Zoo - SELECT
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Try practising your SQL skills by working through the following SQL Select Stages 0 to 7:
+#+BEGIN_HTML
+<a href="https://sqlzoo.net/"><img src="file:img/SQL_Zoo_Sections_Part_1.png"></a>
+#+END_HTML
+
+** Badge It: Structured Query Langauge (SQL) - Simple SQL Query
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Silver*: Carry out the following instructions:
+1. Write an SQL query to find the names and dates of birth of all people born on or before 1st January 1970. = *(Hint: Use the <= operator)*
+2. Draw a table to show the query results. Remember to display *all* fields in the records that satisfy the query criteria, use an asterisk(*) instead of specifying each field.
+
+
+- /Upload to 3.7.2 Structured Query Language (SQL) - Simple SQL Statement: Silver on BourneToLearn/ 
+
+** Learn It: Retrieving Data from Two or more Tables
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- With relational databases, we might want to select from multiple tables
-| <c>                   | <c>           | <c>  | <c>                   | <c>    |
-| Film                  | Director      | Year | RTScore               | Key    |
-|-----------------------+---------------+------+-----------------------+--------|
-| The Way of the Dragon | Bruce Lee     | 1972 | 100                   | FM-001 |
-| Lone Wolf McQuade     | Steve Carver  | 1983 | 67                    | FM-002 |
-| The Delta Force       | Menahem Golan | 1986 | 20                    | FM-003 |
-| The Expendables 2     | Simon West    | 2012 | 65                    | FM-004 |
+- The =Book_Store= database consists of =three tables=, with
+  relational databases, we might want to select from multiple tables.
+- For example, we might want to find the names and phone numbers of
+  people who had previously bought a book in 2020.
+- Using SQL, we can combine data from two or more tables by specifying
+  which data the table is held in.
+- When more than one table is involved, SQL uses the syntax
+  =tablename.tablefield= to specify the field. However, the table name
+  is optional unless the field name appears in more than one table.
+*Customer Table:*
+| <c>      | <c>  | <c>     | <c>     | <c>         | <c>   | <c>          | <c>        | 
+| *CustID  |Title | Initial | Surname | Address     | City  | Phone        | DoB        |
+|----------+------+---------+---------+-------------+-------+--------------+------------| 
+|  C001    |  Mrs | C       | Flowers | 23 Rose Ave | Bourne| 01778 123456 | 01/11/69   |
+|  C002    |  Mr  | J       | Eames   | 100 Dowe Rd | Bourne| 01778 654321 | 23/09/87   |
+|  C003    |  Mr  | H       | Gull    | 34 High St  | Bourne| 01778 657231 | 30/07/99   |
+|  C004    |  Ms  | P       | Jones   | 89 Knight St| Bourne| 01778 856021 | 10/10/56   |
+*Books Table:*
+| <c>      | <c>                               | <c>             | <c>      | <c>         | <c>   | 
+| *BookID  |Title                              | Author          | Genre    | PublishDate | Rating|
+|----------+-----------------------------------+-----------------+----------+-------------+-------| 
+|  B123    |  Charlotte's Web                  |  E. B. White    | Fiction  | 01/01/1952  | 5     |
+|  B456    |  David Copperfield                | Charles Dickens | Fiction  | 10/12/1850  | 5     |
+|  B789    |  How To:                          | Randall Munroe  | Fiction  | 20/08/2019  | 4     |
+|  C123    |  The Way of the Peaceful Warrior  | Dan Millman     | Spiritual| 01/09/2000  | 5     |
+*Orders Table:*
+| <c>      | <c>       | <c>        | <c>        | 
+| *OrderID |CustID     | BookID     | OrderDate  |
+|----------+-------------------------------------| 
+|  O1      |  C003     |  B123      | 15/04/2020 |
+|  O2      |  C002     |  B456      | 07/02/2019 |
+|  O3      |  C001     |  B789      | 26/03/2020 |
+|  O4      |  C004     |  C123      | 01/07/2020 |
 
-| <c>    | <c>                 | <c>    |
-| Film   | Role                | Key    |
-|--------+---------------------+--------|
-| FM-001 | Colt                | CN-001 |
-| FM-002 | Ranger J.J. McQuade | CN-002 |
-| FM-004 | Major Scott McCoy   | CN-003 |
-| FM-003 | Booker              | CN-004 |
+- *EXAMPLE 1:* We will write an SQL query to find the /Title/, /Initial/, /Surname/ and /Phone number/ of each person, together with the /date/ customer bought a book /during 2020/.
+- We need to query the tables Customer and Orders to find the matching OrderDate >= 01/01/2020. These two tables are linked by a primary key CustID in the Customer table and a foreign key CustID in the Orders table. This kind of query is called =inner join=.
+#+BEGIN_SRC sql
+SELECT Customer.Title, Initial, Surname, Phone, Orders.CustID, OrderDate
+      FROM Customer INNER JOIN Orders ON Customer.[CustID] = Orders.[CustID]
+      WHERE Orders.OrderDate >= #1/1/2020#;      
+      ORDER BY Surname ASC
+#+END_SRC
+- This SQL query will return the following three records:
+[[file:img/3.7.2_DB_SQL3.png]]
+
+** Badge It: Structured Query Langauge (SQL) - SQL to Query two tables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Gold*: Carry out the following instructions:
+1. Write an SQL statement to retrieve the title and genre of the books owned by Mr Eames.
+2. Try and write an SQL Statement that will retrieve all the books by the author Dan Millman and show the title and surname of the customer who owns a copy.
+
+
+- /Upload to 3.7.2 Structured Query Language (SQL) - SQL Statement two tables: Silver on BourneToLearn/ 
+
+
+* SQL Syntax - INSERT
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Insert a new record
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- *Example 1:* To insert a new record into an existing table we use the SQL *INSERT INTO* statement. The syntax is:
+#+BEGIN_SRC sql
+  INSERT INTO tableName (column1, column2,...)
+  VALUES (value1, value2,...)
+#+END_SRC
+- For example, to insert a record for a new customer, Mrs T Rush, 78
+  Oak Ave, Peterborough, 01733873194, 19/04/1974
+#+BEGIN_SRC sql
+  INSERT INTO Customer(CustID, Title, Initial, Surname, Address, City, Phone, DoB)
+         VALUES(C005, "Mrs", "T", "Rush", "78 Oak Ave", "Pboro", "01733873194", "19/04/1974");
+#+END_SRC
+- *Example 2:* To insert a record for a new book, C456, You Care Too
+  Much, Carl Vernon, Self Help, 4, 07/01/2019:
+#+BEGIN_SRC sql
+  INSERT INTO Books(BookID, Title, Author, Genre, Rating, PublishDate)
+          VALUES(C456, "You Care Too Much", "Self Help", "4", "07/01/2019");
+#+END_SRC
+
+* SQL Syntax - UPDATE
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Update an existing record
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- To update an existing record's attribute(s) that meeting a specified condition, we use the SQL *UPDATE* statement. The syntax is:
+#+BEGIN_SRC sql
+  UPDATE tableName
+  SET column1 = value1, column2 = value2, ...
+  WHERE column = value
+#+END_SRC
+- *Example:* Update the record of CustID C001, Mrs Flowers, who has
+  changed her address to 63 River Way, and her phone number to 01778 886210.
+#+BEGIN_SRC sql
+  UPDATE Customer
+         SET Address = "63 River Way", Phone = "01778 886210"
+         WHERE CustID = "C001"
+#+END_SRC
+
+* SQL Syntax - DELETE
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It: Delete an existing record
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- To delete an existing record from a table that meeting a specified condition, we use the SQL *DELETE* statement. The syntax is:
+#+BEGIN_SRC sql
+  DELETE FROM tablename
+  WHERE column = value
+#+END_SRC
+- *Example:* Delete the record for CustID C004, Ms, P, Jones.
+#+BEGIN_SRC sql
+  DELETE FROM Customer
+  WHERE CustID = C004
+#+END_SRC
+
+** Try It: SQL Zoo - INSERT...UPDATE...DELETE
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Try practising your SQL skills by working through the following SQL
+  Insert and Delete Stages 1 to 7:
+#+BEGIN_HTML
+<a href="https://sqlzoo.net/wiki/INSERT_and_DELETE_Reference"><img src="file:img/SQL_Zoo_Sections_Part_2.png"></a>
+#+END_HTML
+
+** Badge It: Structured Query Langauge (SQL) - SQL Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+*Platinum*: Answer the following exam questions:
+- A relational database is being developed to store information about the games that are available to play at a games café and the advance bookings that have been made for those games. Each game has a unique name.
+   - The database contains two tables: Game and Booking.
+   - The database is currently being tested by the person who has developed it so the database tables only contain a small amount of data that is being used for testing.
+   - The contents of the tables are shown below.
+[[file:img/3.7.2_DB_Plat_Game_Booking.png]]
+1. *State* the field in the Booking table that is a *foreign key*? (1 Mark)
+2. *State* the most suitable *data type* to use for the /Complexity/ field. (1 Mark)
+3. Due to a change in layout at a games café, the game table with an ID of 2 is no longer suitable for games that can have more than four players. The manager needs to find out the customer, date and time of all bookings made for the game table with an ID of 2 that are for a game that can have more than four players.
+   - a) *Write* an *SQL query* that could be used to find this information for the manager. The results should be shown in date order. (6 Marks)
+4. The /LengthOfGame/ field shows the average amount of time it takes
+   to play a game in minutes. A query to add 10 minutes to the length
+   of time taken for all games that have a /Complexity/ of more than three is shown below:
 
 #+BEGIN_SRC sql
-SELECT Film.Film, Filmography.Role
-      FROM Film, Filmography
-      WHERE Film.Year > 1980 AND Filmography.Role = 'Ranger J.J. McQuade'
-      ORDER BY RTScore ASC
+          UPDATE Game
+          SET LengthOfGame = LengthOfGame + 9
+          WHERE Complexity <= 3
 #+END_SRC
+   - a) The query contains *two errors*.
+   - b) *Refine* the query to correct the errors.
+
+
+- /Upload to 3.7.2 Structured Query Language (SQL) - SQL Exam Questions: Platinum on BourneToLearn/
+
+* Extension Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-
-- Try and explain what this SQL statement retrieves.
-- Try and write an SQL Statement that will retrieve all the films by Director Bruce Lee where the Role is not empty made before 1975, and show name of the films in ascending order.
-* SQL syntax - =CREATE=
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
-:END:
-** Learn It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: learn
-:END:
-- If you've mastered the =SELECT= statement then the rest is easy.
-- =CREATE= is used to create a database table.
-#+BEGIN_SRC sql
-  CREATE TABLE Films(
-         Film VARCHAR (30) NOT NULL,
-         Director CHAR (30) NULL,
-         Year INT NULL,
-         RTScore INT NULL,
-         KEY INT IDENTITY (1000,1) NOT NULL,
-         );
-#+END_SRC
-- Here' we've created the Films table.
-  - =VARCHAR= indicates a string of characters of variable length.
-  - =CHAR= indicates a string of characters with fixed length (30 in this case).
-  - In the example above, the =CHAR (30)= will not accept strings longer than 30, and will always take up 30 bytes of memory.
-  - The =VARCHAR (30)= will accept strings of /almost/ any length. If the length is less than 30, then it will take up fewer bytes of memory. If the string is longer, it will take up more memory.
-  - =INT= indicates an integer.
-  - =IDENTITY= identifies a column as holding primary keys. We can specify a starting and increment value.
-  - =NULL= means the filed can be left blank if desired.
-  - =NOT NULL= indicates a required field.
-* SQL syntax - =INSERT= , =UPDATE= and =DELETE=
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
-:END:
-** Learn It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: learn
-:END:
-- Once a table has been created, we need to fill it with data. Large tables can be loaded with data from text files, but sometimes we might want to add a bit of data ourselves, or get a script ot do it for us.
-#+BEGIN_SRC sql
-  INSERT INTO Films(Film,
-                    Director,
-                    Year,
-                    RTScore
-                    )
-          VALUES(   'The Way of the Dragon',
-                    'Bruce Lee',
-                    1972,
-                    100
-                    );
-#+END_SRC
-- Or we might just want to update some data in out table.
-#+BEGIN_SRC sql
-  UPDATE Films
-         SET Director = 'Bruce Lee'
-         WHERE Film = 'The Way of the Dragon'
-         
-#+END_SRC
-- Or we might want to remove data from our table.
-#+BEGIN_SRC sql
-  DELETE FROM Films
-  WHERE Director = 'Bruce Lee'
-#+END_SRC
-* Exam Questions
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
-:END:
-** Try It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: try
-:END:
-- Try this question from the example examination paper.
+- Try these examination questions on SQL.
 [[file:img/8.jpg]]
