@@ -88,7 +88,7 @@
 - Using SQL we can perform various operations on data in out database tables.
 - We can, for instance, =SELECT=, =INSERT=, =DELETE= and =UPDATE= /tables/, /records/ and /fields/.
 - SQL is a standardized query language for requesting information from a database.
-- *Query* is another word for *questioning* the Database using criteria.
+- *Query* is another word for *questioning* the Database using search criteria.
 - The *Customer*, *Orders* and *Books* tables in the *Book_Store* database will be used to demonstrate the main SQL statements.
 - *The most commonly used SQL statements include:*
   - SELECT
